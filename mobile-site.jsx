@@ -27,6 +27,7 @@ function MobileNav() {
     ['ホーム', 'home'],
     ['私たちについて', 'about'],
     ['会社概要', 'company'],
+    ['事業概要', 'business'],
     ['お知らせ', 'news'],
     ['パートナー', 'partners'],
     ['お問い合わせ', 'contact'],
@@ -45,8 +46,8 @@ function MobileNav() {
             <img src="assets/logo-regionallab.png" alt="Regional Lab" style={{ width: '135%', height: '135%', objectFit: 'cover', marginLeft: '-17.5%', marginTop: '-17.5%', display: 'block' }} />
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.1, gap: 3 }}>
-            <div style={{ fontFamily: mFont.jpSerif, fontSize: 15, letterSpacing: 2, color: mPalette.ink }}>Regional Lab</div>
-            <div style={{ fontFamily: mFont.jpSerif, fontSize: 11, letterSpacing: 2, color: mPalette.ink, paddingLeft: 20 }}>Minamiuonuma</div>
+            <div style={{ fontFamily: mFont.jpSerif, fontSize: 19, fontWeight: 600, letterSpacing: 0.5, color: mPalette.ink }}>Regional Lab</div>
+            <div style={{ fontFamily: mFont.jpSerif, fontSize: 13.5, fontWeight: 600, letterSpacing: 5, color: mPalette.ink, marginTop: 5, paddingLeft: 42 }}>{window.t('株式会社')}</div>
           </div>
         </div>
         <button
@@ -77,10 +78,18 @@ function MobileNav() {
                 cursor: 'pointer',
               }}
             >
-              <span style={{ fontFamily: mFont.jpSerif, fontSize: 18, color: mPalette.ink, letterSpacing: 2 }}>{jp}</span>
+              <span style={{ fontFamily: mFont.jpSerif, fontSize: 18, color: mPalette.ink, letterSpacing: 2 }}>{window.t(jp)}</span>
               <span style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 2, color: mPalette.akane }}>{en.toUpperCase()} →</span>
             </div>
           ))}
+          <div
+            onClick={() => window.saiSetLang(window.saiLang === 'en' ? 'ja' : 'en')}
+            style={{ marginTop: 20, padding: '14px 8px', border: `1px solid ${mPalette.ink}`, display: 'flex', gap: 8, justifyContent: 'center', alignItems: 'center', fontFamily: mFont.mono, fontSize: 13, letterSpacing: 2, cursor: 'pointer' }}
+          >
+            <span style={{ opacity: window.saiLang === 'ja' ? 1 : 0.4, fontWeight: window.saiLang === 'ja' ? 700 : 400 }}>JP</span>
+            <span style={{ opacity: 0.4 }}>/</span>
+            <span style={{ opacity: window.saiLang === 'en' ? 1 : 0.4, fontWeight: window.saiLang === 'en' ? 700 : 400 }}>EN</span>
+          </div>
         </div>
       )}
     </React.Fragment>
@@ -94,6 +103,7 @@ function MobileFooter() {
   const navItems = [
     ['私たちについて', 'about'],
     ['会社概要', 'company'],
+    ['事業概要', 'business'],
     ['お知らせ', 'news'],
     ['パートナー', 'partners'],
     ['お問い合わせ', 'contact'],
@@ -103,7 +113,7 @@ function MobileFooter() {
       <div style={{ textAlign: 'center', marginBottom: 48 }}>
         <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 3, color: mPalette.akane, marginBottom: 16 }}>—— TOGETHER</div>
         <h2 style={{ fontFamily: mFont.jpSerif, fontSize: 28, fontWeight: 400, margin: 0, color: mPalette.ink, letterSpacing: '0.04em', lineHeight: 1.5 }}>
-          その地に、もう一度、<br /><span style={{ color: mPalette.ai }}>光を。</span>
+          {window.t('その地に、もう一度、')}<br /><span style={{ color: mPalette.ai }}>{window.t('光を。')}</span>
         </h2>
       </div>
       <div style={{ borderTop: `1px solid ${mPalette.ink}33`, paddingTop: 28, display: 'flex', flexDirection: 'column', gap: 2 }}>
@@ -116,14 +126,14 @@ function MobileFooter() {
               display: 'flex', justifyContent: 'space-between', alignItems: 'center', cursor: 'pointer',
             }}
           >
-            <span style={{ fontFamily: mFont.jpSerif, fontSize: 15, letterSpacing: 2, color: mPalette.ink }}>{jp}</span>
+            <span style={{ fontFamily: mFont.jpSerif, fontSize: 15, letterSpacing: 2, color: mPalette.ink }}>{window.t(jp)}</span>
             <span style={{ fontFamily: mFont.mono, fontSize: 9, letterSpacing: 2, color: mPalette.akane }}>{en.toUpperCase()}</span>
           </div>
         ))}
       </div>
       <div style={{ marginTop: 32, paddingTop: 20, borderTop: `1px solid ${mPalette.ink}22`, display: 'flex', flexDirection: 'column', gap: 8, fontFamily: mFont.mono, fontSize: 10, letterSpacing: 1.5, color: mPalette.muted, textAlign: 'center' }}>
-        <span>© REGIONAL LAB 2026</span>
-        <span>新潟県南魚沼市 × 東京 × 宮城</span>
+        <span>© REGIONAL LAB 株式会社 2026</span>
+        <span>{window.t('魚沼エリア × 宮城エリア × 東京エリア')}</span>
       </div>
     </div>
   );
@@ -157,10 +167,10 @@ function MobileHome() {
     <div style={{ background: mPalette.paper }}>
       {/* HERO */}
       <div style={{ padding: '40px 24px 56px', background: `linear-gradient(180deg, ${mPalette.paper} 0%, ${mPalette.paperDeep} 100%)`, position: 'relative' }}>
-        <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 3, color: mPalette.akane, marginBottom: 24 }}>—— 新潟県南魚沼市を支え続ける企業へ</div>
+        <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 3, color: mPalette.akane, marginBottom: 24 }}>—— {window.t('新潟県南魚沼市を支え続ける企業へ')} ——</div>
         <h1 style={{ fontFamily: mFont.jpSerif, fontSize: 44, fontWeight: 500, margin: 0, color: mPalette.ink, letterSpacing: '0.04em', lineHeight: 1.3 }}>
-          <span style={{ display: 'block', whiteSpace: 'nowrap' }}>地方の未来を、</span>
-          <span style={{ display: 'block', whiteSpace: 'nowrap' }}>彩る組織へ</span>
+          <span style={{ display: 'block', whiteSpace: window.saiLang === 'en' ? 'normal' : 'nowrap' }}>{window.t('地方の未来を、')}</span>
+          <span style={{ display: 'block', whiteSpace: window.saiLang === 'en' ? 'normal' : 'nowrap' }}>{window.t('彩る組織へ')}</span>
         </h1>
         <div style={{ marginTop: 32, position: 'relative', paddingTop: 64, paddingLeft: 52 }}>
           {/* 藍色の和紙パネル（背面） */}
@@ -176,36 +186,58 @@ function MobileHome() {
         </div>
       </div>
 
-      {/* MISSION */}
+      {/* MISSION — 理念 / 使命 / 展望 */}
       <div style={{ background: mPalette.paperDeep, padding: '64px 24px' }}>
-        <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 3, color: mPalette.akane, marginBottom: 18 }}>—— OUR MISSION</div>
-        <h2 style={{ fontFamily: mFont.jpSerif, fontSize: 32, fontWeight: 400, color: mPalette.ink, letterSpacing: '0.04em', lineHeight: 1.5, margin: 0 }}>
-          地方の<span style={{ color: mPalette.akane }}>礎</span>として、<br />
-          地方の<span style={{ color: mPalette.ai }}>未来</span>を彩る。
+        <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 3, color: mPalette.akane, marginBottom: 18 }}>—— {window.t('─ 理念 / 使命 / 展望').replace('─ ', '')}</div>
+        <h2 style={{ fontFamily: mFont.jpSerif, fontSize: 30, fontWeight: 400, color: mPalette.ink, letterSpacing: '0.04em', lineHeight: 1.5, margin: 0 }}>
+          {window.siteData.mission.heading.map((h, i) => (
+            <React.Fragment key={i}>
+              {h[0]}<span style={{ color: h[2] === 'akane' ? mPalette.akane : mPalette.ai }}>{h[1]}</span>{h[3]}
+              {i === 0 && <br />}
+            </React.Fragment>
+          ))}
         </h2>
-        <p style={{ marginTop: 28, fontFamily: mFont.jpSerif, fontSize: 14, color: mPalette.ink, lineHeight: 2, margin: '28px 0 0' }}>
-          私たちは、新潟県南魚沼市を起点に、地方の魅力を再発見し、再構築し、未来へと継承していく組織です。
-          イベント、コミュニティ、アパレル — 三つの事業で、地方の可能性を引き出します。
+        <p style={{ fontFamily: mFont.jpSerif, fontSize: 14, color: mPalette.ink, lineHeight: 2, margin: '28px 0 32px' }}>
+          {window.siteData.mission.body}
         </p>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+          {[
+            { label: 'PHILOSOPHY', jp: window.t('理念'), body: window.siteData.about.pillars[0][1], bg: mPalette.paper, color: mPalette.ink },
+            { label: 'MISSION', jp: window.t('使命'), body: window.siteData.about.pillars[1][1], bg: mPalette.ai, color: mPalette.paper },
+            { label: 'VISION', jp: window.t('展望'), body: window.siteData.about.pillars[2][1], bg: mPalette.koke, color: mPalette.paper },
+          ].map(c => (
+            <div key={c.label} style={{ background: c.bg, color: c.color, padding: '22px 20px', borderRadius: 4 }}>
+              <div style={{ fontFamily: mFont.mono, fontSize: 9, letterSpacing: 3, opacity: 0.7 }}>{c.label}</div>
+              <div style={{ fontFamily: mFont.jpSerif, fontSize: 14, letterSpacing: 5, marginTop: 4, opacity: 0.85 }}>{c.jp}</div>
+              <div style={{ fontFamily: mFont.jpSerif, fontSize: 17, lineHeight: 1.8, letterSpacing: '0.04em', marginTop: 12 }}>{c.body}</div>
+            </div>
+          ))}
+        </div>
       </div>
 
-      {/* BUSINESS — 三つの柱 */}
+      {/* BUSINESS — 四つの柱 */}
       <div style={{ padding: '64px 24px', background: mPalette.paper }}>
         <div style={{ marginBottom: 36 }}>
           <h2 style={{ fontFamily: mFont.jpSerif, fontSize: 40, fontWeight: 400, margin: 0, color: mPalette.ink, letterSpacing: '0.04em' }}>
-            三つの<span style={{ color: mPalette.akane }}>柱</span>
+            {window.t('四つの')}<span style={{ color: mPalette.akane }}>{window.t('柱')}</span>
           </h2>
-          <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 3, color: mPalette.muted, marginTop: 6 }}>OUR BUSINESS — 03 SECTORS</div>
+          <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 3, color: mPalette.muted, marginTop: 6 }}>OUR BUSINESS — 04 SECTORS</div>
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 36 }}>
           {business.map((s, i) => (
             <div key={s.tag} style={{ background: mPalette.paperDeep, padding: 20, position: 'relative' }}>
               <div style={{ position: 'absolute', top: -8, left: 20, fontFamily: mFont.mono, fontSize: 10, letterSpacing: 3, background: mPalette.paper, padding: '4px 8px', color: s.accent }}>
-                0{i+1} / 03
+                0{i+1} / 0{business.length}
               </div>
-              <div style={{ width: '100%', aspectRatio: '16/10', overflow: 'hidden', marginTop: 8 }}>
-                <img src={s.img} alt={s.tag} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
-              </div>
+              {s.img ? (
+                <div style={{ width: '100%', aspectRatio: '16/10', overflow: 'hidden', marginTop: 8 }}>
+                  <img src={s.img} alt={s.tag} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                </div>
+              ) : (
+                <div style={{ width: '100%', aspectRatio: '16/10', marginTop: 8, background: `linear-gradient(135deg, ${s.accent}22 0%, ${s.accent}44 100%)`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: mFont.mono, fontSize: 10, letterSpacing: 3, color: s.accent }}>
+                  {s.en}
+                </div>
+              )}
               <div style={{ marginTop: 18, fontFamily: mFont.jpAlt, fontSize: 26, color: s.accent, letterSpacing: 1 }}>{s.tag}</div>
               <div style={{ fontFamily: mFont.jpSerif, fontSize: 13, letterSpacing: 3, color: mPalette.muted, marginTop: 4 }}>{s.jp}</div>
               <p style={{ fontFamily: mFont.jpSerif, fontSize: 14, lineHeight: 2, color: mPalette.ink, marginTop: 14, margin: '14px 0 16px' }}>
@@ -228,7 +260,7 @@ function MobileHome() {
       <div style={{ background: mPalette.aiDeep || '#13243a', padding: '56px 0', color: mPalette.paper, overflow: 'hidden' }}>
         <div style={{ padding: '0 24px', marginBottom: 28 }}>
           <h2 style={{ fontFamily: mFont.jpSerif, fontSize: 32, fontWeight: 400, margin: 0, color: mPalette.paper, letterSpacing: '0.04em' }}>
-            歩みは続く<span style={{ fontFamily: mFont.enSerif, fontStyle: 'italic', color: '#c2452f', fontSize: 20 }}> — ongoing.</span>
+            {window.t('歩みは続く')}<span style={{ fontFamily: mFont.enSerif, fontStyle: 'italic', color: '#c2452f', fontSize: 20 }}> — ongoing.</span>
           </h2>
           <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 3, color: mPalette.paper, opacity: 0.7, marginTop: 8 }}>EVENTS — 2024–2026</div>
         </div>
@@ -280,7 +312,7 @@ function MobileAbout() {
   const pillarColors = ['#c2452f', '#d8a13a', '#9bb06a'];
   return (
     <div style={{ background: mPalette.paper }}>
-      <MobilePageHeader no="01" jp="私たちについて" en="About Us" lead={about.lead} />
+      <MobilePageHeader no="01" jp={window.t('私たちについて')} en="About Us" lead={about.lead} />
       <div style={{ padding: '48px 24px' }}>
         {/* 目的 */}
         <div style={{ marginBottom: 32 }}>
@@ -352,22 +384,21 @@ function MobileCompany() {
   const services = window.siteData.company.services;
   const companyInfo = window.siteData.company.info;
   const info = [
-    ['会社名', '株式会社 リージョナルラボ'],
-    ['英名', 'Regional Lab, Inc.'],
-    ['設立', companyInfo.founded],
-    ['代表', '木寺 蒼真'],
-    ['資本金', companyInfo.capital],
-    ['役員', companyInfo.officers],
+    [window.t('会社名'), window.saiLang === 'en' ? 'Regional Lab Inc.' : 'Regional Lab 株式会社'],
+    [window.t('英名'), 'Regional Lab Inc.'],
+    [window.t('設立'), companyInfo.founded],
+    [window.t('代表'), window.saiLang === 'en' ? 'Kidera Soma' : '木寺 蒼真'],
+    [window.t('資本金'), companyInfo.capital],
+    [window.t('役員'), companyInfo.officers],
   ];
   const offices = companyInfo.offices;
-  const visions = window.siteData.company.visions;
   return (
     <div style={{ background: mPalette.paper }}>
-      <MobilePageHeader no="02" jp="会社概要" en="Company" lead={<><span style={{ display: 'block' }}>株式会社リージョナルラボの事業内容、会社情報、</span><span style={{ display: 'block' }}>ビジョンをご紹介します。</span></>} />
+      <MobilePageHeader no="02" jp={window.t('会社概要')} en="Company" lead={window.siteData.company.lead} />
       <div style={{ padding: '48px 24px' }}>
         <div style={{ marginBottom: 40 }}>
           <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 3, color: mPalette.akane, marginBottom: 14 }}>SECTION 01 — BUSINESS</div>
-          <h2 style={{ fontFamily: mFont.jpSerif, fontSize: 28, margin: '0 0 24px', color: mPalette.ink, letterSpacing: '0.04em', fontWeight: 500 }}>事業紹介</h2>
+          <h2 style={{ fontFamily: mFont.jpSerif, fontSize: 28, margin: '0 0 24px', color: mPalette.ink, letterSpacing: '0.04em', fontWeight: 500 }}>{window.t('事業紹介')}</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
             {services.map(s => (
               <div key={s.tag} style={{ background: mPalette.paperDeep, padding: 20, borderTop: `2px solid ${s.color}` }}>
@@ -381,7 +412,7 @@ function MobileCompany() {
 
         <div style={{ marginBottom: 40 }}>
           <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 3, color: mPalette.akane, marginBottom: 14 }}>SECTION 02 — CORPORATE PROFILE</div>
-          <h2 style={{ fontFamily: mFont.jpSerif, fontSize: 28, margin: '0 0 24px', color: mPalette.ink, letterSpacing: '0.04em', fontWeight: 500 }}>会社情報</h2>
+          <h2 style={{ fontFamily: mFont.jpSerif, fontSize: 28, margin: '0 0 24px', color: mPalette.ink, letterSpacing: '0.04em', fontWeight: 500 }}>{window.t('会社情報')}</h2>
           <div style={{ background: mPalette.paperDeep, padding: 22, display: 'flex', flexDirection: 'column', gap: 14 }}>
             {info.map(([k, v]) => (
               <div key={k} style={{ display: 'flex', flexDirection: 'column', gap: 4, paddingBottom: 12, borderBottom: `1px solid ${mPalette.ink}22` }}>
@@ -390,7 +421,7 @@ function MobileCompany() {
               </div>
             ))}
             <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-              <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 2, color: mPalette.akane }}>OFFICES</div>
+              <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 2, color: mPalette.akane }}>LOCATIONS</div>
               {offices.map(([k, v]) => (
                 <div key={k} style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
                   <span style={{ background: mPalette.akane, color: mPalette.paper, fontFamily: mFont.jpSerif, fontSize: 11, letterSpacing: 2, padding: '4px 10px', alignSelf: 'flex-start' }}>{k}</span>
@@ -401,40 +432,6 @@ function MobileCompany() {
           </div>
         </div>
 
-        {/* PL Visions 3ヵ年・5ヵ年・10ヵ年 */}
-        <div style={{ marginBottom: 8 }}>
-          <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 3, color: mPalette.akane, marginBottom: 14 }}>SECTION 03 — VISIONS</div>
-          <h2 style={{ fontFamily: mFont.jpSerif, fontSize: 28, margin: '0 0 8px', color: mPalette.ink, letterSpacing: '0.04em', fontWeight: 500 }}>3ヵ年・5ヵ年・10ヵ年</h2>
-          <p style={{ fontFamily: mFont.jpSerif, fontSize: 13, lineHeight: 1.9, color: mPalette.muted, margin: '0 0 24px' }}>
-            私たちが見据える、短期・中期・中長期の成長設計。
-          </p>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
-            {visions.map(v => (
-              <div key={v.term} style={{ background: mPalette.paperDeep, borderTop: `3px solid ${v.color}` }}>
-                <div style={{ padding: '16px 18px', borderBottom: `1px solid ${mPalette.ink}11` }}>
-                  <div style={{ fontFamily: mFont.jpSerif, fontSize: 18, fontWeight: 500, color: v.color }}>{v.term}</div>
-                  <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 3, color: mPalette.muted, marginTop: 4 }}>[ {v.sub.toUpperCase()} ]</div>
-                </div>
-                {v.rows.map((r, ri) => (
-                  <div key={ri} style={{ padding: '16px 18px', borderBottom: ri < v.rows.length - 1 ? `1px solid ${mPalette.ink}11` : 'none' }}>
-                    <div style={{ display: 'flex', alignItems: 'baseline', gap: 10, marginBottom: 10 }}>
-                      <span style={{ fontFamily: mFont.jpSerif, fontSize: 20, fontWeight: 500, color: v.color }}>{r[0]}</span>
-                      <span style={{ fontFamily: mFont.jpSerif, fontSize: 13, color: mPalette.ink, lineHeight: 1.5 }}>{r[4]}</span>
-                    </div>
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 8 }}>
-                      {[['売上高', r[1], mPalette.ink], ['販管費', r[2], mPalette.muted], ['営業利益', r[3], mPalette.akane]].map(([label, val, col]) => (
-                        <div key={label}>
-                          <div style={{ fontFamily: mFont.mono, fontSize: 8, letterSpacing: 1, color: mPalette.muted }}>{label}</div>
-                          <div style={{ fontFamily: mFont.jpSerif, fontSize: 13, fontWeight: 500, color: col, marginTop: 2 }}>{val}</div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
       <MobileFooter />
     </div>
@@ -452,7 +449,7 @@ function MobileNews() {
   const shown = active === 'ALL' ? articles : articles.filter(a => a.cat === active);
   return (
     <div style={{ background: mPalette.paper }}>
-      <MobilePageHeader no="03" jp="お知らせ" en="News" lead="プロダクト、イベント、メディア掲載 ─ Regional Lab からの最新のお知らせです。" />
+      <MobilePageHeader no="03" jp={window.t('お知らせ')} en="News" lead={window.siteData.news.lead} />
       <div style={{ padding: '40px 24px 48px' }}>
         <div style={{ display: 'flex', gap: 8, marginBottom: 24, flexWrap: 'wrap' }}>
           {cats.map((c) => (
@@ -549,7 +546,7 @@ function MobilePartners() {
   const partners = window.siteData.partners.list;
   return (
     <div style={{ background: mPalette.paper }}>
-      <MobilePageHeader no="04" jp="パートナー" en="Partners" lead="共に地方の未来を彩る、私たちの大切なパートナー様をご紹介します。" />
+      <MobilePageHeader no="04" jp={window.t('パートナー')} en="Partners" lead={window.siteData.partners.lead} />
       <div style={{ padding: '48px 24px' }}>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 22 }}>
           {partners.map(p => (
@@ -568,9 +565,11 @@ function MobilePartners() {
                 ))}
               </div>
               <p style={{ fontFamily: mFont.jpSerif, fontSize: 13, lineHeight: 1.9, color: mPalette.ink, margin: 0 }}>{p.body}</p>
-              <a href={p.url} target="_blank" rel="noopener noreferrer" style={{ fontFamily: mFont.enSerif, fontStyle: 'italic', fontSize: 14, color: mPalette.ai, borderBottom: `1px solid ${mPalette.ai}`, alignSelf: 'flex-start', paddingBottom: 2, textDecoration: 'none' }}>
-                View partner →
-              </a>
+              {p.url && (
+                <a href={p.url} target="_blank" rel="noopener noreferrer" style={{ fontFamily: mFont.enSerif, fontStyle: 'italic', fontSize: 14, color: mPalette.ai, borderBottom: `1px solid ${mPalette.ai}`, alignSelf: 'flex-start', paddingBottom: 2, textDecoration: 'none' }}>
+                  View partner →
+                </a>
+              )}
             </div>
           ))}
         </div>
@@ -578,10 +577,8 @@ function MobilePartners() {
         {/* BECOME A PARTNER */}
         <div style={{ marginTop: 32, padding: 28, border: `1px dashed ${mPalette.ink}55`, textAlign: 'center' }}>
           <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 3, color: mPalette.akane }}>BECOME A PARTNER</div>
-          <div style={{ fontFamily: mFont.jpSerif, fontSize: 19, marginTop: 10, letterSpacing: '0.04em', color: mPalette.ink, lineHeight: 1.6 }}>地方の未来を、共に彩りませんか。</div>
-          <div onClick={() => window.saiNavigate && window.saiNavigate('contact')} style={{ marginTop: 18, padding: '14px 28px', background: mPalette.ink, color: mPalette.paper, fontFamily: mFont.jpSerif, fontSize: 14, letterSpacing: 3, display: 'inline-block', cursor: 'pointer' }}>
-            協業のご相談 →
-          </div>
+          <div style={{ fontFamily: mFont.jpSerif, fontSize: 19, marginTop: 10, letterSpacing: '0.04em', color: mPalette.ink, lineHeight: 1.6 }}>{window.t('地方の未来を、共に彩りませんか。')}</div>
+          <div onClick={() => window.saiNavigate && window.saiNavigate('contact')} style={{ marginTop: 18, padding: '14px 28px', background: mPalette.ink, color: mPalette.paper, fontFamily: mFont.jpSerif, fontSize: 14, letterSpacing: 3, display: 'inline-block', cursor: 'pointer' }}>{window.t('協業のご相談 →')}</div>
         </div>
       </div>
       <MobileFooter />
@@ -645,13 +642,13 @@ function MobileContact() {
   };
   return (
     <div style={{ background: mPalette.paper }}>
-      <MobilePageHeader no="05" jp="お問い合わせ" en="Contact" lead="ご相談・取材・パートナーシップ等のお問い合わせを承っております。お気軽にご連絡ください。" />
+      <MobilePageHeader no="05" jp={window.t('お問い合わせ')} en="Contact" lead={window.t('ご相談・取材・パートナーシップ等のお問い合わせを承っております。お気軽にご連絡ください。')} />
       <div style={{ padding: '48px 24px' }}>
         {/* Contact cards */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: 14, marginBottom: 32 }}>
           {[
-            { tag: 'PHONE', jp: 'お電話でのご連絡', lines: ['080-9541-6870', '受付 : 平日 10:00 – 18:00'], color: mPalette.akane },
-            { tag: 'OFFICE', jp: '本社所在地', lines: ['〒949-7302', '新潟県南魚沼市浦佐 2479'], color: mPalette.koke },
+            { tag: 'PHONE', jp: 'お電話でのご連絡', lines: ['FAX : 03-5391-6870', '携帯 : 080-9541-6870', '受付 : 平日 9:00 – 18:00'], color: mPalette.akane },
+            { tag: 'OFFICE', jp: '本社所在地', lines: ['〒949-7302', '新潟県南魚沼市浦佐 2476'], color: mPalette.koke },
           ].map(c => (
             <div key={c.tag} style={{ background: mPalette.paperDeep, padding: 20, borderTop: `2px solid ${c.color}` }}>
               <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 3, color: c.color }}>{c.tag}</div>
@@ -669,38 +666,34 @@ function MobileContact() {
         <form onSubmit={handleSubmit} style={{ background: mPalette.paperDeep, padding: 22, display: 'flex', flexDirection: 'column', gap: 18, borderTop: `2px solid ${mPalette.ai}` }}>
           <div>
             <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 3, color: mPalette.akane }}>—— INQUIRY FORM</div>
-            <h3 style={{ fontFamily: mFont.jpSerif, fontSize: 20, margin: '6px 0 0', color: mPalette.ink, letterSpacing: '0.04em' }}>お問い合わせフォーム</h3>
+            <h3 style={{ fontFamily: mFont.jpSerif, fontSize: 20, margin: '6px 0 0', color: mPalette.ink, letterSpacing: '0.04em' }}>{window.t('お問い合わせフォーム')}</h3>
           </div>
 
           <label style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-            <span style={{ fontFamily: mFont.jpSerif, fontSize: 13, color: mPalette.ink, letterSpacing: 2 }}>お問い合わせ種別<span style={{ color: mPalette.akane, marginLeft: 4 }}>*</span></span>
+            <span style={{ fontFamily: mFont.jpSerif, fontSize: 13, color: mPalette.ink, letterSpacing: 2 }}>{window.t('お問い合わせ種別')}<span style={{ color: mPalette.akane, marginLeft: 4 }}>*</span></span>
             <select name="category" style={mInputStyle} defaultValue="">
-              <option value="" disabled>選択してください</option>
-              <option>法人の方</option>
-              <option>学生の方</option>
-              <option>取材・メディア</option>
-              <option>パートナー協業</option>
-              <option>その他</option>
+              <option value="" disabled>{window.t('選択してください')}</option>
+              {['法人の方','学生の方','取材・メディア','パートナー協業','その他'].map(c => <option key={c} value={c}>{window.t(c)}</option>)}
             </select>
           </label>
 
           <label style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-            <span style={{ fontFamily: mFont.jpSerif, fontSize: 13, color: mPalette.ink, letterSpacing: 2 }}>お名前<span style={{ color: mPalette.akane, marginLeft: 4 }}>*</span></span>
+            <span style={{ fontFamily: mFont.jpSerif, fontSize: 13, color: mPalette.ink, letterSpacing: 2 }}>{window.t('お名前')}<span style={{ color: mPalette.akane, marginLeft: 4 }}>*</span></span>
             <input name="name" type="text" placeholder="山田 太郎" style={mInputStyle} />
           </label>
 
           <label style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-            <span style={{ fontFamily: mFont.jpSerif, fontSize: 13, color: mPalette.ink, letterSpacing: 2 }}>メールアドレス<span style={{ color: mPalette.akane, marginLeft: 4 }}>*</span></span>
+            <span style={{ fontFamily: mFont.jpSerif, fontSize: 13, color: mPalette.ink, letterSpacing: 2 }}>{window.t('メールアドレス')}<span style={{ color: mPalette.akane, marginLeft: 4 }}>*</span></span>
             <input name="email" type="email" placeholder="example@example.com" style={mInputStyle} />
           </label>
 
           <label style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-            <span style={{ fontFamily: mFont.jpSerif, fontSize: 13, color: mPalette.ink, letterSpacing: 2 }}>お電話番号</span>
+            <span style={{ fontFamily: mFont.jpSerif, fontSize: 13, color: mPalette.ink, letterSpacing: 2 }}>{window.t('お電話番号')}</span>
             <input name="tel" type="tel" placeholder="090-0000-0000" style={mInputStyle} />
           </label>
 
           <label style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-            <span style={{ fontFamily: mFont.jpSerif, fontSize: 13, color: mPalette.ink, letterSpacing: 2 }}>お問い合わせ内容<span style={{ color: mPalette.akane, marginLeft: 4 }}>*</span></span>
+            <span style={{ fontFamily: mFont.jpSerif, fontSize: 13, color: mPalette.ink, letterSpacing: 2 }}>{window.t('お問い合わせ内容')}<span style={{ color: mPalette.akane, marginLeft: 4 }}>*</span></span>
             <textarea name="message" rows={6} placeholder="ご相談内容をご記入ください。" style={{ ...mInputStyle, resize: 'vertical', lineHeight: 1.7 }} />
           </label>
 
@@ -713,9 +706,52 @@ function MobileContact() {
               border: 'none', cursor: sending ? 'wait' : 'pointer', marginTop: 4, opacity: sending ? 0.6 : 1,
             }}
           >
-            {sending ? '送信中…' : '送信する　→'}
+            {sending ? window.t('送信中…') : window.t('送信する　→')}
           </button>
         </form>
+      </div>
+      <MobileFooter />
+    </div>
+  );
+}
+
+// ----------------------------------------------------------
+// BUSINESS OVERVIEW — 事業概要（組織図）
+// ----------------------------------------------------------
+function MobileBusiness() {
+  const t = window.siteData.businessTree;
+  return (
+    <div style={{ background: mPalette.paper }}>
+      <MobilePageHeader no="06" jp={window.t('事業概要')} en="Business" lead={t.lead} />
+      <div style={{ padding: '40px 24px 32px', display: 'flex', flexDirection: 'column', gap: 24 }}>
+        {t.units.map((u, i) => (
+          <div key={u.tag} style={{ background: mPalette.paperDeep, padding: 18, borderLeft: `5px solid ${u.color}` }}>
+            <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 3, color: u.color }}>0{i + 1} / 04</div>
+            <div style={{ fontFamily: mFont.jpAlt, fontSize: 26, color: u.color, letterSpacing: '0.04em', marginTop: 4 }}>{u.tag}</div>
+            <div style={{ fontFamily: mFont.jpSerif, fontSize: 13, letterSpacing: 3, color: mPalette.muted, marginTop: 2, marginBottom: 16 }}>{u.jp}</div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+              {u.groups.map(g => (
+                <div key={g.name} style={{ background: mPalette.paper, border: `1px solid ${u.color}44`, borderTop: `3px solid ${u.color}`, padding: 14 }}>
+                  {g.branch && <div style={{ fontFamily: mFont.mono, fontSize: 9, letterSpacing: 3, color: u.color, opacity: 0.85 }}>{g.branch}</div>}
+                  <div style={{ fontFamily: mFont.jpSerif, fontSize: 16, fontWeight: 500, color: u.color, letterSpacing: '0.06em', marginBottom: 10 }}>{g.name}</div>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
+                    {g.items.map(it => (
+                      <div key={it} style={{ fontFamily: mFont.jpSerif, fontSize: 12.5, lineHeight: 1.6, color: mPalette.ink, background: mPalette.paperDeep, padding: '8px 10px' }}>{it}</div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+      <div style={{ padding: '0 24px 40px' }}>
+        <div style={{ border: `1px dashed ${mPalette.ink}55`, padding: '18px 16px', textAlign: 'center', fontFamily: mFont.jpSerif, fontSize: 12.5, lineHeight: 1.9, color: mPalette.ink }}>
+          {t.footer}
+        </div>
+        <div style={{ marginTop: 20, textAlign: 'center', fontFamily: mFont.jpSerif, fontSize: 16, letterSpacing: '0.08em', color: mPalette.ai, lineHeight: 1.8 }}>
+          {t.tagline}
+        </div>
       </div>
       <MobileFooter />
     </div>
@@ -732,8 +768,8 @@ function MobileApp({ page }) {
     case 'news':     return <MobileNews />;
     case 'partners': return <MobilePartners />;
     case 'contact':  return <MobileContact />;
+    case 'business': return <MobileBusiness />;
     case 'home':
-    case 'business':
     default:         return <MobileHome />;
   }
 }

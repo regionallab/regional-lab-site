@@ -10,7 +10,7 @@ const SITE_COLORS = {
   koke: '#5a6b3d',
 };
 
-window.siteData = {
+window.siteDataJa = {
   colors: SITE_COLORS,
 
   // ----- お問い合わせフォーム送信先 -----
@@ -31,7 +31,7 @@ window.siteData = {
       ['地方の', '礎', 'akane', 'として、'],
       ['地方の', '未来', 'ai', 'を彩る。'],
     ],
-    body: '私たちは、新潟県南魚沼市を起点に、地方の魅力を再発見し、再構築し、未来へと継承していく組織です。イベント、コミュニティ、アパレル — 三つの事業で、地方の可能性を引き出します。',
+    body: '私たちは、新潟県南魚沼市に本社を置き、魚沼エリア（南魚沼市・湯沢町）／宮城エリア／東京エリアで実装する地方創生カンパニーです。イベント、コミュニティ、アパレル、DX&AX — 四つの事業で、地方創生を立体的に描きます。',
   },
 
   // ----- 三つの柱 / BUSINESS (Home) -----
@@ -51,6 +51,11 @@ window.siteData = {
       body: ['地方の伝統産品を現代の需要へと再構築。', '日本を代表する誇れるブランドとして、', '伝統と未来を形にして残します。'],
       accent: SITE_COLORS.koke, key: '形として残す', img: 'assets/regional.jpg',
     },
+    {
+      tag: 'Re.Com', jp: 'DX&AX事業', en: 'DX & AX / Digital Shift',
+      body: ['地方のアナログの価値を見出しながらも、', 'アナログにより生まれている地方課題を、', 'その価値を残しながら解決していきます。'],
+      accent: '#8a6d3b', key: '価値を捉える', img: 'assets/re-com.png',
+    },
   ],
 
   // ----- 歩み / TIMELINE (Home) -----
@@ -67,8 +72,8 @@ window.siteData = {
   about: {
     lead: 'Regional Lab はなぜ生まれたのか。何を目指しているのか。私たちの志と、それを担う4人をご紹介します。',
     purpose: {
-      heading: '新潟県南魚沼市の地域創生を起点に、日本の地方の魅力を永続させる。',
-      body: '地方創生を通じて、地方に根付く歴史・伝統・文化・自然といった様々な魅力を永続的なものにし、同時に、魅力ある日本という国を世界に発信していくこと。それが私たちの目的です。',
+      heading: '地域そのものではなく、地域に関わる個人の力量を引き上げる。',
+      body: '地域に関わる一人ひとりの力量を引き上げ、力をつけた個人が地域に還ることで、結果として地域が動いていく。この順序を守ることが、当社の一貫した姿勢です。私たちは、地方創生を語る組織ではなく、地方創生を事業として成立させる組織です。',
     },
     background: {
       heading: '一観光客の懐疑から、創業へ。',
@@ -84,50 +89,68 @@ window.siteData = {
       ['展望 / Vision', '南魚沼を支える企業へ、地方の未来を彩る組織へ。'],
     ],
     members: [
-      { role: '代表 / Founder & CEO', jp: '木寺 蒼真', en: 'Kidera Soma', bio: ['南魚沼に出会い、地方創生に身を投じる。', '観光客から地域課題と向き合い、日本の未来や地方の魅力を', '残していくべく、Regional Labを創業。'], img: 'assets/member-kidera.jpg' },
-      { role: '副代表 / Co-founder & COO', jp: '中原 光輝', en: 'Nakahara Koki', bio: ['事業戦略を促進し、組織の調和を築き、', '事業を並行で成長へと導く。'], img: 'assets/member-nakahara.jpg' },
-      { role: 'Re.Event 事業統括責任者', jp: '渡邉 輝', en: 'Watanabe Akira', bio: ['事業戦略を促進し統括。', 'より事業を解像度があり、再現性があるものに落とし込む。'], img: 'assets/member-watanabe.jpg' },
-      { role: 'Re.Lab 事業統括責任者', jp: '峯 奏音', en: 'Mine Kanato', bio: ['事業戦略を促進し統括。', 'より事業を解像度があり、再現性があるものに落とし込む。'], img: 'assets/member-mine.jpg' },
+      { role: '代表取締役 / CEO', jp: '木寺 蒼真', en: 'Kidera Soma', bio: ['南魚沼に出会い、地方創生に身を投じる。', '観光客から地域課題と向き合い、日本の未来や地方の魅力を', '残していくべく、Regional Lab を創業。'], img: 'assets/member-kidera.jpg' },
+      { role: '執行役員 / COO ─ Re.Lab 事業責任者', jp: '中原 光輝', en: 'Nakahara Koki', bio: ['My Vision Lab 代表。', 'コミュニティ事業を統括し、ToC・ToB 両輪で', '会員の人生設計に伴走する。'], img: 'assets/member-nakahara.jpg' },
+      { role: '執行役員 / CMO ─ Re.Event 事業責任者', jp: '峯 奏音', en: 'Mine Kanato', bio: ['HopeCreater 代表、CRENECTION 代表。', 'Events / Event Lab / Consulting を統括し、', 'イベント事業の設計と運営を率いる。'], img: 'assets/member-mine.jpg' },
+      { role: '執行役員 / CMO ─ Regional. 事業責任者', jp: '渡邉 輝', en: 'Watanabe Akira', bio: ['Global Canvas Japan 代表。', 'アパレル事業を統括し、日本市場と海外市場（店舗・EC）へ', '伝統工芸品を届ける。'], img: 'assets/member-watanabe.jpg' },
     ],
   },
 
   // ----- COMPANY -----
   company: {
-    lead: '会社情報と、行なっている事業、3ヵ年・5ヵ年・10ヵ年で見据える成長のビジョン。私たちの設計図をお示しします。',
+    lead: '会社情報と、行なっている四つの事業。新潟県南魚沼市に本社を置く地方創生カンパニーとしての設計図をお示しします。',
     info: {
       founded: '2024年10月09日',
-      officers: '7名',
+      officers: '4名（代表取締役1名・執行役員3名）',
       capital: '3,000,000円',
       offices: [
-        ['本社', '〒949-7302  新潟県南魚沼市浦佐 2479'],
-        ['東京支社 ①', '〒150-0001  東京都渋谷区神宮前 6-23-4'],
-        ['東京支社 ②', '〒171-0021  東京都豊島区西池袋 5-20-4'],
+        ['本社', '〒949-7302  新潟県南魚沼市浦佐 2476'],
+        ['活動エリア', '魚沼エリア（南魚沼市・湯沢町）／宮城エリア／東京エリア'],
       ],
     },
     services: [
-      { tag: 'Re.Event', jp: 'イベント事業', body: '地域の課題解決の機会を創出しながら、参加者である学生に対して成長の分岐点を提供。行政や地元企業と参画し、地域密着型の本質的な地方創生のもと、地方の未来を彩り続けます。', color: SITE_COLORS.akane },
-      { tag: 'Re.Lab', jp: 'コミュニティ事業', body: 'ビジネス知識・情報・コーチング等を提供し、それぞれの理想ビジョンに向けた人事コンサルティングを実施。社会的に自立できるスキル構築・実績獲得を支援し、日本の礎を築ける人材を育成します。', color: SITE_COLORS.ai },
-      { tag: 'Regional.', jp: 'アパレル事業', body: '地方の魅力ある伝統産品の歴史を引き継ぎながら、時代と共に変化する需要あるものへと加工。地方の伝統を守りつつ、日本という国を誇れるブランドとして、魅力を形に残します。', color: SITE_COLORS.koke },
+      { tag: 'Re.Event', jp: 'イベント事業', body: '地方創生ビジコンやアイデアソン、地方産品交流会などの企画・運営。集客OS「Event Lab」の提供とイベントコンサルティングを含め、地域への「入口」をつくります。', color: SITE_COLORS.akane },
+      { tag: 'Re.Lab', jp: 'コミュニティ事業', body: 'ビジネス教育を軸とした選抜制の会員コミュニティ。無料のグロース、審査制のスタンダード、招待制のプライムの三層とToB向けプログラムで、実践できる人を育てます。', color: SITE_COLORS.ai },
+      { tag: 'Regional.', jp: 'アパレル事業', body: '地方の伝統工芸品を現代の需要へ再構築。国内はEC・店舗、海外はEC先行からシンガポールへと販路を広げ、価値を形として残します。', color: SITE_COLORS.koke },
+      { tag: 'Re.Com', jp: 'DX&AX事業', body: 'コミュニティではAI人材創出・AIリテラシー研修、企業研修ではAIコンサル・AIセミナーを提供します。', color: '#8a6d3b' },
     ],
-    visions: [
+  },
+
+  // ----- BUSINESS OVERVIEW (事業概要ページ / 組織図) -----
+  businessTree: {
+    lead: '木の根のように広がる事業構造。四つの事業が独立しながら、人と資金の循環をなしています。',
+    footer: '活動エリア：魚沼（南魚沼市・湯沢町）／宮城／東京　─　今後、ご縁のある各地方地域へ拡大',
+    tagline: '地域・人・未来をつなぎ、それぞれに価値を見出す',
+    units: [
       {
-        term: '3ヵ年 PL ビジョン', sub: '短期ビジョン', color: SITE_COLORS.akane,
-        rows: [
-          ['1期', '7,500,000円', '6,000,000円', '1,500,000円', '土台形成'],
-          ['2期', '25,000,000円', '20,000,000円', '5,000,000円', 'Re.Lab・Re.Event 成熟期 / Regional. 成長期'],
-          ['3期', '30,000,000円', '25,000,000円', '5,000,000円', 'Regional. 拡大期 / 南魚沼に知られる企業へ'],
+        tag: 'Re.Event', jp: 'イベント事業', color: SITE_COLORS.ai,
+        groups: [
+          { name: 'Event Lab', items: ['イベント集客 OS', 'イベント開催支援サービス', '質の高い学生コミュニティ'] },
+          { name: 'Events', items: ['地方創生ビジネスコンテスト', '地方創生アイデアソン', '地方産品交流会', '南魚沼諸イベント'] },
+          { name: 'Event Consulting', items: ['イベント企画＆開発壁打ち', 'マネタイズ構築支援', 'イベントの運営サポート'] },
         ],
       },
       {
-        term: '5期目 PL ビジョン', sub: '中期ビジョン', color: SITE_COLORS.ai,
-        rows: [
-          ['5期', '50,000,000円', '40,000,000円', '10,000,000円', '新規事業 成長期 / 南魚沼の顔となる企業へ'],
+        tag: 'Re.Lab', jp: 'コミュニティ事業', color: SITE_COLORS.koke,
+        groups: [
+          { branch: 'To C', name: 'グロース', items: ['無料コミュニティ', '経験蓄積', '情報蓄積', '自己内省サポート'] },
+          { branch: 'To C', name: 'スタンダード', items: ['審査制の選抜型 有料コミュニティ', '前提必須知識', '時事会議', '企業研究会議', '社長 1on1', '1on1 コーチング', 'Event Lab の参加権利'] },
+          { branch: 'To C', name: 'プライム', items: ['招待制の選抜型 有料コミュニティ', '起業伴走支援', 'コミュニティ創業支援', '就職伴走支援', 'インターン先紹介支援', '卒業後の進路伴走支援'] },
+          { branch: 'To B', name: 'To B', items: ['法人向けプログラム', '法人向けコミュニティ'] },
         ],
       },
       {
-        term: '10期目 PL ビジョン', sub: '中長期ビジョン', color: SITE_COLORS.koke,
-        rows: [
-          ['10期', '200,000,000円', '100,000,000円', '100,000,000円', '南魚沼を支える企業へ / 地方の未来を彩る組織へ'],
+        tag: 'Regional.', jp: 'アパレル事業', color: SITE_COLORS.akane,
+        groups: [
+          { name: '日本市場', items: ['地方の伝統工芸品の加工商品販売', '各地の伝統工芸品の仲介販売', '新規ブランド商品開発＆販売', '店舗／EC'] },
+          { name: '海外市場', items: ['日本の伝統工芸品の加工商品販売', '日本の伝統工芸品の仲介販売', '販路地の伝統文化との融合商品開発', 'EC先行 → ポップアップ → 卸', 'シンガポール展開'] },
+        ],
+      },
+      {
+        tag: 'Re.Com', jp: 'DX&AX事業', color: '#8a6d3b',
+        groups: [
+          { name: 'コミュニティ', items: ['AI人材創出', 'AIリテラシー研修'] },
+          { name: '企業研修', items: ['AIコンサル', 'AIセミナー'] },
         ],
       },
     ],
@@ -196,6 +219,30 @@ window.siteData = {
         tags: ['地方創生', 'コミュニティ', 'イベント共催'],
         color: SITE_COLORS.koke,
       },
+      {
+        no: '04', name: '株式会社 LITERAS AI', en: 'LITERAS AI, Inc.',
+        relation: '地方のDX&AX事業で協業提携',
+        url: 'https://literas-ai.jp/',
+        body: '地方のDX&AX事業で協業提携。',
+        tags: ['DX', 'AX', '協業提携'],
+        color: '#8a6d3b',
+      },
+      {
+        no: '05', name: '株式会社 島田組', en: 'Shimadagumi, Inc.',
+        relation: 'DX&AX・イベント・コミュニティ協業',
+        url: 'https://simadagumi.co.jp/',
+        body: '新潟県南魚沼市におけるDX&AX事業、イベント事業、コミュニティ事業において、協業の提携。',
+        tags: ['DX&AX', 'イベント事業', 'コミュニティ事業'],
+        color: '#5d6e86',
+      },
     ],
   },
 };
+
+// 言語に応じて日本語版 / 英語版を返す（コンポーネントは window.siteData を読むだけでよい）
+Object.defineProperty(window, 'siteData', {
+  configurable: true,
+  get: function () {
+    return (window.saiLang === 'en' && window.siteDataEn) ? window.siteDataEn : window.siteDataJa;
+  },
+});

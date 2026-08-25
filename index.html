@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8" />
-<title>Regional Lab</title>
+<title>Regional Lab 株式会社</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -28,15 +28,18 @@
 </template>
 <div id="root"></div>
 
+<script type="text/babel" src="i18n.jsx"></script>
 <script type="text/babel" src="site-data.jsx"></script>
+<script type="text/babel" src="site-data-en.jsx"></script>
 <script type="text/babel" src="shared.jsx"></script>
 <script type="text/babel" src="variant-b-sai.jsx"></script>
 <script type="text/babel" src="variant-b-pages.jsx"></script>
 <script type="text/babel" src="variant-b-contact.jsx"></script>
+<script type="text/babel" src="business-page.jsx"></script>
 <script type="text/babel" src="mobile-site.jsx"></script>
 
 <script type="text/babel">
-const { SaiVariant, SaiNav, SaiCTA, SaiAbout, SaiCompany, SaiNews, SaiPartners, SaiContact, MobileSite } = window;
+const { SaiVariant, SaiNav, SaiCTA, SaiAbout, SaiCompany, SaiNews, SaiPartners, SaiContact, SaiBusinessPage, MobileSite } = window;
 
 const PAGE_IDS = ['home', 'about', 'company', 'business', 'news', 'contact', 'partners'];
 
@@ -49,28 +52,19 @@ function App() {
   const [page, setPage] = React.useState(getPageFromHash());
   const [splashDone, setSplashDone] = React.useState(false);
   const [isMobile, setIsMobile] = React.useState(() => window.matchMedia('(max-width: 768px)').matches);
+  const [lang, setLang] = React.useState(window.saiLang || 'ja');
 
   React.useEffect(() => {
     window.saiNavigate = (id) => {
       if (!PAGE_IDS.includes(id)) return;
       window.location.hash = id;
       setPage(id);
-      if (id === 'business') {
-        setTimeout(() => {
-          const el = document.getElementById('business-section');
-          if (el) {
-            const y = el.getBoundingClientRect().top + window.pageYOffset - 20;
-            window.scrollTo({ top: y, behavior: 'smooth' });
-          } else {
-            window.scrollTo({ top: 0, behavior: 'auto' });
-          }
-        }, 60);
-      } else {
-        window.scrollTo({ top: 0, behavior: 'auto' });
-      }
+      // 事業概要は専用ページがないため、ホームの「三つの柱」セクションへスクロール
+      window.scrollTo({ top: 0, behavior: 'auto' });
     };
     const onHash = () => setPage(getPageFromHash());
     window.addEventListener('hashchange', onHash);
+    window.saiOnLangChange = (l) => setLang(l);
     const mql = window.matchMedia('(max-width: 768px)');
     const onResize = (e) => setIsMobile(e.matches);
     mql.addEventListener('change', onResize);
@@ -107,9 +101,8 @@ function App() {
       case 'news':     desktopBody = <SubPage><SaiNews /></SubPage>; break;
       case 'partners': desktopBody = <SubPage><SaiPartners /></SubPage>; break;
       case 'contact':  desktopBody = <SubPage><SaiContact /></SubPage>; break;
-      // business doesn't have a dedicated sub-page — fall through to Home
+      case 'business': desktopBody = <SubPage><SaiBusinessPage /></SubPage>; break;
       case 'home':
-      case 'business':
       default:         desktopBody = <SaiVariant />;
     }
     body = <div className="desktop-shell">{desktopBody}</div>;
@@ -117,7 +110,7 @@ function App() {
 
   return (
     <React.Fragment>
-      <div className="sai-app-body">
+      <div className="sai-app-body" key={lang}>
         {body}
       </div>
       {!splashDone && (

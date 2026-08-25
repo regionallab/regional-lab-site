@@ -39,8 +39,8 @@ function SaiNav() {
           />
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', lineHeight: 1.1, gap: 6 }}>
-          <div style={{ fontFamily: saiFont.jpSerif, fontSize: 18, letterSpacing: 3, color: saiPalette.ink }}>Regional Lab</div>
-          <div style={{ fontFamily: saiFont.jpSerif, fontSize: 15, letterSpacing: 3, color: saiPalette.ink, paddingLeft: 38 }}>Minamiuonuma</div>
+          <div style={{ fontFamily: saiFont.jpSerif, fontSize: 24, fontWeight: 600, letterSpacing: 1, color: saiPalette.ink }}>Regional Lab</div>
+          <div style={{ fontFamily: saiFont.jpSerif, fontSize: 16, fontWeight: 600, letterSpacing: 6, color: saiPalette.ink, marginTop: 6, paddingLeft: 58 }}>{window.t('株式会社')}</div>
         </div>
       </div>
       <div style={{ display: 'flex', gap: 28, fontFamily: saiFont.jpSerif, fontSize: 14, color: saiPalette.ink, alignItems: 'center', letterSpacing: 2 }}>
@@ -50,13 +50,21 @@ function SaiNav() {
             onClick={() => window.saiNavigate && window.saiNavigate(en)}
             style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 2, cursor: 'pointer' }}
           >
-            <span>{jp}</span>
+            <span style={{ whiteSpace: 'nowrap' }}>{window.t(jp)}</span>
             <span style={{ fontFamily: saiFont.mono, fontSize: 8, opacity: 0.5, letterSpacing: 2 }}>{en.toUpperCase()}</span>
           </div>
         ))}
-        <div style={{
-          padding: '8px 16px', border: `1px solid ${saiPalette.ink}`, fontFamily: saiFont.mono, fontSize: 11, letterSpacing: 2,
-        }}>JP / EN</div>
+        <div
+          onClick={() => window.saiSetLang(window.saiLang === 'en' ? 'ja' : 'en')}
+          title="Switch language"
+          style={{
+            padding: '8px 16px', border: `1px solid ${saiPalette.ink}`, fontFamily: saiFont.mono, fontSize: 11, letterSpacing: 2,
+            cursor: 'pointer', display: 'flex', gap: 6, whiteSpace: 'nowrap',
+          }}>
+          <span style={{ opacity: window.saiLang === 'ja' ? 1 : 0.4, fontWeight: window.saiLang === 'ja' ? 700 : 400 }}>JP</span>
+          <span style={{ opacity: 0.4 }}>/</span>
+          <span style={{ opacity: window.saiLang === 'en' ? 1 : 0.4, fontWeight: window.saiLang === 'en' ? 700 : 400 }}>EN</span>
+        </div>
       </div>
     </div>
   );
@@ -82,10 +90,20 @@ function SaiHero() {
       <div style={{ position: 'absolute', left: 320, top: 180, width: 540, height: 680, overflow: 'hidden', background: '#d5d492' }}>
         <img src="assets/hero-logo-hq.png" alt="Regional Lab" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
       </div>
-      {/* Vertical Japanese type — explicit columns so each line stays intact */}
+      {/* Headline — vertical in JP, horizontal in EN */}
+      {window.saiLang === 'en' ? (
+      <div style={{ position: 'absolute', right: 72, top: 96, width: 520, textAlign: 'right' }}>
+        <div style={{ fontFamily: saiFont.jpAlt, fontSize: 15, lineHeight: 2, color: saiPalette.akane, letterSpacing: '0.18em', marginBottom: 20 }}>
+          {window.t('─ 新潟県南魚沼市を支え続ける企業へ')}
+        </div>
+        <div style={{ fontFamily: saiFont.enSerif, fontSize: 68, lineHeight: 1.15, color: saiPalette.ink, letterSpacing: '0.01em', fontWeight: 500 }}>
+          {window.t('地方の未来を、')}<br/>{window.t('彩る組織へ')}
+        </div>
+      </div>
+      ) : (
       <div style={{ position: 'absolute', right: 80, top: 80, display: 'flex', flexDirection: 'row-reverse', alignItems: 'flex-start', gap: 28 }}>
         <Vertical style={{ fontFamily: saiFont.jpAlt, fontSize: 18, lineHeight: 2.2, color: saiPalette.akane, letterSpacing: '0.3em', whiteSpace: 'nowrap', marginTop: 24 }}>
-          ─ 新潟県南魚沼市を支え続ける企業へ
+          ─ 新潟県南魚沼市を支え続ける企業へ ─
         </Vertical>
         <Vertical style={{ fontFamily: saiFont.jpSerif, fontSize: 84, lineHeight: 1.35, color: saiPalette.ink, letterSpacing: '0.08em', fontWeight: 500, whiteSpace: 'nowrap' }}>
           地方の未来を、
@@ -94,6 +112,7 @@ function SaiHero() {
           彩る組織へ
         </Vertical>
       </div>
+      )}
 
       {/* Bottom metadata strip */}
       <div style={{
@@ -101,20 +120,20 @@ function SaiHero() {
         display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end',
       }}>
         <div style={{ background: saiPalette.paper, padding: '16px 24px', maxWidth: 380, border: `1px solid ${saiPalette.ink}22` }}>
-          <div style={{ fontFamily: saiFont.mono, fontSize: 10, letterSpacing: 2, color: saiPalette.akane, marginBottom: 8 }}>—— EST. 2024</div>
+          <div style={{ fontFamily: saiFont.mono, fontSize: 10, letterSpacing: 2, color: saiPalette.akane, marginBottom: 8 }}>—— EST. 2024.10.09</div>
           <p style={{ fontFamily: saiFont.jpSerif, fontSize: 14, lineHeight: 1.9, color: saiPalette.ink, margin: 0 }}>
-            イベント、コミュニティ、アパレル。<br/>三つの事業で、地方創生を立体的に描く。
+            {window.t('イベント、コミュニティ、アパレル、DX&AX。')}<br/>{window.t('四つの事業で、地方創生を立体的に描く。')}
           </p>
         </div>
         <div style={{ display: 'flex', gap: 12 }}>
           <div onClick={() => window.saiNavigate && window.saiNavigate('business')} style={{
             padding: '14px 28px', background: saiPalette.akane, color: saiPalette.paper,
             fontFamily: saiFont.jpSerif, fontSize: 14, letterSpacing: 3, cursor: 'pointer',
-          }}>事業を見る →</div>
+          }}>{window.t('事業を見る →')}</div>
           <div onClick={() => window.saiNavigate && window.saiNavigate('contact')} style={{
             padding: '14px 28px', border: `1px solid ${saiPalette.ink}`, color: saiPalette.ink,
             fontFamily: saiFont.jpSerif, fontSize: 14, letterSpacing: 3, cursor: 'pointer',
-          }}>お問い合わせ</div>
+          }}>{window.t('お問い合わせ')}</div>
         </div>
       </div>
     </div>
@@ -133,14 +152,15 @@ function SaiMission() {
       <div style={{ display: 'grid', gridTemplateColumns: '200px 1fr', gap: 64, position: 'relative' }}>
         <div>
           <div style={{ writingMode: 'vertical-rl', fontFamily: saiFont.jpSerif, fontSize: 28, letterSpacing: 8, color: saiPalette.ai }}>
-            ─ 理念 / 使命 / 展望
+            {window.t('─ 理念 / 使命 / 展望')}
           </div>
         </div>
+        <div>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 24 }}>
           {[
-            { label: 'PHILOSOPHY', jp: '理念', body: ['個の研鑽をもって、', '日本の礎であり続ける。'], bg: saiPalette.paper, color: saiPalette.ink },
-            { label: 'MISSION', jp: '使命', body: ['地域の歩みに寄り添い、', '新たな希望を見出す。'], bg: saiPalette.ai, color: saiPalette.paper },
-            { label: 'VISION', jp: '展望', body: ['南魚沼を支える企業へ、', '地方の未来を彩る組織へ。'], bg: saiPalette.koke, color: saiPalette.paper },
+            { label: 'PHILOSOPHY', jp: window.t('理念'), body: [window.t('個の研鑽をもって、'), window.t('日本の礎であり続ける。')], bg: saiPalette.paper, color: saiPalette.ink },
+            { label: 'MISSION', jp: window.t('使命'), body: [window.t('地域の歩みに寄り添い、'), window.t('新たな希望を見出す。')], bg: saiPalette.ai, color: saiPalette.paper },
+            { label: 'VISION', jp: window.t('展望'), body: [window.t('南魚沼を支える企業へ、'), window.t('地方の未来を彩る組織へ。')], bg: saiPalette.koke, color: saiPalette.paper },
           ].map(c => (
             <div key={c.label} style={{
               background: c.bg, color: c.color,
@@ -159,6 +179,10 @@ function SaiMission() {
             </div>
           ))}
         </div>
+        <p style={{ fontFamily: saiFont.jpSerif, fontSize: 15, lineHeight: 2.2, color: saiPalette.ink, margin: '32px 0 0', maxWidth: 900 }}>
+          {window.siteData.mission.body}
+        </p>
+        </div>
       </div>
     </div>
   );
@@ -170,15 +194,15 @@ function SaiBusiness() {
     <div id="business-section" style={{ background: saiPalette.paper, padding: '120px 56px' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 64 }}>
         <h2 style={{ fontFamily: saiFont.jpSerif, fontSize: 64, fontWeight: 400, margin: 0, color: saiPalette.ink, letterSpacing: '0.04em' }}>
-          三つの<span style={{ color: saiPalette.akane }}>柱</span>
+          {window.t('四つの')}<span style={{ color: saiPalette.akane }}>{window.t('柱')}</span>
         </h2>
-        <div style={{ fontFamily: saiFont.mono, fontSize: 11, letterSpacing: 3, color: saiPalette.muted }}>OUR BUSINESS — 03 SECTORS</div>
+        <div style={{ fontFamily: saiFont.mono, fontSize: 11, letterSpacing: 3, color: saiPalette.muted }}>OUR BUSINESS — 04 SECTORS</div>
       </div>
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 32 }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, minmax(0, 1fr))', gap: 24 }}>
         {items.map((s, i) => (
           <div key={s.tag} style={{ background: saiPalette.paperDeep, padding: 28, position: 'relative', minHeight: 540, display: 'flex', flexDirection: 'column' }}>
             <div style={{ position: 'absolute', top: -8, left: 28, fontFamily: saiFont.mono, fontSize: 10, letterSpacing: 3, background: saiPalette.paper, padding: '4px 8px', color: s.accent }}>
-              0{i+1} / 03
+              0{i+1} / 0{items.length}
             </div>
             {s.img ? (
               <div style={{ width: '100%', aspectRatio: '16/10', overflow: 'hidden' }}>
@@ -221,7 +245,7 @@ function SaiTimeline() {
       }}>歩</Vertical>
       <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: 56 }}>
         <h2 style={{ fontFamily: saiFont.jpSerif, fontSize: 56, fontWeight: 400, margin: 0, letterSpacing: '0.04em' }}>
-          歩みは続く<span style={{ fontFamily: saiFont.enSerif, fontStyle: 'italic', color: saiPalette.akane, fontSize: 36 }}>— ongoing.</span>
+          {window.t('歩みは続く')}<span style={{ fontFamily: saiFont.enSerif, fontStyle: 'italic', color: saiPalette.akane, fontSize: 36 }}>— ongoing.</span>
         </h2>
         <span style={{ fontFamily: saiFont.mono, fontSize: 11, letterSpacing: 3, opacity: 0.7 }}>04 / EVENTS — 2024–2026</span>
       </div>
@@ -262,7 +286,7 @@ function SaiTimeline() {
 function SaiCTA() {
   const tabs = [
     ['私たちについて', 'About', ['目的と設立背景', 'メンバー紹介']],
-    ['会社概要', 'Company', ['事業紹介', '3ヵ年ビジョン', '5ヵ年ビジョン', '10ヵ年ビジョン']],
+    ['会社概要', 'Company', ['事業紹介', '会社情報', '拠点']],
     ['お知らせ', 'News', ['新着記事', 'プレスリリース', 'メディア掲載']],
     ['お問い合わせ', 'Contact', ['法人の方', '学生の方', '取材依頼']],
     ['パートナー', 'Partners', ['H.O.I.Consulting', '(株)遊然', 'リーボシ']],
@@ -272,7 +296,7 @@ function SaiCTA() {
       <div style={{ textAlign: 'center', maxWidth: 1200, margin: '0 auto 80px' }}>
         <div style={{ fontFamily: saiFont.mono, fontSize: 11, letterSpacing: 3, color: saiPalette.akane, marginBottom: 20 }}>—— TOGETHER</div>
         <h2 style={{ fontFamily: saiFont.jpSerif, fontSize: 'clamp(36px, 4.6vw, 60px)', fontWeight: 400, margin: 0, color: saiPalette.ink, letterSpacing: '0.06em', lineHeight: 1.3, whiteSpace: 'nowrap' }}>
-          その地に、もう一度、<span style={{ color: saiPalette.ai }}>光を。</span>
+          {window.t('その地に、もう一度、')}<span style={{ color: saiPalette.ai }}>{window.t('光を。')}</span>
         </h2>
       </div>
 
@@ -283,11 +307,11 @@ function SaiCTA() {
             onClick={() => window.saiNavigate && window.saiNavigate(en.toLowerCase())}
             style={{ cursor: 'pointer' }}
           >
-            <div style={{ fontFamily: saiFont.jpSerif, fontSize: 15, color: saiPalette.ink, letterSpacing: 2, fontWeight: 500 }}>{jp}</div>
+            <div style={{ fontFamily: saiFont.jpSerif, fontSize: 15, color: saiPalette.ink, letterSpacing: 2, fontWeight: 500 }}>{window.t(jp)}</div>
             <div style={{ fontFamily: saiFont.mono, fontSize: 9, letterSpacing: 2, color: saiPalette.akane, marginTop: 2, marginBottom: 14 }}>{en.toUpperCase()}</div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
               {sub.map(s => (
-                <span key={s} style={{ fontFamily: saiFont.jpSerif, fontSize: 12, color: saiPalette.muted, letterSpacing: 1 }}>— {s}</span>
+                <span key={s} style={{ fontFamily: saiFont.jpSerif, fontSize: 12, color: saiPalette.muted, letterSpacing: 1 }}>— {window.t(s)}</span>
               ))}
             </div>
           </div>
@@ -295,9 +319,9 @@ function SaiCTA() {
       </div>
 
       <div style={{ marginTop: 64, paddingTop: 24, borderTop: `1px solid ${saiPalette.ink}22`, display: 'flex', justifyContent: 'space-between', fontFamily: saiFont.mono, fontSize: 10, letterSpacing: 2, color: saiPalette.muted }}>
-        <span>© REGIONAL LAB 2026</span>
-        <span>新潟県南魚沼市 × 東京 × 宮城</span>
-        <span>個の研鑽をもって、日本の礎であり続ける。</span>
+        <span>© REGIONAL LAB 株式会社 2026</span>
+        <span>{window.t('魚沼エリア × 宮城エリア × 東京エリア')}</span>
+        <span>{window.t('個の研鑽をもって、日本の礎であり続ける。')}</span>
       </div>
     </div>
   );
