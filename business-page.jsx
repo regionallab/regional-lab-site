@@ -105,6 +105,8 @@ function BizGroupCard({ group, color, n, total }) {
 // ---------------------------------------------------------
 function BizUnit({ unit, index }) {
   const sections = bizSections(unit.groups);
+  // ブランチ（To C / To B）が違っても同じ列グリッドに載せ、カードの見せ方を揃える
+  const bizCols = Math.min(Math.max.apply(null, sections.map(sec => sec.groups.length)), 4);
   const summaryLines = (window.siteData.business.find(b => b.tag === unit.tag) || {}).body || [];
   // 日本語は行をそのまま連結、英語は語の区切りが必要なので空白で連結
   const summary = summaryLines.join(window.saiLang === 'en' ? ' ' : '');
@@ -161,9 +163,8 @@ function BizUnit({ unit, index }) {
             )}
             <div style={{
               display: 'grid',
-              gridTemplateColumns: `repeat(${Math.min(sec.groups.length, 4)}, minmax(0, 1fr))`,
+              gridTemplateColumns: `repeat(${bizCols}, minmax(0, 1fr))`,
               gap: 16, alignItems: 'start',
-              maxWidth: sec.groups.length === 1 && sections.length > 1 ? 420 : 'none',
             }}>
               {sec.groups.map(g => {
                 n += 1;

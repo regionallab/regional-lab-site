@@ -50,7 +50,7 @@ window.siteDataEn = (function () {
         { branch: 'To C', name: 'Growth', items: ['Free community', 'Building experience', 'Building knowledge', 'Self-reflection support'] },
         { branch: 'To C', name: 'Standard', items: ['Screened, paid community', 'Foundational knowledge', 'Current-affairs sessions', 'Company research sessions', '1-on-1 with founders', '1-on-1 coaching', 'Access to Event Lab'] },
         { branch: 'To C', name: 'Prime', items: ['Invitation-only, paid community', 'Startup support', 'Community founding support', 'Career support', 'Internship introductions', 'Post-graduation guidance'] },
-        { branch: 'To B', name: 'To B', items: ['Corporate programmes', 'Corporate community'] },
+        { branch: 'To B', name: 'Premium', items: ['Corporate programmes', 'Corporate community'] },
       ],
     },
     {
