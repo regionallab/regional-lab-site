@@ -134,8 +134,8 @@ window.siteDataEn = (function () {
     },
     mission: {
       heading: [
-        ['The ', 'foundation', 'akane', ' of the regions,'],
-        ['coloring their ', 'future', 'ai', '.'],
+        ['The ', 'foundation', 'akane', ' of Japan,'],
+        ['coloring the regions’ ', 'future', 'ai', '.'],
       ],
       body: 'Headquartered in Minamiuonuma, Niigata, we are a regional revitalization company operating across Uonuma (Minamiuonuma and Yuzawa), Miyagi and Tokyo. Events, community, apparel and DX & AX — four businesses that describe regional revitalization in three dimensions.',
     },
