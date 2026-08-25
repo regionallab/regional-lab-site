@@ -718,38 +718,148 @@ function MobileContact() {
 // ----------------------------------------------------------
 // BUSINESS OVERVIEW — 事業概要（組織図）
 // ----------------------------------------------------------
+function mBizSections(groups) {
+  const out = [];
+  groups.forEach(g => {
+    const last = out[out.length - 1];
+    if (last && last.branch === (g.branch || '')) last.groups.push(g);
+    else out.push({ branch: g.branch || '', groups: [g] });
+  });
+  return out;
+}
+
+function mBizPad(n) { return (n < 10 ? '0' : '') + n; }
+
+function mBizCount(n) {
+  return window.saiLang === 'en' ? n + (n === 1 ? ' area' : ' areas') : n + ' 領域';
+}
+
+function mBizScrollTo(id) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const y = el.getBoundingClientRect().top + window.pageYOffset - 12;
+  window.scrollTo({ top: y, behavior: reduce ? 'auto' : 'smooth' });
+  // 一部の環境では smooth が無視されるため、動いていなければ確実に移動させる
+  setTimeout(() => {
+    if (Math.abs(window.pageYOffset - y) > 4) window.scrollTo(0, y);
+  }, 600);
+}
+
+function MobileBizGroup({ group, color, n }) {
+  return (
+    <div style={{ background: mPalette.paper, display: 'flex', flexDirection: 'column' }}>
+      <div style={{ background: color, color: mPalette.paper, padding: '10px 13px', display: 'flex', alignItems: 'baseline', gap: 9 }}>
+        <span style={{ fontFamily: mFont.mono, fontSize: 9.5, letterSpacing: 2, opacity: 0.75 }}>{mBizPad(n)}</span>
+        <span style={{ fontFamily: mFont.jpSerif, fontSize: 15, fontWeight: 500, letterSpacing: '0.06em', lineHeight: 1.4 }}>{group.name}</span>
+      </div>
+      <ul style={{ listStyle: 'none', margin: 0, padding: '2px 13px 5px', background: color + '0f' }}>
+        {group.items.map((it, i) => (
+          <li key={it} style={{
+            fontFamily: mFont.jpSerif, fontSize: 13, lineHeight: 1.8, color: mPalette.ink,
+            padding: '9px 0 9px 15px', position: 'relative',
+            borderTop: i === 0 ? 'none' : `1px solid ${mPalette.ink}18`,
+          }}>
+            <span aria-hidden="true" style={{ position: 'absolute', left: 0, top: '1.6em', width: 6, height: 1, background: color }} />
+            {it}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
 function MobileBusiness() {
   const t = window.siteData.businessTree;
   return (
     <div style={{ background: mPalette.paper }}>
       <MobilePageHeader no="06" jp={window.t('事業概要')} en="Business" lead={t.lead} />
-      <div style={{ padding: '40px 24px 32px', display: 'flex', flexDirection: 'column', gap: 24 }}>
-        {t.units.map((u, i) => (
-          <div key={u.tag} style={{ background: mPalette.paperDeep, padding: 18, borderLeft: `5px solid ${u.color}` }}>
-            <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 3, color: u.color }}>0{i + 1} / 04</div>
-            <div style={{ fontFamily: mFont.jpAlt, fontSize: 26, color: u.color, letterSpacing: '0.04em', marginTop: 4 }}>{u.tag}</div>
-            <div style={{ fontFamily: mFont.jpSerif, fontSize: 13, letterSpacing: 3, color: mPalette.muted, marginTop: 2, marginBottom: 16 }}>{u.jp}</div>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
-              {u.groups.map(g => (
-                <div key={g.name} style={{ background: mPalette.paper, border: `1px solid ${u.color}44`, borderTop: `3px solid ${u.color}`, padding: 14 }}>
-                  {g.branch && <div style={{ fontFamily: mFont.mono, fontSize: 9, letterSpacing: 3, color: u.color, opacity: 0.85 }}>{g.branch}</div>}
-                  <div style={{ fontFamily: mFont.jpSerif, fontSize: 16, fontWeight: 500, color: u.color, letterSpacing: '0.06em', marginBottom: 10 }}>{g.name}</div>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
-                    {g.items.map(it => (
-                      <div key={it} style={{ fontFamily: mFont.jpSerif, fontSize: 12.5, lineHeight: 1.6, color: mPalette.ink, background: mPalette.paperDeep, padding: '8px 10px' }}>{it}</div>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        ))}
-      </div>
-      <div style={{ padding: '0 24px 40px' }}>
-        <div style={{ border: `1px dashed ${mPalette.ink}55`, padding: '18px 16px', textAlign: 'center', fontFamily: mFont.jpSerif, fontSize: 12.5, lineHeight: 1.9, color: mPalette.ink }}>
-          {t.footer}
+
+      <div style={{ padding: '32px 24px 0' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 14 }}>
+          <span style={{ fontFamily: mFont.mono, fontSize: 9.5, letterSpacing: 3, color: mPalette.akane }}>STRUCTURE — 04 SECTORS</span>
+          <span style={{ flex: 1, height: 1, background: `${mPalette.ink}22` }} />
         </div>
-        <div style={{ marginTop: 20, textAlign: 'center', fontFamily: mFont.jpSerif, fontSize: 16, letterSpacing: '0.08em', color: mPalette.ai, lineHeight: 1.8 }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: 10 }}>
+          {t.units.map((u, i) => (
+            <button
+              key={u.tag}
+              type="button"
+              onClick={() => mBizScrollTo('mbiz-' + i)}
+              style={{
+                appearance: 'none', textAlign: 'left', cursor: 'pointer', font: 'inherit', color: mPalette.ink,
+                background: mPalette.paperDeep, border: 'none', borderTop: `3px solid ${u.color}`,
+                padding: '14px 14px 16px', display: 'flex', flexDirection: 'column', gap: 3, minWidth: 0,
+              }}
+            >
+              <span style={{ fontFamily: mFont.mono, fontSize: 9.5, letterSpacing: 2, color: u.color }}>{mBizPad(i + 1)} / 04</span>
+              <span style={{ fontFamily: mFont.jpAlt, fontSize: 20, color: u.color, letterSpacing: '0.03em', lineHeight: 1.2 }}>{u.tag}</span>
+              <span style={{ fontFamily: mFont.jpSerif, fontSize: 11.5, letterSpacing: 2, color: mPalette.muted }}>{u.jp}</span>
+              <span style={{ fontFamily: mFont.mono, fontSize: 9, letterSpacing: 1.5, color: mPalette.muted, marginTop: 4 }}>{mBizCount(u.groups.length)}</span>
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <div style={{ padding: '32px 24px 32px', display: 'flex', flexDirection: 'column', gap: 22 }}>
+        {t.units.map((u, i) => {
+          const sections = mBizSections(u.groups);
+          const summaryLines = (window.siteData.business.find(b => b.tag === u.tag) || {}).body || [];
+          const summary = summaryLines.join(window.saiLang === 'en' ? ' ' : '');
+          let n = 0;
+          return (
+            <section key={u.tag} id={'mbiz-' + i} style={{
+              background: mPalette.paperDeep, borderLeft: `5px solid ${u.color}`,
+              padding: '20px 18px 22px', position: 'relative', overflow: 'hidden',
+            }}>
+              <span aria-hidden="true" style={{
+                position: 'absolute', right: 12, top: 2, fontFamily: mFont.mono, fontSize: 64,
+                color: u.color, opacity: 0.05, letterSpacing: -3, lineHeight: 1,
+              }}>{mBizPad(i + 1)}</span>
+
+              <div style={{ position: 'relative' }}>
+                <div style={{ fontFamily: mFont.mono, fontSize: 9.5, letterSpacing: 3, color: u.color }}>{mBizPad(i + 1)} / 04</div>
+                <div style={{ fontFamily: mFont.jpAlt, fontSize: 27, color: u.color, letterSpacing: '0.04em', marginTop: 4, lineHeight: 1.1 }}>{u.tag}</div>
+                <div style={{ fontFamily: mFont.jpSerif, fontSize: 12.5, letterSpacing: 3, color: mPalette.muted, marginTop: 3 }}>{u.jp}</div>
+                {summary && (
+                  <p style={{
+                    margin: '14px 0 0', fontFamily: mFont.jpSerif, fontSize: 12.5, lineHeight: 1.95,
+                    color: mPalette.ink, opacity: 0.85, borderLeft: `1px solid ${u.color}55`, paddingLeft: 12,
+                  }}>{summary}</p>
+                )}
+              </div>
+
+              <div style={{ height: 1, background: `${mPalette.ink}22`, margin: '20px 0 18px' }} />
+
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
+                {sections.map(sec => (
+                  <div key={sec.branch || 'main'}>
+                    {sec.branch && !(sec.groups.length === 1 && sec.groups[0].name === sec.branch) && (
+                      <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 10 }}>
+                        <span style={{ fontFamily: mFont.mono, fontSize: 9.5, letterSpacing: 2.5, color: mPalette.paper, background: u.color, padding: '3px 10px' }}>{sec.branch}</span>
+                        <span style={{ flex: 1, height: 1, background: `${u.color}44` }} />
+                      </div>
+                    )}
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+                      {sec.groups.map(g => {
+                        n += 1;
+                        return <MobileBizGroup key={g.name} group={g} color={u.color} n={n} />;
+                      })}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+          );
+        })}
+      </div>
+
+      <div style={{ padding: '0 24px 40px' }}>
+        <div style={{ borderTop: `1px solid ${mPalette.ink}33`, borderBottom: `1px solid ${mPalette.ink}33`, padding: '18px 0' }}>
+          <div style={{ fontFamily: mFont.mono, fontSize: 9.5, letterSpacing: 3, color: mPalette.akane, marginBottom: 8 }}>AREAS</div>
+          <div style={{ fontFamily: mFont.jpSerif, fontSize: 12.5, lineHeight: 1.9, color: mPalette.ink }}>{t.footer}</div>
+        </div>
+        <div style={{ marginTop: 26, textAlign: 'center', fontFamily: mFont.jpSerif, fontSize: 17, letterSpacing: '0.08em', color: mPalette.ai, lineHeight: 1.8 }}>
           {t.tagline}
         </div>
       </div>
