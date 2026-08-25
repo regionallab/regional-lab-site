@@ -70,12 +70,21 @@
   #root { width: 100%; min-height: 100vh; }
 
   /* ---- 日本語組版：折り返し位置と行のバランス ---- */
-  /* 文節の途中で改行されるのを防ぐ（未対応ブラウザでは従来動作） */
-  body { word-break: auto-phrase; line-break: strict; }
-  /* 行末に一文字だけ残るのを防ぐ */
-  p, li { text-wrap: pretty; }
+  /* 禁則処理は全画面共通 */
+  body { line-break: strict; }
+
+  /* 文節単位の折り返し（auto-phrase）は PC 幅だけで使う。
+     1行40字以上ある PC では読みやすさが上がるが、1行24字程度のスマホでは
+     次の文節が入りきらず手前で折り返すため、右側が大きく余ってしまう。
+     （実測：スマホ幅で行の埋まり具合が 74〜88% → 未使用時は 97〜99%）
+     ブレークポイントはアプリ側のPC/スマホ切替（768px）と揃えている。 */
+  @media (min-width: 769px) {
+    body { word-break: auto-phrase; }
+    p, li { text-wrap: pretty; }
+  }
   /* ※ text-wrap: balance は使わない。Chrome では auto-phrase を無効化し、
-     Safari では文節を無視して「日/本」のように語の途中で割ってしまうため。 */
+     Safari では文節を無視して「日/本」のように語の途中で割ってしまうため。
+     短い一文（理念・使命・展望など）は読点で明示的に改行している。 */
 </style>
 <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
