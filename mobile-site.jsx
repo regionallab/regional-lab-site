@@ -21,6 +21,16 @@ const mFont = {
 // ----------------------------------------------------------
 // Mobile Nav (hamburger drawer)
 // ----------------------------------------------------------
+// 読点で改行し、語の途中で折り返されないようにする（英語は読点が無いので1行のまま）
+function mBreakAtComma(text) {
+  const parts = String(text).split('、');
+  return parts.map((part, i) => (
+    <React.Fragment key={i}>
+      {part}{i < parts.length - 1 ? '、' : ''}{i < parts.length - 1 ? <br/> : null}
+    </React.Fragment>
+  ));
+}
+
 function MobileNav() {
   const [open, setOpen] = React.useState(false);
   const navItems = [
@@ -209,7 +219,7 @@ function MobileHome() {
             <div key={c.label} style={{ background: c.bg, color: c.color, padding: '22px 20px', borderRadius: 4 }}>
               <div style={{ fontFamily: mFont.mono, fontSize: 9, letterSpacing: 3, opacity: 0.7 }}>{c.label}</div>
               <div style={{ fontFamily: mFont.jpSerif, fontSize: 14, letterSpacing: 5, marginTop: 4, opacity: 0.85 }}>{c.jp}</div>
-              <div style={{ fontFamily: mFont.jpSerif, fontSize: 17, lineHeight: 1.8, letterSpacing: '0.04em', marginTop: 12, textWrap: 'balance' }}>{c.body}</div>
+              <div style={{ fontFamily: mFont.jpSerif, fontSize: 17, lineHeight: 1.8, letterSpacing: '0.04em', marginTop: 12 }}>{mBreakAtComma(c.body)}</div>
             </div>
           ))}
         </div>
@@ -346,7 +356,7 @@ function MobileAbout() {
             {about.pillars.map(([label, body], i) => (
               <div key={label} style={{ borderLeft: `2px solid ${pillarColors[i]}`, paddingLeft: 16 }}>
                 <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 3, opacity: 0.7 }}>{label}</div>
-                <div style={{ fontFamily: mFont.jpSerif, fontSize: 17, lineHeight: 1.8, marginTop: 8, letterSpacing: '0.04em', textWrap: 'balance' }}>{body}</div>
+                <div style={{ fontFamily: mFont.jpSerif, fontSize: 17, lineHeight: 1.8, marginTop: 8, letterSpacing: '0.04em' }}>{mBreakAtComma(body)}</div>
               </div>
             ))}
           </div>

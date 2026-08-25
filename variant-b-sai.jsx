@@ -179,7 +179,7 @@ function SaiMission() {
             </div>
           ))}
         </div>
-        <p style={{ fontFamily: saiFont.jpSerif, fontSize: 15, lineHeight: 2.2, color: saiPalette.ink, margin: '32px 0 0', maxWidth: 660 }}>
+        <p style={{ fontFamily: saiFont.jpSerif, fontSize: 15, lineHeight: 2.2, color: saiPalette.ink, margin: '32px 0 0', maxWidth: 980 }}>
           {window.siteData.mission.body}
         </p>
         </div>
@@ -200,7 +200,7 @@ function SaiBusiness() {
       </div>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, minmax(0, 1fr))', gap: 24 }}>
         {items.map((s, i) => (
-          <div key={s.tag} style={{ background: saiPalette.paperDeep, padding: 28, position: 'relative', minHeight: 540, display: 'flex', flexDirection: 'column' }}>
+          <div key={s.tag} style={{ background: saiPalette.paperDeep, padding: 28, position: 'relative', display: 'flex', flexDirection: 'column' }}>
             <div style={{ position: 'absolute', top: -8, left: 28, fontFamily: saiFont.mono, fontSize: 10, letterSpacing: 3, background: saiPalette.paper, padding: '4px 8px', color: s.accent }}>
               0{i+1} / 0{items.length}
             </div>
@@ -217,7 +217,7 @@ function SaiBusiness() {
             <div style={{ fontFamily: saiFont.jpSerif, fontSize: 15, letterSpacing: 3, color: saiPalette.muted, marginTop: 4 }}>{s.jp}</div>
             <p style={{ fontFamily: saiFont.jpSerif, fontSize: 14, lineHeight: 2, color: saiPalette.ink, marginTop: 16 }}>
               {Array.isArray(s.body)
-                ? s.body.map((line, li) => <React.Fragment key={li}>{line}{li < s.body.length - 1 && <br/>}</React.Fragment>)
+                ? s.body.join(window.saiLang === 'en' ? ' ' : '')
                 : s.body}
             </p>
             <div style={{

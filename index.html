@@ -74,10 +74,8 @@
   body { word-break: auto-phrase; line-break: strict; }
   /* 行末に一文字だけ残るのを防ぐ */
   p, li { text-wrap: pretty; }
-  /* 見出しは行長を揃える */
-  h1, h2, h3 { text-wrap: balance; }
-  /* 和文の可読行長（約42字）を上限にする。狭い画面では効きません */
-  p { max-width: 42em; }
+  /* ※ text-wrap: balance は使わない。Chrome では auto-phrase を無効化し、
+     Safari では文節を無視して「日/本」のように語の途中で割ってしまうため。 */
 </style>
 <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
