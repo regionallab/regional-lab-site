@@ -30,7 +30,7 @@ function SaiPageHeader({ no, jp, en, lead }) {
         <h1 style={{ fontFamily: saiBFont.jpSerif, fontSize: 72, fontWeight: 400, margin: 0, color: saiB.ink, letterSpacing: '0.04em' }}>{jp}</h1>
         <span style={{ fontFamily: saiBFont.enSerif, fontStyle: 'italic', fontSize: 36, color: saiB.ai }}>{en}</span>
       </div>
-      {lead && <p style={{ fontFamily: saiBFont.jpSerif, fontSize: 15, lineHeight: 2.0, color: saiB.muted, marginTop: 20, maxWidth: 720 }}>{lead}</p>}
+      {lead && <p style={{ fontFamily: saiBFont.jpSerif, fontSize: 15, lineHeight: 2.0, color: saiB.muted, marginTop: 20, maxWidth: 640 }}>{lead}</p>}
     </div>
   );
 }
@@ -94,7 +94,7 @@ function SaiAbout() {
           ].map(([label, body]) => (
             <div key={label} style={{ borderLeft: `2px solid ${saiB.akane}`, paddingLeft: 20 }}>
               <div style={{ fontFamily: saiBFont.mono, fontSize: 10, letterSpacing: 3, opacity: 0.7 }}>{label}</div>
-              <div style={{ fontFamily: saiBFont.jpSerif, fontSize: 18, lineHeight: 1.9, marginTop: 10, letterSpacing: '0.04em', whiteSpace: 'pre-line' }}>{body}</div>
+              <div style={{ fontFamily: saiBFont.jpSerif, fontSize: 18, lineHeight: 1.9, marginTop: 10, letterSpacing: '0.04em', whiteSpace: 'pre-line', textWrap: 'balance' }}>{body}</div>
             </div>
           ))}
         </div>
