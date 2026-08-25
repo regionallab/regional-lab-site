@@ -166,7 +166,7 @@ window.siteDataEn = (function () {
       lead: 'Corporate information and our four businesses — the blueprint of a regional revitalization company headquartered in Minamiuonuma, Niigata.',
       info: {
         founded: 'October 9, 2024',
-        officers: '4 (1 representative director, 3 executive officers)',
+        officers: '4',
         capital: 'JPY 3,000,000',
         offices: [
           ['Head office', '2476 Urasa, Minamiuonuma, Niigata 949-7302, Japan'],
