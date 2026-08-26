@@ -137,7 +137,7 @@ window.siteDataEn = (function () {
         ['The ', 'foundation', 'akane', ' of Japan,'],
         ['coloring the regions’ ', 'future', 'ai', '.'],
       ],
-      body: 'Headquartered in Minamiuonuma, Niigata, we are a regional revitalization company operating across Uonuma (Minamiuonuma and Yuzawa), Miyagi and Tokyo. Events, community, apparel and DX & AX — four businesses that describe regional revitalization in three dimensions.',
+      body: 'Headquartered in Minamiuonuma, Niigata, we are a regional revitalization trading company operating across Uonuma (Minamiuonuma and Yuzawa), Miyagi and Tokyo. Events, community, apparel and DX & AX — four businesses that describe regional revitalization in three dimensions.',
     },
     business: ja.business.map((b, i) => ({ ...b, jp: business[i].jp, body: business[i].body, key: business[i].key })),
     timeline: ja.timeline.map((t, i) => [timeline[i][0], timeline[i][1], timeline[i][2], t[3]]),
@@ -163,7 +163,7 @@ window.siteDataEn = (function () {
       members: ja.about.members.map((m, i) => ({ ...m, role: members[i].role, jp: members[i].jp, en: members[i].en, bio: members[i].bio })),
     },
     company: {
-      lead: 'Corporate information and our four businesses — the blueprint of a regional revitalization company headquartered in Minamiuonuma, Niigata.',
+      lead: 'Corporate information and our four businesses — the blueprint of a regional revitalization trading company headquartered in Minamiuonuma, Niigata.',
       info: {
         founded: 'October 9, 2024',
         officers: '4',

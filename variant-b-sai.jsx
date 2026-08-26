@@ -179,7 +179,7 @@ function SaiMission() {
             </div>
           ))}
         </div>
-        <p style={{ fontFamily: saiFont.jpSerif, fontSize: 15, lineHeight: 2.2, color: saiPalette.ink, margin: '32px 0 0', maxWidth: 980 }}>
+        <p style={{ fontFamily: saiFont.jpSerif, fontSize: 15, lineHeight: 2.2, color: saiPalette.ink, margin: '32px 0 0', maxWidth: 940 }}>
           {window.siteData.mission.body}
         </p>
         </div>
