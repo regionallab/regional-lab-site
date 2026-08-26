@@ -1,0 +1,10 @@
+{
+  "_comment": "商品マスタ。価格は「叩き台」であり、確定価格に置き換えてください。kpi.mjs が不足額から必要件数を逆算するのに使います。",
+  "targetWeeklyYen": 100000,
+  "products": [
+    { "id": "relab-standard",  "unit": "Re.Lab",    "name": "スタンダード会員（月額）",     "type": "recurring", "price": 4980,   "targetCount": 40 },
+    { "id": "eventlab-host",   "unit": "Re.Event",  "name": "Event Lab 主催者プラン（月額）", "type": "recurring", "price": 9800,   "targetCount": 8  },
+    { "id": "recom-training",  "unit": "Re.Com",    "name": "AIリテラシー研修（法人・単発）", "type": "flow",      "price": 120000, "targetCount": 1  },
+    { "id": "regional-ec",     "unit": "Regional.", "name": "EC 伝統工芸品（1点あたり粗利）", "type": "flow",      "price": 3000,   "targetCount": 12 }
+  ]
+}

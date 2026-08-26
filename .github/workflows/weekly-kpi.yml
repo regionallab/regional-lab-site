@@ -1,0 +1,36 @@
+name: Weekly KPI report
+
+# 毎週金曜 09:00 JST（= 00:00 UTC）に収益レポートを自動生成してコミットする。
+# 手動実行も可（Actions タブ → Run workflow）。
+on:
+  schedule:
+    - cron: '0 0 * * 5'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  kpi:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Generate report
+        run: node automation/kpi.mjs
+
+      - name: Commit if changed
+        run: |
+          git config user.name  'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          if [ -n "$(git status --porcelain automation/reports)" ]; then
+            git add automation/reports
+            git commit -m "chore: weekly KPI report $(date -u +%Y-%m-%d)"
+            git push
+          else
+            echo "変更なし — コミットしません"
+          fi
