@@ -92,9 +92,17 @@ function MobileNav() {
               <span style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 2, color: mPalette.akane }}>{en.toUpperCase()} →</span>
             </div>
           ))}
+          {/* アプリ版（PWA）への導線 */}
+          <a
+            href="app/index.html"
+            style={{ marginTop: 20, padding: '16px 8px', background: mPalette.ai, color: mPalette.paper, textDecoration: 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}
+          >
+            <span style={{ fontFamily: mFont.jpSerif, fontSize: 16, letterSpacing: 2 }}>{window.t('アプリ版を開く')}</span>
+            <span style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 2 }}>APP →</span>
+          </a>
           <div
             onClick={() => window.saiSetLang(window.saiLang === 'en' ? 'ja' : 'en')}
-            style={{ marginTop: 20, padding: '14px 8px', border: `1px solid ${mPalette.ink}`, display: 'flex', gap: 8, justifyContent: 'center', alignItems: 'center', fontFamily: mFont.mono, fontSize: 13, letterSpacing: 2, cursor: 'pointer' }}
+            style={{ marginTop: 12, padding: '14px 8px', border: `1px solid ${mPalette.ink}`, display: 'flex', gap: 8, justifyContent: 'center', alignItems: 'center', fontFamily: mFont.mono, fontSize: 13, letterSpacing: 2, cursor: 'pointer' }}
           >
             <span style={{ opacity: window.saiLang === 'ja' ? 1 : 0.4, fontWeight: window.saiLang === 'ja' ? 700 : 400 }}>JP</span>
             <span style={{ opacity: 0.4 }}>/</span>

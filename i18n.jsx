@@ -114,6 +114,64 @@ const SAI_EN = {
   'ご相談内容をご記入ください。': 'Please describe your inquiry.',
 };
 
+// ---- アプリ（/app）で使う文言 ----
+Object.assign(SAI_EN, {
+  '事業': 'Business',
+  'イベント': 'Events',
+  '開催予定': 'Upcoming',
+  'これまでの歩み': 'Past events',
+  'サービス': 'Services',
+  '検索': 'Search',
+  '保存した項目': 'Saved',
+  'アプリについて': 'About this app',
+  'アプリの機能': 'App features',
+  '言語': 'Language',
+  '電話': 'Phone',
+  'メール': 'Email',
+  '地図で見る': 'Open in Maps',
+  'Web サイトを開く': 'Open the website',
+  'この事業について相談する': 'Ask us about this business',
+  '事業・お知らせ・イベントを検索': 'Search businesses, news and events',
+  'キーワードを入力してください。': 'Enter a keyword to search.',
+  '該当する項目は見つかりませんでした。': 'No matching items were found.',
+  '保存した項目はまだありません。お知らせやイベントのしおりアイコンから保存できます。':
+    'Nothing saved yet. Tap the bookmark icon on a news item or event to save it here.',
+  '現在、公開中の開催予定はありません。': 'There are no announced upcoming events at the moment.',
+  '事業が見つかりませんでした。': 'That business could not be found.',
+  'お知らせが見つかりませんでした。': 'That news item could not be found.',
+  '送信しました': 'Message sent',
+  'お問い合わせいただき、ありがとうございます。担当より順次ご連絡いたします。':
+    'Thank you for reaching out. Our team will get back to you shortly.',
+  'プライバシーポリシーへの同意が必要です。': 'Please agree to the privacy policy.',
+  '必須項目（種別・お名前・メール・内容）をご入力ください。':
+    'Please fill in the required fields (type, name, email and message).',
+  '送信に失敗しました。お手数ですが、お電話または直接メールにてご連絡ください。':
+    'Sending failed. Please contact us by phone or email instead.',
+  '送信に失敗しました。通信環境をご確認のうえ、再度お試しください。':
+    'Sending failed. Please check your connection and try again.',
+  '受付時間': 'Hours',
+  '平日 9:00 – 18:00': 'Weekdays 9:00 – 18:00',
+  'いただいたお問い合わせ内容は、当社のプライバシーポリシーに基づき適切に管理いたします。':
+    'Your enquiry is handled in accordance with our privacy policy.',
+  'バージョン': 'Version',
+  '接続状態': 'Connection',
+  'オンライン': 'Online',
+  'オフライン（保存済みの内容を表示中）': 'Offline (showing cached content)',
+  '既読のお知らせ': 'Read news items',
+  'Regional Lab の公式アプリです。事業・イベント・お知らせを、オフラインでもご覧いただけます。':
+    'The official Regional Lab app. Browse our businesses, events and news — offline too.',
+  'ホーム画面に追加する': 'Add to home screen',
+  'ホーム画面に追加すると、アプリとして開けます。': 'Add it to your home screen to open it like an app.',
+  '追加': 'Add',
+  '閉じる': 'Close',
+  '消去しました': 'Cleared',
+  '保存データを消去する': 'Clear saved data',
+  '※ 保存した項目と既読の状態は、この端末のブラウザ内にのみ保存されます。':
+    'Saved items and read status live only in this browser, on this device.',
+  'オフラインです。保存済みの内容を表示しています。': 'You are offline — showing cached content.',
+  'アプリ版を開く': 'Open the app',
+});
+
 window.t = function (jp) {
   if (window.saiLang !== 'en') return jp;
   return Object.prototype.hasOwnProperty.call(SAI_EN, jp) ? SAI_EN[jp] : jp;

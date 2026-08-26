@@ -1,0 +1,25 @@
+{
+  "name": "Regional Lab 株式会社",
+  "short_name": "Regional Lab",
+  "description": "新潟県南魚沼市に本社を置く地方創生商社 Regional Lab の公式アプリ。事業・イベント・お知らせを、オフラインでも。",
+  "lang": "ja",
+  "dir": "ltr",
+  "start_url": "./index.html#/home",
+  "scope": "./",
+  "id": "/app/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f1ead8",
+  "theme_color": "#f1ead8",
+  "categories": ["business", "news", "lifestyle"],
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "お知らせ", "short_name": "News", "url": "./index.html#/news", "icons": [{ "src": "icon-192.png", "sizes": "192x192" }] },
+    { "name": "イベント", "short_name": "Events", "url": "./index.html#/events", "icons": [{ "src": "icon-192.png", "sizes": "192x192" }] },
+    { "name": "お問い合わせ", "short_name": "Contact", "url": "./index.html#/more/contact", "icons": [{ "src": "icon-192.png", "sizes": "192x192" }] }
+  ]
+}
