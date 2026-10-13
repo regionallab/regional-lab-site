@@ -66,11 +66,10 @@ window.siteDataJa = {
     ['2025.09', '地域創生×国際交流', 'Online', 'assets/event-2025-09-kokusai.jpg'],
     ['2025.12', '地方産品大忘年会', '東京スクエアガーデン', 'assets/event-2025-12.jpg'],
     ['2026.03', '第2回ビジコン in 蔵王', 'メルキュール宮城蔵王', 'assets/event-2026-03.jpg'],
-    // 第4要素は写真、写真が無い場合は第5要素の文字を透かしで敷く
-    ['2026.08', 'Event Lab オンライン交流会', 'Online', null, '交'],
-    ['2026.09', '親子でDIY in 浦佐', 'URASA HOTEIYA', null, '浦'],
-    ['2026.09', '第2回 次につながる交流会', 'Online', null, '次'],
-    ['2026.10', '湯沢の旅 フィールドワーク', '新潟・湯沢町', null, '湯'],
+    ['2026.08', 'Event Lab オンライン交流会', 'Online', 'assets/event-2026-08.jpg'],
+    ['2026.09', '親子でDIY in 浦佐', 'URASA HOTEIYA', 'assets/event-2026-09-diy.jpg'],
+    ['2026.09', '第2回 次につながる交流会', 'Online', 'assets/event-2026-09-meetup.jpg'],
+    ['2026.10', '湯沢の旅 フィールドワーク', '新潟・湯沢町', 'assets/event-2026-10-yuzawa.jpg'],
   ],
 
   // ----- ABOUT -----
