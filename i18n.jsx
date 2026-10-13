@@ -15,7 +15,6 @@ const SAI_EN = {
   'お問い合わせ': 'Contact',
   'パートナー': 'Partners',
   'ホーム': 'Home',
-  '株式会社': 'Co., Ltd.',
   'メニュー': 'Menu',
 
   // hero

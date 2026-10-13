@@ -57,7 +57,6 @@ function MobileNav() {
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.1, gap: 3 }}>
             <div style={{ fontFamily: mFont.jpSerif, fontSize: 19, fontWeight: 600, letterSpacing: 0.5, color: mPalette.ink }}>Regional Lab</div>
-            <div style={{ fontFamily: mFont.jpSerif, fontSize: 13.5, fontWeight: 600, letterSpacing: 5, color: mPalette.ink, marginTop: 5, paddingLeft: 42 }}>{window.t('株式会社')}</div>
           </div>
         </div>
         <button
@@ -142,7 +141,7 @@ function MobileFooter() {
         ))}
       </div>
       <div style={{ marginTop: 32, paddingTop: 20, borderTop: `1px solid ${mPalette.ink}22`, display: 'flex', flexDirection: 'column', gap: 8, fontFamily: mFont.mono, fontSize: 10, letterSpacing: 1.5, color: mPalette.muted, textAlign: 'center' }}>
-        <span>© REGIONAL LAB 株式会社 2026</span>
+        <span>© REGIONAL LAB 2026</span>
         <span>{window.t('魚沼エリア × 宮城エリア × 東京エリア')}</span>
       </div>
     </div>
@@ -394,8 +393,7 @@ function MobileCompany() {
   const services = window.siteData.company.services;
   const companyInfo = window.siteData.company.info;
   const info = [
-    [window.t('会社名'), window.saiLang === 'en' ? 'Regional Lab Inc.' : 'Regional Lab 株式会社'],
-    [window.t('英名'), 'Regional Lab Inc.'],
+    [window.t('会社名'), 'Regional Lab'],
     [window.t('設立'), companyInfo.founded],
     [window.t('代表'), window.saiLang === 'en' ? 'Kidera Soma' : '木寺 蒼真'],
     [window.t('資本金'), companyInfo.capital],
@@ -451,6 +449,22 @@ function MobileCompany() {
 // ----------------------------------------------------------
 // NEWS
 // ----------------------------------------------------------
+// 記事カバー（文字を画像に焼かずに描く）
+function MobileNewsCover({ cover, ratio }) {
+  return (
+    <div style={{
+      width: '100%', aspectRatio: ratio, background: cover.bg,
+      display: 'flex', alignItems: 'center', justifyContent: 'center',
+    }}>
+      <svg viewBox="0 0 320 64" role="img" aria-label={cover.label}
+           style={{ width: '64%', height: 'auto', display: 'block', overflow: 'visible' }}>
+        <text x="160" y="46" textAnchor="middle" fill={mPalette.paper}
+              fontFamily={mFont.enSerif} fontSize="48" letterSpacing="0.5">{cover.label}</text>
+      </svg>
+    </div>
+  );
+}
+
 function MobileNews() {
   const articles = window.siteData.news.articles;
   const cats = ['ALL', ...Array.from(new Set(articles.map(a => a.cat)))];
@@ -486,11 +500,13 @@ function MobileNews() {
                 <span style={{ fontFamily: mFont.mono, fontSize: 9, letterSpacing: 2, color: a.catColor, border: `1px solid ${a.catColor}`, padding: '3px 8px' }}>{a.cat}</span>
                 <span style={{ fontFamily: mFont.enSerif, fontStyle: 'italic', fontSize: 13, color: mPalette.muted, marginLeft: 'auto' }}>No. {a.no}</span>
               </div>
-              {a.img && (
+              {a.img ? (
                 <div style={{ width: '100%', aspectRatio: '4/3', overflow: 'hidden' }}>
                   <img src={a.img} alt={a.title} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
                 </div>
-              )}
+              ) : a.cover ? (
+                <MobileNewsCover cover={a.cover} ratio="4/3" />
+              ) : null}
               <h3 style={{ fontFamily: mFont.jpSerif, fontSize: 17, fontWeight: 500, margin: 0, letterSpacing: '0.04em', lineHeight: 1.55 }}>{a.title}</h3>
               <p style={{ fontFamily: mFont.jpSerif, fontSize: 13, lineHeight: 1.95, color: mPalette.akane, margin: 0 }}>{a.lead}</p>
               <p style={{ fontSize: 12, lineHeight: 2, color: mPalette.ink, margin: 0 }}>{a.body}</p>
@@ -529,11 +545,13 @@ function MobileNewsModal({ article: a, onClose }) {
           width: 46, height: 46, borderRadius: 23, border: 'none',
           background: mPalette.ink, color: mPalette.paper, fontSize: 22, cursor: 'pointer',
         }}>×</button>
-        {a.img && (
+        {a.img ? (
           <div style={{ width: '100%', aspectRatio: '4/3', overflow: 'hidden' }}>
             <img src={a.img} alt={a.title} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
           </div>
-        )}
+        ) : a.cover ? (
+          <MobileNewsCover cover={a.cover} ratio="4/3" />
+        ) : null}
         <div style={{ padding: '32px 24px 64px' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 16, flexWrap: 'wrap' }}>
             <span style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 2, color: a.catColor, border: `1px solid ${a.catColor}`, padding: '4px 10px' }}>{a.cat}</span>
@@ -543,6 +561,13 @@ function MobileNewsModal({ article: a, onClose }) {
           <h2 style={{ fontFamily: mFont.jpSerif, fontSize: 24, fontWeight: 500, margin: 0, letterSpacing: '0.04em', lineHeight: 1.5 }}>{a.title}</h2>
           <p style={{ fontFamily: mFont.jpSerif, fontSize: 15, lineHeight: 2, color: a.catColor, margin: '18px 0 20px' }}>{a.lead}</p>
           <p style={{ fontSize: 14, lineHeight: 2.2, color: mPalette.ink, margin: 0 }}>{a.body}</p>
+          {a.url && (
+            <a href={a.url} target="_blank" rel="noopener noreferrer" style={{
+              marginTop: 26, display: 'block', textAlign: 'center', padding: '15px 20px',
+              background: a.catColor, color: mPalette.paper, textDecoration: 'none',
+              fontFamily: mFont.jpSerif, fontSize: 14, letterSpacing: 2,
+            }}>{a.urlLabel} →</a>
+          )}
         </div>
       </div>
     </div>

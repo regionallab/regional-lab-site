@@ -22,10 +22,10 @@ window.siteDataEn = (function () {
   ];
 
   const members = [
-    { role: 'Representative Director / CEO', jp: 'Kidera Soma', en: '木寺 蒼真', bio: ['Met Minamiuonuma and devoted himself to regional revitalization.', 'Moving from tourist to problem-solver, he founded Regional Lab', 'to preserve the appeal of regional Japan.'] },
-    { role: 'Executive Officer / COO ─ Head of Re.Lab', jp: 'Nakahara Koki', en: '中原 光輝', bio: ['Representative of My Vision Lab.', 'Leads the community business across ToC and ToB,', 'walking beside members as they design their lives.'] },
-    { role: 'Executive Officer / CMO ─ Head of Re.Event', jp: 'Mine Kanato', en: '峯 奏音', bio: ['Representative of HopeCreater and CRENECTION.', 'Leads Events / Event Lab / Consulting,', 'directing the design and operation of the event business.'] },
-    { role: 'Executive Officer / CMO ─ Head of Regional.', jp: 'Watanabe Akira', en: '渡邉 輝', bio: ['Representative of Global Canvas Japan.', 'Leads the apparel business, delivering regional crafts', 'to the Japanese and overseas markets (retail and e-commerce).'] },
+    { role: 'Representative', jp: 'Kidera Soma', en: '木寺 蒼真', bio: ['Met Minamiuonuma and devoted himself to regional revitalization.', 'Moving from tourist to problem-solver, he founded Regional Lab', 'to preserve the appeal of regional Japan.'] },
+    { role: 'Vice Representative', jp: 'Nakahara Koki', en: '中原 光輝', bio: ['Representative of My Vision Lab.', 'Leads the community business across ToC and ToB,', 'walking beside members as they design their lives.'] },
+    { role: 'Head of Business ─ Re.Event', jp: 'Mine Kanato', en: '峯 奏音', bio: ['Representative of HopeCreater and CRENECTION.', 'Leads Events / Event Lab / Consulting,', 'directing the design and operation of the event business.'] },
+    { role: 'Head of Business ─ Regional.', jp: 'Watanabe Akira', en: '渡邉 輝', bio: ['Representative of Global Canvas Japan.', 'Leads the apparel business, delivering regional crafts', 'to the Japanese and overseas markets (retail and e-commerce).'] },
   ];
 
   const services = [
@@ -70,6 +70,12 @@ window.siteDataEn = (function () {
   ];
 
   const articles = [
+    {
+      title: 'Re.Event official LINE account is now open',
+      lead: 'Finding events, meeting people, asking for advice — one door for all three.',
+      body: 'Beyond Event Lab, the whole of Re.Event is now available from LINE. Under Events, a monthly calendar brings together both our own events and those run by other organisations, and you can move straight from the one that catches your eye to signing up. Event Lab is where you meet people and widen what you do; Consulting is where you talk a plan or an activity through. Co-hosting and sponsorship applications, and our past events, are all one tap away from the menu at the bottom of the screen.',
+      urlLabel: 'Open the Re.Event LINE account',
+    },
     {
       title: 'Re.Lab version 2.0 released',
       lead: 'We rebuilt the core of the community for coaching that stays closer to each individual, with a new invitation system and selection process.',
@@ -183,7 +189,7 @@ window.siteDataEn = (function () {
     },
     news: {
       lead: 'Products, events and media — the latest from Regional Lab.',
-      articles: ja.news.articles.map((a, i) => ({ ...a, title: articles[i].title, lead: articles[i].lead, body: articles[i].body })),
+      articles: ja.news.articles.map((a, i) => ({ ...a, title: articles[i].title, lead: articles[i].lead, body: articles[i].body, urlLabel: articles[i].urlLabel || a.urlLabel })),
     },
     partners: {
       lead: 'The partners who color the future of regional Japan together with us.',

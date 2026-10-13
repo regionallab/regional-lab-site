@@ -246,6 +246,22 @@ function SaiCompany() {
 // =========================================================
 // NEWS — お知らせ
 // =========================================================
+// 記事カバー — 文字を画像に焼かず本文として描くので、どの解像度でも輪郭が崩れない
+function SaiNewsCover({ cover, ratio }) {
+  return (
+    <div style={{
+      width: '100%', aspectRatio: ratio, background: cover.bg,
+      display: 'flex', alignItems: 'center', justifyContent: 'center',
+    }}>
+      <svg viewBox="0 0 320 64" role="img" aria-label={cover.label}
+           style={{ width: '62%', height: 'auto', display: 'block', overflow: 'visible' }}>
+        <text x="160" y="46" textAnchor="middle" fill={saiB.paper}
+              fontFamily={saiBFont.enSerif} fontSize="48" letterSpacing="0.5">{cover.label}</text>
+      </svg>
+    </div>
+  );
+}
+
 function SaiNews() {
   const articles = window.siteData.news.articles;
   const cats = ['ALL', ...Array.from(new Set(articles.map(a => a.cat)))];
@@ -297,6 +313,8 @@ function SaiNews() {
                 <div style={{ width: '100%', aspectRatio: '4/3', overflow: 'hidden' }}>
                   <img src={a.img} alt={a.title} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
                 </div>
+              ) : a.cover ? (
+                <SaiNewsCover cover={a.cover} ratio="4/3" />
               ) : (
                 <Placeholder label={a.cat === 'PRODUCT' ? 'product / screen' : 'event / venue'} ratio="4/3" color1="#d4c39e" color2="#c0a978" textColor={saiB.ink} />
               )}
@@ -343,11 +361,13 @@ function SaiNewsModal({ article: a, onClose }) {
           background: saiB.ink, color: saiB.paper, fontSize: 20, cursor: 'pointer',
           display: 'flex', alignItems: 'center', justifyContent: 'center',
         }}>×</button>
-        {a.img && (
+        {a.img ? (
           <div style={{ width: '100%', aspectRatio: '16/9', overflow: 'hidden' }}>
             <img src={a.img} alt={a.title} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
           </div>
-        )}
+        ) : a.cover ? (
+          <SaiNewsCover cover={a.cover} ratio="16/9" />
+        ) : null}
         <div style={{ padding: '40px 48px 56px' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 20 }}>
             <span style={{ fontFamily: saiBFont.mono, fontSize: 11, letterSpacing: 2, color: a.catColor, border: `1px solid ${a.catColor}`, padding: '4px 10px' }}>{a.cat}</span>
@@ -357,6 +377,13 @@ function SaiNewsModal({ article: a, onClose }) {
           <h2 style={{ fontFamily: saiBFont.jpSerif, fontSize: 34, fontWeight: 500, margin: 0, letterSpacing: '0.04em', lineHeight: 1.5 }}>{a.title}</h2>
           <p style={{ fontFamily: saiBFont.jpSerif, fontSize: 17, lineHeight: 2, color: a.catColor, margin: '20px 0 24px' }}>{a.lead}</p>
           <p style={{ fontSize: 15, lineHeight: 2.4, color: saiB.ink, margin: 0 }}>{a.body}</p>
+          {a.url && (
+            <a href={a.url} target="_blank" rel="noopener noreferrer" style={{
+              marginTop: 32, display: 'inline-block', padding: '14px 32px',
+              background: a.catColor, color: saiB.paper, textDecoration: 'none',
+              fontFamily: saiBFont.jpSerif, fontSize: 15, letterSpacing: 3,
+            }}>{a.urlLabel} →</a>
+          )}
         </div>
       </div>
     </div>

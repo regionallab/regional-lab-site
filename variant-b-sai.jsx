@@ -40,7 +40,6 @@ function SaiNav() {
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', lineHeight: 1.1, gap: 6 }}>
           <div style={{ fontFamily: saiFont.jpSerif, fontSize: 24, fontWeight: 600, letterSpacing: 1, color: saiPalette.ink }}>Regional Lab</div>
-          <div style={{ fontFamily: saiFont.jpSerif, fontSize: 16, fontWeight: 600, letterSpacing: 6, color: saiPalette.ink, marginTop: 6, paddingLeft: 58 }}>{window.t('株式会社')}</div>
         </div>
       </div>
       <div style={{ display: 'flex', gap: 28, fontFamily: saiFont.jpSerif, fontSize: 14, color: saiPalette.ink, alignItems: 'center', letterSpacing: 2 }}>
@@ -319,7 +318,7 @@ function SaiCTA() {
       </div>
 
       <div style={{ marginTop: 64, paddingTop: 24, borderTop: `1px solid ${saiPalette.ink}22`, display: 'flex', justifyContent: 'space-between', fontFamily: saiFont.mono, fontSize: 10, letterSpacing: 2, color: saiPalette.muted }}>
-        <span>© REGIONAL LAB 株式会社 2026</span>
+        <span>© REGIONAL LAB 2026</span>
         <span>{window.t('魚沼エリア × 宮城エリア × 東京エリア')}</span>
         <span>{window.t('個の研鑽をもって、日本の礎であり続ける。')}</span>
       </div>
