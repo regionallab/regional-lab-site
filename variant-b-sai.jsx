@@ -254,7 +254,7 @@ function SaiTimeline() {
         {/* gap ではなく各カードの marginRight で間隔をとる。
             こうすると「カード幅＋間隔」が均一になり、-50% がちょうど1セット分と一致して継ぎ目が出ない */}
         <div className="sai-marquee" style={{ display: 'flex', width: 'max-content' }}>
-          {[...events, ...events].map(([date, name, loc, img], i) => (
+          {[...events, ...events].map(([date, name, loc, img, glyph], i) => (
             <div key={i} style={{
               flexShrink: 0, width: 260, height: 330, marginRight: 20,
               border: `1px solid ${saiPalette.paper}33`,
@@ -273,6 +273,13 @@ function SaiTimeline() {
                     background: `linear-gradient(180deg, ${saiPalette.aiDeep}99 0%, ${saiPalette.aiDeep}33 40%, ${saiPalette.aiDeep}ee 100%)`,
                   }} />
                 </React.Fragment>
+              )}
+              {!img && glyph && (
+                <span aria-hidden="true" style={{
+                  position: 'absolute', right: -14, bottom: -44, zIndex: 0,
+                  fontFamily: saiFont.jpSerif, fontSize: 200, lineHeight: 1,
+                  color: saiPalette.paper, opacity: 0.1, letterSpacing: 0,
+                }}>{glyph}</span>
               )}
               <div style={{ fontFamily: saiFont.mono, fontSize: 10, letterSpacing: 2, opacity: 0.9, position: 'relative', zIndex: 2 }}>{date}</div>
               <div style={{ position: 'relative', zIndex: 2 }}>

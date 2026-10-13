@@ -275,7 +275,7 @@ function MobileHome() {
         </div>
         <div style={{ overflow: 'hidden', width: '100%' }}>
           <div className="m-marquee" style={{ display: 'flex', gap: 14, width: 'max-content', paddingLeft: 14 }}>
-            {[...window.siteData.timeline, ...window.siteData.timeline].map(([date, name, loc, img], i) => (
+            {[...window.siteData.timeline, ...window.siteData.timeline].map(([date, name, loc, img, glyph], i) => (
               <div key={i} style={{
                 flexShrink: 0, width: 200, height: 280,
                 border: `1px solid ${mPalette.paper}33`,
@@ -288,6 +288,13 @@ function MobileHome() {
                     <img src={img} alt={name} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', zIndex: 0 }} />
                     <div style={{ position: 'absolute', inset: 0, zIndex: 1, background: 'linear-gradient(180deg, rgba(19,36,58,0.6) 0%, rgba(19,36,58,0.2) 40%, rgba(19,36,58,0.93) 100%)' }} />
                   </React.Fragment>
+                )}
+                {!img && glyph && (
+                  <span aria-hidden="true" style={{
+                    position: 'absolute', right: -10, bottom: -34, zIndex: 0,
+                    fontFamily: mFont.jpSerif, fontSize: 150, lineHeight: 1,
+                    color: mPalette.paper, opacity: 0.1, letterSpacing: 0,
+                  }}>{glyph}</span>
                 )}
                 <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 2, position: 'relative', zIndex: 2 }}>{date}</div>
                 <div style={{ position: 'relative', zIndex: 2 }}>

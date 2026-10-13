@@ -150,7 +150,7 @@ window.siteDataEn = (function () {
       body: 'Headquartered in Minamiuonuma, Niigata, we are a regional revitalization trading company operating across Uonuma (Minamiuonuma and Yuzawa), Miyagi and Tokyo. Events, community, apparel and DX & AX — four businesses that describe regional revitalization in three dimensions.',
     },
     business: ja.business.map((b, i) => ({ ...b, jp: business[i].jp, body: business[i].body, key: business[i].key })),
-    timeline: ja.timeline.map((t, i) => [timeline[i][0], timeline[i][1], timeline[i][2], t[3]]),
+    timeline: ja.timeline.map((t, i) => [timeline[i][0], timeline[i][1], timeline[i][2], t[3], t[4]]),
     about: {
       lead: 'Why Regional Lab exists, and what it is aiming at — our intent, and the four people behind it.',
       purpose: {
