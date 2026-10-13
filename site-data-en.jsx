@@ -19,6 +19,10 @@ window.siteDataEn = (function () {
     ['2025.09', 'Regional × International Exchange', 'Online'],
     ['2025.12', 'Regional Products Year-End Gathering', 'Tokyo Square Garden'],
     ['2026.03', '2nd Business Contest in Zao', 'Mercure Miyagi Zao'],
+    ['2026.08', 'Event Lab Online Meetup', 'Online'],
+    ['2026.09', 'Family DIY in Urasa', 'URASA HOTEIYA'],
+    ['2026.09', '2nd “Next Step” Meetup', 'Online'],
+    ['2026.10', 'Yuzawa Fieldwork', 'Niigata, Yuzawa'],
   ];
 
   const members = [

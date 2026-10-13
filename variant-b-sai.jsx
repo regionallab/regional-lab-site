@@ -237,51 +237,62 @@ function SaiBusiness() {
 function SaiTimeline() {
   const events = window.siteData.timeline;
   return (
-    <div style={{ background: saiPalette.aiDeep, padding: '120px 56px', color: saiPalette.paper, position: 'relative', overflow: 'hidden' }}>
+    <div style={{ background: saiPalette.aiDeep, padding: '120px 0', color: saiPalette.paper, position: 'relative', overflow: 'hidden' }}>
       <Vertical style={{
         position: 'absolute', right: 56, top: 56,
         fontFamily: saiFont.jpSerif, fontSize: 160, opacity: 0.08, letterSpacing: 0,
       }}>歩</Vertical>
-      <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: 56 }}>
+      <div style={{ padding: '0 56px', display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: 56, position: 'relative', zIndex: 2 }}>
         <h2 style={{ fontFamily: saiFont.jpSerif, fontSize: 56, fontWeight: 400, margin: 0, letterSpacing: '0.04em' }}>
           {window.t('歩みは続く')}<span style={{ fontFamily: saiFont.enSerif, fontStyle: 'italic', color: saiPalette.akane, fontSize: 36 }}>— ongoing.</span>
         </h2>
         <span style={{ fontFamily: saiFont.mono, fontSize: 11, letterSpacing: 3, opacity: 0.7 }}>04 / EVENTS — 2024–2026</span>
       </div>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(6, 1fr)', gap: 16 }}>
-        {events.map(([date, name, loc, img], i) => (
-          <div key={i} style={{
-            background: 'transparent',
-            border: `1px solid ${saiPalette.paper}33`,
-            padding: 20,
-            minHeight: 220,
-            display: 'flex', flexDirection: 'column', justifyContent: 'space-between',
-            position: 'relative', overflow: 'hidden',
-          }}>
-            {img && (
-              <>
-                <img src={img} alt={name} style={{
-                  position: 'absolute', inset: 0, width: '100%', height: '100%',
-                  objectFit: 'cover', zIndex: 0,
-                }} />
-                <div style={{
-                  position: 'absolute', inset: 0, zIndex: 1,
-                  background: `linear-gradient(180deg, ${saiPalette.aiDeep}99 0%, ${saiPalette.aiDeep}33 40%, ${saiPalette.aiDeep}ee 100%)`,
-                }} />
-              </>
-            )}
-            <div style={{ fontFamily: saiFont.mono, fontSize: 10, letterSpacing: 2, opacity: 0.9, position: 'relative', zIndex: 2 }}>{date}</div>
-            <div style={{ position: 'relative', zIndex: 2 }}>
-              <div style={{ fontFamily: saiFont.jpSerif, fontSize: 15, lineHeight: 1.6, letterSpacing: '0.04em' }}>{name}</div>
-              <div style={{ fontFamily: saiFont.mono, fontSize: 9, letterSpacing: 2, opacity: 0.8, marginTop: 8 }}>{loc}</div>
+
+      {/* 右から左へ無限スクロール。同じ並びを2組つないで -50% まで動かすので継ぎ目が出ない */}
+      <div style={{ overflow: 'hidden', width: '100%' }}>
+        {/* gap ではなく各カードの marginRight で間隔をとる。
+            こうすると「カード幅＋間隔」が均一になり、-50% がちょうど1セット分と一致して継ぎ目が出ない */}
+        <div className="sai-marquee" style={{ display: 'flex', width: 'max-content' }}>
+          {[...events, ...events].map(([date, name, loc, img], i) => (
+            <div key={i} style={{
+              flexShrink: 0, width: 260, height: 330, marginRight: 20,
+              border: `1px solid ${saiPalette.paper}33`,
+              padding: 20,
+              display: 'flex', flexDirection: 'column', justifyContent: 'space-between',
+              position: 'relative', overflow: 'hidden',
+            }}>
+              {img && (
+                <React.Fragment>
+                  <img src={img} alt={name} style={{
+                    position: 'absolute', inset: 0, width: '100%', height: '100%',
+                    objectFit: 'cover', zIndex: 0,
+                  }} />
+                  <div style={{
+                    position: 'absolute', inset: 0, zIndex: 1,
+                    background: `linear-gradient(180deg, ${saiPalette.aiDeep}99 0%, ${saiPalette.aiDeep}33 40%, ${saiPalette.aiDeep}ee 100%)`,
+                  }} />
+                </React.Fragment>
+              )}
+              <div style={{ fontFamily: saiFont.mono, fontSize: 10, letterSpacing: 2, opacity: 0.9, position: 'relative', zIndex: 2 }}>{date}</div>
+              <div style={{ position: 'relative', zIndex: 2 }}>
+                <div style={{ fontFamily: saiFont.jpSerif, fontSize: 17, lineHeight: 1.6, letterSpacing: '0.04em' }}>{name}</div>
+                <div style={{ fontFamily: saiFont.mono, fontSize: 9, letterSpacing: 2, opacity: 0.8, marginTop: 8 }}>{loc}</div>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
+
+      <style>{`
+        @keyframes saiMarquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+        .sai-marquee { animation: saiMarquee 56s linear infinite; }
+        .sai-marquee:hover { animation-play-state: paused; }
+        @media (prefers-reduced-motion: reduce) { .sai-marquee { animation: none; } }
+      `}</style>
     </div>
   );
 }
-
 function SaiCTA() {
   const tabs = [
     ['私たちについて', 'About', ['目的と設立背景', 'メンバー紹介']],

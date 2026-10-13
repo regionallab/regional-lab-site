@@ -300,7 +300,8 @@ function MobileHome() {
         </div>
         <style>{`
           @keyframes mMarquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-          .m-marquee { animation: mMarquee 32s linear infinite; }
+          .m-marquee { animation: mMarquee 52s linear infinite; }
+          @media (prefers-reduced-motion: reduce) { .m-marquee { animation: none; } }
         `}</style>
       </div>
 
