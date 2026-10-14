@@ -225,6 +225,22 @@ function MobileHome() {
         </div>
       </div>
 
+      {/* CONSULTING — キャッチコピー */}
+      <div style={{ background: mPalette.ai, color: mPalette.paper, padding: '56px 24px' }}>
+        <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 3, color: '#c2452f', marginBottom: 16 }}>
+          {consulting.eyebrow}
+        </div>
+        <h2 style={{ fontFamily: mFont.jpSerif, fontSize: 30, fontWeight: 400, margin: 0, color: mPalette.paper, letterSpacing: '0.04em', lineHeight: 1.5 }}>
+          {consulting.heading[0]}<br /><span style={{ color: '#c2452f' }}>{consulting.heading[1]}</span>{consulting.heading[2]}
+        </h2>
+        <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 2, color: mPalette.paper, opacity: 0.7, marginTop: 14, lineHeight: 1.8 }}>
+          {consulting.scope}
+        </div>
+        <p style={{ fontFamily: mFont.jpSerif, fontSize: 14, color: mPalette.paper, opacity: 0.85, lineHeight: 2, margin: '20px 0 0' }}>
+          {consulting.body}
+        </p>
+      </div>
+
       {/* BUSINESS — 四つの柱 */}
       <div style={{ padding: '64px 24px', background: mPalette.paper }}>
         <div style={{ marginBottom: 36 }}>
@@ -263,22 +279,6 @@ function MobileHome() {
             </div>
           ))}
         </div>
-      </div>
-
-      {/* CONSULTING — キャッチコピー */}
-      <div style={{ background: mPalette.paperDeep, padding: '56px 24px' }}>
-        <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 3, color: mPalette.akane, marginBottom: 16 }}>
-          {consulting.eyebrow}
-        </div>
-        <h2 style={{ fontFamily: mFont.jpSerif, fontSize: 30, fontWeight: 400, margin: 0, color: mPalette.ink, letterSpacing: '0.04em', lineHeight: 1.5 }}>
-          {consulting.heading[0]}<br /><span style={{ color: mPalette.ai }}>{consulting.heading[1]}</span>{consulting.heading[2]}
-        </h2>
-        <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 2, color: mPalette.muted, marginTop: 14, lineHeight: 1.8 }}>
-          {consulting.scope}
-        </div>
-        <p style={{ fontFamily: mFont.jpSerif, fontSize: 14, color: mPalette.muted, lineHeight: 2, margin: '20px 0 0' }}>
-          {consulting.body}
-        </p>
       </div>
 
       {/* TIMELINE */}

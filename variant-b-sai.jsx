@@ -237,25 +237,25 @@ function SaiBusiness() {
 function SaiConsulting() {
   const c = window.siteData.consulting;
   return (
-    <div style={{ background: saiPalette.paperDeep, padding: '96px 56px', position: 'relative', overflow: 'hidden' }}>
+    <div style={{ background: saiPalette.ai, color: saiPalette.paper, padding: '88px 56px', position: 'relative', overflow: 'hidden' }}>
       {/* faded kanji */}
       <Vertical style={{
-        position: 'absolute', right: 56, top: 32,
-        fontFamily: saiFont.jpSerif, fontSize: 220, color: saiPalette.ink, opacity: 0.045, letterSpacing: 0,
+        position: 'absolute', right: 56, top: 24,
+        fontFamily: saiFont.jpSerif, fontSize: 220, color: saiPalette.paper, opacity: 0.07, letterSpacing: 0,
       }}>導</Vertical>
 
       <div style={{ position: 'relative' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 20, marginBottom: 28 }}>
-          <span style={{ fontFamily: saiFont.mono, fontSize: 11, letterSpacing: 3, color: saiPalette.akane, whiteSpace: 'nowrap' }}>{c.eyebrow} — {c.scope}</span>
-          <span style={{ flex: 1, height: 1, background: `${saiPalette.ink}22` }} />
+          <span style={{ fontFamily: saiFont.mono, fontSize: 11, letterSpacing: 3, color: '#c2452f', whiteSpace: 'nowrap' }}>{c.eyebrow} — {c.scope}</span>
+          <span style={{ flex: 1, height: 1, background: `${saiPalette.paper}33` }} />
         </div>
         <h2 style={{
           fontFamily: saiFont.jpSerif, fontSize: 'clamp(38px, 4.2vw, 58px)', fontWeight: 400, margin: 0,
-          color: saiPalette.ink, letterSpacing: '0.06em', lineHeight: 1.4,
+          color: saiPalette.paper, letterSpacing: '0.06em', lineHeight: 1.4,
         }}>
-          {c.heading[0]}<span style={{ color: saiPalette.ai }}>{c.heading[1]}</span>{c.heading[2]}
+          {c.heading[0]}<span style={{ color: '#c2452f' }}>{c.heading[1]}</span>{c.heading[2]}
         </h2>
-        <p style={{ fontFamily: saiFont.jpSerif, fontSize: 15, lineHeight: 2.2, color: saiPalette.muted, margin: '28px 0 0', maxWidth: 940 }}>
+        <p style={{ fontFamily: saiFont.jpSerif, fontSize: 15, lineHeight: 2.2, color: saiPalette.paper, opacity: 0.8, margin: '28px 0 0', maxWidth: 940 }}>
           {c.body}
         </p>
       </div>
@@ -379,8 +379,8 @@ function SaiVariant() {
       <SaiNav />
       <SaiHero />
       <SaiMission />
-      <SaiBusiness />
       <SaiConsulting />
+      <SaiBusiness />
       <SaiTimeline />
       <SaiCTA />
     </div>
