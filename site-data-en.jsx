@@ -153,7 +153,7 @@ window.siteDataEn = (function () {
       eyebrow: 'CONSULTING',
       scope: 'ORGANISATION / HR / REGION / CORPORATE',
       heading: ['Coloring the ', 'future', ' through consulting.'],
-      body: 'From sparring on event planning and development to monetisation design and operational support — and now organisational, HR, regional and corporate consulting as well.',
+      body: 'Four businesses, centred on consulting across HR, regional, organisational and corporate domains.',
     },
     business: ja.business.map((b, i) => ({ ...b, jp: business[i].jp, body: business[i].body, key: business[i].key })),
     timeline: ja.timeline.map((t, i) => [timeline[i][0], timeline[i][1], timeline[i][2], t[3], t[4]]),
