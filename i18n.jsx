@@ -79,7 +79,6 @@ const SAI_EN = {
   '目的と設立背景': 'Purpose & founding',
   'H.O.I.Consulting': 'H.O.I.Consulting',
   '(株)遊然': 'Yuzen, Inc.',
-  'リーボシ': 'Reboshi',
 
   // news
   'もっと見る': 'Read more',

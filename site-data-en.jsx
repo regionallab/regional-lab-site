@@ -116,12 +116,6 @@ window.siteDataEn = (function () {
       tags: ['Marketing', 'Co-hosted events', 'Event Lab'],
     },
     {
-      name: 'Reboshi', en: '地方創生団体 リーボシ',
-      relation: 'Regional revitalization / community',
-      body: 'They co-hosted the December 2025 regional products year-end gathering, and we continue to collaborate on the recurring gathering and beyond.',
-      tags: ['Regional revitalization', 'Community', 'Co-hosted events'],
-    },
-    {
       name: 'LITERAS AI, Inc.', en: '株式会社 LITERAS AI',
       relation: 'Partnership in regional DX & AX',
       body: 'Partnership in regional DX & AX.',

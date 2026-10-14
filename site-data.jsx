@@ -232,15 +232,7 @@ window.siteDataJa = {
         color: SITE_COLORS.akane,
       },
       {
-        no: '03', name: '地方創生団体 リーボシ', en: 'Reboshi',
-        relation: '地方創生・コミュニティ連携',
-        url: 'https://campuslink.studio.site/notes/3-gXChyH',
-        body: '2025年12月に開催しました地方産品大忘年会イベントにて、共催を行い、今後も、定例化していく地方産品大忘年会や多方面において、パートナー団体様として連携。',
-        tags: ['地方創生', 'コミュニティ', 'イベント共催'],
-        color: SITE_COLORS.koke,
-      },
-      {
-        no: '04', name: '株式会社 LITERAS AI', en: 'LITERAS AI, Inc.',
+        no: '03', name: '株式会社 LITERAS AI', en: 'LITERAS AI, Inc.',
         relation: '地方のDX&AX事業で協業提携',
         url: 'https://literas-ai.jp/',
         body: '地方のDX&AX事業で協業提携。',
@@ -248,7 +240,7 @@ window.siteDataJa = {
         color: '#8a6d3b',
       },
       {
-        no: '05', name: '株式会社 島田組', en: 'Shimadagumi, Inc.',
+        no: '04', name: '株式会社 島田組', en: 'Shimadagumi, Inc.',
         relation: 'DX&AX・イベント・コミュニティ協業',
         url: 'https://simadagumi.co.jp/',
         body: '新潟県南魚沼市におけるDX&AX事業、イベント事業、コミュニティ事業において、協業の提携。',

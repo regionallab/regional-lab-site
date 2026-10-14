@@ -335,7 +335,7 @@ function SaiCTA() {
     ['屋号概要', 'Profile', ['事業紹介', '屋号情報', '拠点'], 'company'],
     ['お知らせ', 'News', ['新着記事', 'プレスリリース', 'メディア掲載']],
     ['お問い合わせ', 'Contact', ['法人の方', '学生の方', '取材依頼']],
-    ['パートナー', 'Partners', ['H.O.I.Consulting', '(株)遊然', 'リーボシ']],
+    ['パートナー', 'Partners', ['H.O.I.Consulting', '(株)遊然', 'LITERAS AI']],
   ];
   return (
     <div style={{ background: saiPalette.paper, padding: '96px 56px 32px', position: 'relative' }}>
