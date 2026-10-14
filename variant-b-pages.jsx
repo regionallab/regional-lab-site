@@ -154,7 +154,7 @@ function SaiAbout() {
 }
 
 // =========================================================
-// COMPANY — 会社概要
+// COMPANY — 屋号概要
 // =========================================================
 function SaiCompany() {
   const services = window.siteData.company.services;
@@ -164,8 +164,8 @@ function SaiCompany() {
     <div style={{ background: saiB.paper, fontFamily: saiBFont.jpSerif, color: saiB.ink }}>
       <SaiPageHeader
         no="02"
-        jp={window.t('会社概要')}
-        en="Company"
+        jp={window.t('屋号概要')}
+        en="Profile"
         lead={window.siteData.company.lead}
       />
 

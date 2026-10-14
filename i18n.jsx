@@ -9,7 +9,7 @@ window.saiLang = (function () {
 const SAI_EN = {
   // nav / chrome
   '私たちについて': 'About Us',
-  '会社概要': 'Company',
+  '屋号概要': 'Profile',
   '事業概要': 'Business',
   'お知らせ': 'News',
   'お問い合わせ': 'Contact',

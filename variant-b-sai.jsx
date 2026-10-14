@@ -43,14 +43,14 @@ function SaiNav() {
         </div>
       </div>
       <div style={{ display: 'flex', gap: 28, fontFamily: saiFont.jpSerif, fontSize: 14, color: saiPalette.ink, alignItems: 'center', letterSpacing: 2 }}>
-        {[['私たちについて','about'],['会社概要','company'],['事業概要','business'],['お知らせ','news'],['お問い合わせ','contact'],['パートナー','partners']].map(([jp, en]) => (
+        {[['私たちについて','about'],['屋号概要','company','Profile'],['事業概要','business'],['お知らせ','news'],['お問い合わせ','contact'],['パートナー','partners']].map(([jp, en, sub]) => (
           <div
             key={en}
             onClick={() => window.saiNavigate && window.saiNavigate(en)}
             style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 2, cursor: 'pointer' }}
           >
             <span style={{ whiteSpace: 'nowrap' }}>{window.t(jp)}</span>
-            <span style={{ fontFamily: saiFont.mono, fontSize: 8, opacity: 0.5, letterSpacing: 2 }}>{en.toUpperCase()}</span>
+            <span style={{ fontFamily: saiFont.mono, fontSize: 8, opacity: 0.5, letterSpacing: 2 }}>{(sub || en).toUpperCase()}</span>
           </div>
         ))}
         <div
@@ -303,7 +303,7 @@ function SaiTimeline() {
 function SaiCTA() {
   const tabs = [
     ['私たちについて', 'About', ['目的と設立背景', 'メンバー紹介']],
-    ['会社概要', 'Company', ['事業紹介', '屋号情報', '拠点']],
+    ['屋号概要', 'Profile', ['事業紹介', '屋号情報', '拠点'], 'company'],
     ['お知らせ', 'News', ['新着記事', 'プレスリリース', 'メディア掲載']],
     ['お問い合わせ', 'Contact', ['法人の方', '学生の方', '取材依頼']],
     ['パートナー', 'Partners', ['H.O.I.Consulting', '(株)遊然', 'リーボシ']],
@@ -318,10 +318,10 @@ function SaiCTA() {
       </div>
 
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 24, paddingTop: 48, borderTop: `1px solid ${saiPalette.ink}33` }}>
-        {tabs.map(([jp, en, sub]) => (
+        {tabs.map(([jp, en, sub, id]) => (
           <div
             key={en}
-            onClick={() => window.saiNavigate && window.saiNavigate(en.toLowerCase())}
+            onClick={() => window.saiNavigate && window.saiNavigate(id || en.toLowerCase())}
             style={{ cursor: 'pointer' }}
           >
             <div style={{ fontFamily: saiFont.jpSerif, fontSize: 15, color: saiPalette.ink, letterSpacing: 2, fontWeight: 500 }}>{window.t(jp)}</div>

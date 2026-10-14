@@ -36,7 +36,7 @@ function MobileNav() {
   const navItems = [
     ['ホーム', 'home'],
     ['私たちについて', 'about'],
-    ['会社概要', 'company'],
+    ['屋号概要', 'company', 'Profile'],
     ['事業概要', 'business'],
     ['お知らせ', 'news'],
     ['パートナー', 'partners'],
@@ -76,7 +76,7 @@ function MobileNav() {
           padding: '40px 24px',
           display: 'flex', flexDirection: 'column', gap: 4,
         }}>
-          {navItems.map(([jp, en]) => (
+          {navItems.map(([jp, en, sub]) => (
             <div
               key={en}
               onClick={() => { window.saiNavigate && window.saiNavigate(en); setOpen(false); }}
@@ -88,7 +88,7 @@ function MobileNav() {
               }}
             >
               <span style={{ fontFamily: mFont.jpSerif, fontSize: 18, color: mPalette.ink, letterSpacing: 2 }}>{window.t(jp)}</span>
-              <span style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 2, color: mPalette.akane }}>{en.toUpperCase()} →</span>
+              <span style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 2, color: mPalette.akane }}>{(sub || en).toUpperCase()} →</span>
             </div>
           ))}
           <div
@@ -111,7 +111,7 @@ function MobileNav() {
 function MobileFooter() {
   const navItems = [
     ['私たちについて', 'about'],
-    ['会社概要', 'company'],
+    ['屋号概要', 'company', 'Profile'],
     ['事業概要', 'business'],
     ['お知らせ', 'news'],
     ['パートナー', 'partners'],
@@ -126,7 +126,7 @@ function MobileFooter() {
         </h2>
       </div>
       <div style={{ borderTop: `1px solid ${mPalette.ink}33`, paddingTop: 28, display: 'flex', flexDirection: 'column', gap: 2 }}>
-        {navItems.map(([jp, en]) => (
+        {navItems.map(([jp, en, sub]) => (
           <div
             key={en}
             onClick={() => window.saiNavigate && window.saiNavigate(en)}
@@ -136,7 +136,7 @@ function MobileFooter() {
             }}
           >
             <span style={{ fontFamily: mFont.jpSerif, fontSize: 15, letterSpacing: 2, color: mPalette.ink }}>{window.t(jp)}</span>
-            <span style={{ fontFamily: mFont.mono, fontSize: 9, letterSpacing: 2, color: mPalette.akane }}>{en.toUpperCase()}</span>
+            <span style={{ fontFamily: mFont.mono, fontSize: 9, letterSpacing: 2, color: mPalette.akane }}>{(sub || en).toUpperCase()}</span>
           </div>
         ))}
       </div>
@@ -409,7 +409,7 @@ function MobileCompany() {
   const offices = companyInfo.offices;
   return (
     <div style={{ background: mPalette.paper }}>
-      <MobilePageHeader no="02" jp={window.t('会社概要')} en="Company" lead={window.siteData.company.lead} />
+      <MobilePageHeader no="02" jp={window.t('屋号概要')} en="Profile" lead={window.siteData.company.lead} />
       <div style={{ padding: '48px 24px' }}>
         <div style={{ marginBottom: 40 }}>
           <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 3, color: mPalette.akane, marginBottom: 14 }}>SECTION 01 — BUSINESS</div>
