@@ -53,7 +53,8 @@ const SAI_EN = {
   '目的と設立背景': 'Purpose & Founding',
   'メンバー紹介': 'Members',
   '事業紹介': 'Our Businesses',
-  '会社情報': 'Corporate Profile',
+  '屋号情報': 'Business Profile',
+  '屋号名': 'Trade name',
   '新着記事': 'Latest articles',
   'プレスリリース': 'Press releases',
   'メディア掲載': 'In the media',
@@ -64,10 +65,8 @@ const SAI_EN = {
 
   // section labels
   '設立': 'Founded',
-  '資本金': 'Capital',
   '役員': 'Officers',
   '拠点': 'Locations',
-  '会社名': 'Company name',
   '英名': 'English name',
   '代表': 'Representative',
   '本社': 'Head office',

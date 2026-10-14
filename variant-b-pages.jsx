@@ -172,18 +172,18 @@ function SaiCompany() {
       {/* 会社情報 */}
       <div style={{ padding: '80px 56px 0' }}>
         <div style={{ marginBottom: 32 }}>
-          <div style={{ fontFamily: saiBFont.mono, fontSize: 10, letterSpacing: 3, color: saiB.akane }}>SECTION 01 — CORPORATE PROFILE</div>
+          <div style={{ fontFamily: saiBFont.mono, fontSize: 10, letterSpacing: 3, color: saiB.akane }}>SECTION 01 — BUSINESS PROFILE</div>
           <h2 style={{ fontFamily: saiBFont.jpSerif, fontSize: 44, fontWeight: 400, margin: '8px 0 0', letterSpacing: '0.04em' }}>
-            {window.t('会社情報')}
+            {window.t('屋号情報')}
           </h2>
         </div>
         <div style={{ borderTop: `1px solid ${saiB.ink}` }}>
           {[
-            [window.t('設立'), companyInfo.founded],
-            [window.t('資本金'), companyInfo.capital],
-            [window.t('役員'), companyInfo.officers],
-            [window.t('拠点'), companyInfo.offices],
-          ].map(([label, value]) => (
+            [window.t('屋号名'), window.saiLang === 'en' ? 'Regional Lab' : 'Regional Lab / リージョナルラボ', 'TRADE NAME'],
+            [window.t('設立'), companyInfo.founded, 'FOUNDED'],
+            [window.t('役員'), companyInfo.officers, 'OFFICERS'],
+            [window.t('拠点'), companyInfo.offices, 'LOCATIONS'],
+          ].map(([label, value, enLabel]) => (
             <div key={label} style={{
               display: 'grid',
               gridTemplateColumns: '200px 1fr',
@@ -195,7 +195,7 @@ function SaiCompany() {
               <div>
                 <div style={{ fontFamily: saiBFont.jpSerif, fontSize: 18, fontWeight: 500, color: saiB.ai, letterSpacing: 4 }}>{label}</div>
                 <div style={{ fontFamily: saiBFont.mono, fontSize: 9, letterSpacing: 2, color: saiB.muted, marginTop: 4 }}>
-                  {label === window.t('設立') ? 'FOUNDED' : label === window.t('役員') ? 'OFFICERS' : label === window.t('資本金') ? 'CAPITAL' : 'LOCATIONS'}
+                  {enLabel}
                 </div>
               </div>
               <div>

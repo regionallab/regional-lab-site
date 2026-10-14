@@ -401,10 +401,9 @@ function MobileCompany() {
   const services = window.siteData.company.services;
   const companyInfo = window.siteData.company.info;
   const info = [
-    [window.t('会社名'), 'Regional Lab'],
+    [window.t('屋号名'), window.saiLang === 'en' ? 'Regional Lab' : 'Regional Lab / リージョナルラボ'],
     [window.t('設立'), companyInfo.founded],
     [window.t('代表'), window.saiLang === 'en' ? 'Kidera Soma' : '木寺 蒼真'],
-    [window.t('資本金'), companyInfo.capital],
     [window.t('役員'), companyInfo.officers],
   ];
   const offices = companyInfo.offices;
@@ -427,8 +426,8 @@ function MobileCompany() {
         </div>
 
         <div style={{ marginBottom: 40 }}>
-          <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 3, color: mPalette.akane, marginBottom: 14 }}>SECTION 02 — CORPORATE PROFILE</div>
-          <h2 style={{ fontFamily: mFont.jpSerif, fontSize: 28, margin: '0 0 24px', color: mPalette.ink, letterSpacing: '0.04em', fontWeight: 500 }}>{window.t('会社情報')}</h2>
+          <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 3, color: mPalette.akane, marginBottom: 14 }}>SECTION 02 — BUSINESS PROFILE</div>
+          <h2 style={{ fontFamily: mFont.jpSerif, fontSize: 28, margin: '0 0 24px', color: mPalette.ink, letterSpacing: '0.04em', fontWeight: 500 }}>{window.t('屋号情報')}</h2>
           <div style={{ background: mPalette.paperDeep, padding: 22, display: 'flex', flexDirection: 'column', gap: 14 }}>
             {info.map(([k, v]) => (
               <div key={k} style={{ display: 'flex', flexDirection: 'column', gap: 4, paddingBottom: 12, borderBottom: `1px solid ${mPalette.ink}22` }}>

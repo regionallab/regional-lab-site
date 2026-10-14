@@ -173,11 +173,10 @@ window.siteDataEn = (function () {
       members: ja.about.members.map((m, i) => ({ ...m, role: members[i].role, jp: members[i].jp, en: members[i].en, bio: members[i].bio })),
     },
     company: {
-      lead: 'Corporate information and our four businesses — the blueprint of a regional revitalization trading company headquartered in Minamiuonuma, Niigata.',
+      lead: 'Business information and our four businesses — the blueprint of a regional revitalization trading company headquartered in Minamiuonuma, Niigata.',
       info: {
         founded: 'October 9, 2024',
         officers: '4',
-        capital: 'JPY 3,000,000',
         offices: [
           ['Head office', '2476 Urasa, Minamiuonuma, Niigata 949-7302, Japan'],
           ['Areas of activity', 'Uonuma (Minamiuonuma / Yuzawa) — Miyagi — Tokyo'],
