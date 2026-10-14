@@ -43,7 +43,7 @@ function SaiNav() {
         </div>
       </div>
       <div style={{ display: 'flex', gap: 28, fontFamily: saiFont.jpSerif, fontSize: 14, color: saiPalette.ink, alignItems: 'center', letterSpacing: 2 }}>
-        {[['私たちについて','about'],['屋号概要','company','Profile'],['事業概要','business'],['お知らせ','news'],['お問い合わせ','contact'],['パートナー','partners']].map(([jp, en, sub]) => (
+        {[['ホーム','home'],['私たちについて','about'],['屋号概要','company','Profile'],['事業概要','business'],['お知らせ','news'],['お問い合わせ','contact'],['パートナー','partners']].map(([jp, en, sub]) => (
           <div
             key={en}
             onClick={() => window.saiNavigate && window.saiNavigate(en)}
