@@ -171,6 +171,7 @@ function MobileHome() {
     bodyText: Array.isArray(b.body) ? b.body.join('') : b.body,
   }));
   const events = window.siteData.timeline.map(([date, title, place]) => [date, title, place]);
+  const consulting = window.siteData.consulting;
 
   return (
     <div style={{ background: mPalette.paper }}>
@@ -262,6 +263,22 @@ function MobileHome() {
             </div>
           ))}
         </div>
+      </div>
+
+      {/* CONSULTING — キャッチコピー */}
+      <div style={{ background: mPalette.paperDeep, padding: '56px 24px' }}>
+        <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 3, color: mPalette.akane, marginBottom: 16 }}>
+          {consulting.eyebrow}
+        </div>
+        <h2 style={{ fontFamily: mFont.jpSerif, fontSize: 30, fontWeight: 400, margin: 0, color: mPalette.ink, letterSpacing: '0.04em', lineHeight: 1.5 }}>
+          {consulting.heading[0]}<br /><span style={{ color: mPalette.ai }}>{consulting.heading[1]}</span>{consulting.heading[2]}
+        </h2>
+        <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 2, color: mPalette.muted, marginTop: 14, lineHeight: 1.8 }}>
+          {consulting.scope}
+        </div>
+        <p style={{ fontFamily: mFont.jpSerif, fontSize: 14, color: mPalette.muted, lineHeight: 2, margin: '20px 0 0' }}>
+          {consulting.body}
+        </p>
       </div>
 
       {/* TIMELINE */}

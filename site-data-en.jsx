@@ -33,7 +33,7 @@ window.siteDataEn = (function () {
   ];
 
   const services = [
-    { jp: 'Events', body: 'Planning and running regional business contests, ideathons and product exchange events. With the Event Lab audience platform and event consulting, we create the entry point into each region.' },
+    { jp: 'Events', body: 'Planning and running regional business contests, ideathons and product exchange events. With the Event Lab audience platform and our consulting, we create the entry point into each region.' },
     { jp: 'Community', body: 'A selective membership community built on business education: free Growth, screened Standard, invitation-only Prime, plus programmes for companies — developing people who can execute.' },
     { jp: 'Apparel', body: 'Rebuilding regional crafts for modern demand. E-commerce and retail in Japan, e-commerce first then Singapore abroad — keeping value in tangible form.' },
     { jp: 'DX & AX', body: 'For communities: AI talent development and AI literacy training. For companies: AI consulting and AI seminars.' },
@@ -45,7 +45,7 @@ window.siteDataEn = (function () {
       groups: [
         { name: 'Event Lab', items: ['Event audience platform', 'Event production support', 'High-quality student community'] },
         { name: 'Events', items: ['Regional business contests', 'Regional ideathons', 'Regional product exchanges', 'Minamiuonuma events'] },
-        { name: 'Event Consulting', items: ['Event planning & development sparring', 'Monetisation design support', 'Operational support'] },
+        { name: 'Consulting', items: ['Event planning & development sparring', 'Monetisation design support', 'Operational support', 'Organisational consulting', 'HR consulting', 'Regional consulting', 'Corporate consulting'] },
       ],
     },
     {
@@ -148,6 +148,12 @@ window.siteDataEn = (function () {
         ['coloring the regions’ ', 'future', 'ai', '.'],
       ],
       body: 'Headquartered in Minamiuonuma, Niigata, we are a regional revitalization trading company operating across Uonuma (Minamiuonuma and Yuzawa), Miyagi and Tokyo. Events, community, apparel and DX & AX — four businesses that describe regional revitalization in three dimensions.',
+    },
+    consulting: {
+      eyebrow: 'CONSULTING',
+      scope: 'ORGANISATION / HR / REGION / CORPORATE',
+      heading: ['Coloring the ', 'future', ' through consulting.'],
+      body: 'From sparring on event planning and development to monetisation design and operational support — and now organisational, HR, regional and corporate consulting as well.',
     },
     business: ja.business.map((b, i) => ({ ...b, jp: business[i].jp, body: business[i].body, key: business[i].key })),
     timeline: ja.timeline.map((t, i) => [timeline[i][0], timeline[i][1], timeline[i][2], t[3], t[4]]),
