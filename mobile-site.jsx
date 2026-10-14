@@ -231,7 +231,7 @@ function MobileHome() {
           {consulting.eyebrow}
         </div>
         <h2 style={{ fontFamily: mFont.jpSerif, fontSize: 30, fontWeight: 400, margin: 0, color: mPalette.ink, letterSpacing: '0.04em', lineHeight: 1.5 }}>
-          {consulting.heading[0]}<br /><span style={{ color: mPalette.ai }}>{consulting.heading[1]}</span>{consulting.heading[2]}
+          {consulting.heading[0]}<br /><span style={{ color: mPalette.akane }}>{consulting.heading[1]}</span>{consulting.heading[2]}
         </h2>
         <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 2, color: mPalette.muted, marginTop: 14, lineHeight: 1.8 }}>
           {consulting.scope}

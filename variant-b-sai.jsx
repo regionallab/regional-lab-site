@@ -253,7 +253,7 @@ function SaiConsulting() {
           fontFamily: saiFont.jpSerif, fontSize: 'clamp(38px, 4.2vw, 58px)', fontWeight: 400, margin: 0,
           color: saiPalette.ink, letterSpacing: '0.06em', lineHeight: 1.4,
         }}>
-          {c.heading[0]}<span style={{ color: saiPalette.ai }}>{c.heading[1]}</span>{c.heading[2]}
+          {c.heading[0]}<span style={{ color: saiPalette.akane }}>{c.heading[1]}</span>{c.heading[2]}
         </h2>
         <p style={{ fontFamily: saiFont.jpSerif, fontSize: 15, lineHeight: 2.2, color: saiPalette.muted, margin: '28px 0 0', maxWidth: 940 }}>
           {c.body}
