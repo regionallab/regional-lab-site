@@ -188,8 +188,8 @@ window.siteDataJa = {
           '旧来の松下村塾は、利用者に利用料を求めていなかったため、基本的には六日町松下村塾もプログラム参加者や利用者には、常に参加費をかけずに、学びたい人、何者かになりたい人、社会を変えたい人向けに常に開かれた塾として開校します。',
           'この地から日本の礎を築く人材を輩出すべく、我々も尽力して参ります。',
         ],
-        img: 'assets/event-2026-11-shokasonjuku.jpg',
-        imgPos: 'top',
+        img: 'assets/news-shokasonjuku.jpg',
+        imgPos: '50% 56%',
       },
       {
         no: '02', date: '2026.10.13', cat: 'PRODUCT', catColor: SITE_COLORS.koke,
