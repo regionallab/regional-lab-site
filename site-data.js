@@ -70,7 +70,7 @@ window.siteDataJa = {
     img: 'assets/re-com.png'
   }],
   // ----- 歩み / TIMELINE (Home) -----
-  timeline: [['2024.12', '地方創生アイデアソン', 'Online', 'assets/event-2024-12.jpg'], ['2025.03', '地方創生ビジコン', '東京スクエアガーデン', 'assets/event-2025-03.jpg'], ['2025.09', '第1回ビジコン in 秋保', '宮城・蘭亭旅館', 'assets/event-2025-09-akiu.jpg'], ['2025.09', '地域創生×国際交流', 'Online', 'assets/event-2025-09-kokusai.jpg'], ['2025.12', '地方産品大忘年会', '東京スクエアガーデン', 'assets/event-2025-12.jpg'], ['2026.03', '第2回ビジコン in 蔵王', 'メルキュール宮城蔵王', 'assets/event-2026-03.jpg'], ['2026.08', 'Event Lab オンライン交流会', 'Online', 'assets/event-2026-08.jpg'], ['2026.09', '親子でDIY in 浦佐', 'URASA HOTEIYA', 'assets/event-2026-09-diy.jpg'], ['2026.09', '第2回 次につながる交流会', 'Online', 'assets/event-2026-09-meetup.jpg'], ['2026.10', '湯沢の旅 フィールドワーク', '新潟・湯沢町', 'assets/event-2026-10-yuzawa.jpg']],
+  timeline: [['2024.12', '地方創生アイデアソン', 'Online', 'assets/event-2024-12.jpg'], ['2025.03', '地方創生ビジコン', '東京スクエアガーデン', 'assets/event-2025-03.jpg'], ['2025.09', '第1回ビジコン in 秋保', '宮城・蘭亭旅館', 'assets/event-2025-09-akiu.jpg'], ['2025.09', '地域創生×国際交流', 'Online', 'assets/event-2025-09-kokusai.jpg'], ['2025.12', '地方産品大忘年会', '東京スクエアガーデン', 'assets/event-2025-12.jpg'], ['2026.03', '第2回ビジコン in 蔵王', 'メルキュール宮城蔵王', 'assets/event-2026-03.jpg'], ['2026.08', 'Event Lab オンライン交流会', 'Online', 'assets/event-2026-08.jpg'], ['2026.09', '親子でDIY in 浦佐', 'URASA HOTEIYA', 'assets/event-2026-09-diy.jpg'], ['2026.09', '第2回 次につながる交流会', 'Online', 'assets/event-2026-09-meetup.jpg'], ['2026.10', '湯沢の旅 フィールドワーク', '新潟・湯沢町', 'assets/event-2026-10-yuzawa.jpg'], ['2026.11', '六日町松下村塾 プレリリース', 'ハイブリッド開催', 'assets/event-2026-11-shokasonjuku.jpg']],
   // ----- ABOUT -----
   about: {
     lead: 'Regional Lab はなぜ生まれたのか。何を目指しているのか。私たちの志と、それを担う4人をご紹介します。',

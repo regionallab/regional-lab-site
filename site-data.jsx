@@ -78,6 +78,7 @@ window.siteDataJa = {
     ['2026.09', '親子でDIY in 浦佐', 'URASA HOTEIYA', 'assets/event-2026-09-diy.jpg'],
     ['2026.09', '第2回 次につながる交流会', 'Online', 'assets/event-2026-09-meetup.jpg'],
     ['2026.10', '湯沢の旅 フィールドワーク', '新潟・湯沢町', 'assets/event-2026-10-yuzawa.jpg'],
+    ['2026.11', '六日町松下村塾 プレリリース', 'ハイブリッド開催', 'assets/event-2026-11-shokasonjuku.jpg'],
   ],
 
   // ----- ABOUT -----

@@ -23,6 +23,7 @@ window.siteDataEn = (function () {
     ['2026.09', 'Family DIY in Urasa', 'URASA HOTEIYA'],
     ['2026.09', '2nd “Next Step” Meetup', 'Online'],
     ['2026.10', 'Yuzawa Fieldwork', 'Niigata, Yuzawa'],
+    ['2026.11', 'Muikamachi Shoka Sonjuku Pre-release', 'Online & on-site'],
   ];
 
   const members = [

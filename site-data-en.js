@@ -22,7 +22,7 @@ window.siteDataEn = function () {
     body: ['We recognise the value of what remains analogue in the regions,', 'and solve the problems that analogue creates', 'without losing that value.'],
     key: 'Capture the value'
   }];
-  const timeline = [['2024.12', 'Regional Ideathon', 'Online'], ['2025.03', 'Regional Business Contest', 'Tokyo Square Garden'], ['2025.09', '1st Business Contest in Akiu', 'Rantei, Miyagi'], ['2025.09', 'Regional × International Exchange', 'Online'], ['2025.12', 'Regional Products Year-End Gathering', 'Tokyo Square Garden'], ['2026.03', '2nd Business Contest in Zao', 'Mercure Miyagi Zao'], ['2026.08', 'Event Lab Online Meetup', 'Online'], ['2026.09', 'Family DIY in Urasa', 'URASA HOTEIYA'], ['2026.09', '2nd “Next Step” Meetup', 'Online'], ['2026.10', 'Yuzawa Fieldwork', 'Niigata, Yuzawa']];
+  const timeline = [['2024.12', 'Regional Ideathon', 'Online'], ['2025.03', 'Regional Business Contest', 'Tokyo Square Garden'], ['2025.09', '1st Business Contest in Akiu', 'Rantei, Miyagi'], ['2025.09', 'Regional × International Exchange', 'Online'], ['2025.12', 'Regional Products Year-End Gathering', 'Tokyo Square Garden'], ['2026.03', '2nd Business Contest in Zao', 'Mercure Miyagi Zao'], ['2026.08', 'Event Lab Online Meetup', 'Online'], ['2026.09', 'Family DIY in Urasa', 'URASA HOTEIYA'], ['2026.09', '2nd “Next Step” Meetup', 'Online'], ['2026.10', 'Yuzawa Fieldwork', 'Niigata, Yuzawa'], ['2026.11', 'Muikamachi Shoka Sonjuku Pre-release', 'Online & on-site']];
   const members = [{
     role: 'Representative',
     jp: 'Kidera Soma',

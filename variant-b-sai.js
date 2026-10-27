@@ -742,7 +742,7 @@ function SaiTimeline() {
     }
   }, loc)))))), /*#__PURE__*/React.createElement("style", null, `
         @keyframes saiMarquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-        .sai-marquee { animation: saiMarquee 56s linear infinite; }
+        .sai-marquee { animation: saiMarquee 62s linear infinite; }
         .sai-marquee:hover { animation-play-state: paused; }
         @media (prefers-reduced-motion: reduce) { .sai-marquee { animation: none; } }
       `));
