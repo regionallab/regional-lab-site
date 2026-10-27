@@ -311,7 +311,7 @@ function SaiNews() {
               </div>
               {a.img ? (
                 <div style={{ width: '100%', aspectRatio: '4/3', overflow: 'hidden' }}>
-                  <img src={a.img} alt={a.title} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                  <img src={a.img} alt={a.title} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: a.imgPos || 'center', display: 'block' }} />
                 </div>
               ) : a.cover ? (
                 <SaiNewsCover cover={a.cover} ratio="4/3" />
@@ -321,7 +321,7 @@ function SaiNews() {
               <div>
                 <h3 style={{ fontFamily: saiBFont.jpSerif, fontSize: 24, fontWeight: 500, margin: 0, letterSpacing: '0.04em', lineHeight: 1.5 }}>{a.title}</h3>
                 <p style={{ fontFamily: saiBFont.jpSerif, fontSize: 14, lineHeight: 2, color: saiB.akane, marginTop: 12, marginBottom: 14 }}>{a.lead}</p>
-                <p style={{ fontSize: 13, lineHeight: 2.1, color: saiB.ink, margin: 0 }}>{a.body}</p>
+                <NewsBody body={a.body} firstOnly style={{ fontSize: 13, lineHeight: 2.1, color: saiB.ink }} />
                 <div style={{ marginTop: 16, fontFamily: saiBFont.enSerif, fontStyle: 'italic', fontSize: 14, color: saiB.ink, borderBottom: `1px solid ${saiB.ink}`, display: 'inline-block', paddingBottom: 2 }}>
                   Read more →
                 </div>
@@ -363,7 +363,7 @@ function SaiNewsModal({ article: a, onClose }) {
         }}>×</button>
         {a.img ? (
           <div style={{ width: '100%', aspectRatio: '16/9', overflow: 'hidden' }}>
-            <img src={a.img} alt={a.title} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+            <img src={a.img} alt={a.title} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: a.imgPos || 'center', display: 'block' }} />
           </div>
         ) : a.cover ? (
           <SaiNewsCover cover={a.cover} ratio="16/9" />
@@ -376,7 +376,7 @@ function SaiNewsModal({ article: a, onClose }) {
           </div>
           <h2 style={{ fontFamily: saiBFont.jpSerif, fontSize: 34, fontWeight: 500, margin: 0, letterSpacing: '0.04em', lineHeight: 1.5 }}>{a.title}</h2>
           <p style={{ fontFamily: saiBFont.jpSerif, fontSize: 17, lineHeight: 2, color: a.catColor, margin: '20px 0 24px' }}>{a.lead}</p>
-          <p style={{ fontSize: 15, lineHeight: 2.4, color: saiB.ink, margin: 0 }}>{a.body}</p>
+          <NewsBody body={a.body} style={{ fontSize: 15, lineHeight: 2.4, color: saiB.ink }} />
           {a.url && (
             <a href={a.url} target="_blank" rel="noopener noreferrer" style={{
               marginTop: 32, display: 'inline-block', padding: '14px 32px',

@@ -1320,6 +1320,7 @@ function MobileNews() {
       width: '100%',
       height: '100%',
       objectFit: 'cover',
+      objectPosition: a.imgPos || 'center',
       display: 'block'
     }
   })) : a.cover ? /*#__PURE__*/React.createElement(MobileNewsCover, {
@@ -1342,14 +1343,15 @@ function MobileNews() {
       color: mPalette.akane,
       margin: 0
     }
-  }, a.lead), /*#__PURE__*/React.createElement("p", {
+  }, a.lead), /*#__PURE__*/React.createElement(NewsBody, {
+    body: a.body,
+    firstOnly: true,
     style: {
       fontSize: 12,
       lineHeight: 2,
-      color: mPalette.ink,
-      margin: 0
+      color: mPalette.ink
     }
-  }, a.body), /*#__PURE__*/React.createElement("div", {
+  }), /*#__PURE__*/React.createElement("div", {
     style: {
       fontFamily: mFont.enSerif,
       fontStyle: 'italic',
@@ -1429,6 +1431,7 @@ function MobileNewsModal({
       width: '100%',
       height: '100%',
       objectFit: 'cover',
+      objectPosition: a.imgPos || 'center',
       display: 'block'
     }
   })) : a.cover ? /*#__PURE__*/React.createElement(MobileNewsCover, {
@@ -1487,14 +1490,14 @@ function MobileNewsModal({
       color: a.catColor,
       margin: '18px 0 20px'
     }
-  }, a.lead), /*#__PURE__*/React.createElement("p", {
+  }, a.lead), /*#__PURE__*/React.createElement(NewsBody, {
+    body: a.body,
     style: {
       fontSize: 14,
       lineHeight: 2.2,
-      color: mPalette.ink,
-      margin: 0
+      color: mPalette.ink
     }
-  }, a.body), a.url && /*#__PURE__*/React.createElement("a", {
+  }), a.url && /*#__PURE__*/React.createElement("a", {
     href: a.url,
     target: "_blank",
     rel: "noopener noreferrer",

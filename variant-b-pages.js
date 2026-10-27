@@ -675,6 +675,7 @@ function SaiNews() {
       width: '100%',
       height: '100%',
       objectFit: 'cover',
+      objectPosition: a.imgPos || 'center',
       display: 'block'
     }
   })) : a.cover ? /*#__PURE__*/React.createElement(SaiNewsCover, {
@@ -704,14 +705,15 @@ function SaiNews() {
       marginTop: 12,
       marginBottom: 14
     }
-  }, a.lead), /*#__PURE__*/React.createElement("p", {
+  }, a.lead), /*#__PURE__*/React.createElement(NewsBody, {
+    body: a.body,
+    firstOnly: true,
     style: {
       fontSize: 13,
       lineHeight: 2.1,
-      color: saiB.ink,
-      margin: 0
+      color: saiB.ink
     }
-  }, a.body), /*#__PURE__*/React.createElement("div", {
+  }), /*#__PURE__*/React.createElement("div", {
     style: {
       marginTop: 16,
       fontFamily: saiBFont.enSerif,
@@ -805,6 +807,7 @@ function SaiNewsModal({
       width: '100%',
       height: '100%',
       objectFit: 'cover',
+      objectPosition: a.imgPos || 'center',
       display: 'block'
     }
   })) : a.cover ? /*#__PURE__*/React.createElement(SaiNewsCover, {
@@ -862,14 +865,14 @@ function SaiNewsModal({
       color: a.catColor,
       margin: '20px 0 24px'
     }
-  }, a.lead), /*#__PURE__*/React.createElement("p", {
+  }, a.lead), /*#__PURE__*/React.createElement(NewsBody, {
+    body: a.body,
     style: {
       fontSize: 15,
       lineHeight: 2.4,
-      color: saiB.ink,
-      margin: 0
+      color: saiB.ink
     }
-  }, a.body), a.url && /*#__PURE__*/React.createElement("a", {
+  }), a.url && /*#__PURE__*/React.createElement("a", {
     href: a.url,
     target: "_blank",
     rel: "noopener noreferrer",

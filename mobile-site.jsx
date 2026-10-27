@@ -526,14 +526,14 @@ function MobileNews() {
               </div>
               {a.img ? (
                 <div style={{ width: '100%', aspectRatio: '4/3', overflow: 'hidden' }}>
-                  <img src={a.img} alt={a.title} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                  <img src={a.img} alt={a.title} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: a.imgPos || 'center', display: 'block' }} />
                 </div>
               ) : a.cover ? (
                 <MobileNewsCover cover={a.cover} ratio="4/3" />
               ) : null}
               <h3 style={{ fontFamily: mFont.jpSerif, fontSize: 17, fontWeight: 500, margin: 0, letterSpacing: '0.04em', lineHeight: 1.55 }}>{a.title}</h3>
               <p style={{ fontFamily: mFont.jpSerif, fontSize: 13, lineHeight: 1.95, color: mPalette.akane, margin: 0 }}>{a.lead}</p>
-              <p style={{ fontSize: 12, lineHeight: 2, color: mPalette.ink, margin: 0 }}>{a.body}</p>
+              <NewsBody body={a.body} firstOnly style={{ fontSize: 12, lineHeight: 2, color: mPalette.ink }} />
               <div style={{ fontFamily: mFont.enSerif, fontStyle: 'italic', fontSize: 13, color: mPalette.ink, borderBottom: `1px solid ${mPalette.ink}`, display: 'inline-block', alignSelf: 'flex-start', paddingBottom: 2 }}>
                 Read more →
               </div>
@@ -571,7 +571,7 @@ function MobileNewsModal({ article: a, onClose }) {
         }}>×</button>
         {a.img ? (
           <div style={{ width: '100%', aspectRatio: '4/3', overflow: 'hidden' }}>
-            <img src={a.img} alt={a.title} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+            <img src={a.img} alt={a.title} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: a.imgPos || 'center', display: 'block' }} />
           </div>
         ) : a.cover ? (
           <MobileNewsCover cover={a.cover} ratio="4/3" />
@@ -584,7 +584,7 @@ function MobileNewsModal({ article: a, onClose }) {
           </div>
           <h2 style={{ fontFamily: mFont.jpSerif, fontSize: 24, fontWeight: 500, margin: 0, letterSpacing: '0.04em', lineHeight: 1.5 }}>{a.title}</h2>
           <p style={{ fontFamily: mFont.jpSerif, fontSize: 15, lineHeight: 2, color: a.catColor, margin: '18px 0 20px' }}>{a.lead}</p>
-          <p style={{ fontSize: 14, lineHeight: 2.2, color: mPalette.ink, margin: 0 }}>{a.body}</p>
+          <NewsBody body={a.body} style={{ fontSize: 14, lineHeight: 2.2, color: mPalette.ink }} />
           {a.url && (
             <a href={a.url} target="_blank" rel="noopener noreferrer" style={{
               marginTop: 26, display: 'block', textAlign: 'center', padding: '15px 20px',

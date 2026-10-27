@@ -50,6 +50,19 @@ function Vertical({ children, style }) {
 }
 
 // Inline hairline divider
+// お知らせ本文：配列なら段落ごとに改段、文字列ならこれまでどおり1段落。
+// firstOnly は一覧カード用（長い記事でカードが伸びすぎないよう冒頭だけ出す）。
+function NewsBody({ body, style, firstOnly }) {
+  const list = Array.isArray(body) ? (firstOnly ? body.slice(0, 1) : body) : [body];
+  return (
+    <React.Fragment>
+      {list.map((t, i) => (
+        <p key={i} style={{ ...style, margin: 0, marginTop: i === 0 ? 0 : '1.4em' }}>{t}</p>
+      ))}
+    </React.Fragment>
+  );
+}
+
 function Hairline({ color = 'currentColor', opacity = 0.2, vertical = false, length = '100%', thickness = 1 }) {
   return (
     <span
