@@ -67,8 +67,8 @@
           }
         });
       }, {
-        threshold: 0.06,
-        rootMargin: '0px 0px -8% 0px'
+        threshold: 0.04,
+        rootMargin: '0px 0px -14% 0px'
       });
       const scan = () => document.querySelectorAll('.sai-reveal:not(.sai-in)').forEach(el => io.observe(el));
       const t1 = setTimeout(scan, 60);
@@ -153,8 +153,8 @@
         .sai-app-body { animation: saiHomeIn 4s ease-in-out forwards; }
         .sai-reveal-on .sai-reveal {
           opacity: 0;
-          transform: translateY(26px);
-          transition: opacity 900ms cubic-bezier(.22,.61,.36,1), transform 900ms cubic-bezier(.22,.61,.36,1);
+          transform: translateY(64px) scale(0.975);
+          transition: opacity 1150ms cubic-bezier(.16,.84,.34,1), transform 1150ms cubic-bezier(.16,.84,.34,1);
           will-change: opacity, transform;
         }
         .sai-reveal-on .sai-reveal.sai-in { opacity: 1; transform: none; }
