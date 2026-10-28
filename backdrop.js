@@ -8,17 +8,17 @@ const BACKDROP_DEFAULTS = {
   // 1枚を映す時間（ms）
   fade: 2400,
   // クロスフェードにかける時間（ms）
-  zoomFrom: 1.06,
+  zoomFrom: 1.08,
   // 映り始めの拡大率（横に流すための余白をここで確保する）
-  zoom: 1.22,
+  zoom: 1.30,
   // 表示の終わりまでにここまでゆっくり拡大する
-  driftX: -2.0,
+  driftX: -3.0,
   // 表示中に横へ流す量（要素幅に対する％）
-  driftY: -1.4,
+  driftY: -2.0,
   // 同じく縦へ流す量
-  stillZoom: 1.14,
+  stillZoom: 1.18,
   // スマホの1枚表示で、ゆっくり往復させる拡大率
-  stillCycle: 24000,
+  stillCycle: 22000,
   // その往復1回にかける時間（ms）
   veil: 0,
   // 見出し帯にかける和紙の濃さ。0 = 写真の色をそのまま出す
@@ -111,6 +111,37 @@ function saiLine(hex, alpha) {
 function saiPageVeil(hex) {
   return saiVeil(hex, saiBackdropCfg().veilPage);
 }
+
+// 最初の画面をスクロールに合わせて静かに見送る。上へ流しながら薄くしていく。
+// 「視差効果を減らす」設定の端末では何もしない。
+function saiUseScrollFade() {
+  const ref = React.useRef(null);
+  React.useEffect(() => {
+    const el = ref.current;
+    if (!el || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    let raf = 0;
+    const apply = () => {
+      raf = 0;
+      const span = (window.innerHeight || 1) * 0.9;
+      const p = Math.min(1, Math.max(0, window.scrollY / span));
+      el.style.opacity = String(1 - p * 0.95);
+      el.style.transform = p ? `translate3d(0, ${(-p * 110).toFixed(1)}px, 0) scale(${(1 - p * 0.06).toFixed(4)})` : '';
+      el.style.willChange = p > 0 && p < 1 ? 'opacity, transform' : 'auto';
+    };
+    const onScroll = () => {
+      if (!raf) raf = requestAnimationFrame(apply);
+    };
+    window.addEventListener('scroll', onScroll, {
+      passive: true
+    });
+    apply();
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      if (raf) cancelAnimationFrame(raf);
+    };
+  }, []);
+  return ref;
+}
 function Backdrop() {
   const cfg = saiBackdropCfg();
   const photos = cfg.photos || [];
@@ -202,6 +233,7 @@ function Backdrop() {
 }
 Object.assign(window, {
   Backdrop,
+  saiUseScrollFade,
   saiBackdropOn,
   saiVeil,
   saiPageVeil,

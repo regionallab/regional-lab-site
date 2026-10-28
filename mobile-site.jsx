@@ -168,6 +168,7 @@ function MobilePageHeader({ no, jp, en, lead }) {
 // HOME
 // ----------------------------------------------------------
 function MobileHome() {
+  const heroRef = saiUseScrollFade();
   const business = window.siteData.business.map(b => ({
     ...b,
     bodyText: Array.isArray(b.body) ? b.body.join('') : b.body,
@@ -178,13 +179,13 @@ function MobileHome() {
   return (
     <div style={{ ...saiVars(false), background: saiBackdropOn() ? 'transparent' : mPalette.paper }}>
       {/* HERO */}
-      <div style={{ padding: '40px 24px 56px', background: `linear-gradient(180deg, ${saiVeil(mPalette.paper)} 0%, ${saiVeil(mPalette.paperDeep)} 100%)`, position: 'relative' }}>
-        <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 3, color: saiOnPhoto(mPalette.akane), textShadow: saiShadow(), marginBottom: 24 }}>{window.t('新潟県南魚沼市を支え続ける企業へ')}</div>
-        <h1 style={{ fontFamily: mFont.jpSerif, fontSize: 44, fontWeight: 500, margin: 0, color: saiOnPhoto(mPalette.ink), textShadow: saiShadow(), letterSpacing: '0.04em', lineHeight: 1.3 }}>
+      <div ref={heroRef} style={{ padding: '40px 24px 56px', background: `linear-gradient(180deg, ${saiVeil(mPalette.paper)} 0%, ${saiVeil(mPalette.paperDeep)} 100%)`, position: 'relative' }}>
+        <div className="sai-hero-piece" style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 3, color: saiOnPhoto(mPalette.akane), textShadow: saiShadow(), marginBottom: 24 }}>{window.t('新潟県南魚沼市を支え続ける企業へ')}</div>
+        <h1 className="sai-hero-piece" style={{ '--sai-hero-step': '0.14s', fontFamily: mFont.jpSerif, fontSize: 44, fontWeight: 500, margin: 0, color: saiOnPhoto(mPalette.ink), textShadow: saiShadow(), letterSpacing: '0.04em', lineHeight: 1.3 }}>
           <span style={{ display: 'block', whiteSpace: window.saiLang === 'en' ? 'normal' : 'nowrap' }}>{window.t('地方の未来を、')}</span>
           <span style={{ display: 'block', whiteSpace: window.saiLang === 'en' ? 'normal' : 'nowrap' }}>{window.t('彩る組織へ')}</span>
         </h1>
-        <div style={{ marginTop: 32, position: 'relative', paddingTop: 64, paddingLeft: 52 }}>
+        <div className="sai-hero-piece" style={{ '--sai-hero-step': '0.3s', marginTop: 32, position: 'relative', paddingTop: 64, paddingLeft: 52 }}>
           {/* 藍色の和紙パネル（背面）。背景写真があるときは濃い藍にして写真と沈み込ませない。 */}
           <div style={{
             position: 'absolute', top: 0, left: 0,

@@ -348,6 +348,7 @@ function MobilePageHeader({
 // HOME
 // ----------------------------------------------------------
 function MobileHome() {
+  const heroRef = saiUseScrollFade();
   const business = window.siteData.business.map(b => ({
     ...b,
     bodyText: Array.isArray(b.body) ? b.body.join('') : b.body
@@ -360,12 +361,14 @@ function MobileHome() {
       background: saiBackdropOn() ? 'transparent' : mPalette.paper
     }
   }, /*#__PURE__*/React.createElement("div", {
+    ref: heroRef,
     style: {
       padding: '40px 24px 56px',
       background: `linear-gradient(180deg, ${saiVeil(mPalette.paper)} 0%, ${saiVeil(mPalette.paperDeep)} 100%)`,
       position: 'relative'
     }
   }, /*#__PURE__*/React.createElement("div", {
+    className: "sai-hero-piece",
     style: {
       fontFamily: mFont.mono,
       fontSize: 10,
@@ -375,7 +378,9 @@ function MobileHome() {
       marginBottom: 24
     }
   }, window.t('新潟県南魚沼市を支え続ける企業へ')), /*#__PURE__*/React.createElement("h1", {
+    className: "sai-hero-piece",
     style: {
+      '--sai-hero-step': '0.14s',
       fontFamily: mFont.jpSerif,
       fontSize: 44,
       fontWeight: 500,
@@ -396,7 +401,9 @@ function MobileHome() {
       whiteSpace: window.saiLang === 'en' ? 'normal' : 'nowrap'
     }
   }, window.t('彩る組織へ'))), /*#__PURE__*/React.createElement("div", {
+    className: "sai-hero-piece",
     style: {
+      '--sai-hero-step': '0.3s',
       marginTop: 32,
       position: 'relative',
       paddingTop: 64,

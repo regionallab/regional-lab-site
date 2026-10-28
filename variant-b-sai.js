@@ -146,7 +146,9 @@ function SaiNav() {
   }, "EN"))));
 }
 function SaiHero() {
+  const heroRef = saiUseScrollFade();
   return /*#__PURE__*/React.createElement("div", {
+    ref: heroRef,
     style: {
       position: 'relative',
       padding: '64px 56px 80px',
@@ -155,6 +157,7 @@ function SaiHero() {
       minHeight: 760
     }
   }, /*#__PURE__*/React.createElement("div", {
+    className: "sai-hero-piece",
     style: {
       position: 'absolute',
       left: 56,
@@ -164,7 +167,9 @@ function SaiHero() {
       background: saiBackdropOn() ? saiPalette.aiDeep : saiPalette.ai
     }
   }), /*#__PURE__*/React.createElement("div", {
+    className: "sai-hero-piece",
     style: {
+      '--sai-hero-step': '0.14s',
       position: 'absolute',
       left: 320,
       top: 180,
@@ -183,7 +188,9 @@ function SaiHero() {
       display: 'block'
     }
   })), window.saiLang === 'en' ? /*#__PURE__*/React.createElement("div", {
+    className: "sai-hero-piece",
     style: {
+      '--sai-hero-step': '0.3s',
       position: 'absolute',
       right: 72,
       top: 96,
@@ -211,7 +218,9 @@ function SaiHero() {
       fontWeight: 500
     }
   }, window.t('地方の未来を、'), /*#__PURE__*/React.createElement("br", null), window.t('彩る組織へ'))) : /*#__PURE__*/React.createElement("div", {
+    className: "sai-hero-piece",
     style: {
+      '--sai-hero-step': '0.3s',
       position: 'absolute',
       right: 80,
       top: 80,
@@ -255,7 +264,9 @@ function SaiHero() {
       marginTop: 88
     }
   }, "\u5F69\u308B\u7D44\u7E54\u3078")), /*#__PURE__*/React.createElement("div", {
+    className: "sai-hero-piece",
     style: {
+      '--sai-hero-step': '0.46s',
       position: 'absolute',
       left: 56,
       bottom: 40,

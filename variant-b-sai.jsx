@@ -73,8 +73,9 @@ function SaiNav() {
 }
 
 function SaiHero() {
+  const heroRef = saiUseScrollFade();
   return (
-    <div style={{
+    <div ref={heroRef} style={{
       position: 'relative',
       padding: '64px 56px 80px',
       background: `linear-gradient(180deg, ${saiVeil(saiPalette.paper)} 0%, ${saiVeil(saiPalette.paperDeep)} 100%)`,
@@ -83,19 +84,19 @@ function SaiHero() {
     }}>
       {/* 藍の和紙パネル（背面）。背景写真が緑〜碧なので、藍は濃いほうを使って
           写真と沈み込まないようにしている（前面の若草パネルとの差も大きくなる）。 */}
-      <div style={{
+      <div className="sai-hero-piece" style={{
         position: 'absolute',
         left: 56, top: 64,
         width: 720, height: 600,
         background: saiBackdropOn() ? saiPalette.aiDeep : saiPalette.ai,
       }} />
       {/* Photo */}
-      <div style={{ position: 'absolute', left: 320, top: 180, width: 540, height: 680, overflow: 'hidden', background: '#d5d492' }}>
+      <div className="sai-hero-piece" style={{ '--sai-hero-step': '0.14s', position: 'absolute', left: 320, top: 180, width: 540, height: 680, overflow: 'hidden', background: '#d5d492' }}>
         <img src="assets/hero-logo-hq.png" alt="Regional Lab" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
       </div>
       {/* Headline — vertical in JP, horizontal in EN */}
       {window.saiLang === 'en' ? (
-      <div style={{ position: 'absolute', right: 72, top: 96, width: 520, textAlign: 'right' }}>
+      <div className="sai-hero-piece" style={{ '--sai-hero-step': '0.3s', position: 'absolute', right: 72, top: 96, width: 520, textAlign: 'right' }}>
         <div style={{ fontFamily: saiFont.jpAlt, fontSize: 15, lineHeight: 2, color: saiOnPhoto(saiPalette.akane), textShadow: saiShadow(), letterSpacing: '0.18em', marginBottom: 20 }}>
           {window.t('新潟県南魚沼市を支え続ける企業へ')}
         </div>
@@ -104,7 +105,7 @@ function SaiHero() {
         </div>
       </div>
       ) : (
-      <div style={{ position: 'absolute', right: 80, top: 80, display: 'flex', flexDirection: 'row-reverse', alignItems: 'flex-start', gap: 28 }}>
+      <div className="sai-hero-piece" style={{ '--sai-hero-step': '0.3s', position: 'absolute', right: 80, top: 80, display: 'flex', flexDirection: 'row-reverse', alignItems: 'flex-start', gap: 28 }}>
         <Vertical style={{ fontFamily: saiFont.jpAlt, fontSize: 18, lineHeight: 2.2, color: saiOnPhoto(saiPalette.akane), textShadow: saiShadow(), letterSpacing: '0.3em', whiteSpace: 'nowrap', marginTop: 24 }}>
           新潟県南魚沼市を支え続ける企業へ
         </Vertical>
@@ -118,7 +119,8 @@ function SaiHero() {
       )}
 
       {/* Bottom metadata strip */}
-      <div style={{
+      <div className="sai-hero-piece" style={{
+        '--sai-hero-step': '0.46s',
         position: 'absolute', left: 56, bottom: 40, right: 56,
         display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end',
       }}>

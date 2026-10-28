@@ -50,7 +50,13 @@ function App() {
   }, []);
 
   React.useEffect(() => {
-    const t = setTimeout(() => setSplashDone(true), 4000);
+    // 初回だけ、オープニングが明けるのを待ってから最初の画面を立ち上げる。
+    // 明けた後は待ち時間を 0 にして、ページを戻ったときすぐ現れるようにする。
+    document.documentElement.style.setProperty('--sai-hero-delay', '3.3s');
+    const t = setTimeout(() => {
+      setSplashDone(true);
+      document.documentElement.style.setProperty('--sai-hero-delay', '0s');
+    }, 4000);
     return () => clearTimeout(t);
   }, []);
 
@@ -137,13 +143,26 @@ function App() {
         .sai-app-body { animation: saiHomeIn 4s ease-in-out forwards; }
         .sai-reveal-on .sai-reveal {
           opacity: 0;
-          transform: translateY(132px) scale(0.92);
-          transition: opacity 1500ms cubic-bezier(.16,.86,.3,1), transform 1500ms cubic-bezier(.16,.86,.3,1);
+          transform: translateY(180px) scale(0.88);
+          transition: opacity 1700ms cubic-bezier(.16,.86,.3,1), transform 1700ms cubic-bezier(.16,.86,.3,1);
           will-change: opacity, transform;
         }
         .sai-reveal-on .sai-reveal.sai-in { opacity: 1; transform: none; will-change: auto; }
         @media (prefers-reduced-motion: reduce) {
           .sai-reveal-on .sai-reveal { opacity: 1; transform: none; transition: none; }
+        }
+        /* 最初の画面の各要素を、順に下から立ち上げる。
+           初回はオープニングが明けてから始めたいので、待ち時間を変数で持つ。 */
+        .sai-hero-piece {
+          animation: saiHeroIn 1600ms cubic-bezier(.16,.86,.3,1) both;
+          animation-delay: calc(var(--sai-hero-delay, 0s) + var(--sai-hero-step, 0s));
+        }
+        @keyframes saiHeroIn {
+          from { opacity: 0; transform: translateY(86px) scale(0.94); }
+          to   { opacity: 1; transform: none; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .sai-hero-piece { animation: none; }
         }
         .sai-splash-logo { animation: saiSplashLogo 4s ease-in-out forwards; }
         @keyframes saiHomeIn {
