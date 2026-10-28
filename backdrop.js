@@ -35,6 +35,28 @@ const SAI_ON_PHOTO = {
   '#5a6b3d': '#bed092' // 苔
 };
 
+// 文字色の組をCSS変数で配る。ページの地には「写真の上」の組、
+// 和紙の面（カード・帯）には従来の組を流し込むと、中の文字は自動で読める側に揃う。
+const SAI_VARS_ON_PHOTO = {
+  '--sai-ink': '#faf6ec',
+  '--sai-muted': '#e6ddc8',
+  '--sai-akane': '#f0907a',
+  '--sai-ai': '#b3cbe4',
+  '--sai-koke': '#bed092'
+};
+const SAI_VARS_ON_PAPER = {
+  '--sai-ink': '#1f1a14',
+  '--sai-muted': '#766a52',
+  '--sai-akane': '#9a3324',
+  '--sai-ai': '#1f3552',
+  '--sai-koke': '#5a6b3d'
+};
+
+// onPaper=true なら和紙の面の組。false ならページの地の組（背景写真が無いときは和紙の組）。
+function saiVars(onPaper) {
+  return onPaper || !saiBackdropOn() ? SAI_VARS_ON_PAPER : SAI_VARS_ON_PHOTO;
+}
+
 // 明るい文字が白飛びした空などに溶けないよう、文字の後ろにだけ薄い影を落とす。
 const SAI_TEXT_SHADOW = '0 1px 2px rgba(0,0,0,0.6), 0 2px 10px rgba(0,0,0,0.55), 0 0 28px rgba(0,0,0,0.45)';
 
@@ -67,9 +89,12 @@ function saiShadow() {
 }
 
 // 罫線。写真の上では暗い罫が沈むので、明るい側へ入れ替える。
+// alpha は元の 16 進アルファ（'22' など）。濃さの比率はそのまま明るい側へ移す。
 function saiLine(hex, alpha) {
-  if (!saiBackdropOn()) return `${hex}${alpha || '22'}`;
-  return 'rgba(250, 246, 236, 0.38)';
+  const a = alpha || '22';
+  if (!saiBackdropOn()) return `${hex}${a}`;
+  const v = Math.min(1, parseInt(a, 16) / 255 * 2.2 + 0.12);
+  return `rgba(250, 246, 236, ${v.toFixed(2)})`;
 }
 
 // 本文が詰まったページの地。写真の上でも読めるよう和紙を濃いめに敷く。
@@ -157,5 +182,6 @@ Object.assign(window, {
   saiOnPhoto,
   saiShadow,
   saiLine,
+  saiVars,
   saiBackdropCfg
 });
