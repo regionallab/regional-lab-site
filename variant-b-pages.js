@@ -625,7 +625,7 @@ function SaiNews() {
       padding: '8px 18px',
       border: `1px solid ${saiLine(saiB.ink, 'ff')}`,
       background: active === c ? saiB.ink : 'transparent',
-      color: active === c ? saiB.paper : saiB.ink,
+      color: active === c ? saiB.paper : 'var(--sai-ink)',
       fontFamily: saiBFont.mono,
       fontSize: 11,
       letterSpacing: 2,
@@ -792,6 +792,7 @@ function SaiNewsModal({
       background: saiB.paper,
       maxWidth: 820,
       width: '100%',
+      flexShrink: 0,
       position: 'relative',
       borderTop: `5px solid ${a.catColor}`
     }

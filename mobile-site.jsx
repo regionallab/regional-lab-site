@@ -296,7 +296,7 @@ function MobileHome() {
       <div style={{ background: mPalette.aiDeep || '#13243a', padding: '56px 0', color: mPalette.paper, overflow: 'hidden' }}>
         <div style={{ padding: '0 24px', marginBottom: 28 }}>
           <h2 style={{ fontFamily: mFont.jpSerif, fontSize: 32, fontWeight: 400, margin: 0, color: mPalette.paper, letterSpacing: '0.04em' }}>
-            {window.t('歩みは続く')}<span style={{ fontFamily: mFont.enSerif, fontStyle: 'italic', color: '#c2452f', fontSize: 20 }}> ongoing.</span>
+            {window.t('歩みは続く')}<span style={{ fontFamily: mFont.enSerif, fontStyle: 'italic', color: saiOnPhoto(mPalette.akane), fontSize: 20 }}> ongoing.</span>
           </h2>
           <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 3, color: mPalette.paper, opacity: 0.7, marginTop: 8 }}>EVENTS 2024〜2026</div>
         </div>
@@ -515,7 +515,7 @@ function MobileNews() {
               padding: '8px 16px',
               border: `1px solid ${saiLine(mPalette.ink, 'ff')}`,
               background: active === c ? mPalette.ink : 'transparent',
-              color: active === c ? mPalette.paper : mPalette.ink,
+              color: active === c ? mPalette.paper : 'var(--sai-ink)',
               fontFamily: mFont.mono, fontSize: 11, letterSpacing: 2, cursor: 'pointer',
             }}>{c}</div>
           ))}
@@ -570,8 +570,11 @@ function MobileNewsModal({ article: a, onClose }) {
       background: 'rgba(20,16,10,0.6)', overflowY: 'auto',
       display: 'flex', flexDirection: 'column',
     }}>
+      {/* 縦並びの flex では既定で縮むため、本文が画面より長いと和紙の地が足りず
+          背後のページが透けてしまう。flexShrink: 0 で内容の高さまで伸ばす。 */}
       <div onClick={(e) => e.stopPropagation()} style={{
-        ...saiVars(true), color: 'var(--sai-ink)', textShadow: 'none', background: mPalette.paper, minHeight: '100%',
+        ...saiVars(true), color: 'var(--sai-ink)', textShadow: 'none',
+        background: mPalette.paper, minHeight: '100%', flexShrink: 0,
         borderTop: `5px solid ${a.catColor}`, position: 'relative',
       }}>
         <button onClick={onClose} aria-label="閉じる" style={{

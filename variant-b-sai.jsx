@@ -287,7 +287,7 @@ function SaiTimeline() {
       }}>歩</Vertical>
       <div style={{ padding: '0 56px', display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: 56, position: 'relative', zIndex: 2 }}>
         <h2 style={{ fontFamily: saiFont.jpSerif, fontSize: 56, fontWeight: 400, margin: 0, letterSpacing: '0.04em' }}>
-          {window.t('歩みは続く')}<span style={{ fontFamily: saiFont.enSerif, fontStyle: 'italic', color: saiPalette.akane, fontSize: 36 }}> ongoing.</span>
+          {window.t('歩みは続く')}<span style={{ fontFamily: saiFont.enSerif, fontStyle: 'italic', color: saiOnPhoto(saiPalette.akane), fontSize: 36 }}> ongoing.</span>
         </h2>
         <span style={{ fontFamily: saiFont.mono, fontSize: 11, letterSpacing: 3, opacity: 0.7 }}>04 / EVENTS 2024〜2026</span>
       </div>

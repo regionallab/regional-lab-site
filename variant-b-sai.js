@@ -672,7 +672,7 @@ function SaiTimeline() {
     style: {
       fontFamily: saiFont.enSerif,
       fontStyle: 'italic',
-      color: saiPalette.akane,
+      color: saiOnPhoto(saiPalette.akane),
       fontSize: 36
     }
   }, " ongoing.")), /*#__PURE__*/React.createElement("span", {

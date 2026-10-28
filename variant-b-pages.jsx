@@ -285,7 +285,7 @@ function SaiNews() {
               padding: '8px 18px',
               border: `1px solid ${saiLine(saiB.ink, 'ff')}`,
               background: active === c ? saiB.ink : 'transparent',
-              color: active === c ? saiB.paper : saiB.ink,
+              color: active === c ? saiB.paper : 'var(--sai-ink)',
               fontFamily: saiBFont.mono, fontSize: 11, letterSpacing: 2,
               cursor: 'pointer', transition: 'all 0.15s',
             }}>{c}</div>
@@ -352,7 +352,8 @@ function SaiNewsModal({ article: a, onClose }) {
       padding: '64px 24px', overflowY: 'auto',
     }}>
       <div onClick={(e) => e.stopPropagation()} style={{
-...saiVars(true), color: 'var(--sai-ink)', textShadow: 'none',         background: saiB.paper, maxWidth: 820, width: '100%',
+        ...saiVars(true), color: 'var(--sai-ink)', textShadow: 'none',
+        background: saiB.paper, maxWidth: 820, width: '100%', flexShrink: 0,
         position: 'relative', borderTop: `5px solid ${a.catColor}`,
       }}>
         <button onClick={onClose} aria-label="閉じる" style={{

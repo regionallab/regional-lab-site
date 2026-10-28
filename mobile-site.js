@@ -755,7 +755,7 @@ function MobileHome() {
     style: {
       fontFamily: mFont.enSerif,
       fontStyle: 'italic',
-      color: '#c2452f',
+      color: saiOnPhoto(mPalette.akane),
       fontSize: 20
     }
   }, " ongoing.")), /*#__PURE__*/React.createElement("div", {
@@ -1323,7 +1323,7 @@ function MobileNews() {
       padding: '8px 16px',
       border: `1px solid ${saiLine(mPalette.ink, 'ff')}`,
       background: active === c ? mPalette.ink : 'transparent',
-      color: active === c ? mPalette.paper : mPalette.ink,
+      color: active === c ? mPalette.paper : 'var(--sai-ink)',
       fontFamily: mFont.mono,
       fontSize: 11,
       letterSpacing: 2,
@@ -1475,6 +1475,7 @@ function MobileNewsModal({
       textShadow: 'none',
       background: mPalette.paper,
       minHeight: '100%',
+      flexShrink: 0,
       borderTop: `5px solid ${a.catColor}`,
       position: 'relative'
     }
