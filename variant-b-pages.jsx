@@ -35,7 +35,7 @@ function SaiPageHeader({ no, jp, en, lead }) {
       <Vertical style={{ position: 'absolute', right: 56, top: 40, fontFamily: saiBFont.jpSerif, fontSize: 220, opacity: 0.06, letterSpacing: 0 }}>
         {jp.charAt(0)}
       </Vertical>
-      <div style={{ fontFamily: saiBFont.mono, fontSize: 11, letterSpacing: 3, color: 'var(--sai-akane)' }}>— {no} / PAGE</div>
+      <div style={{ fontFamily: saiBFont.mono, fontSize: 11, letterSpacing: 3, color: 'var(--sai-akane)' }}>{no} / PAGE</div>
       <div style={{ display: 'flex', alignItems: 'baseline', gap: 24, marginTop: 16 }}>
         <h1 style={{ fontFamily: saiBFont.jpSerif, fontSize: 72, fontWeight: 400, margin: 0, color: 'var(--sai-ink)', letterSpacing: '0.04em' }}>{jp}</h1>
         <span style={{ fontFamily: saiBFont.enSerif, fontStyle: 'italic', fontSize: 36, color: 'var(--sai-ai)' }}>{en}</span>
@@ -69,7 +69,7 @@ function SaiAbout() {
           </h2>
           <div style={{ marginTop: 24 }}>
             <div style={{ width: '100%', aspectRatio: '4/5', overflow: 'hidden' }}>
-              <img src="assets/founder-logo.png" alt="Regional Lab — Minamiuonuma" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+              <img src="assets/founder-logo.png" alt="Regional Lab Minamiuonuma" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
             </div>
           </div>
         </div>
@@ -116,7 +116,7 @@ function SaiAbout() {
           <div>
             <div style={{ fontFamily: saiBFont.mono, fontSize: 10, letterSpacing: 3, color: 'var(--sai-akane)' }}>SECTION 02</div>
             <h2 style={{ fontFamily: saiBFont.jpSerif, fontSize: 44, fontWeight: 400, margin: '8px 0 0', letterSpacing: '0.04em' }}>
-              {window.t('メンバー紹介')}<span style={{ fontFamily: saiBFont.enSerif, fontStyle: 'italic', color: 'var(--sai-ai)', fontSize: 28 }}>— our four.</span>
+              {window.t('メンバー紹介')}<span style={{ fontFamily: saiBFont.enSerif, fontStyle: 'italic', color: 'var(--sai-ai)', fontSize: 28 }}> our four.</span>
             </h2>
           </div>
           <span style={{ fontFamily: saiBFont.mono, fontSize: 11, letterSpacing: 3, color: 'var(--sai-muted)' }}>04 MEMBERS</span>
@@ -172,7 +172,7 @@ function SaiCompany() {
       {/* 会社情報 */}
       <div style={{ padding: '80px 56px 0' }}>
         <div style={{ marginBottom: 32 }}>
-          <div style={{ fontFamily: saiBFont.mono, fontSize: 10, letterSpacing: 3, color: 'var(--sai-akane)' }}>SECTION 01 — BUSINESS PROFILE</div>
+          <div style={{ fontFamily: saiBFont.mono, fontSize: 10, letterSpacing: 3, color: 'var(--sai-akane)' }}>SECTION 01 / BUSINESS PROFILE</div>
           <h2 style={{ fontFamily: saiBFont.jpSerif, fontSize: 44, fontWeight: 400, margin: '8px 0 0', letterSpacing: '0.04em' }}>
             {window.t('屋号情報')}
           </h2>
@@ -223,7 +223,7 @@ function SaiCompany() {
       {/* 事業紹介 */}
       <div style={{ padding: '80px 56px' }}>
         <div style={{ marginBottom: 40 }}>
-          <div style={{ fontFamily: saiBFont.mono, fontSize: 10, letterSpacing: 3, color: 'var(--sai-akane)' }}>SECTION 02 — BUSINESS</div>
+          <div style={{ fontFamily: saiBFont.mono, fontSize: 10, letterSpacing: 3, color: 'var(--sai-akane)' }}>SECTION 02 / BUSINESS</div>
           <h2 style={{ fontFamily: saiBFont.jpSerif, fontSize: 44, fontWeight: 400, margin: '8px 0 0', letterSpacing: '0.04em' }}>
             {window.t('事業紹介')}
           </h2>
@@ -275,7 +275,7 @@ function SaiNews() {
         no="03"
         jp={window.t('お知らせ')}
         en="News"
-        lead="プロダクト、イベント、メディア掲載 ─ Regional Lab からの最新のお知らせです。"
+        lead="プロダクト、イベント、メディア掲載。Regional Lab からの最新のお知らせです。"
       />
 
       <div style={{ padding: '64px 56px' }}>

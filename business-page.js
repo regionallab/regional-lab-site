@@ -169,21 +169,10 @@ function BizGroupCard({
       lineHeight: 1.85,
       color: 'var(--sai-ink)',
       letterSpacing: '0.02em',
-      padding: '10px 0 10px 16px',
-      position: 'relative',
+      padding: '10px 0',
       borderTop: i === 0 ? 'none' : `1px solid ${saiLine(bizB.ink, '18')}`
     }
-  }, /*#__PURE__*/React.createElement("span", {
-    "aria-hidden": "true",
-    style: {
-      position: 'absolute',
-      left: 0,
-      top: '1.65em',
-      width: 6,
-      height: 1,
-      background: color
-    }
-  }), it))));
+  }, it))));
 }
 
 // ---------------------------------------------------------
@@ -304,13 +293,7 @@ function BizUnit({
       background: unit.color,
       padding: '4px 12px'
     }
-  }, sec.branch), /*#__PURE__*/React.createElement("span", {
-    style: {
-      flex: 1,
-      height: 1,
-      background: `${unit.color}44`
-    }
-  })), /*#__PURE__*/React.createElement("div", {
+  }, sec.branch)), /*#__PURE__*/React.createElement("div", {
     style: {
       display: 'grid',
       gridTemplateColumns: `repeat(${bizCols}, minmax(0, 1fr))`,
@@ -361,13 +344,7 @@ function SaiBusinessPage() {
       letterSpacing: 3,
       color: 'var(--sai-akane)'
     }
-  }, "STRUCTURE \u2014 04 SECTORS"), /*#__PURE__*/React.createElement("span", {
-    style: {
-      flex: 1,
-      height: 1,
-      background: `${saiLine(bizB.ink, '22')}`
-    }
-  })), /*#__PURE__*/React.createElement("div", {
+  }, "STRUCTURE / 04 SECTORS")), /*#__PURE__*/React.createElement("div", {
     style: {
       display: 'grid',
       gridTemplateColumns: 'repeat(4, minmax(0, 1fr))',

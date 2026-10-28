@@ -18,7 +18,7 @@ const SAI_EN = {
   'メニュー': 'Menu',
 
   // hero
-  '─ 新潟県南魚沼市を支え続ける企業へ': '─ A company that keeps supporting Minamiuonuma, Niigata',
+  '新潟県南魚沼市を支え続ける企業へ': 'A company that keeps supporting Minamiuonuma, Niigata',
   '地方の未来を、': 'Coloring the future',
   '彩る組織へ': 'of regional Japan',
   '事業を見る →': 'Our business →',
@@ -26,7 +26,7 @@ const SAI_EN = {
   '四つの事業で、地方創生を立体的に描く。': 'Four businesses, one three-dimensional approach to regional revitalization.',
 
   // mission
-  '─ 理念 / 使命 / 展望': '─ Philosophy / Mission / Vision',
+  '理念 / 使命 / 展望': 'Philosophy / Mission / Vision',
   '理念': 'Philosophy',
   '使命': 'Mission',
   '展望': 'Vision',

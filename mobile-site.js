@@ -232,7 +232,7 @@ function MobileFooter() {
       textShadow: saiShadow(),
       marginBottom: 16
     }
-  }, "\u2014\u2014 TOGETHER"), /*#__PURE__*/React.createElement("h2", {
+  }, "TOGETHER"), /*#__PURE__*/React.createElement("h2", {
     style: {
       fontFamily: mFont.jpSerif,
       fontSize: 28,
@@ -323,7 +323,7 @@ function MobilePageHeader({
       color: 'var(--sai-akane)',
       marginBottom: 14
     }
-  }, "SECTION ", no, " \u2014 ", en.toUpperCase()), /*#__PURE__*/React.createElement("h1", {
+  }, "SECTION ", no, " / ", en.toUpperCase()), /*#__PURE__*/React.createElement("h1", {
     style: {
       fontFamily: mFont.jpSerif,
       fontSize: 40,
@@ -383,7 +383,7 @@ function MobileHome() {
       textShadow: saiShadow(),
       marginBottom: 24
     }
-  }, "\u2014\u2014 ", window.t('新潟県南魚沼市を支え続ける企業へ'), " \u2014\u2014"), /*#__PURE__*/React.createElement("h1", {
+  }, window.t('新潟県南魚沼市を支え続ける企業へ')), /*#__PURE__*/React.createElement("h1", {
     style: {
       fontFamily: mFont.jpSerif,
       fontSize: 44,
@@ -451,7 +451,7 @@ function MobileHome() {
       textShadow: saiShadow(),
       marginBottom: 18
     }
-  }, "\u2014\u2014 ", window.t('─ 理念 / 使命 / 展望').replace('─ ', '')), /*#__PURE__*/React.createElement("h2", {
+  }, window.t('理念 / 使命 / 展望')), /*#__PURE__*/React.createElement("h2", {
     style: {
       fontFamily: mFont.jpSerif,
       fontSize: 30,
@@ -613,7 +613,7 @@ function MobileHome() {
       textShadow: saiShadow(),
       marginTop: 6
     }
-  }, "OUR BUSINESS \u2014 04 SECTORS")), /*#__PURE__*/React.createElement("div", {
+  }, "OUR BUSINESS / 04 SECTORS")), /*#__PURE__*/React.createElement("div", {
     style: {
       display: 'flex',
       flexDirection: 'column',
@@ -738,7 +738,7 @@ function MobileHome() {
       color: '#c2452f',
       fontSize: 20
     }
-  }, " \u2014 ongoing.")), /*#__PURE__*/React.createElement("div", {
+  }, " ongoing.")), /*#__PURE__*/React.createElement("div", {
     style: {
       fontFamily: mFont.mono,
       fontSize: 10,
@@ -747,7 +747,7 @@ function MobileHome() {
       opacity: 0.7,
       marginTop: 8
     }
-  }, "EVENTS \u2014 2024\u20132026")), /*#__PURE__*/React.createElement("div", {
+  }, "EVENTS 2024\u301C2026")), /*#__PURE__*/React.createElement("div", {
     style: {
       overflow: 'hidden',
       width: '100%'
@@ -879,7 +879,7 @@ function MobileAbout() {
       color: 'var(--sai-akane)',
       marginBottom: 14
     }
-  }, "SECTION 01 \u2014 PURPOSE"), /*#__PURE__*/React.createElement("div", {
+  }, "SECTION 01 / PURPOSE"), /*#__PURE__*/React.createElement("div", {
     style: {
       ...saiVars(true),
       color: 'var(--sai-ink)',
@@ -984,7 +984,7 @@ function MobileAbout() {
       color: 'var(--sai-akane)',
       marginBottom: 18
     }
-  }, "SECTION 02 \u2014 MEMBERS"), /*#__PURE__*/React.createElement("div", {
+  }, "SECTION 02 / MEMBERS"), /*#__PURE__*/React.createElement("div", {
     style: {
       display: 'flex',
       flexDirection: 'column',
@@ -1086,7 +1086,7 @@ function MobileCompany() {
       color: 'var(--sai-akane)',
       marginBottom: 14
     }
-  }, "SECTION 01 \u2014 BUSINESS"), /*#__PURE__*/React.createElement("h2", {
+  }, "SECTION 01 / BUSINESS"), /*#__PURE__*/React.createElement("h2", {
     style: {
       fontFamily: mFont.jpSerif,
       fontSize: 28,
@@ -1147,7 +1147,7 @@ function MobileCompany() {
       color: 'var(--sai-akane)',
       marginBottom: 14
     }
-  }, "SECTION 02 \u2014 BUSINESS PROFILE"), /*#__PURE__*/React.createElement("h2", {
+  }, "SECTION 02 / BUSINESS PROFILE"), /*#__PURE__*/React.createElement("h2", {
     style: {
       fontFamily: mFont.jpSerif,
       fontSize: 28,
@@ -1826,7 +1826,7 @@ function MobileContact() {
   }, [{
     tag: 'PHONE',
     jp: 'お電話でのご連絡',
-    lines: ['FAX : 03-5391-6870', '携帯 : 080-9541-6870', '受付 : 平日 9:00 – 18:00'],
+    lines: ['FAX : 03-5391-6870', '携帯 : 080-9541-6870', '受付 : 平日 9:00〜18:00'],
     color: 'var(--sai-akane)'
   }, {
     tag: 'OFFICE',
@@ -1893,7 +1893,7 @@ function MobileContact() {
       letterSpacing: 3,
       color: 'var(--sai-akane)'
     }
-  }, "\u2014\u2014 INQUIRY FORM"), /*#__PURE__*/React.createElement("h3", {
+  }, "INQUIRY FORM"), /*#__PURE__*/React.createElement("h3", {
     style: {
       fontFamily: mFont.jpSerif,
       fontSize: 20,
@@ -2124,21 +2124,10 @@ function MobileBizGroup({
       fontSize: 13,
       lineHeight: 1.8,
       color: 'var(--sai-ink)',
-      padding: '9px 0 9px 15px',
-      position: 'relative',
+      padding: '9px 0',
       borderTop: i === 0 ? 'none' : `1px solid ${saiLine(mPalette.ink, '18')}`
     }
-  }, /*#__PURE__*/React.createElement("span", {
-    "aria-hidden": "true",
-    style: {
-      position: 'absolute',
-      left: 0,
-      top: '1.6em',
-      width: 6,
-      height: 1,
-      background: color
-    }
-  }), it))));
+  }, it))));
 }
 function MobileBusiness() {
   const t = window.siteData.businessTree;
@@ -2172,13 +2161,7 @@ function MobileBusiness() {
       letterSpacing: 3,
       color: 'var(--sai-akane)'
     }
-  }, "STRUCTURE \u2014 04 SECTORS"), /*#__PURE__*/React.createElement("span", {
-    style: {
-      flex: 1,
-      height: 1,
-      background: `${saiLine(mPalette.ink, '22')}`
-    }
-  })), /*#__PURE__*/React.createElement("div", {
+  }, "STRUCTURE / 04 SECTORS")), /*#__PURE__*/React.createElement("div", {
     style: {
       display: 'grid',
       gridTemplateColumns: 'repeat(2, minmax(0, 1fr))',
@@ -2343,13 +2326,7 @@ function MobileBusiness() {
         background: u.color,
         padding: '3px 10px'
       }
-    }, sec.branch), /*#__PURE__*/React.createElement("span", {
-      style: {
-        flex: 1,
-        height: 1,
-        background: `${u.color}44`
-      }
-    })), /*#__PURE__*/React.createElement("div", {
+    }, sec.branch)), /*#__PURE__*/React.createElement("div", {
       style: {
         display: 'flex',
         flexDirection: 'column',

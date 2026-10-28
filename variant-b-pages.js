@@ -58,7 +58,7 @@ function SaiPageHeader({
       letterSpacing: 3,
       color: 'var(--sai-akane)'
     }
-  }, "\u2014 ", no, " / PAGE"), /*#__PURE__*/React.createElement("div", {
+  }, no, " / PAGE"), /*#__PURE__*/React.createElement("div", {
     style: {
       display: 'flex',
       alignItems: 'baseline',
@@ -146,7 +146,7 @@ function SaiAbout() {
     }
   }, /*#__PURE__*/React.createElement("img", {
     src: "assets/founder-logo.png",
-    alt: "Regional Lab \u2014 Minamiuonuma",
+    alt: "Regional Lab Minamiuonuma",
     style: {
       width: '100%',
       height: '100%',
@@ -280,7 +280,7 @@ function SaiAbout() {
       color: 'var(--sai-ai)',
       fontSize: 28
     }
-  }, "\u2014 our four."))), /*#__PURE__*/React.createElement("span", {
+  }, " our four."))), /*#__PURE__*/React.createElement("span", {
     style: {
       fontFamily: saiBFont.mono,
       fontSize: 11,
@@ -404,7 +404,7 @@ function SaiCompany() {
       letterSpacing: 3,
       color: 'var(--sai-akane)'
     }
-  }, "SECTION 01 \u2014 BUSINESS PROFILE"), /*#__PURE__*/React.createElement("h2", {
+  }, "SECTION 01 / BUSINESS PROFILE"), /*#__PURE__*/React.createElement("h2", {
     style: {
       fontFamily: saiBFont.jpSerif,
       fontSize: 44,
@@ -495,7 +495,7 @@ function SaiCompany() {
       letterSpacing: 3,
       color: 'var(--sai-akane)'
     }
-  }, "SECTION 02 \u2014 BUSINESS"), /*#__PURE__*/React.createElement("h2", {
+  }, "SECTION 02 / BUSINESS"), /*#__PURE__*/React.createElement("h2", {
     style: {
       fontFamily: saiBFont.jpSerif,
       fontSize: 44,
@@ -607,7 +607,7 @@ function SaiNews() {
     no: "03",
     jp: window.t('お知らせ'),
     en: "News",
-    lead: "\u30D7\u30ED\u30C0\u30AF\u30C8\u3001\u30A4\u30D9\u30F3\u30C8\u3001\u30E1\u30C7\u30A3\u30A2\u63B2\u8F09 \u2500 Regional Lab \u304B\u3089\u306E\u6700\u65B0\u306E\u304A\u77E5\u3089\u305B\u3067\u3059\u3002"
+    lead: "\u30D7\u30ED\u30C0\u30AF\u30C8\u3001\u30A4\u30D9\u30F3\u30C8\u3001\u30E1\u30C7\u30A3\u30A2\u63B2\u8F09\u3002Regional Lab \u304B\u3089\u306E\u6700\u65B0\u306E\u304A\u77E5\u3089\u305B\u3067\u3059\u3002"
   }), /*#__PURE__*/React.createElement("div", {
     style: {
       padding: '64px 56px'

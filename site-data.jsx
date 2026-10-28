@@ -55,7 +55,7 @@ window.siteDataJa = {
       ['日本の', '礎', 'akane', 'として、'],
       ['地方の', '未来', 'ai', 'を彩る。'],
     ],
-    body: '私たちは、新潟県南魚沼市に本社を置き、魚沼エリア（南魚沼市・湯沢町）／宮城エリア／東京エリアで実装する地方創生商社です。イベント、コミュニティ、アパレル、DX&AX — 四つの事業で、地方創生を立体的に描きます。',
+    body: '私たちは、新潟県南魚沼市に本社を置き、魚沼エリア（南魚沼市・湯沢町）／宮城エリア／東京エリアで実装する地方創生商社です。イベント、コミュニティ、アパレル、DX&AX。四つの事業で、地方創生を立体的に描きます。',
   },
 
   // ----- CONSULTING キャッチコピー (Home) -----
@@ -75,7 +75,7 @@ window.siteDataJa = {
     },
     {
       tag: 'Re.Lab', jp: 'コミュニティ事業', en: 'Community / Coaching',
-      body: ['招待制・審査制のコミュニティで、', 'ビジネス知識、企業研究、社長1on1、コーチング等提供。', '卒業後、必ず何者かになっている', '— そんな未来を確約します。'],
+      body: ['招待制・審査制のコミュニティで、', 'ビジネス知識、企業研究、社長1on1、コーチング等提供。', '卒業後、必ず何者かになっている。', 'そんな未来を確約します。'],
       accent: SITE_COLORS.ai, key: '何者かになる', img: 'assets/re-lab.jpg',
     },
     {
@@ -128,8 +128,8 @@ window.siteDataJa = {
     members: [
       { role: '代表', jp: '木寺 蒼真', en: 'Kidera Soma', bio: ['南魚沼に出会い、地方創生に身を投じる。', '観光客から地域課題と向き合い、日本の未来や地方の魅力を', '残していくべく、Regional Lab を創業。'], img: 'assets/member-kidera.jpg' },
       { role: '副代表', jp: '中原 光輝', en: 'Nakahara Koki', bio: ['My Vision Lab 代表。', 'コミュニティ事業を統括し、ToC・ToB 両輪で', '会員の人生設計に伴走する。'], img: 'assets/member-nakahara.jpg' },
-      { role: '事業統括責任者 ─ Re.Event', jp: '峯 奏音', en: 'Mine Kanato', bio: ['HopeCreater 代表、CRENECTION 代表。', 'Events / Event Lab / Consulting を統括し、', 'イベント事業の設計と運営を率いる。'], img: 'assets/member-mine.jpg' },
-      { role: '事業統括責任者 ─ Regional.', jp: '渡邉 輝', en: 'Watanabe Akira', bio: ['Global Canvas Japan 代表。', 'アパレル事業を統括し、日本市場と海外市場（店舗・EC）へ', '伝統工芸品を届ける。'], img: 'assets/member-watanabe.jpg' },
+      { role: '事業統括責任者 / Re.Event', jp: '峯 奏音', en: 'Mine Kanato', bio: ['HopeCreater 代表、CRENECTION 代表。', 'Events / Event Lab / Consulting を統括し、', 'イベント事業の設計と運営を率いる。'], img: 'assets/member-mine.jpg' },
+      { role: '事業統括責任者 / Regional.', jp: '渡邉 輝', en: 'Watanabe Akira', bio: ['Global Canvas Japan 代表。', 'アパレル事業を統括し、日本市場と海外市場（店舗・EC）へ', '伝統工芸品を届ける。'], img: 'assets/member-watanabe.jpg' },
     ],
   },
 
@@ -155,7 +155,7 @@ window.siteDataJa = {
   // ----- BUSINESS OVERVIEW (事業概要ページ / 組織図) -----
   businessTree: {
     lead: '木の根のように広がる事業構造。四つの事業が独立しながら、人と資金の循環をなしています。',
-    footer: '活動エリア：魚沼（南魚沼市・湯沢町）／宮城／東京　─　今後、ご縁のある各地方地域へ拡大',
+    footer: '活動エリア：魚沼（南魚沼市・湯沢町）／宮城／東京。今後、ご縁のある各地方地域へ拡大',
     tagline: '地域・人・未来をつなぎ、それぞれに価値を見出す',
     units: [
       {
@@ -195,12 +195,12 @@ window.siteDataJa = {
 
   // ----- NEWS -----
   news: {
-    lead: 'プロダクト、イベント、メディア掲載 ─ Regional Lab からの最新のお知らせです。',
+    lead: 'プロダクト、イベント、メディア掲載。Regional Lab からの最新のお知らせです。',
     articles: [
       {
         no: '01', date: '2026.10.27', cat: 'EVENT', catColor: SITE_COLORS.ai,
         title: '2027年4月、六日町松下村塾を南魚沼市六日町駅前にて開塾。',
-        lead: '「君は何を成すためにこの世に生を受けたのか。」── この地から、日本の礎を築く人材を。',
+        lead: '「君は何を成すためにこの世に生を受けたのか。」この地から、日本の礎を築く人材を。',
         body: [
           'この度、新潟県南魚沼市の中心地である六日町にて、松下村塾を立ち上げます。',
           '幕末のあの時代に、山口県の小さな村の小さな塾から日本の未来を変えた偉人を次々と輩出した「松下村塾」。',
@@ -236,7 +236,7 @@ window.siteDataJa = {
         no: '04', date: '2026.05.10', cat: 'PRODUCT', catColor: SITE_COLORS.akane,
         title: 'Re.Event「Event Lab」リリースのお知らせ',
         lead: 'イベント主催者の集客課題を解決する、質と集客力を両立した次世代プラットフォームが誕生。',
-        body: 'Event Lab は、イベント開催における集客のお悩みを解決する集客プラットフォームです。質の高いイベント情報の閲覧、質の高い学生との接点、(株)遊然様提供のマーケティング商材の学習機会、そして集客を確約するサービスまで ─ イベントに特化した魅力ある場をご用意しました。',
+        body: 'Event Lab は、イベント開催における集客のお悩みを解決する集客プラットフォームです。質の高いイベント情報の閲覧、質の高い学生との接点、(株)遊然様提供のマーケティング商材の学習機会、そして集客を確約するサービスまで。イベントに特化した魅力ある場をご用意しました。',
         img: 'assets/news-event-lab.jpg',
       },
       {
@@ -250,7 +250,7 @@ window.siteDataJa = {
         no: '06', date: '2026.04.15', cat: 'EVENT', catColor: SITE_COLORS.akane,
         title: '第2回 地方産品大忘年会、今年も年末に開催決定',
         lead: '日本各地の特産品を持ち寄り、垣根を超えた交流の場を、今年も東京にて。',
-        body: '昨年好評をいただいた地方産品大忘年会、第2回も2026年末に開催いたします。学生、社会人、社長 ─ 立場の異なる方々が地方の魅力を味わいながら交わる、特別な一夜を演出します。',
+        body: '昨年好評をいただいた地方産品大忘年会、第2回も2026年末に開催いたします。学生、社会人、社長と、立場の異なる方々が地方の魅力を味わいながら交わる、特別な一夜を演出します。',
         img: 'assets/news-bonenkai2.jpg',
       },
     ],

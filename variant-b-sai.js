@@ -191,7 +191,7 @@ function SaiHero() {
       letterSpacing: '0.18em',
       marginBottom: 20
     }
-  }, window.t('─ 新潟県南魚沼市を支え続ける企業へ')), /*#__PURE__*/React.createElement("div", {
+  }, window.t('新潟県南魚沼市を支え続ける企業へ')), /*#__PURE__*/React.createElement("div", {
     style: {
       fontFamily: saiFont.enSerif,
       fontSize: 68,
@@ -222,7 +222,7 @@ function SaiHero() {
       whiteSpace: 'nowrap',
       marginTop: 24
     }
-  }, "\u2500 \u65B0\u6F5F\u770C\u5357\u9B5A\u6CBC\u5E02\u3092\u652F\u3048\u7D9A\u3051\u308B\u4F01\u696D\u3078 \u2500"), /*#__PURE__*/React.createElement(Vertical, {
+  }, "\u65B0\u6F5F\u770C\u5357\u9B5A\u6CBC\u5E02\u3092\u652F\u3048\u7D9A\u3051\u308B\u4F01\u696D\u3078"), /*#__PURE__*/React.createElement(Vertical, {
     style: {
       fontFamily: saiFont.jpSerif,
       fontSize: 84,
@@ -270,7 +270,7 @@ function SaiHero() {
       color: saiPalette.akane,
       marginBottom: 8
     }
-  }, "\u2014\u2014 EST. 2024.10.09"), /*#__PURE__*/React.createElement("p", {
+  }, "EST. 2024.10.09"), /*#__PURE__*/React.createElement("p", {
     style: {
       fontFamily: saiFont.jpSerif,
       fontSize: 14,
@@ -341,7 +341,7 @@ function SaiMission() {
       color: saiOnPhoto(saiPalette.ai),
       textShadow: saiShadow()
     }
-  }, window.t('─ 理念 / 使命 / 展望'))), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+  }, window.t('理念 / 使命 / 展望'))), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
     style: {
       display: 'grid',
       gridTemplateColumns: '1fr 1fr 1fr',
@@ -448,7 +448,7 @@ function SaiBusiness() {
       color: saiOnPhoto(saiPalette.muted),
       textShadow: saiShadow()
     }
-  }, "OUR BUSINESS \u2014 04 SECTORS")), /*#__PURE__*/React.createElement("div", {
+  }, "OUR BUSINESS / 04 SECTORS")), /*#__PURE__*/React.createElement("div", {
     style: {
       display: 'grid',
       gridTemplateColumns: 'repeat(4, minmax(0, 1fr))',
@@ -580,13 +580,7 @@ function SaiConsulting() {
       textShadow: saiShadow(),
       whiteSpace: 'nowrap'
     }
-  }, c.eyebrow, " \u2014 ", c.scope), /*#__PURE__*/React.createElement("span", {
-    style: {
-      flex: 1,
-      height: 1,
-      background: saiLine(saiPalette.ink, '22')
-    }
-  })), /*#__PURE__*/React.createElement("h2", {
+  }, c.eyebrow, "\u3000", c.scope)), /*#__PURE__*/React.createElement("h2", {
     style: {
       fontFamily: saiFont.jpSerif,
       fontSize: 'clamp(38px, 4.2vw, 58px)',
@@ -658,14 +652,14 @@ function SaiTimeline() {
       color: saiPalette.akane,
       fontSize: 36
     }
-  }, "\u2014 ongoing.")), /*#__PURE__*/React.createElement("span", {
+  }, " ongoing.")), /*#__PURE__*/React.createElement("span", {
     style: {
       fontFamily: saiFont.mono,
       fontSize: 11,
       letterSpacing: 3,
       opacity: 0.7
     }
-  }, "04 / EVENTS \u2014 2024\u20132026")), /*#__PURE__*/React.createElement("div", {
+  }, "04 / EVENTS 2024\u301C2026")), /*#__PURE__*/React.createElement("div", {
     style: {
       overflow: 'hidden',
       width: '100%'
@@ -782,7 +776,7 @@ function SaiCTA() {
       textShadow: saiShadow(),
       marginBottom: 20
     }
-  }, "\u2014\u2014 TOGETHER"), /*#__PURE__*/React.createElement("h2", {
+  }, "TOGETHER"), /*#__PURE__*/React.createElement("h2", {
     style: {
       fontFamily: saiFont.jpSerif,
       fontSize: 'clamp(36px, 4.6vw, 60px)',
@@ -846,7 +840,7 @@ function SaiCTA() {
       textShadow: saiShadow(),
       letterSpacing: 1
     }
-  }, "\u2014 ", window.t(s))))))), /*#__PURE__*/React.createElement("div", {
+  }, window.t(s))))))), /*#__PURE__*/React.createElement("div", {
     style: {
       marginTop: 64,
       paddingTop: 24,

@@ -34,7 +34,7 @@ function SaiContactHeader() {
       color: 'var(--sai-akane)',
       marginBottom: 18
     }
-  }, "SECTION 05 \u2014 CONTACT"), /*#__PURE__*/React.createElement("div", {
+  }, "SECTION 05 / CONTACT"), /*#__PURE__*/React.createElement("div", {
     style: {
       display: 'flex',
       alignItems: 'flex-end',
@@ -206,7 +206,7 @@ function SaiContactForm() {
       letterSpacing: 3,
       color: 'var(--sai-akane)'
     }
-  }, "\u2014\u2014 INQUIRY FORM"), /*#__PURE__*/React.createElement("h3", {
+  }, "INQUIRY FORM"), /*#__PURE__*/React.createElement("h3", {
     style: {
       fontFamily: saiCFont.jpSerif,
       fontSize: 26,
@@ -419,7 +419,7 @@ function SaiContact() {
     jp: window.t('お電話でのご連絡'),
     en: "Phone Inquiry",
     color: saiC.akane,
-    lines: ['FAX : 03-5391-6870', '携帯 : 080-9541-6870', '受付時間 : 平日 9:00 – 18:00']
+    lines: ['FAX : 03-5391-6870', '携帯 : 080-9541-6870', '受付時間 : 平日 9:00〜18:00']
   }), /*#__PURE__*/React.createElement(ContactCard, {
     tag: "OFFICE",
     jp: window.t('本社所在地'),

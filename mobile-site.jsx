@@ -121,7 +121,7 @@ function MobileFooter() {
   return (
     <div style={{ background: saiVeil(mPalette.paper), padding: '64px 24px 32px' }}>
       <div style={{ textAlign: 'center', marginBottom: 48 }}>
-        <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 3, color: saiOnPhoto(mPalette.akane), textShadow: saiShadow(), marginBottom: 16 }}>—— TOGETHER</div>
+        <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 3, color: saiOnPhoto(mPalette.akane), textShadow: saiShadow(), marginBottom: 16 }}>TOGETHER</div>
         <h2 style={{ fontFamily: mFont.jpSerif, fontSize: 28, fontWeight: 400, margin: 0, color: saiOnPhoto(mPalette.ink), textShadow: saiShadow(), letterSpacing: '0.04em', lineHeight: 1.5 }}>
           {window.t('その地に、もう一度、')}<br /><span style={{ color: saiOnPhoto(mPalette.ai) }}>{window.t('光を。')}</span>
         </h2>
@@ -155,7 +155,7 @@ function MobileFooter() {
 function MobilePageHeader({ no, jp, en, lead }) {
   return (
     <div style={{ background: saiVeil(mPalette.paperDeep), padding: '48px 24px 40px', borderBottom: `1px solid ${saiLine(mPalette.ink, '22')}` }}>
-      <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 3, color: 'var(--sai-akane)', marginBottom: 14 }}>SECTION {no} — {en.toUpperCase()}</div>
+      <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 3, color: 'var(--sai-akane)', marginBottom: 14 }}>SECTION {no} / {en.toUpperCase()}</div>
       <h1 style={{ fontFamily: mFont.jpSerif, fontSize: 40, fontWeight: 500, margin: 0, color: 'var(--sai-ink)', letterSpacing: '0.05em', lineHeight: 1.2 }}>{jp}</h1>
       <div style={{ fontFamily: mFont.enSerif, fontStyle: 'italic', fontSize: 20, color: 'var(--sai-muted)', marginTop: 8 }}>{en}</div>
       {lead && <p style={{ marginTop: 20, fontFamily: mFont.jpSerif, fontSize: 14, color: 'var(--sai-ink)', lineHeight: 2, margin: '20px 0 0' }}>{lead}</p>}
@@ -178,7 +178,7 @@ function MobileHome() {
     <div style={{ ...saiVars(false), background: saiBackdropOn() ? 'transparent' : mPalette.paper }}>
       {/* HERO */}
       <div style={{ padding: '40px 24px 56px', background: `linear-gradient(180deg, ${saiVeil(mPalette.paper)} 0%, ${saiVeil(mPalette.paperDeep)} 100%)`, position: 'relative' }}>
-        <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 3, color: saiOnPhoto(mPalette.akane), textShadow: saiShadow(), marginBottom: 24 }}>—— {window.t('新潟県南魚沼市を支え続ける企業へ')} ——</div>
+        <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 3, color: saiOnPhoto(mPalette.akane), textShadow: saiShadow(), marginBottom: 24 }}>{window.t('新潟県南魚沼市を支え続ける企業へ')}</div>
         <h1 style={{ fontFamily: mFont.jpSerif, fontSize: 44, fontWeight: 500, margin: 0, color: saiOnPhoto(mPalette.ink), textShadow: saiShadow(), letterSpacing: '0.04em', lineHeight: 1.3 }}>
           <span style={{ display: 'block', whiteSpace: window.saiLang === 'en' ? 'normal' : 'nowrap' }}>{window.t('地方の未来を、')}</span>
           <span style={{ display: 'block', whiteSpace: window.saiLang === 'en' ? 'normal' : 'nowrap' }}>{window.t('彩る組織へ')}</span>
@@ -199,7 +199,7 @@ function MobileHome() {
 
       {/* MISSION — 理念 / 使命 / 展望 */}
       <div style={{ background: saiVeil(mPalette.paperDeep), padding: '64px 24px' }}>
-        <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 3, color: saiOnPhoto(mPalette.akane), textShadow: saiShadow(), marginBottom: 18 }}>—— {window.t('─ 理念 / 使命 / 展望').replace('─ ', '')}</div>
+        <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 3, color: saiOnPhoto(mPalette.akane), textShadow: saiShadow(), marginBottom: 18 }}>{window.t('理念 / 使命 / 展望')}</div>
         <h2 style={{ fontFamily: mFont.jpSerif, fontSize: 30, fontWeight: 400, color: saiOnPhoto(mPalette.ink), textShadow: saiShadow(), letterSpacing: '0.04em', lineHeight: 1.5, margin: 0 }}>
           {window.siteData.mission.heading.map((h, i) => (
             <React.Fragment key={i}>
@@ -248,7 +248,7 @@ function MobileHome() {
           <h2 style={{ fontFamily: mFont.jpSerif, fontSize: 40, fontWeight: 400, margin: 0, color: saiOnPhoto(mPalette.ink), textShadow: saiShadow(), letterSpacing: '0.04em' }}>
             {window.t('四つの')}<span style={{ color: saiOnPhoto(mPalette.akane) }}>{window.t('柱')}</span>
           </h2>
-          <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 3, color: saiOnPhoto(mPalette.muted), textShadow: saiShadow(), marginTop: 6 }}>OUR BUSINESS — 04 SECTORS</div>
+          <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 3, color: saiOnPhoto(mPalette.muted), textShadow: saiShadow(), marginTop: 6 }}>OUR BUSINESS / 04 SECTORS</div>
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 36 }}>
           {business.map((s, i) => (
@@ -287,9 +287,9 @@ function MobileHome() {
       <div style={{ background: mPalette.aiDeep || '#13243a', padding: '56px 0', color: mPalette.paper, overflow: 'hidden' }}>
         <div style={{ padding: '0 24px', marginBottom: 28 }}>
           <h2 style={{ fontFamily: mFont.jpSerif, fontSize: 32, fontWeight: 400, margin: 0, color: mPalette.paper, letterSpacing: '0.04em' }}>
-            {window.t('歩みは続く')}<span style={{ fontFamily: mFont.enSerif, fontStyle: 'italic', color: '#c2452f', fontSize: 20 }}> — ongoing.</span>
+            {window.t('歩みは続く')}<span style={{ fontFamily: mFont.enSerif, fontStyle: 'italic', color: '#c2452f', fontSize: 20 }}> ongoing.</span>
           </h2>
-          <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 3, color: mPalette.paper, opacity: 0.7, marginTop: 8 }}>EVENTS — 2024–2026</div>
+          <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 3, color: mPalette.paper, opacity: 0.7, marginTop: 8 }}>EVENTS 2024〜2026</div>
         </div>
         <div style={{ overflow: 'hidden', width: '100%' }}>
           <div className="m-marquee" style={{ display: 'flex', gap: 14, width: 'max-content', paddingLeft: 14 }}>
@@ -351,7 +351,7 @@ function MobileAbout() {
       <div style={{ padding: '48px 24px' }}>
         {/* 目的 */}
         <div style={{ marginBottom: 32 }}>
-          <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 3, color: 'var(--sai-akane)', marginBottom: 14 }}>SECTION 01 — PURPOSE</div>
+          <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 3, color: 'var(--sai-akane)', marginBottom: 14 }}>SECTION 01 / PURPOSE</div>
           <div style={{ ...saiVars(true), color: 'var(--sai-ink)', textShadow: 'none', background: mPalette.paperDeep, padding: 22, borderLeft: `4px solid ${mPalette.akane}` }}>
             <h2 style={{ fontFamily: mFont.jpSerif, fontSize: 22, fontWeight: 500, margin: '0 0 16px', color: 'var(--sai-ink)', letterSpacing: '0.04em', lineHeight: 1.6 }}>
               {about.purpose.heading}
@@ -389,7 +389,7 @@ function MobileAbout() {
 
         {/* メンバー */}
         <div>
-          <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 3, color: 'var(--sai-akane)', marginBottom: 18 }}>SECTION 02 — MEMBERS</div>
+          <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 3, color: 'var(--sai-akane)', marginBottom: 18 }}>SECTION 02 / MEMBERS</div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
             {members.map((m, i) => (
               <div key={m.jp} style={{ ...saiVars(true), color: 'var(--sai-ink)', textShadow: 'none', background: mPalette.paperDeep, padding: 22 }}>
@@ -430,7 +430,7 @@ function MobileCompany() {
       <MobilePageHeader no="02" jp={window.t('屋号概要')} en="Profile" lead={window.siteData.company.lead} />
       <div style={{ padding: '48px 24px' }}>
         <div style={{ marginBottom: 40 }}>
-          <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 3, color: 'var(--sai-akane)', marginBottom: 14 }}>SECTION 01 — BUSINESS</div>
+          <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 3, color: 'var(--sai-akane)', marginBottom: 14 }}>SECTION 01 / BUSINESS</div>
           <h2 style={{ fontFamily: mFont.jpSerif, fontSize: 28, margin: '0 0 24px', color: 'var(--sai-ink)', letterSpacing: '0.04em', fontWeight: 500 }}>{window.t('事業紹介')}</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
             {services.map(s => (
@@ -444,7 +444,7 @@ function MobileCompany() {
         </div>
 
         <div style={{ marginBottom: 40 }}>
-          <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 3, color: 'var(--sai-akane)', marginBottom: 14 }}>SECTION 02 — BUSINESS PROFILE</div>
+          <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 3, color: 'var(--sai-akane)', marginBottom: 14 }}>SECTION 02 / BUSINESS PROFILE</div>
           <h2 style={{ fontFamily: mFont.jpSerif, fontSize: 28, margin: '0 0 24px', color: 'var(--sai-ink)', letterSpacing: '0.04em', fontWeight: 500 }}>{window.t('屋号情報')}</h2>
           <div style={{ ...saiVars(true), color: 'var(--sai-ink)', textShadow: 'none', background: mPalette.paperDeep, padding: 22, display: 'flex', flexDirection: 'column', gap: 14 }}>
             {info.map(([k, v]) => (
@@ -707,7 +707,7 @@ function MobileContact() {
         {/* Contact cards */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: 14, marginBottom: 32 }}>
           {[
-            { tag: 'PHONE', jp: 'お電話でのご連絡', lines: ['FAX : 03-5391-6870', '携帯 : 080-9541-6870', '受付 : 平日 9:00 – 18:00'], color: 'var(--sai-akane)' },
+            { tag: 'PHONE', jp: 'お電話でのご連絡', lines: ['FAX : 03-5391-6870', '携帯 : 080-9541-6870', '受付 : 平日 9:00〜18:00'], color: 'var(--sai-akane)' },
             { tag: 'OFFICE', jp: '本社所在地', lines: ['〒949-7302', '新潟県南魚沼市浦佐 2476'], color: 'var(--sai-koke)' },
           ].map(c => (
             <div key={c.tag} style={{ ...saiVars(true), color: 'var(--sai-ink)', textShadow: 'none', background: mPalette.paperDeep, padding: 20, borderTop: `2px solid ${c.color}` }}>
@@ -725,7 +725,7 @@ function MobileContact() {
         {/* Form */}
         <form onSubmit={handleSubmit} style={{ ...saiVars(true), color: 'var(--sai-ink)', textShadow: 'none', background: mPalette.paperDeep, padding: 22, display: 'flex', flexDirection: 'column', gap: 18, borderTop: `2px solid ${mPalette.ai}` }}>
           <div>
-            <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 3, color: 'var(--sai-akane)' }}>—— INQUIRY FORM</div>
+            <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 3, color: 'var(--sai-akane)' }}>INQUIRY FORM</div>
             <h3 style={{ fontFamily: mFont.jpSerif, fontSize: 20, margin: '6px 0 0', color: 'var(--sai-ink)', letterSpacing: '0.04em' }}>{window.t('お問い合わせフォーム')}</h3>
           </div>
 
@@ -817,10 +817,9 @@ function MobileBizGroup({ group, color, n }) {
         {group.items.map((it, i) => (
           <li key={it} style={{
             fontFamily: mFont.jpSerif, fontSize: 13, lineHeight: 1.8, color: 'var(--sai-ink)',
-            padding: '9px 0 9px 15px', position: 'relative',
+            padding: '9px 0',
             borderTop: i === 0 ? 'none' : `1px solid ${saiLine(mPalette.ink, '18')}`,
           }}>
-            <span aria-hidden="true" style={{ position: 'absolute', left: 0, top: '1.6em', width: 6, height: 1, background: color }} />
             {it}
           </li>
         ))}
@@ -837,8 +836,7 @@ function MobileBusiness() {
 
       <div style={{ padding: '32px 24px 0' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 14 }}>
-          <span style={{ fontFamily: mFont.mono, fontSize: 9.5, letterSpacing: 3, color: 'var(--sai-akane)' }}>STRUCTURE — 04 SECTORS</span>
-          <span style={{ flex: 1, height: 1, background: `${saiLine(mPalette.ink, '22')}` }} />
+          <span style={{ fontFamily: mFont.mono, fontSize: 9.5, letterSpacing: 3, color: 'var(--sai-akane)' }}>STRUCTURE / 04 SECTORS</span>
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: 10 }}>
           {t.units.map((u, i) => (
@@ -897,7 +895,6 @@ function MobileBusiness() {
                     {sec.branch && !(sec.groups.length === 1 && sec.groups[0].name === sec.branch) && (
                       <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 10 }}>
                         <span style={{ fontFamily: mFont.mono, fontSize: 9.5, letterSpacing: 2.5, color: mPalette.paper, background: u.color, padding: '3px 10px' }}>{sec.branch}</span>
-                        <span style={{ flex: 1, height: 1, background: `${u.color}44` }} />
                       </div>
                     )}
                     <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
