@@ -16,6 +16,8 @@ const SAI_EN = {
   'パートナー': 'Partners',
   'ホーム': 'Home',
   'メニュー': 'Menu',
+  'すべて': 'All',
+  'パートナーを見る →': 'View partner →',
 
   // hero
   '新潟県南魚沼市を支え続ける企業へ': 'A company that keeps supporting Minamiuonuma, Niigata',

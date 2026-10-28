@@ -79,13 +79,6 @@ function BizIndexCard({
     }
   }, /*#__PURE__*/React.createElement("span", {
     style: {
-      fontFamily: bizFont.mono,
-      fontSize: 10,
-      letterSpacing: 3,
-      color: unit.color
-    }
-  }, bizPad(index + 1), " / 04"), /*#__PURE__*/React.createElement("span", {
-    style: {
       fontFamily: bizFont.jpAlt,
       fontSize: 26,
       color: unit.color,
@@ -139,13 +132,6 @@ function BizGroupCard({
       gap: 10
     }
   }, /*#__PURE__*/React.createElement("span", {
-    style: {
-      fontFamily: bizFont.mono,
-      fontSize: 10,
-      letterSpacing: 2,
-      opacity: 0.75
-    }
-  }, bizPad(n)), /*#__PURE__*/React.createElement("span", {
     style: {
       fontFamily: bizFont.jpSerif,
       fontSize: 16,
@@ -201,21 +187,7 @@ function BizUnit({
       position: 'relative',
       overflow: 'hidden'
     }
-  }, /*#__PURE__*/React.createElement("span", {
-    "aria-hidden": "true",
-    style: {
-      position: 'absolute',
-      right: 28,
-      top: 6,
-      fontFamily: bizFont.mono,
-      fontSize: 108,
-      fontWeight: 500,
-      color: unit.color,
-      opacity: 0.05,
-      letterSpacing: -4,
-      lineHeight: 1
-    }
-  }, bizPad(index + 1)), /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", {
     style: {
       display: 'grid',
       gridTemplateColumns: '1fr 1fr',
@@ -225,17 +197,9 @@ function BizUnit({
     }
   }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
     style: {
-      fontFamily: bizFont.mono,
-      fontSize: 10,
-      letterSpacing: 3,
-      color: unit.color
-    }
-  }, bizPad(index + 1), " / 04"), /*#__PURE__*/React.createElement("div", {
-    style: {
       display: 'flex',
       alignItems: 'baseline',
-      gap: 18,
-      marginTop: 8
+      gap: 18
     }
   }, /*#__PURE__*/React.createElement("span", {
     style: {
@@ -333,20 +297,6 @@ function SaiBusinessPage() {
       padding: '64px 56px 0'
     }
   }, /*#__PURE__*/React.createElement("div", {
-    style: {
-      display: 'flex',
-      alignItems: 'center',
-      gap: 16,
-      marginBottom: 20
-    }
-  }, /*#__PURE__*/React.createElement("span", {
-    style: {
-      fontFamily: bizFont.mono,
-      fontSize: 10,
-      letterSpacing: 3,
-      color: 'var(--sai-akane)'
-    }
-  }, "STRUCTURE / 04 SECTORS")), /*#__PURE__*/React.createElement("div", {
     className: "sai-reveal-each",
     style: {
       display: 'grid',
@@ -378,20 +328,9 @@ function SaiBusinessPage() {
     style: {
       borderTop: `1px solid ${saiLine(bizB.ink, '33')}`,
       borderBottom: `1px solid ${saiLine(bizB.ink, '33')}`,
-      padding: '26px 0',
-      display: 'grid',
-      gridTemplateColumns: '160px 1fr',
-      gap: 32,
-      alignItems: 'center'
+      padding: '26px 0'
     }
   }, /*#__PURE__*/React.createElement("span", {
-    style: {
-      fontFamily: bizFont.mono,
-      fontSize: 10,
-      letterSpacing: 3,
-      color: 'var(--sai-akane)'
-    }
-  }, "AREAS"), /*#__PURE__*/React.createElement("span", {
     style: {
       fontFamily: bizFont.jpSerif,
       fontSize: 14,

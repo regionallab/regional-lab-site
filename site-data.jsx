@@ -126,9 +126,9 @@ window.siteDataJa = {
       ],
     },
     pillars: [
-      ['理念 / Philosophy', '個の研鑽をもって、日本の礎であり続ける。'],
-      ['使命 / Mission', '地域の歩みに寄り添い、新たな希望を見出す。'],
-      ['展望 / Vision', '南魚沼を支える企業へ、地方の未来を彩る組織へ。'],
+      ['理念', '個の研鑽をもって、日本の礎であり続ける。'],
+      ['使命', '地域の歩みに寄り添い、新たな希望を見出す。'],
+      ['展望', '南魚沼を支える企業へ、地方の未来を彩る組織へ。'],
     ],
     members: [
       { role: '代表', jp: '木寺 蒼真', en: 'Kidera Soma', bio: ['南魚沼に出会い、地方創生に身を投じる。', '観光客から地域課題と向き合い、日本の未来や地方の魅力を', '残していくべく、Regional Lab を創業。'], img: 'assets/member-kidera.jpg' },
@@ -203,7 +203,7 @@ window.siteDataJa = {
     lead: 'プロダクト、イベント、メディア掲載。Regional Lab からの最新のお知らせです。',
     articles: [
       {
-        no: '01', date: '2026.10.27', cat: 'EVENT', catColor: SITE_COLORS.ai,
+        no: '01', date: '2026.10.27', cat: 'イベント', catColor: SITE_COLORS.ai,
         title: '2027年4月、六日町松下村塾を南魚沼市六日町駅前にて開塾。',
         lead: '「君は何を成すためにこの世に生を受けたのか。」この地から、日本の礎を築く人材を。',
         body: [
@@ -222,7 +222,7 @@ window.siteDataJa = {
         imgPosWide: '50% 31%',
       },
       {
-        no: '02', date: '2026.10.13', cat: 'PRODUCT', catColor: SITE_COLORS.koke,
+        no: '02', date: '2026.10.13', cat: 'プロダクト', catColor: SITE_COLORS.koke,
         title: 'Re.Event 公式LINE 開設のお知らせ',
         lead: 'イベントを探す。人とつながる。相談する。その入口を、ひとつにまとめました。',
         body: 'Event Lab だけでなく、Re.Event 全体の情報とサービスを LINE から見られるようになりました。Events では月間カレンダーで、Re.Event 主催のイベントも他団体のイベントもまとめて確認でき、気になるものからそのまま申し込みへ進めます。Event Lab は人とつながり活動を広げる場、Consulting は企画や活動についてご相談いただく場です。共催申請・協賛申請や過去イベントの実績も、画面下のメニューからすぐにたどり着けます。',
@@ -231,28 +231,28 @@ window.siteDataJa = {
         urlLabel: 'Re.Event公式LINEを見る',
       },
       {
-        no: '03', date: '2026.05.10', cat: 'PRODUCT', catColor: SITE_COLORS.ai,
+        no: '03', date: '2026.05.10', cat: 'プロダクト', catColor: SITE_COLORS.ai,
         title: 'Re.Lab バージョン 2.0 リリースのお知らせ',
         lead: 'コミュニティの根幹を見直し、より個に寄り添うコーチング体験へ。新たな招待制システムと選抜プロセスを実装しました。',
         body: '個別最適化された伴走、企業研究会議のオンライン化、コーチングログのアーカイブ機能など、卒業後の進路実現をより強力にサポートします。',
         img: 'assets/news-relab-v2.jpg',
       },
       {
-        no: '04', date: '2026.05.10', cat: 'PRODUCT', catColor: SITE_COLORS.akane,
+        no: '04', date: '2026.05.10', cat: 'プロダクト', catColor: SITE_COLORS.akane,
         title: 'Re.Event「Event Lab」リリースのお知らせ',
         lead: 'イベント主催者の集客課題を解決する、質と集客力を両立した次世代プラットフォームが誕生。',
         body: 'Event Lab は、イベント開催における集客のお悩みを解決する集客プラットフォームです。質の高いイベント情報の閲覧、質の高い学生との接点、(株)遊然様提供のマーケティング商材の学習機会、そして集客を確約するサービスまで。イベントに特化した魅力ある場をご用意しました。',
         img: 'assets/news-event-lab.jpg',
       },
       {
-        no: '05', date: '2026.04.20', cat: 'EVENT', catColor: SITE_COLORS.koke,
+        no: '05', date: '2026.04.20', cat: 'イベント', catColor: SITE_COLORS.koke,
         title: '第3回 地方創生ビジネスコンテスト 9月開催のお知らせ',
         lead: '地域密着型の本質的な地方創生ビジコン、第3回の開催地・日程が決定しました。',
         body: '第3回となる今回も、対象地域に深く根を下ろし、2泊3日の没入型プログラムとして実施します。詳細は順次お知らせいたします。',
         img: 'assets/news-bizcon3.jpg',
       },
       {
-        no: '06', date: '2026.04.15', cat: 'EVENT', catColor: SITE_COLORS.akane,
+        no: '06', date: '2026.04.15', cat: 'イベント', catColor: SITE_COLORS.akane,
         title: '第2回 地方産品大忘年会、今年も年末に開催決定',
         lead: '日本各地の特産品を持ち寄り、垣根を超えた交流の場を、今年も東京にて。',
         body: '昨年好評をいただいた地方産品大忘年会、第2回も2026年末に開催いたします。学生、社会人、社長と、立場の異なる方々が地方の魅力を味わいながら交わる、特別な一夜を演出します。',

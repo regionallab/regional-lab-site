@@ -48,9 +48,6 @@ function BizIndexCard({ unit, index }) {
         font: 'inherit', color: 'var(--sai-ink)',
       }}
     >
-      <span style={{ fontFamily: bizFont.mono, fontSize: 10, letterSpacing: 3, color: unit.color }}>
-        {bizPad(index + 1)} / 04
-      </span>
       <span style={{ fontFamily: bizFont.jpAlt, fontSize: 26, color: unit.color, letterSpacing: '0.04em', lineHeight: 1.2 }}>
         {unit.tag}
       </span>
@@ -74,9 +71,6 @@ function BizGroupCard({ group, color, n, total }) {
         background: color, color: bizB.paper,
         padding: '11px 14px', display: 'flex', alignItems: 'baseline', gap: 10,
       }}>
-        <span style={{ fontFamily: bizFont.mono, fontSize: 10, letterSpacing: 2, opacity: 0.75 }}>
-          {bizPad(n)}
-        </span>
         <span style={{ fontFamily: bizFont.jpSerif, fontSize: 16, fontWeight: 500, letterSpacing: '0.06em', lineHeight: 1.4 }}>
           {group.name}
         </span>
@@ -113,18 +107,9 @@ function BizUnit({ unit, index }) {
 ...saiVars(true), color: 'var(--sai-ink)', textShadow: 'none',       background: bizB.paperDeep, borderLeft: `5px solid ${unit.color}`,
       padding: '38px 40px 40px', position: 'relative', overflow: 'hidden',
     }}>
-      <span aria-hidden="true" style={{
-        position: 'absolute', right: 28, top: 6,
-        fontFamily: bizFont.mono, fontSize: 108, fontWeight: 500,
-        color: unit.color, opacity: 0.05, letterSpacing: -4, lineHeight: 1,
-      }}>{bizPad(index + 1)}</span>
-
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 48, alignItems: 'start', position: 'relative' }}>
         <div>
-          <div style={{ fontFamily: bizFont.mono, fontSize: 10, letterSpacing: 3, color: unit.color }}>
-            {bizPad(index + 1)} / 04
-          </div>
-          <div style={{ display: 'flex', alignItems: 'baseline', gap: 18, marginTop: 8 }}>
+          <div style={{ display: 'flex', alignItems: 'baseline', gap: 18 }}>
             <span style={{ fontFamily: bizFont.jpAlt, fontSize: 44, color: unit.color, letterSpacing: '0.04em', lineHeight: 1.1 }}>
               {unit.tag}
             </span>
@@ -180,11 +165,6 @@ function SaiBusinessPage() {
       <SaiPageHeader no="06" jp={window.t('事業概要')} en="Business" lead={t.lead} />
 
       <div className="sai-reveal-each" style={{ padding: '64px 56px 0' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 20 }}>
-          <span style={{ fontFamily: bizFont.mono, fontSize: 10, letterSpacing: 3, color: 'var(--sai-akane)' }}>
-            STRUCTURE / 04 SECTORS
-          </span>
-        </div>
         <div className="sai-reveal-each" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, minmax(0, 1fr))', gap: 16 }}>
           {t.units.map((u, i) => <BizIndexCard key={u.tag} unit={u} index={i} />)}
         </div>
@@ -195,8 +175,7 @@ function SaiBusinessPage() {
       </div>
 
       <div className="sai-reveal-each" style={{ padding: '0 56px 88px' }}>
-        <div style={{ borderTop: `1px solid ${saiLine(bizB.ink, '33')}`, borderBottom: `1px solid ${saiLine(bizB.ink, '33')}`, padding: '26px 0', display: 'grid', gridTemplateColumns: '160px 1fr', gap: 32, alignItems: 'center' }}>
-          <span style={{ fontFamily: bizFont.mono, fontSize: 10, letterSpacing: 3, color: 'var(--sai-akane)' }}>AREAS</span>
+        <div style={{ borderTop: `1px solid ${saiLine(bizB.ink, '33')}`, borderBottom: `1px solid ${saiLine(bizB.ink, '33')}`, padding: '26px 0' }}>
           <span style={{ fontFamily: bizFont.jpSerif, fontSize: 14, letterSpacing: '0.06em', lineHeight: 1.9, color: 'var(--sai-ink)' }}>
             {t.footer}
           </span>

@@ -20,7 +20,6 @@ const saiCFont = {
 function SaiContactHeader() {
   return (
     <div style={{ background: saiVeil(saiC.paperDeep), padding: '80px 56px 64px', borderBottom: `1px solid ${saiLine(saiC.ink, '22')}`, position: 'relative', overflow: 'hidden' }}>
-      <div style={{ fontFamily: saiCFont.mono, fontSize: 11, letterSpacing: 4, color: 'var(--sai-akane)', marginBottom: 18 }}>SECTION 05 / CONTACT</div>
       <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', gap: 40 }}>
         <h1 style={{ fontFamily: saiCFont.jpSerif, fontSize: 72, fontWeight: 500, margin: 0, color: 'var(--sai-ink)', letterSpacing: '0.06em', lineHeight: 1.1 }}>
           {window.t('お問い合わせ')}
@@ -35,14 +34,13 @@ function SaiContactHeader() {
   );
 }
 
-function ContactField({ label, en, required, children }) {
+function ContactField({ label, required, children }) {
   return (
     <label style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
       <span style={{ display: 'flex', alignItems: 'baseline', gap: 12 }}>
         <span style={{ fontFamily: saiCFont.jpSerif, fontSize: 14, letterSpacing: 2, color: 'var(--sai-ink)' }}>
           {label}{required && <span style={{ color: 'var(--sai-akane)', marginLeft: 6 }}>*</span>}
         </span>
-        <span style={{ fontFamily: saiCFont.mono, fontSize: 9, letterSpacing: 2, color: 'var(--sai-muted)' }}>{en}</span>
       </span>
       {children}
     </label>
@@ -125,36 +123,35 @@ function SaiContactForm() {
       borderTop: `2px solid ${saiC.ai}`,
     }}>
       <div style={{ gridColumn: '1 / -1' }}>
-        <div style={{ fontFamily: saiCFont.mono, fontSize: 10, letterSpacing: 3, color: 'var(--sai-akane)' }}>INQUIRY FORM</div>
-        <h3 style={{ fontFamily: saiCFont.jpSerif, fontSize: 26, margin: '8px 0 0', letterSpacing: '0.05em', color: 'var(--sai-ink)' }}>{window.t('お問い合わせフォーム')}</h3>
+        <h3 style={{ fontFamily: saiCFont.jpSerif, fontSize: 26, margin: 0, letterSpacing: '0.05em', color: 'var(--sai-ink)' }}>{window.t('お問い合わせフォーム')}</h3>
       </div>
 
-      <ContactField label={window.t('お問い合わせ種別')} en="CATEGORY" required>
+      <ContactField label={window.t('お問い合わせ種別')} required>
         <select name="category" style={inputStyle} defaultValue="">
           <option value="" disabled>{window.t('選択してください')}</option>
           {categories.map(c => <option key={c} value={c}>{window.t(c)}</option>)}
         </select>
       </ContactField>
-      <ContactField label={window.t('会社名・団体名')} en="ORGANIZATION">
+      <ContactField label={window.t('会社名・団体名')}>
         <input name="org" type="text" placeholder="株式会社 ○○○" style={inputStyle} />
       </ContactField>
 
-      <ContactField label={window.t('お名前')} en="NAME" required>
+      <ContactField label={window.t('お名前')} required>
         <input name="name" type="text" placeholder="山田 太郎" style={inputStyle} />
       </ContactField>
-      <ContactField label={window.t('ふりがな')} en="KANA">
+      <ContactField label={window.t('ふりがな')}>
         <input name="kana" type="text" placeholder="やまだ たろう" style={inputStyle} />
       </ContactField>
 
-      <ContactField label={window.t('メールアドレス')} en="EMAIL" required>
+      <ContactField label={window.t('メールアドレス')} required>
         <input name="email" type="email" placeholder="example@example.com" style={inputStyle} />
       </ContactField>
-      <ContactField label={window.t('お電話番号')} en="PHONE">
+      <ContactField label={window.t('お電話番号')}>
         <input name="tel" type="tel" placeholder="090-0000-0000" style={inputStyle} />
       </ContactField>
 
       <div style={{ gridColumn: '1 / -1' }}>
-        <ContactField label={window.t('お問い合わせ内容')} en="MESSAGE" required>
+        <ContactField label={window.t('お問い合わせ内容')} required>
           <textarea name="message" rows={7} placeholder="ご相談内容をご記入ください。" style={{ ...inputStyle, resize: 'vertical', lineHeight: 1.8 }} />
         </ContactField>
       </div>
@@ -175,13 +172,11 @@ function SaiContactForm() {
   );
 }
 
-function ContactCard({ tag, jp, en, lines, color }) {
+function ContactCard({ jp, lines, color }) {
   return (
     <div style={{ ...saiVars(true), color: 'var(--sai-ink)', textShadow: 'none', background: saiC.paper, padding: '32px 28px', borderTop: `2px solid ${color}`, display: 'flex', flexDirection: 'column', gap: 12 }}>
-      <div style={{ fontFamily: saiCFont.mono, fontSize: 10, letterSpacing: 3, color }}>{tag}</div>
       <div>
         <div style={{ fontFamily: saiCFont.jpSerif, fontSize: 20, color: 'var(--sai-ink)', letterSpacing: '0.05em', fontWeight: 500 }}>{jp}</div>
-        <div style={{ fontFamily: saiCFont.enSerif, fontStyle: 'italic', fontSize: 14, color: 'var(--sai-muted)', marginTop: 2 }}>{en}</div>
       </div>
       <div style={{ display: 'flex', flexDirection: 'column', gap: 6, marginTop: 8 }}>
         {lines.map((l, i) => (
@@ -201,16 +196,12 @@ function SaiContact() {
         {/* Direct contact cards */}
         <div className="sai-reveal-each" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 20, marginBottom: 48 }}>
           <ContactCard
-            tag="PHONE"
             jp={window.t('お電話でのご連絡')}
-            en="Phone Inquiry"
             color={saiC.akane}
             lines={['FAX : 03-5391-6870', '携帯 : 080-9541-6870', '受付時間 : 平日 9:00〜18:00']}
           />
           <ContactCard
-            tag="OFFICE"
             jp={window.t('本社所在地')}
-            en="Head Office"
             color={saiC.koke}
             lines={['〒949-7302', '新潟県南魚沼市浦佐 2476']}
           />

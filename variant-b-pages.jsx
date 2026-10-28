@@ -35,8 +35,7 @@ function SaiPageHeader({ no, jp, en, lead }) {
       <Vertical style={{ position: 'absolute', right: 56, top: 40, fontFamily: saiBFont.jpSerif, fontSize: 220, opacity: 0.06, letterSpacing: 0 }}>
         {jp.charAt(0)}
       </Vertical>
-      <div style={{ fontFamily: saiBFont.mono, fontSize: 11, letterSpacing: 3, color: 'var(--sai-akane)' }}>{no} / PAGE</div>
-      <div style={{ display: 'flex', alignItems: 'baseline', gap: 24, marginTop: 16 }}>
+      <div style={{ display: 'flex', alignItems: 'baseline', gap: 24 }}>
         <h1 style={{ fontFamily: saiBFont.jpSerif, fontSize: 72, fontWeight: 400, margin: 0, color: 'var(--sai-ink)', letterSpacing: '0.04em' }}>{jp}</h1>
         <span style={{ fontFamily: saiBFont.enSerif, fontStyle: 'italic', fontSize: 36, color: 'var(--sai-ai)' }}>{en}</span>
       </div>
@@ -63,8 +62,7 @@ function SaiAbout() {
       {/* 目的と設立背景 */}
       <div style={{ padding: '96px 56px', display: 'grid', gridTemplateColumns: '280px 1fr', gap: 56 }}>
         <div>
-          <div style={{ fontFamily: saiBFont.mono, fontSize: 10, letterSpacing: 3, color: 'var(--sai-akane)' }}>SECTION 01</div>
-          <h2 style={{ fontFamily: saiBFont.jpSerif, fontSize: 36, fontWeight: 400, margin: '12px 0 0', letterSpacing: '0.04em', lineHeight: 1.4 }}>
+          <h2 style={{ fontFamily: saiBFont.jpSerif, fontSize: 36, fontWeight: 400, margin: 0, letterSpacing: '0.04em', lineHeight: 1.4 }}>
             {window.saiLang === 'en' ? <React.Fragment>Purpose &amp;<br/>Founding</React.Fragment> : <React.Fragment>目的と<br/>設立背景</React.Fragment>}
           </h2>
           <div style={{ marginTop: 24 }}>
@@ -75,8 +73,7 @@ function SaiAbout() {
         </div>
         <div>
           <div style={{ ...saiVars(true), color: 'var(--sai-ink)', textShadow: 'none', marginBottom: 40, background: saiB.paperDeep, padding: 32, borderLeft: `4px solid ${saiB.akane}` }}>
-            <div style={{ fontFamily: saiBFont.mono, fontSize: 11, letterSpacing: 3, color: 'var(--sai-akane)' }}>PURPOSE</div>
-            <h3 style={{ fontFamily: saiBFont.jpSerif, fontSize: 26, fontWeight: 400, margin: '8px 0 16px', letterSpacing: '0.04em' }}>
+            <h3 style={{ fontFamily: saiBFont.jpSerif, fontSize: 26, fontWeight: 400, margin: '0 0 16px', letterSpacing: '0.04em' }}>
               {window.siteData.about.purpose.heading}
             </h3>
             <p style={{ fontSize: 15, lineHeight: 2.1, color: 'var(--sai-muted)', margin: 0 }}>
@@ -84,8 +81,7 @@ function SaiAbout() {
             </p>
           </div>
 
-          <div style={{ fontFamily: saiBFont.mono, fontSize: 11, letterSpacing: 3, color: 'var(--sai-ai)' }}>BACKGROUND</div>
-          <h3 style={{ fontFamily: saiBFont.jpSerif, fontSize: 22, fontWeight: 400, margin: '8px 0 20px', letterSpacing: '0.04em' }}>
+          <h3 style={{ fontFamily: saiBFont.jpSerif, fontSize: 22, fontWeight: 400, margin: '0 0 20px', letterSpacing: '0.04em' }}>
             {window.siteData.about.background.heading}
           </h3>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
@@ -103,7 +99,7 @@ function SaiAbout() {
             ...window.siteData.about.pillars,
           ].map(([label, body]) => (
             <div key={label} style={{ borderLeft: `2px solid ${saiB.akane}`, paddingLeft: 20 }}>
-              <div style={{ fontFamily: saiBFont.mono, fontSize: 10, letterSpacing: 3, opacity: 0.7 }}>{label}</div>
+              <div style={{ fontFamily: saiBFont.jpSerif, fontSize: 13, letterSpacing: 4, opacity: 0.75 }}>{label}</div>
               <div style={{ fontFamily: saiBFont.jpSerif, fontSize: 18, lineHeight: 1.9, marginTop: 10, letterSpacing: '0.04em' }}>{saiBreakAtComma(body)}</div>
             </div>
           ))}
@@ -114,12 +110,10 @@ function SaiAbout() {
       <div className="sai-reveal-each" style={{ padding: '96px 56px' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 48 }}>
           <div>
-            <div style={{ fontFamily: saiBFont.mono, fontSize: 10, letterSpacing: 3, color: 'var(--sai-akane)' }}>SECTION 02</div>
-            <h2 style={{ fontFamily: saiBFont.jpSerif, fontSize: 44, fontWeight: 400, margin: '8px 0 0', letterSpacing: '0.04em' }}>
-              {window.t('メンバー紹介')}<span style={{ fontFamily: saiBFont.enSerif, fontStyle: 'italic', color: 'var(--sai-ai)', fontSize: 28 }}> our four.</span>
+            <h2 style={{ fontFamily: saiBFont.jpSerif, fontSize: 44, fontWeight: 400, margin: 0, letterSpacing: '0.04em' }}>
+              {window.t('メンバー紹介')}
             </h2>
           </div>
-          <span style={{ fontFamily: saiBFont.mono, fontSize: 11, letterSpacing: 3, color: 'var(--sai-muted)' }}>04 MEMBERS</span>
         </div>
 
         <div className="sai-reveal-each" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24 }}>
@@ -133,7 +127,6 @@ function SaiAbout() {
                 ) : (
                   <Placeholder label="portrait" ratio="4/5" color1="#d2c1a0" color2="#bfa97a" textColor={saiB.ink} />
                 )}
-                <div style={{ fontFamily: saiBFont.mono, fontSize: 9, letterSpacing: 2, color: 'var(--sai-muted)', marginTop: 8 }}>0{i+1} / 04</div>
               </div>
               <div>
                 <div style={{ fontFamily: saiBFont.mono, fontSize: 10, letterSpacing: 2, color: 'var(--sai-akane)', marginBottom: 8 }}>{m.role}</div>
@@ -172,18 +165,17 @@ function SaiCompany() {
       {/* 会社情報 */}
       <div className="sai-reveal-each" style={{ padding: '80px 56px 0' }}>
         <div style={{ marginBottom: 32 }}>
-          <div style={{ fontFamily: saiBFont.mono, fontSize: 10, letterSpacing: 3, color: 'var(--sai-akane)' }}>SECTION 01 / BUSINESS PROFILE</div>
-          <h2 style={{ fontFamily: saiBFont.jpSerif, fontSize: 44, fontWeight: 400, margin: '8px 0 0', letterSpacing: '0.04em' }}>
+          <h2 style={{ fontFamily: saiBFont.jpSerif, fontSize: 44, fontWeight: 400, margin: 0, letterSpacing: '0.04em' }}>
             {window.t('屋号情報')}
           </h2>
         </div>
         <div style={{ borderTop: `1px solid ${saiLine(saiB.ink, 'ff')}` }}>
           {[
-            [window.t('屋号名'), window.saiLang === 'en' ? 'Regional Lab' : 'Regional Lab / リージョナルラボ', 'TRADE NAME'],
-            [window.t('設立'), companyInfo.founded, 'FOUNDED'],
-            [window.t('役員'), companyInfo.officers, 'OFFICERS'],
-            [window.t('拠点'), companyInfo.offices, 'LOCATIONS'],
-          ].map(([label, value, enLabel]) => (
+            [window.t('屋号名'), window.saiLang === 'en' ? 'Regional Lab' : 'Regional Lab / リージョナルラボ'],
+            [window.t('設立'), companyInfo.founded],
+            [window.t('役員'), companyInfo.officers],
+            [window.t('拠点'), companyInfo.offices],
+          ].map(([label, value]) => (
             <div key={label} style={{
               display: 'grid',
               gridTemplateColumns: '200px 1fr',
@@ -194,9 +186,6 @@ function SaiCompany() {
             }}>
               <div>
                 <div style={{ fontFamily: saiBFont.jpSerif, fontSize: 18, fontWeight: 500, color: 'var(--sai-ai)', letterSpacing: 4 }}>{label}</div>
-                <div style={{ fontFamily: saiBFont.mono, fontSize: 9, letterSpacing: 2, color: 'var(--sai-muted)', marginTop: 4 }}>
-                  {enLabel}
-                </div>
               </div>
               <div>
                 {Array.isArray(value) ? (
@@ -223,15 +212,13 @@ function SaiCompany() {
       {/* 事業紹介 */}
       <div className="sai-reveal-each" style={{ padding: '80px 56px' }}>
         <div style={{ marginBottom: 40 }}>
-          <div style={{ fontFamily: saiBFont.mono, fontSize: 10, letterSpacing: 3, color: 'var(--sai-akane)' }}>SECTION 02 / BUSINESS</div>
-          <h2 style={{ fontFamily: saiBFont.jpSerif, fontSize: 44, fontWeight: 400, margin: '8px 0 0', letterSpacing: '0.04em' }}>
+          <h2 style={{ fontFamily: saiBFont.jpSerif, fontSize: 44, fontWeight: 400, margin: 0, letterSpacing: '0.04em' }}>
             {window.t('事業紹介')}
           </h2>
         </div>
         <div className="sai-reveal-each" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, minmax(0, 1fr))', gap: 18 }}>
           {services.map((s, i) => (
             <div key={s.tag} style={{ ...saiVars(true), color: 'var(--sai-ink)', textShadow: 'none', background: saiB.paperDeep, padding: 28 }}>
-              <div style={{ fontFamily: saiBFont.mono, fontSize: 10, letterSpacing: 3, color: s.color, marginBottom: 8 }}>0{i+1} / 0{services.length}</div>
               <div style={{ fontFamily: saiBFont.jpAlt, fontSize: 32, color: s.color, lineHeight: 1.1, fontWeight: 500 }}>{s.tag}</div>
               <div style={{ fontFamily: saiBFont.jpSerif, fontSize: 14, color: 'var(--sai-muted)', letterSpacing: 3, marginTop: 4, marginBottom: 16 }}>{s.jp}</div>
               <p style={{ fontSize: 13, lineHeight: 2, margin: 0 }}>{s.body}</p>
@@ -288,7 +275,7 @@ function SaiNews() {
               color: active === c ? saiB.paper : 'var(--sai-ink)',
               fontFamily: saiBFont.mono, fontSize: 11, letterSpacing: 2,
               cursor: 'pointer', transition: 'all 0.15s',
-            }}>{c}</div>
+            }}>{c === 'ALL' ? window.t('すべて') : c}</div>
           ))}
         </div>
 
@@ -307,7 +294,6 @@ function SaiNews() {
               <div>
                 <div style={{ fontFamily: saiBFont.mono, fontSize: 10, letterSpacing: 2, color: 'var(--sai-muted)' }}>{a.date}</div>
                 <div style={{ fontFamily: saiBFont.mono, fontSize: 10, letterSpacing: 2, color: a.catColor, marginTop: 6, border: `1px solid ${a.catColor}`, padding: '3px 8px', display: 'inline-block' }}>{a.cat}</div>
-                <div style={{ fontFamily: saiBFont.enSerif, fontStyle: 'italic', fontSize: 18, color: 'var(--sai-muted)', marginTop: 16 }}>No. {a.no}</div>
               </div>
               {a.img ? (
                 <div style={{ width: '100%', aspectRatio: '4/3', overflow: 'hidden' }}>
@@ -374,7 +360,6 @@ function SaiNewsModal({ article: a, onClose }) {
           <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 20 }}>
             <span style={{ fontFamily: saiBFont.mono, fontSize: 11, letterSpacing: 2, color: a.catColor, border: `1px solid ${a.catColor}`, padding: '4px 10px' }}>{a.cat}</span>
             <span style={{ fontFamily: saiBFont.mono, fontSize: 12, letterSpacing: 2, color: 'var(--sai-muted)' }}>{a.date}</span>
-            <span style={{ fontFamily: saiBFont.enSerif, fontStyle: 'italic', fontSize: 16, color: 'var(--sai-muted)', marginLeft: 'auto' }}>No. {a.no}</span>
           </div>
           <h2 style={{ fontFamily: saiBFont.jpSerif, fontSize: 34, fontWeight: 500, margin: 0, letterSpacing: '0.04em', lineHeight: 1.5 }}>{a.title}</h2>
           <p style={{ fontFamily: saiBFont.jpSerif, fontSize: 17, lineHeight: 2, color: a.catColor, margin: '20px 0 24px' }}>{a.lead}</p>
@@ -413,20 +398,13 @@ function SaiPartners() {
             <div key={p.no} style={{
 ...saiVars(true), color: 'var(--sai-ink)', textShadow: 'none',               background: saiB.paperDeep,
               padding: '40px 44px',
+              borderLeft: `5px solid ${p.color}`,
               display: 'grid',
-              gridTemplateColumns: '80px 1.3fr 2fr',
+              gridTemplateColumns: '1.3fr 2fr',
               gap: 40,
               alignItems: 'center',
               position: 'relative',
             }}>
-              <div style={{
-                width: 80, height: 80,
-                borderRadius: 40,
-                background: p.color,
-                color: saiB.paper,
-                display: 'flex', alignItems: 'center', justifyContent: 'center',
-                fontFamily: saiBFont.jpSerif, fontSize: 32, letterSpacing: 1,
-              }}>{p.no}</div>
               <div>
                 <div style={{ fontFamily: saiBFont.mono, fontSize: 10, letterSpacing: 3, color: p.color, marginBottom: 8 }}>{p.relation}</div>
                 <h3 style={{ fontFamily: saiBFont.jpSerif, fontSize: 26, fontWeight: 500, margin: 0, letterSpacing: '0.04em' }}>{p.name}</h3>
@@ -444,7 +422,7 @@ function SaiPartners() {
                 <p style={{ fontSize: 14, lineHeight: 2.1, color: 'var(--sai-ink)', margin: 0 }}>{p.body}</p>
                 {p.url && (
                   <a href={p.url} target="_blank" rel="noopener noreferrer" style={{ marginTop: 20, fontFamily: saiBFont.enSerif, fontStyle: 'italic', fontSize: 14, color: 'var(--sai-ai)', borderBottom: `1px solid ${saiB.ai}`, display: 'inline-block', paddingBottom: 2, textDecoration: 'none' }}>
-                    View partner →
+                    {window.t('パートナーを見る →')}
                   </a>
                 )}
               </div>
@@ -453,7 +431,6 @@ function SaiPartners() {
         </div>
 
         <div style={{ marginTop: 48, padding: 40, border: `1px dashed ${saiLine(saiB.ink, '55')}`, textAlign: 'center' }}>
-          <div style={{ fontFamily: saiBFont.mono, fontSize: 10, letterSpacing: 3, color: 'var(--sai-akane)' }}>BECOME A PARTNER</div>
           <div style={{ fontFamily: saiBFont.jpSerif, fontSize: 22, marginTop: 8, letterSpacing: '0.04em' }}>{window.t('地方の未来を、共に彩りませんか。')}</div>
           <div style={{ marginTop: 16, padding: '12px 28px', background: saiB.ink, color: saiB.paper, fontFamily: saiBFont.jpSerif, fontSize: 14, letterSpacing: 3, display: 'inline-block' }}>{window.t('協業のご相談 →')}</div>
         </div>

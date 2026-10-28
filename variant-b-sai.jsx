@@ -54,7 +54,6 @@ function SaiNav() {
             style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 2, cursor: 'pointer' }}
           >
             <span style={{ whiteSpace: 'nowrap' }}>{window.t(jp)}</span>
-            <span style={{ fontFamily: saiFont.mono, fontSize: 8, opacity: 0.5, letterSpacing: 2 }}>{(sub || en).toUpperCase()}</span>
           </div>
         ))}
         <div
@@ -124,7 +123,6 @@ function SaiHero() {
         display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end',
       }}>
         <div style={{ background: saiPalette.paper, padding: '16px 24px', maxWidth: 380, border: `1px solid ${saiPalette.ink}22` }}>
-          <div style={{ fontFamily: saiFont.mono, fontSize: 10, letterSpacing: 2, color: saiPalette.akane, marginBottom: 8 }}>EST. 2024.10.09</div>
           <p style={{ fontFamily: saiFont.jpSerif, fontSize: 14, lineHeight: 1.9, color: saiPalette.ink, margin: 0 }}>
             {window.t('イベント、コミュニティ、アパレル、DX&AX。')}<br/>{window.t('四つの事業で、地方創生を立体的に描く。')}
           </p>
@@ -179,8 +177,7 @@ function SaiMission() {
               borderRadius: 4,
             }}>
               <div>
-                <div style={{ fontFamily: saiFont.mono, fontSize: 10, letterSpacing: 3, opacity: 0.7 }}>{c.label}</div>
-                <div style={{ fontFamily: saiFont.jpSerif, fontSize: 16, letterSpacing: 6, marginTop: 6, opacity: 0.85 }}>{c.jp}</div>
+                <div style={{ fontFamily: saiFont.jpSerif, fontSize: 16, letterSpacing: 6, opacity: 0.85 }}>{c.jp}</div>
               </div>
               <div style={{ fontFamily: saiFont.jpSerif, fontSize: 22, lineHeight: 1.8, letterSpacing: '0.04em' }}>
                 {c.body[0]}<br/>{c.body[1]}
@@ -205,14 +202,10 @@ function SaiBusiness() {
         <h2 style={{ fontFamily: saiFont.jpSerif, fontSize: 64, fontWeight: 400, margin: 0, color: saiOnPhoto(saiPalette.ink), textShadow: saiShadow(), letterSpacing: '0.04em' }}>
           {window.t('四つの')}<span style={{ color: saiOnPhoto(saiPalette.akane) }}>{window.t('柱')}</span>
         </h2>
-        <div style={{ fontFamily: saiFont.mono, fontSize: 11, letterSpacing: 3, color: saiOnPhoto(saiPalette.muted), textShadow: saiShadow() }}>OUR BUSINESS / 04 SECTORS</div>
       </div>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, minmax(0, 1fr))', gap: 24 }}>
         {items.map((s, i) => (
           <div key={s.tag} style={{ background: saiPalette.paperDeep, padding: 28, position: 'relative', display: 'flex', flexDirection: 'column' }}>
-            <div style={{ position: 'absolute', top: -8, left: 28, fontFamily: saiFont.mono, fontSize: 10, letterSpacing: 3, background: saiPalette.paper, padding: '4px 8px', color: s.accent }}>
-              0{i+1} / 0{items.length}
-            </div>
             {s.img ? (
               <div style={{ width: '100%', aspectRatio: '16/10', overflow: 'hidden' }}>
                 <img src={s.img} alt={s.tag} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
@@ -261,7 +254,7 @@ function SaiConsulting() {
 
       <div style={{ position: 'relative' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 20, marginBottom: 28 }}>
-          <span style={{ fontFamily: saiFont.mono, fontSize: 11, letterSpacing: 3, color: saiOnPhoto(saiPalette.akane), textShadow: saiShadow(), whiteSpace: 'nowrap' }}>{c.eyebrow}　{c.scope}</span>
+          <span style={{ fontFamily: saiFont.mono, fontSize: 11, letterSpacing: 3, color: saiOnPhoto(saiPalette.akane), textShadow: saiShadow(), whiteSpace: 'nowrap' }}>{c.scope}</span>
         </div>
         <h2 style={{
           fontFamily: saiFont.jpSerif, fontSize: 'clamp(38px, 4.2vw, 58px)', fontWeight: 400, margin: 0,
@@ -287,9 +280,8 @@ function SaiTimeline() {
       }}>歩</Vertical>
       <div style={{ padding: '0 56px', display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: 56, position: 'relative', zIndex: 2 }}>
         <h2 style={{ fontFamily: saiFont.jpSerif, fontSize: 56, fontWeight: 400, margin: 0, letterSpacing: '0.04em' }}>
-          {window.t('歩みは続く')}<span style={{ fontFamily: saiFont.enSerif, fontStyle: 'italic', color: saiOnPhoto(saiPalette.akane), fontSize: 36 }}> ongoing.</span>
+          {window.t('歩みは続く')}
         </h2>
-        <span style={{ fontFamily: saiFont.mono, fontSize: 11, letterSpacing: 3, opacity: 0.7 }}>04 / EVENTS 2024〜2026</span>
       </div>
 
       {/* 右から左へ無限スクロール。同じ並びを2組つないで -50% まで動かすので継ぎ目が出ない */}
@@ -354,7 +346,6 @@ function SaiCTA() {
   return (
     <div className="sai-reveal" style={{ background: saiVeil(saiPalette.paper), padding: '96px 56px 32px', position: 'relative' }}>
       <div style={{ textAlign: 'center', maxWidth: 1200, margin: '0 auto 80px' }}>
-        <div style={{ fontFamily: saiFont.mono, fontSize: 11, letterSpacing: 3, color: saiOnPhoto(saiPalette.akane), textShadow: saiShadow(), marginBottom: 20 }}>TOGETHER</div>
         <h2 style={{ fontFamily: saiFont.jpSerif, fontSize: 'clamp(36px, 4.6vw, 60px)', fontWeight: 400, margin: 0, color: saiOnPhoto(saiPalette.ink), textShadow: saiShadow(), letterSpacing: '0.06em', lineHeight: 1.3, whiteSpace: 'nowrap' }}>
           {window.t('その地に、もう一度、')}<span style={{ color: saiOnPhoto(saiPalette.ai) }}>{window.t('光を。')}</span>
         </h2>
@@ -368,8 +359,7 @@ function SaiCTA() {
             style={{ cursor: 'pointer' }}
           >
             <div style={{ fontFamily: saiFont.jpSerif, fontSize: 15, color: saiOnPhoto(saiPalette.ink), textShadow: saiShadow(), letterSpacing: 2, fontWeight: 500 }}>{window.t(jp)}</div>
-            <div style={{ fontFamily: saiFont.mono, fontSize: 9, letterSpacing: 2, color: saiOnPhoto(saiPalette.akane), textShadow: saiShadow(), marginTop: 2, marginBottom: 14 }}>{en.toUpperCase()}</div>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginTop: 14 }}>
               {sub.map(s => (
                 <span key={s} style={{ fontFamily: saiFont.jpSerif, fontSize: 12, color: saiOnPhoto(saiPalette.muted), textShadow: saiShadow(), letterSpacing: 1 }}>{window.t(s)}</span>
               ))}

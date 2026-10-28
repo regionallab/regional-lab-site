@@ -53,17 +53,9 @@ function SaiPageHeader({
     }
   }, jp.charAt(0)), /*#__PURE__*/React.createElement("div", {
     style: {
-      fontFamily: saiBFont.mono,
-      fontSize: 11,
-      letterSpacing: 3,
-      color: 'var(--sai-akane)'
-    }
-  }, no, " / PAGE"), /*#__PURE__*/React.createElement("div", {
-    style: {
       display: 'flex',
       alignItems: 'baseline',
-      gap: 24,
-      marginTop: 16
+      gap: 24
     }
   }, /*#__PURE__*/React.createElement("h1", {
     style: {
@@ -119,19 +111,12 @@ function SaiAbout() {
       gridTemplateColumns: '280px 1fr',
       gap: 56
     }
-  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
-    style: {
-      fontFamily: saiBFont.mono,
-      fontSize: 10,
-      letterSpacing: 3,
-      color: 'var(--sai-akane)'
-    }
-  }, "SECTION 01"), /*#__PURE__*/React.createElement("h2", {
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h2", {
     style: {
       fontFamily: saiBFont.jpSerif,
       fontSize: 36,
       fontWeight: 400,
-      margin: '12px 0 0',
+      margin: 0,
       letterSpacing: '0.04em',
       lineHeight: 1.4
     }
@@ -164,19 +149,12 @@ function SaiAbout() {
       padding: 32,
       borderLeft: `4px solid ${saiB.akane}`
     }
-  }, /*#__PURE__*/React.createElement("div", {
-    style: {
-      fontFamily: saiBFont.mono,
-      fontSize: 11,
-      letterSpacing: 3,
-      color: 'var(--sai-akane)'
-    }
-  }, "PURPOSE"), /*#__PURE__*/React.createElement("h3", {
+  }, /*#__PURE__*/React.createElement("h3", {
     style: {
       fontFamily: saiBFont.jpSerif,
       fontSize: 26,
       fontWeight: 400,
-      margin: '8px 0 16px',
+      margin: '0 0 16px',
       letterSpacing: '0.04em'
     }
   }, window.siteData.about.purpose.heading), /*#__PURE__*/React.createElement("p", {
@@ -186,19 +164,12 @@ function SaiAbout() {
       color: 'var(--sai-muted)',
       margin: 0
     }
-  }, window.siteData.about.purpose.body)), /*#__PURE__*/React.createElement("div", {
-    style: {
-      fontFamily: saiBFont.mono,
-      fontSize: 11,
-      letterSpacing: 3,
-      color: 'var(--sai-ai)'
-    }
-  }, "BACKGROUND"), /*#__PURE__*/React.createElement("h3", {
+  }, window.siteData.about.purpose.body)), /*#__PURE__*/React.createElement("h3", {
     style: {
       fontFamily: saiBFont.jpSerif,
       fontSize: 22,
       fontWeight: 400,
-      margin: '8px 0 20px',
+      margin: '0 0 20px',
       letterSpacing: '0.04em'
     }
   }, window.siteData.about.background.heading), /*#__PURE__*/React.createElement("div", {
@@ -235,10 +206,10 @@ function SaiAbout() {
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
-      fontFamily: saiBFont.mono,
-      fontSize: 10,
-      letterSpacing: 3,
-      opacity: 0.7
+      fontFamily: saiBFont.jpSerif,
+      fontSize: 13,
+      letterSpacing: 4,
+      opacity: 0.75
     }
   }, label), /*#__PURE__*/React.createElement("div", {
     style: {
@@ -260,36 +231,15 @@ function SaiAbout() {
       alignItems: 'baseline',
       marginBottom: 48
     }
-  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
-    style: {
-      fontFamily: saiBFont.mono,
-      fontSize: 10,
-      letterSpacing: 3,
-      color: 'var(--sai-akane)'
-    }
-  }, "SECTION 02"), /*#__PURE__*/React.createElement("h2", {
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h2", {
     style: {
       fontFamily: saiBFont.jpSerif,
       fontSize: 44,
       fontWeight: 400,
-      margin: '8px 0 0',
+      margin: 0,
       letterSpacing: '0.04em'
     }
-  }, window.t('メンバー紹介'), /*#__PURE__*/React.createElement("span", {
-    style: {
-      fontFamily: saiBFont.enSerif,
-      fontStyle: 'italic',
-      color: 'var(--sai-ai)',
-      fontSize: 28
-    }
-  }, " our four."))), /*#__PURE__*/React.createElement("span", {
-    style: {
-      fontFamily: saiBFont.mono,
-      fontSize: 11,
-      letterSpacing: 3,
-      color: 'var(--sai-muted)'
-    }
-  }, "04 MEMBERS")), /*#__PURE__*/React.createElement("div", {
+  }, window.t('メンバー紹介')))), /*#__PURE__*/React.createElement("div", {
     className: "sai-reveal-each",
     style: {
       display: 'grid',
@@ -329,15 +279,7 @@ function SaiAbout() {
     color1: "#d2c1a0",
     color2: "#bfa97a",
     textColor: saiB.ink
-  }), /*#__PURE__*/React.createElement("div", {
-    style: {
-      fontFamily: saiBFont.mono,
-      fontSize: 9,
-      letterSpacing: 2,
-      color: 'var(--sai-muted)',
-      marginTop: 8
-    }
-  }, "0", i + 1, " / 04")), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+  })), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
     style: {
       fontFamily: saiBFont.mono,
       fontSize: 10,
@@ -402,26 +344,19 @@ function SaiCompany() {
     style: {
       marginBottom: 32
     }
-  }, /*#__PURE__*/React.createElement("div", {
-    style: {
-      fontFamily: saiBFont.mono,
-      fontSize: 10,
-      letterSpacing: 3,
-      color: 'var(--sai-akane)'
-    }
-  }, "SECTION 01 / BUSINESS PROFILE"), /*#__PURE__*/React.createElement("h2", {
+  }, /*#__PURE__*/React.createElement("h2", {
     style: {
       fontFamily: saiBFont.jpSerif,
       fontSize: 44,
       fontWeight: 400,
-      margin: '8px 0 0',
+      margin: 0,
       letterSpacing: '0.04em'
     }
   }, window.t('屋号情報'))), /*#__PURE__*/React.createElement("div", {
     style: {
       borderTop: `1px solid ${saiLine(saiB.ink, 'ff')}`
     }
-  }, [[window.t('屋号名'), window.saiLang === 'en' ? 'Regional Lab' : 'Regional Lab / リージョナルラボ', 'TRADE NAME'], [window.t('設立'), companyInfo.founded, 'FOUNDED'], [window.t('役員'), companyInfo.officers, 'OFFICERS'], [window.t('拠点'), companyInfo.offices, 'LOCATIONS']].map(([label, value, enLabel]) => /*#__PURE__*/React.createElement("div", {
+  }, [[window.t('屋号名'), window.saiLang === 'en' ? 'Regional Lab' : 'Regional Lab / リージョナルラボ'], [window.t('設立'), companyInfo.founded], [window.t('役員'), companyInfo.officers], [window.t('拠点'), companyInfo.offices]].map(([label, value]) => /*#__PURE__*/React.createElement("div", {
     key: label,
     style: {
       display: 'grid',
@@ -439,15 +374,7 @@ function SaiCompany() {
       color: 'var(--sai-ai)',
       letterSpacing: 4
     }
-  }, label), /*#__PURE__*/React.createElement("div", {
-    style: {
-      fontFamily: saiBFont.mono,
-      fontSize: 9,
-      letterSpacing: 2,
-      color: 'var(--sai-muted)',
-      marginTop: 4
-    }
-  }, enLabel)), /*#__PURE__*/React.createElement("div", null, Array.isArray(value) ? /*#__PURE__*/React.createElement("div", {
+  }, label)), /*#__PURE__*/React.createElement("div", null, Array.isArray(value) ? /*#__PURE__*/React.createElement("div", {
     style: {
       display: 'flex',
       flexDirection: 'column',
@@ -494,19 +421,12 @@ function SaiCompany() {
     style: {
       marginBottom: 40
     }
-  }, /*#__PURE__*/React.createElement("div", {
-    style: {
-      fontFamily: saiBFont.mono,
-      fontSize: 10,
-      letterSpacing: 3,
-      color: 'var(--sai-akane)'
-    }
-  }, "SECTION 02 / BUSINESS"), /*#__PURE__*/React.createElement("h2", {
+  }, /*#__PURE__*/React.createElement("h2", {
     style: {
       fontFamily: saiBFont.jpSerif,
       fontSize: 44,
       fontWeight: 400,
-      margin: '8px 0 0',
+      margin: 0,
       letterSpacing: '0.04em'
     }
   }, window.t('事業紹介'))), /*#__PURE__*/React.createElement("div", {
@@ -526,14 +446,6 @@ function SaiCompany() {
       padding: 28
     }
   }, /*#__PURE__*/React.createElement("div", {
-    style: {
-      fontFamily: saiBFont.mono,
-      fontSize: 10,
-      letterSpacing: 3,
-      color: s.color,
-      marginBottom: 8
-    }
-  }, "0", i + 1, " / 0", services.length), /*#__PURE__*/React.createElement("div", {
     style: {
       fontFamily: saiBFont.jpAlt,
       fontSize: 32,
@@ -641,7 +553,7 @@ function SaiNews() {
       cursor: 'pointer',
       transition: 'all 0.15s'
     }
-  }, c))), /*#__PURE__*/React.createElement("div", {
+  }, c === 'ALL' ? window.t('すべて') : c))), /*#__PURE__*/React.createElement("div", {
     className: "sai-reveal-each",
     style: {
       display: 'flex',
@@ -682,15 +594,7 @@ function SaiNews() {
       padding: '3px 8px',
       display: 'inline-block'
     }
-  }, a.cat), /*#__PURE__*/React.createElement("div", {
-    style: {
-      fontFamily: saiBFont.enSerif,
-      fontStyle: 'italic',
-      fontSize: 18,
-      color: 'var(--sai-muted)',
-      marginTop: 16
-    }
-  }, "No. ", a.no)), a.img ? /*#__PURE__*/React.createElement("div", {
+  }, a.cat)), a.img ? /*#__PURE__*/React.createElement("div", {
     style: {
       width: '100%',
       aspectRatio: '4/3',
@@ -872,15 +776,7 @@ function SaiNewsModal({
       letterSpacing: 2,
       color: 'var(--sai-muted)'
     }
-  }, a.date), /*#__PURE__*/React.createElement("span", {
-    style: {
-      fontFamily: saiBFont.enSerif,
-      fontStyle: 'italic',
-      fontSize: 16,
-      color: 'var(--sai-muted)',
-      marginLeft: 'auto'
-    }
-  }, "No. ", a.no)), /*#__PURE__*/React.createElement("h2", {
+  }, a.date)), /*#__PURE__*/React.createElement("h2", {
     style: {
       fontFamily: saiBFont.jpSerif,
       fontSize: 34,
@@ -961,27 +857,14 @@ function SaiPartners() {
       textShadow: 'none',
       background: saiB.paperDeep,
       padding: '40px 44px',
+      borderLeft: `5px solid ${p.color}`,
       display: 'grid',
-      gridTemplateColumns: '80px 1.3fr 2fr',
+      gridTemplateColumns: '1.3fr 2fr',
       gap: 40,
       alignItems: 'center',
       position: 'relative'
     }
-  }, /*#__PURE__*/React.createElement("div", {
-    style: {
-      width: 80,
-      height: 80,
-      borderRadius: 40,
-      background: p.color,
-      color: saiB.paper,
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      fontFamily: saiBFont.jpSerif,
-      fontSize: 32,
-      letterSpacing: 1
-    }
-  }, p.no), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
     style: {
       fontFamily: saiBFont.mono,
       fontSize: 10,
@@ -1044,7 +927,7 @@ function SaiPartners() {
       paddingBottom: 2,
       textDecoration: 'none'
     }
-  }, "View partner \u2192"))))), /*#__PURE__*/React.createElement("div", {
+  }, window.t('パートナーを見る →')))))), /*#__PURE__*/React.createElement("div", {
     style: {
       marginTop: 48,
       padding: 40,
@@ -1052,13 +935,6 @@ function SaiPartners() {
       textAlign: 'center'
     }
   }, /*#__PURE__*/React.createElement("div", {
-    style: {
-      fontFamily: saiBFont.mono,
-      fontSize: 10,
-      letterSpacing: 3,
-      color: 'var(--sai-akane)'
-    }
-  }, "BECOME A PARTNER"), /*#__PURE__*/React.createElement("div", {
     style: {
       fontFamily: saiBFont.jpSerif,
       fontSize: 22,

@@ -4,6 +4,12 @@
 // 画像・URL・カラーは日本語版から継承します。
 // ==========================================================
 window.siteDataEn = function () {
+  // 記事カテゴリは日本語で持っているので、英語版では英字に戻す
+  const NEWS_CATS_EN = {
+    'イベント': 'EVENT',
+    'プロダクト': 'PRODUCT',
+    'メディア': 'MEDIA'
+  };
   const ja = window.siteDataJa;
   const business = [{
     jp: 'Events',
@@ -232,6 +238,7 @@ window.siteDataEn = function () {
       lead: 'Products, events and media: the latest from Regional Lab.',
       articles: ja.news.articles.map((a, i) => ({
         ...a,
+        cat: NEWS_CATS_EN[a.cat] || a.cat,
         title: articles[i].title,
         lead: articles[i].lead,
         body: articles[i].body,

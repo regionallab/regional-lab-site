@@ -28,14 +28,6 @@ function SaiContactHeader() {
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
-      fontFamily: saiCFont.mono,
-      fontSize: 11,
-      letterSpacing: 4,
-      color: 'var(--sai-akane)',
-      marginBottom: 18
-    }
-  }, "SECTION 05 / CONTACT"), /*#__PURE__*/React.createElement("div", {
-    style: {
       display: 'flex',
       alignItems: 'flex-end',
       justifyContent: 'space-between',
@@ -71,7 +63,6 @@ function SaiContactHeader() {
 }
 function ContactField({
   label,
-  en,
   required,
   children
 }) {
@@ -99,14 +90,7 @@ function ContactField({
       color: 'var(--sai-akane)',
       marginLeft: 6
     }
-  }, "*")), /*#__PURE__*/React.createElement("span", {
-    style: {
-      fontFamily: saiCFont.mono,
-      fontSize: 9,
-      letterSpacing: 2,
-      color: 'var(--sai-muted)'
-    }
-  }, en)), children);
+  }, "*"))), children);
 }
 const inputStyle = {
   fontFamily: '"Zen Old Mincho", serif',
@@ -199,24 +183,16 @@ function SaiContactForm() {
     style: {
       gridColumn: '1 / -1'
     }
-  }, /*#__PURE__*/React.createElement("div", {
-    style: {
-      fontFamily: saiCFont.mono,
-      fontSize: 10,
-      letterSpacing: 3,
-      color: 'var(--sai-akane)'
-    }
-  }, "INQUIRY FORM"), /*#__PURE__*/React.createElement("h3", {
+  }, /*#__PURE__*/React.createElement("h3", {
     style: {
       fontFamily: saiCFont.jpSerif,
       fontSize: 26,
-      margin: '8px 0 0',
+      margin: 0,
       letterSpacing: '0.05em',
       color: 'var(--sai-ink)'
     }
   }, window.t('お問い合わせフォーム'))), /*#__PURE__*/React.createElement(ContactField, {
     label: window.t('お問い合わせ種別'),
-    en: "CATEGORY",
     required: true
   }, /*#__PURE__*/React.createElement("select", {
     name: "category",
@@ -229,8 +205,7 @@ function SaiContactForm() {
     key: c,
     value: c
   }, window.t(c))))), /*#__PURE__*/React.createElement(ContactField, {
-    label: window.t('会社名・団体名'),
-    en: "ORGANIZATION"
+    label: window.t('会社名・団体名')
   }, /*#__PURE__*/React.createElement("input", {
     name: "org",
     type: "text",
@@ -238,7 +213,6 @@ function SaiContactForm() {
     style: inputStyle
   })), /*#__PURE__*/React.createElement(ContactField, {
     label: window.t('お名前'),
-    en: "NAME",
     required: true
   }, /*#__PURE__*/React.createElement("input", {
     name: "name",
@@ -246,8 +220,7 @@ function SaiContactForm() {
     placeholder: "\u5C71\u7530 \u592A\u90CE",
     style: inputStyle
   })), /*#__PURE__*/React.createElement(ContactField, {
-    label: window.t('ふりがな'),
-    en: "KANA"
+    label: window.t('ふりがな')
   }, /*#__PURE__*/React.createElement("input", {
     name: "kana",
     type: "text",
@@ -255,7 +228,6 @@ function SaiContactForm() {
     style: inputStyle
   })), /*#__PURE__*/React.createElement(ContactField, {
     label: window.t('メールアドレス'),
-    en: "EMAIL",
     required: true
   }, /*#__PURE__*/React.createElement("input", {
     name: "email",
@@ -263,8 +235,7 @@ function SaiContactForm() {
     placeholder: "example@example.com",
     style: inputStyle
   })), /*#__PURE__*/React.createElement(ContactField, {
-    label: window.t('お電話番号'),
-    en: "PHONE"
+    label: window.t('お電話番号')
   }, /*#__PURE__*/React.createElement("input", {
     name: "tel",
     type: "tel",
@@ -276,7 +247,6 @@ function SaiContactForm() {
     }
   }, /*#__PURE__*/React.createElement(ContactField, {
     label: window.t('お問い合わせ内容'),
-    en: "MESSAGE",
     required: true
   }, /*#__PURE__*/React.createElement("textarea", {
     name: "message",
@@ -335,9 +305,7 @@ function SaiContactForm() {
   }, sending ? window.t('送信中…') : window.t('送信する　→'))));
 }
 function ContactCard({
-  tag,
   jp,
-  en,
   lines,
   color
 }) {
@@ -353,14 +321,7 @@ function ContactCard({
       flexDirection: 'column',
       gap: 12
     }
-  }, /*#__PURE__*/React.createElement("div", {
-    style: {
-      fontFamily: saiCFont.mono,
-      fontSize: 10,
-      letterSpacing: 3,
-      color
-    }
-  }, tag), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
     style: {
       fontFamily: saiCFont.jpSerif,
       fontSize: 20,
@@ -368,15 +329,7 @@ function ContactCard({
       letterSpacing: '0.05em',
       fontWeight: 500
     }
-  }, jp), /*#__PURE__*/React.createElement("div", {
-    style: {
-      fontFamily: saiCFont.enSerif,
-      fontStyle: 'italic',
-      fontSize: 14,
-      color: 'var(--sai-muted)',
-      marginTop: 2
-    }
-  }, en)), /*#__PURE__*/React.createElement("div", {
+  }, jp)), /*#__PURE__*/React.createElement("div", {
     style: {
       display: 'flex',
       flexDirection: 'column',
@@ -418,15 +371,11 @@ function SaiContact() {
       marginBottom: 48
     }
   }, /*#__PURE__*/React.createElement(ContactCard, {
-    tag: "PHONE",
     jp: window.t('お電話でのご連絡'),
-    en: "Phone Inquiry",
     color: saiC.akane,
     lines: ['FAX : 03-5391-6870', '携帯 : 080-9541-6870', '受付時間 : 平日 9:00〜18:00']
   }), /*#__PURE__*/React.createElement(ContactCard, {
-    tag: "OFFICE",
     jp: window.t('本社所在地'),
-    en: "Head Office",
     color: saiC.koke,
     lines: ['〒949-7302', '新潟県南魚沼市浦佐 2476']
   })), /*#__PURE__*/React.createElement(SaiContactForm, null), /*#__PURE__*/React.createElement("div", {

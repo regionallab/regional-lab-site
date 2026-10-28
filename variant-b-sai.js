@@ -115,14 +115,7 @@ function SaiNav() {
     style: {
       whiteSpace: 'nowrap'
     }
-  }, window.t(jp)), /*#__PURE__*/React.createElement("span", {
-    style: {
-      fontFamily: saiFont.mono,
-      fontSize: 8,
-      opacity: 0.5,
-      letterSpacing: 2
-    }
-  }, (sub || en).toUpperCase()))), /*#__PURE__*/React.createElement("div", {
+  }, window.t(jp)))), /*#__PURE__*/React.createElement("div", {
     onClick: () => window.saiSetLang(window.saiLang === 'en' ? 'ja' : 'en'),
     title: "Switch language",
     style: {
@@ -278,15 +271,7 @@ function SaiHero() {
       maxWidth: 380,
       border: `1px solid ${saiPalette.ink}22`
     }
-  }, /*#__PURE__*/React.createElement("div", {
-    style: {
-      fontFamily: saiFont.mono,
-      fontSize: 10,
-      letterSpacing: 2,
-      color: saiPalette.akane,
-      marginBottom: 8
-    }
-  }, "EST. 2024.10.09"), /*#__PURE__*/React.createElement("p", {
+  }, /*#__PURE__*/React.createElement("p", {
     style: {
       fontFamily: saiFont.jpSerif,
       fontSize: 14,
@@ -399,17 +384,9 @@ function SaiMission() {
     }
   }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
     style: {
-      fontFamily: saiFont.mono,
-      fontSize: 10,
-      letterSpacing: 3,
-      opacity: 0.7
-    }
-  }, c.label), /*#__PURE__*/React.createElement("div", {
-    style: {
       fontFamily: saiFont.jpSerif,
       fontSize: 16,
       letterSpacing: 6,
-      marginTop: 6,
       opacity: 0.85
     }
   }, c.jp)), /*#__PURE__*/React.createElement("div", {
@@ -461,15 +438,7 @@ function SaiBusiness() {
     style: {
       color: saiOnPhoto(saiPalette.akane)
     }
-  }, window.t('柱'))), /*#__PURE__*/React.createElement("div", {
-    style: {
-      fontFamily: saiFont.mono,
-      fontSize: 11,
-      letterSpacing: 3,
-      color: saiOnPhoto(saiPalette.muted),
-      textShadow: saiShadow()
-    }
-  }, "OUR BUSINESS / 04 SECTORS")), /*#__PURE__*/React.createElement("div", {
+  }, window.t('柱')))), /*#__PURE__*/React.createElement("div", {
     style: {
       display: 'grid',
       gridTemplateColumns: 'repeat(4, minmax(0, 1fr))',
@@ -484,19 +453,7 @@ function SaiBusiness() {
       display: 'flex',
       flexDirection: 'column'
     }
-  }, /*#__PURE__*/React.createElement("div", {
-    style: {
-      position: 'absolute',
-      top: -8,
-      left: 28,
-      fontFamily: saiFont.mono,
-      fontSize: 10,
-      letterSpacing: 3,
-      background: saiPalette.paper,
-      padding: '4px 8px',
-      color: s.accent
-    }
-  }, "0", i + 1, " / 0", items.length), s.img ? /*#__PURE__*/React.createElement("div", {
+  }, s.img ? /*#__PURE__*/React.createElement("div", {
     style: {
       width: '100%',
       aspectRatio: '16/10',
@@ -602,7 +559,7 @@ function SaiConsulting() {
       textShadow: saiShadow(),
       whiteSpace: 'nowrap'
     }
-  }, c.eyebrow, "\u3000", c.scope)), /*#__PURE__*/React.createElement("h2", {
+  }, c.scope)), /*#__PURE__*/React.createElement("h2", {
     style: {
       fontFamily: saiFont.jpSerif,
       fontSize: 'clamp(38px, 4.2vw, 58px)',
@@ -668,21 +625,7 @@ function SaiTimeline() {
       margin: 0,
       letterSpacing: '0.04em'
     }
-  }, window.t('歩みは続く'), /*#__PURE__*/React.createElement("span", {
-    style: {
-      fontFamily: saiFont.enSerif,
-      fontStyle: 'italic',
-      color: saiOnPhoto(saiPalette.akane),
-      fontSize: 36
-    }
-  }, " ongoing.")), /*#__PURE__*/React.createElement("span", {
-    style: {
-      fontFamily: saiFont.mono,
-      fontSize: 11,
-      letterSpacing: 3,
-      opacity: 0.7
-    }
-  }, "04 / EVENTS 2024\u301C2026")), /*#__PURE__*/React.createElement("div", {
+  }, window.t('歩みは続く'))), /*#__PURE__*/React.createElement("div", {
     style: {
       overflow: 'hidden',
       width: '100%'
@@ -791,16 +734,7 @@ function SaiCTA() {
       maxWidth: 1200,
       margin: '0 auto 80px'
     }
-  }, /*#__PURE__*/React.createElement("div", {
-    style: {
-      fontFamily: saiFont.mono,
-      fontSize: 11,
-      letterSpacing: 3,
-      color: saiOnPhoto(saiPalette.akane),
-      textShadow: saiShadow(),
-      marginBottom: 20
-    }
-  }, "TOGETHER"), /*#__PURE__*/React.createElement("h2", {
+  }, /*#__PURE__*/React.createElement("h2", {
     style: {
       fontFamily: saiFont.jpSerif,
       fontSize: 'clamp(36px, 4.6vw, 60px)',
@@ -841,19 +775,10 @@ function SaiCTA() {
     }
   }, window.t(jp)), /*#__PURE__*/React.createElement("div", {
     style: {
-      fontFamily: saiFont.mono,
-      fontSize: 9,
-      letterSpacing: 2,
-      color: saiOnPhoto(saiPalette.akane),
-      textShadow: saiShadow(),
-      marginTop: 2,
-      marginBottom: 14
-    }
-  }, en.toUpperCase()), /*#__PURE__*/React.createElement("div", {
-    style: {
       display: 'flex',
       flexDirection: 'column',
-      gap: 8
+      gap: 8,
+      marginTop: 14
     }
   }, sub.map(s => /*#__PURE__*/React.createElement("span", {
     key: s,
