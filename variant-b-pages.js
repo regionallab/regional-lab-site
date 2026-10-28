@@ -807,7 +807,7 @@ function SaiNewsModal({
       width: '100%',
       height: '100%',
       objectFit: 'cover',
-      objectPosition: a.imgPos || 'center',
+      objectPosition: a.imgPosWide || a.imgPos || 'center',
       display: 'block'
     }
   })) : a.cover ? /*#__PURE__*/React.createElement(SaiNewsCover, {

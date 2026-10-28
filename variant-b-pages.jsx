@@ -363,7 +363,8 @@ function SaiNewsModal({ article: a, onClose }) {
         }}>×</button>
         {a.img ? (
           <div style={{ width: '100%', aspectRatio: '16/9', overflow: 'hidden' }}>
-            <img src={a.img} alt={a.title} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: a.imgPos || 'center', display: 'block' }} />
+            {/* 16/9 は 4/3 より縦の見える範囲が狭いので、必要なら imgPosWide で別の位置を指定する */}
+            <img src={a.img} alt={a.title} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: a.imgPosWide || a.imgPos || 'center', display: 'block' }} />
           </div>
         ) : a.cover ? (
           <SaiNewsCover cover={a.cover} ratio="16/9" />
