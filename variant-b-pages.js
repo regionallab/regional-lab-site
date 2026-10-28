@@ -100,7 +100,7 @@ function SaiAbout() {
   const members = window.siteData.about.members;
   return /*#__PURE__*/React.createElement("div", {
     style: {
-      background: saiB.paper,
+      background: saiVeil(saiB.paper),
       fontFamily: saiBFont.jpSerif,
       color: saiB.ink
     }
@@ -370,7 +370,7 @@ function SaiCompany() {
   const companyInfo = window.siteData.company.info;
   return /*#__PURE__*/React.createElement("div", {
     style: {
-      background: saiB.paper,
+      background: saiVeil(saiB.paper),
       fontFamily: saiBFont.jpSerif,
       color: saiB.ink
     }
@@ -584,7 +584,7 @@ function SaiNews() {
   const shown = active === 'ALL' ? articles : articles.filter(a => a.cat === active);
   return /*#__PURE__*/React.createElement("div", {
     style: {
-      background: saiB.paper,
+      background: saiVeil(saiB.paper),
       fontFamily: saiBFont.jpSerif,
       color: saiB.ink
     }
@@ -897,7 +897,7 @@ function SaiPartners() {
   const partners = window.siteData.partners.list;
   return /*#__PURE__*/React.createElement("div", {
     style: {
-      background: saiB.paper,
+      background: saiVeil(saiB.paper),
       fontFamily: saiBFont.jpSerif,
       color: saiB.ink
     }

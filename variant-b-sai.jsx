@@ -27,7 +27,7 @@ function SaiNav() {
       alignItems: 'center',
       justifyContent: 'space-between',
       padding: '24px 56px',
-      background: saiPalette.paper,
+      background: saiVeil(saiPalette.paper, 0.92),
       borderBottom: `1px solid ${saiPalette.ink}22`,
     }}>
       <div onClick={() => window.saiNavigate && window.saiNavigate('home')} style={{ display: 'flex', alignItems: 'center', gap: 14, cursor: 'pointer' }}>
@@ -74,7 +74,7 @@ function SaiHero() {
     <div style={{
       position: 'relative',
       padding: '64px 56px 80px',
-      background: `linear-gradient(180deg, ${saiPalette.paper} 0%, ${saiPalette.paperDeep} 100%)`,
+      background: `linear-gradient(180deg, ${saiVeil(saiPalette.paper)} 0%, ${saiVeil(saiPalette.paperDeep)} 100%)`,
       overflow: 'hidden',
       minHeight: 760,
     }}>
@@ -141,7 +141,7 @@ function SaiHero() {
 
 function SaiMission() {
   return (
-    <div style={{ background: saiPalette.paperDeep, padding: '96px 56px', position: 'relative' }}>
+    <div style={{ background: saiVeil(saiPalette.paperDeep), padding: '96px 56px', position: 'relative' }}>
       {/* faded kanji */}
       <Vertical style={{
         position: 'absolute', right: 40, top: 40,
@@ -190,7 +190,7 @@ function SaiMission() {
 function SaiBusiness() {
   const items = window.siteData.business;
   return (
-    <div id="business-section" style={{ background: saiPalette.paper, padding: '120px 56px' }}>
+    <div id="business-section" style={{ background: saiVeil(saiPalette.paper), padding: '120px 56px' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 64 }}>
         <h2 style={{ fontFamily: saiFont.jpSerif, fontSize: 64, fontWeight: 400, margin: 0, color: saiPalette.ink, letterSpacing: '0.04em' }}>
           {window.t('四つの')}<span style={{ color: saiPalette.akane }}>{window.t('柱')}</span>
@@ -237,7 +237,7 @@ function SaiBusiness() {
 function SaiConsulting() {
   const c = window.siteData.consulting;
   return (
-    <div style={{ background: saiPalette.paper, color: saiPalette.ink, padding: '96px 56px 56px', position: 'relative', overflow: 'hidden' }}>
+    <div style={{ background: saiVeil(saiPalette.paper), color: saiPalette.ink, padding: '96px 56px 56px', position: 'relative', overflow: 'hidden' }}>
       {/* faded kanji */}
       <Vertical style={{
         position: 'absolute', right: 56, top: 24,
@@ -266,7 +266,7 @@ function SaiConsulting() {
 function SaiTimeline() {
   const events = window.siteData.timeline;
   return (
-    <div style={{ background: saiPalette.aiDeep, padding: '120px 0', color: saiPalette.paper, position: 'relative', overflow: 'hidden' }}>
+    <div style={{ background: saiVeil(saiPalette.aiDeep, 0.86), padding: '120px 0', color: saiPalette.paper, position: 'relative', overflow: 'hidden' }}>
       <Vertical style={{
         position: 'absolute', right: 56, top: 56,
         fontFamily: saiFont.jpSerif, fontSize: 160, opacity: 0.08, letterSpacing: 0,
@@ -338,7 +338,7 @@ function SaiCTA() {
     ['パートナー', 'Partners', ['H.O.I.Consulting', '(株)遊然', 'LITERAS AI']],
   ];
   return (
-    <div style={{ background: saiPalette.paper, padding: '96px 56px 32px', position: 'relative' }}>
+    <div style={{ background: saiVeil(saiPalette.paper), padding: '96px 56px 32px', position: 'relative' }}>
       <div style={{ textAlign: 'center', maxWidth: 1200, margin: '0 auto 80px' }}>
         <div style={{ fontFamily: saiFont.mono, fontSize: 11, letterSpacing: 3, color: saiPalette.akane, marginBottom: 20 }}>—— TOGETHER</div>
         <h2 style={{ fontFamily: saiFont.jpSerif, fontSize: 'clamp(36px, 4.6vw, 60px)', fontWeight: 400, margin: 0, color: saiPalette.ink, letterSpacing: '0.06em', lineHeight: 1.3, whiteSpace: 'nowrap' }}>
@@ -375,7 +375,7 @@ function SaiCTA() {
 
 function SaiVariant() {
   return (
-    <div style={{ fontFamily: saiFont.jpSerif, color: saiPalette.ink, background: saiPalette.paper }}>
+    <div style={{ fontFamily: saiFont.jpSerif, color: saiPalette.ink, background: saiBackdropOn() ? 'transparent' : saiPalette.paper }}>
       <SaiNav />
       <SaiHero />
       <SaiMission />

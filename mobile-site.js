@@ -41,7 +41,7 @@ function MobileNav() {
       alignItems: 'center',
       justifyContent: 'space-between',
       padding: '14px 18px',
-      background: mPalette.paper,
+      background: saiVeil(mPalette.paper, 0.92),
       borderBottom: `1px solid ${mPalette.ink}22`
     }
   }, /*#__PURE__*/React.createElement("div", {
@@ -208,7 +208,7 @@ function MobileFooter() {
   const navItems = [['私たちについて', 'about'], ['屋号概要', 'company', 'Profile'], ['事業概要', 'business'], ['お知らせ', 'news'], ['パートナー', 'partners'], ['お問い合わせ', 'contact']];
   return /*#__PURE__*/React.createElement("div", {
     style: {
-      background: mPalette.paper,
+      background: saiVeil(mPalette.paper),
       padding: '64px 24px 32px'
     }
   }, /*#__PURE__*/React.createElement("div", {
@@ -299,7 +299,7 @@ function MobilePageHeader({
 }) {
   return /*#__PURE__*/React.createElement("div", {
     style: {
-      background: mPalette.paperDeep,
+      background: saiVeil(mPalette.paperDeep),
       padding: '48px 24px 40px',
       borderBottom: `1px solid ${mPalette.ink}22`
     }
@@ -353,7 +353,7 @@ function MobileHome() {
   const consulting = window.siteData.consulting;
   return /*#__PURE__*/React.createElement("div", {
     style: {
-      background: mPalette.paper
+      background: saiBackdropOn() ? 'transparent' : mPalette.paper
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
@@ -424,7 +424,7 @@ function MobileHome() {
     }
   })))), /*#__PURE__*/React.createElement("div", {
     style: {
-      background: mPalette.paperDeep,
+      background: saiVeil(mPalette.paperDeep),
       padding: '64px 24px'
     }
   }, /*#__PURE__*/React.createElement("div", {
@@ -516,7 +516,7 @@ function MobileHome() {
     }
   }, mBreakAtComma(c.body)))))), /*#__PURE__*/React.createElement("div", {
     style: {
-      background: mPalette.paper,
+      background: saiVeil(mPalette.paper),
       color: mPalette.ink,
       padding: '56px 24px 24px'
     }
@@ -562,7 +562,7 @@ function MobileHome() {
   }, consulting.body)), /*#__PURE__*/React.createElement("div", {
     style: {
       padding: '64px 24px',
-      background: mPalette.paper
+      background: saiVeil(mPalette.paper)
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
@@ -823,7 +823,7 @@ function MobileAbout() {
   const pillarColors = ['#c2452f', '#d8a13a', '#9bb06a'];
   return /*#__PURE__*/React.createElement("div", {
     style: {
-      background: mPalette.paper
+      background: saiVeil(mPalette.paper)
     }
   }, /*#__PURE__*/React.createElement(MobilePageHeader, {
     no: "01",
@@ -1021,7 +1021,7 @@ function MobileCompany() {
   const offices = companyInfo.offices;
   return /*#__PURE__*/React.createElement("div", {
     style: {
-      background: mPalette.paper
+      background: saiVeil(mPalette.paper)
     }
   }, /*#__PURE__*/React.createElement(MobilePageHeader, {
     no: "02",
@@ -1227,7 +1227,7 @@ function MobileNews() {
   const shown = active === 'ALL' ? articles : articles.filter(a => a.cat === active);
   return /*#__PURE__*/React.createElement("div", {
     style: {
-      background: mPalette.paper
+      background: saiVeil(mPalette.paper)
     }
   }, /*#__PURE__*/React.createElement(MobilePageHeader, {
     no: "03",
@@ -1523,7 +1523,7 @@ function MobilePartners() {
   const partners = window.siteData.partners.list;
   return /*#__PURE__*/React.createElement("div", {
     style: {
-      background: mPalette.paper
+      background: saiVeil(mPalette.paper)
     }
   }, /*#__PURE__*/React.createElement(MobilePageHeader, {
     no: "04",
@@ -1736,7 +1736,7 @@ function MobileContact() {
   };
   return /*#__PURE__*/React.createElement("div", {
     style: {
-      background: mPalette.paper
+      background: saiVeil(mPalette.paper)
     }
   }, /*#__PURE__*/React.createElement(MobilePageHeader, {
     no: "05",
@@ -2066,7 +2066,7 @@ function MobileBusiness() {
   const t = window.siteData.businessTree;
   return /*#__PURE__*/React.createElement("div", {
     style: {
-      background: mPalette.paper
+      background: saiVeil(mPalette.paper)
     }
   }, /*#__PURE__*/React.createElement(MobilePageHeader, {
     no: "06",
@@ -2346,7 +2346,7 @@ function MobileSite({
     style: {
       fontFamily: mFont.jpSerif,
       color: mPalette.ink,
-      background: mPalette.paper,
+      background: saiBackdropOn() ? 'transparent' : mPalette.paper,
       minHeight: '100vh'
     }
   }, /*#__PURE__*/React.createElement(MobileNav, null), /*#__PURE__*/React.createElement(MobileApp, {

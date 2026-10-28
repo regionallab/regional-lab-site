@@ -48,7 +48,7 @@ function MobileNav() {
         position: 'sticky', top: 0, zIndex: 100,
         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
         padding: '14px 18px',
-        background: mPalette.paper,
+        background: saiVeil(mPalette.paper, 0.92),
         borderBottom: `1px solid ${mPalette.ink}22`,
       }}>
         <div onClick={() => { window.saiNavigate && window.saiNavigate('home'); setOpen(false); }} style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
@@ -118,7 +118,7 @@ function MobileFooter() {
     ['お問い合わせ', 'contact'],
   ];
   return (
-    <div style={{ background: mPalette.paper, padding: '64px 24px 32px' }}>
+    <div style={{ background: saiVeil(mPalette.paper), padding: '64px 24px 32px' }}>
       <div style={{ textAlign: 'center', marginBottom: 48 }}>
         <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 3, color: mPalette.akane, marginBottom: 16 }}>—— TOGETHER</div>
         <h2 style={{ fontFamily: mFont.jpSerif, fontSize: 28, fontWeight: 400, margin: 0, color: mPalette.ink, letterSpacing: '0.04em', lineHeight: 1.5 }}>
@@ -153,7 +153,7 @@ function MobileFooter() {
 // ----------------------------------------------------------
 function MobilePageHeader({ no, jp, en, lead }) {
   return (
-    <div style={{ background: mPalette.paperDeep, padding: '48px 24px 40px', borderBottom: `1px solid ${mPalette.ink}22` }}>
+    <div style={{ background: saiVeil(mPalette.paperDeep), padding: '48px 24px 40px', borderBottom: `1px solid ${mPalette.ink}22` }}>
       <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 3, color: mPalette.akane, marginBottom: 14 }}>SECTION {no} — {en.toUpperCase()}</div>
       <h1 style={{ fontFamily: mFont.jpSerif, fontSize: 40, fontWeight: 500, margin: 0, color: mPalette.ink, letterSpacing: '0.05em', lineHeight: 1.2 }}>{jp}</h1>
       <div style={{ fontFamily: mFont.enSerif, fontStyle: 'italic', fontSize: 20, color: mPalette.muted, marginTop: 8 }}>{en}</div>
@@ -174,7 +174,7 @@ function MobileHome() {
   const consulting = window.siteData.consulting;
 
   return (
-    <div style={{ background: mPalette.paper }}>
+    <div style={{ background: saiBackdropOn() ? 'transparent' : mPalette.paper }}>
       {/* HERO */}
       <div style={{ padding: '40px 24px 56px', background: `linear-gradient(180deg, ${mPalette.paper} 0%, ${mPalette.paperDeep} 100%)`, position: 'relative' }}>
         <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 3, color: mPalette.akane, marginBottom: 24 }}>—— {window.t('新潟県南魚沼市を支え続ける企業へ')} ——</div>
@@ -197,7 +197,7 @@ function MobileHome() {
       </div>
 
       {/* MISSION — 理念 / 使命 / 展望 */}
-      <div style={{ background: mPalette.paperDeep, padding: '64px 24px' }}>
+      <div style={{ background: saiVeil(mPalette.paperDeep), padding: '64px 24px' }}>
         <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 3, color: mPalette.akane, marginBottom: 18 }}>—— {window.t('─ 理念 / 使命 / 展望').replace('─ ', '')}</div>
         <h2 style={{ fontFamily: mFont.jpSerif, fontSize: 30, fontWeight: 400, color: mPalette.ink, letterSpacing: '0.04em', lineHeight: 1.5, margin: 0 }}>
           {window.siteData.mission.heading.map((h, i) => (
@@ -226,7 +226,7 @@ function MobileHome() {
       </div>
 
       {/* CONSULTING — キャッチコピー */}
-      <div style={{ background: mPalette.paper, color: mPalette.ink, padding: '56px 24px 24px' }}>
+      <div style={{ background: saiVeil(mPalette.paper), color: mPalette.ink, padding: '56px 24px 24px' }}>
         <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 3, color: mPalette.akane, marginBottom: 16 }}>
           {consulting.eyebrow}
         </div>
@@ -242,7 +242,7 @@ function MobileHome() {
       </div>
 
       {/* BUSINESS — 四つの柱 */}
-      <div style={{ padding: '64px 24px', background: mPalette.paper }}>
+      <div style={{ padding: '64px 24px', background: saiVeil(mPalette.paper) }}>
         <div style={{ marginBottom: 36 }}>
           <h2 style={{ fontFamily: mFont.jpSerif, fontSize: 40, fontWeight: 400, margin: 0, color: mPalette.ink, letterSpacing: '0.04em' }}>
             {window.t('四つの')}<span style={{ color: mPalette.akane }}>{window.t('柱')}</span>
@@ -345,7 +345,7 @@ function MobileAbout() {
   }));
   const pillarColors = ['#c2452f', '#d8a13a', '#9bb06a'];
   return (
-    <div style={{ background: mPalette.paper }}>
+    <div style={{ background: saiVeil(mPalette.paper) }}>
       <MobilePageHeader no="01" jp={window.t('私たちについて')} en="About Us" lead={about.lead} />
       <div style={{ padding: '48px 24px' }}>
         {/* 目的 */}
@@ -425,7 +425,7 @@ function MobileCompany() {
   ];
   const offices = companyInfo.offices;
   return (
-    <div style={{ background: mPalette.paper }}>
+    <div style={{ background: saiVeil(mPalette.paper) }}>
       <MobilePageHeader no="02" jp={window.t('屋号概要')} en="Profile" lead={window.siteData.company.lead} />
       <div style={{ padding: '48px 24px' }}>
         <div style={{ marginBottom: 40 }}>
@@ -496,7 +496,7 @@ function MobileNews() {
   const [open, setOpen] = React.useState(null);
   const shown = active === 'ALL' ? articles : articles.filter(a => a.cat === active);
   return (
-    <div style={{ background: mPalette.paper }}>
+    <div style={{ background: saiVeil(mPalette.paper) }}>
       <MobilePageHeader no="03" jp={window.t('お知らせ')} en="News" lead={window.siteData.news.lead} />
       <div style={{ padding: '40px 24px 48px' }}>
         <div style={{ display: 'flex', gap: 8, marginBottom: 24, flexWrap: 'wrap' }}>
@@ -604,7 +604,7 @@ function MobileNewsModal({ article: a, onClose }) {
 function MobilePartners() {
   const partners = window.siteData.partners.list;
   return (
-    <div style={{ background: mPalette.paper }}>
+    <div style={{ background: saiVeil(mPalette.paper) }}>
       <MobilePageHeader no="04" jp={window.t('パートナー')} en="Partners" lead={window.siteData.partners.lead} />
       <div style={{ padding: '48px 24px' }}>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 22 }}>
@@ -700,7 +700,7 @@ function MobileContact() {
       `mailto:${fallback}?subject=${encodeURIComponent(payload._subject)}&body=${encodeURIComponent(body)}`;
   };
   return (
-    <div style={{ background: mPalette.paper }}>
+    <div style={{ background: saiVeil(mPalette.paper) }}>
       <MobilePageHeader no="05" jp={window.t('お問い合わせ')} en="Contact" lead={window.t('ご相談・取材・パートナーシップ等のお問い合わせを承っております。お気軽にご連絡ください。')} />
       <div style={{ padding: '48px 24px' }}>
         {/* Contact cards */}
@@ -831,7 +831,7 @@ function MobileBizGroup({ group, color, n }) {
 function MobileBusiness() {
   const t = window.siteData.businessTree;
   return (
-    <div style={{ background: mPalette.paper }}>
+    <div style={{ background: saiVeil(mPalette.paper) }}>
       <MobilePageHeader no="06" jp={window.t('事業概要')} en="Business" lead={t.lead} />
 
       <div style={{ padding: '32px 24px 0' }}>
@@ -945,7 +945,7 @@ function MobileApp({ page }) {
 
 function MobileSite({ page }) {
   return (
-    <div style={{ fontFamily: mFont.jpSerif, color: mPalette.ink, background: mPalette.paper, minHeight: '100vh' }}>
+    <div style={{ fontFamily: mFont.jpSerif, color: mPalette.ink, background: saiBackdropOn() ? 'transparent' : mPalette.paper, minHeight: '100vh' }}>
       <MobileNav />
       <MobileApp page={page} />
     </div>

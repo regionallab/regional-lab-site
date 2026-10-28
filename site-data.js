@@ -12,6 +12,22 @@ const SITE_COLORS = {
 };
 window.siteDataJa = {
   colors: SITE_COLORS,
+  // ----- 背景の風景写真 -----
+  // assets/ に置いた写真のパスを並べると、サイト全体の背景でゆっくり
+  // 拡大しながら入れ替わります。空のままなら従来どおりの無地（和紙色）。
+  // 横長・2000px以上・明るすぎない写真が向いています。
+  backdrop: {
+    photos: [],
+    interval: 9000,
+    // 1枚を映す時間（ms）
+    fade: 2400,
+    // 入れ替えにかける時間（ms）
+    zoom: 1.10,
+    // 表示中にここまで拡大する
+    veil: 0.72,
+    // 本文の面にかける和紙の濃さ（1に近いほど写真が薄くなる）
+    scrim: 0.12 // 写真全体にうっすら重ねる和紙の濃さ
+  },
   // ----- お問い合わせフォーム送信先 -----
   // Formspree のフォームID（https://formspree.io で作成）に置き換えてください。
   // 例: 'https://formspree.io/f/xmyzabcd'

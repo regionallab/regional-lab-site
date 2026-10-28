@@ -389,7 +389,7 @@ function ContactCard({
 function SaiContact() {
   return /*#__PURE__*/React.createElement("div", {
     style: {
-      background: saiC.paper,
+      background: saiVeil(saiC.paper),
       fontFamily: saiCFont.jpSerif,
       color: saiC.ink
     }

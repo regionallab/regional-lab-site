@@ -29,7 +29,7 @@ function SaiNav() {
       alignItems: 'center',
       justifyContent: 'space-between',
       padding: '24px 56px',
-      background: saiPalette.paper,
+      background: saiVeil(saiPalette.paper, 0.92),
       borderBottom: `1px solid ${saiPalette.ink}22`
     }
   }, /*#__PURE__*/React.createElement("div", {
@@ -141,7 +141,7 @@ function SaiHero() {
     style: {
       position: 'relative',
       padding: '64px 56px 80px',
-      background: `linear-gradient(180deg, ${saiPalette.paper} 0%, ${saiPalette.paperDeep} 100%)`,
+      background: `linear-gradient(180deg, ${saiVeil(saiPalette.paper)} 0%, ${saiVeil(saiPalette.paperDeep)} 100%)`,
       overflow: 'hidden',
       minHeight: 760
     }
@@ -305,7 +305,7 @@ function SaiHero() {
 function SaiMission() {
   return /*#__PURE__*/React.createElement("div", {
     style: {
-      background: saiPalette.paperDeep,
+      background: saiVeil(saiPalette.paperDeep),
       padding: '96px 56px',
       position: 'relative'
     }
@@ -409,7 +409,7 @@ function SaiBusiness() {
   return /*#__PURE__*/React.createElement("div", {
     id: "business-section",
     style: {
-      background: saiPalette.paper,
+      background: saiVeil(saiPalette.paper),
       padding: '120px 56px'
     }
   }, /*#__PURE__*/React.createElement("div", {
@@ -534,7 +534,7 @@ function SaiConsulting() {
   const c = window.siteData.consulting;
   return /*#__PURE__*/React.createElement("div", {
     style: {
-      background: saiPalette.paper,
+      background: saiVeil(saiPalette.paper),
       color: saiPalette.ink,
       padding: '96px 56px 56px',
       position: 'relative',
@@ -605,7 +605,7 @@ function SaiTimeline() {
   const events = window.siteData.timeline;
   return /*#__PURE__*/React.createElement("div", {
     style: {
-      background: saiPalette.aiDeep,
+      background: saiVeil(saiPalette.aiDeep, 0.86),
       padding: '120px 0',
       color: saiPalette.paper,
       position: 'relative',
@@ -751,7 +751,7 @@ function SaiCTA() {
   const tabs = [['私たちについて', 'About', ['目的と設立背景', 'メンバー紹介']], ['屋号概要', 'Profile', ['事業紹介', '屋号情報', '拠点'], 'company'], ['お知らせ', 'News', ['新着記事', 'プレスリリース', 'メディア掲載']], ['お問い合わせ', 'Contact', ['法人の方', '学生の方', '取材依頼']], ['パートナー', 'Partners', ['H.O.I.Consulting', '(株)遊然', 'LITERAS AI']]];
   return /*#__PURE__*/React.createElement("div", {
     style: {
-      background: saiPalette.paper,
+      background: saiVeil(saiPalette.paper),
       padding: '96px 56px 32px',
       position: 'relative'
     }
@@ -848,7 +848,7 @@ function SaiVariant() {
     style: {
       fontFamily: saiFont.jpSerif,
       color: saiPalette.ink,
-      background: saiPalette.paper
+      background: saiBackdropOn() ? 'transparent' : saiPalette.paper
     }
   }, /*#__PURE__*/React.createElement(SaiNav, null), /*#__PURE__*/React.createElement(SaiHero, null), /*#__PURE__*/React.createElement(SaiMission, null), /*#__PURE__*/React.createElement(SaiConsulting, null), /*#__PURE__*/React.createElement(SaiBusiness, null), /*#__PURE__*/React.createElement(SaiTimeline, null), /*#__PURE__*/React.createElement(SaiCTA, null));
 }

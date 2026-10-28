@@ -4,6 +4,7 @@
 //    同名のグローバル関数（SaiVariant など）と衝突するのを避けるためです。
 (function () {
   const {
+    Backdrop,
     SaiVariant,
     SaiNav,
     SaiCTA,
@@ -59,7 +60,7 @@
       return /*#__PURE__*/React.createElement("div", {
         style: {
           fontFamily: '"Shippori Mincho", serif',
-          background: '#f1ead8'
+          background: window.saiBackdropOn() ? 'transparent' : '#f1ead8'
         }
       }, /*#__PURE__*/React.createElement(SaiNav, null), children, /*#__PURE__*/React.createElement(SaiCTA, null));
     }
@@ -99,7 +100,7 @@
         className: "desktop-shell"
       }, desktopBody);
     }
-    return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
+    return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Backdrop, null), /*#__PURE__*/React.createElement("div", {
       className: "sai-app-body",
       key: lang
     }, body), !splashDone && /*#__PURE__*/React.createElement("img", {

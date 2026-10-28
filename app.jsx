@@ -3,7 +3,7 @@
 //    同名のグローバル関数（SaiVariant など）と衝突するのを避けるためです。
 (function () {
 
-const { SaiVariant, SaiNav, SaiCTA, SaiAbout, SaiCompany, SaiNews, SaiPartners, SaiContact, SaiBusinessPage, MobileSite } = window;
+const { Backdrop, SaiVariant, SaiNav, SaiCTA, SaiAbout, SaiCompany, SaiNews, SaiPartners, SaiContact, SaiBusinessPage, MobileSite } = window;
 
 const PAGE_IDS = ['home', 'about', 'company', 'business', 'news', 'contact', 'partners'];
 
@@ -46,7 +46,7 @@ function App() {
   // Sub-page renderer wraps the page content with the shared nav + footer
   function SubPage({ children }) {
     return (
-      <div style={{ fontFamily: '"Shippori Mincho", serif', background: '#f1ead8' }}>
+      <div style={{ fontFamily: '"Shippori Mincho", serif', background: window.saiBackdropOn() ? 'transparent' : '#f1ead8' }}>
         <SaiNav />
         {children}
         <SaiCTA />
@@ -74,6 +74,7 @@ function App() {
 
   return (
     <React.Fragment>
+      <Backdrop />
       <div className="sai-app-body" key={lang}>
         {body}
       </div>

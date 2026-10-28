@@ -191,7 +191,7 @@ function ContactCard({ tag, jp, en, lines, color }) {
 
 function SaiContact() {
   return (
-    <div style={{ background: saiC.paper, fontFamily: saiCFont.jpSerif, color: saiC.ink }}>
+    <div style={{ background: saiVeil(saiC.paper), fontFamily: saiCFont.jpSerif, color: saiC.ink }}>
       <SaiContactHeader />
 
       <div style={{ padding: '64px 56px 96px' }}>
