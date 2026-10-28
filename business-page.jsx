@@ -176,25 +176,25 @@ function BizUnit({ unit, index }) {
 function SaiBusinessPage() {
   const t = window.siteData.businessTree;
   return (
-    <div style={{ ...saiVars(false), background: saiBackdropOn() ? 'transparent' : bizB.paper, fontFamily: bizFont.jpSerif, color: 'var(--sai-ink)', textShadow: saiShadow() }}>
+    <div className="sai-reveal-each" style={{ ...saiVars(false), background: saiBackdropOn() ? 'transparent' : bizB.paper, fontFamily: bizFont.jpSerif, color: 'var(--sai-ink)', textShadow: saiShadow() }}>
       <SaiPageHeader no="06" jp={window.t('事業概要')} en="Business" lead={t.lead} />
 
-      <div style={{ padding: '64px 56px 0' }}>
+      <div className="sai-reveal-each" style={{ padding: '64px 56px 0' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 20 }}>
           <span style={{ fontFamily: bizFont.mono, fontSize: 10, letterSpacing: 3, color: 'var(--sai-akane)' }}>
             STRUCTURE / 04 SECTORS
           </span>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, minmax(0, 1fr))', gap: 16 }}>
+        <div className="sai-reveal-each" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, minmax(0, 1fr))', gap: 16 }}>
           {t.units.map((u, i) => <BizIndexCard key={u.tag} unit={u} index={i} />)}
         </div>
       </div>
 
-      <div style={{ padding: '48px 56px 40px', display: 'flex', flexDirection: 'column', gap: 28 }}>
+      <div className="sai-reveal-each" style={{ padding: '48px 56px 40px', display: 'flex', flexDirection: 'column', gap: 28 }}>
         {t.units.map((u, i) => <BizUnit key={u.tag} unit={u} index={i} />)}
       </div>
 
-      <div style={{ padding: '0 56px 88px' }}>
+      <div className="sai-reveal-each" style={{ padding: '0 56px 88px' }}>
         <div style={{ borderTop: `1px solid ${saiLine(bizB.ink, '33')}`, borderBottom: `1px solid ${saiLine(bizB.ink, '33')}`, padding: '26px 0', display: 'grid', gridTemplateColumns: '160px 1fr', gap: 32, alignItems: 'center' }}>
           <span style={{ fontFamily: bizFont.mono, fontSize: 10, letterSpacing: 3, color: 'var(--sai-akane)' }}>AREAS</span>
           <span style={{ fontFamily: bizFont.jpSerif, fontSize: 14, letterSpacing: '0.06em', lineHeight: 1.9, color: 'var(--sai-ink)' }}>

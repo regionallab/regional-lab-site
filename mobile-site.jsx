@@ -355,9 +355,9 @@ function MobileAbout() {
   }));
   const pillarColors = ['#c2452f', '#d8a13a', '#9bb06a'];
   return (
-    <div style={{ ...saiVars(false), background: saiBackdropOn() ? 'transparent' : mPalette.paper, color: 'var(--sai-ink)', textShadow: saiShadow() }}>
+    <div className="sai-reveal-each" style={{ ...saiVars(false), background: saiBackdropOn() ? 'transparent' : mPalette.paper, color: 'var(--sai-ink)', textShadow: saiShadow() }}>
       <MobilePageHeader no="01" jp={window.t('私たちについて')} en="About Us" lead={about.lead} />
-      <div style={{ padding: '48px 24px' }}>
+      <div className="sai-reveal-each" style={{ padding: '48px 24px' }}>
         {/* 目的 */}
         <div style={{ marginBottom: 32 }}>
           <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 3, color: 'var(--sai-akane)', marginBottom: 14 }}>SECTION 01 / PURPOSE</div>
@@ -386,7 +386,7 @@ function MobileAbout() {
 
         {/* 三本柱 理念/使命/展望 */}
         <div style={{ margin: '0 -24px 40px', background: mPalette.ai, color: mPalette.paper, padding: '36px 24px' }}>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
+          <div className="sai-reveal-each" style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
             {about.pillars.map(([label, body], i) => (
               <div key={label} style={{ borderLeft: `2px solid ${pillarColors[i]}`, paddingLeft: 16 }}>
                 <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 3, opacity: 0.7 }}>{label}</div>
@@ -399,7 +399,7 @@ function MobileAbout() {
         {/* メンバー */}
         <div>
           <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 3, color: 'var(--sai-akane)', marginBottom: 18 }}>SECTION 02 / MEMBERS</div>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
+          <div className="sai-reveal-each" style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
             {members.map((m, i) => (
               <div key={m.jp} style={{ ...saiVars(true), color: 'var(--sai-ink)', textShadow: 'none', background: mPalette.paperDeep, padding: 22 }}>
                 {m.img && (
@@ -435,13 +435,13 @@ function MobileCompany() {
   ];
   const offices = companyInfo.offices;
   return (
-    <div style={{ ...saiVars(false), background: saiBackdropOn() ? 'transparent' : mPalette.paper, color: 'var(--sai-ink)', textShadow: saiShadow() }}>
+    <div className="sai-reveal-each" style={{ ...saiVars(false), background: saiBackdropOn() ? 'transparent' : mPalette.paper, color: 'var(--sai-ink)', textShadow: saiShadow() }}>
       <MobilePageHeader no="02" jp={window.t('屋号概要')} en="Profile" lead={window.siteData.company.lead} />
-      <div style={{ padding: '48px 24px' }}>
+      <div className="sai-reveal-each" style={{ padding: '48px 24px' }}>
         <div style={{ marginBottom: 40 }}>
           <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 3, color: 'var(--sai-akane)', marginBottom: 14 }}>SECTION 01 / BUSINESS</div>
           <h2 style={{ fontFamily: mFont.jpSerif, fontSize: 28, margin: '0 0 24px', color: 'var(--sai-ink)', letterSpacing: '0.04em', fontWeight: 500 }}>{window.t('事業紹介')}</h2>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
+          <div className="sai-reveal-each" style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
             {services.map(s => (
               <div key={s.tag} style={{ ...saiVars(true), color: 'var(--sai-ink)', textShadow: 'none', background: mPalette.paperDeep, padding: 20, borderTop: `2px solid ${s.color}` }}>
                 <div style={{ fontFamily: mFont.jpAlt, fontSize: 22, color: s.color, letterSpacing: 1 }}>{s.tag}</div>
@@ -506,9 +506,9 @@ function MobileNews() {
   const [open, setOpen] = React.useState(null);
   const shown = active === 'ALL' ? articles : articles.filter(a => a.cat === active);
   return (
-    <div style={{ ...saiVars(false), background: saiBackdropOn() ? 'transparent' : mPalette.paper, color: 'var(--sai-ink)', textShadow: saiShadow() }}>
+    <div className="sai-reveal-each" style={{ ...saiVars(false), background: saiBackdropOn() ? 'transparent' : mPalette.paper, color: 'var(--sai-ink)', textShadow: saiShadow() }}>
       <MobilePageHeader no="03" jp={window.t('お知らせ')} en="News" lead={window.siteData.news.lead} />
-      <div style={{ padding: '40px 24px 48px' }}>
+      <div className="sai-reveal-each" style={{ padding: '40px 24px 48px' }}>
         <div style={{ display: 'flex', gap: 8, marginBottom: 24, flexWrap: 'wrap' }}>
           {cats.map((c) => (
             <div key={c} onClick={() => setActive(c)} style={{
@@ -520,7 +520,7 @@ function MobileNews() {
             }}>{c}</div>
           ))}
         </div>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
+        <div className="sai-reveal-each" style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
           {shown.map(a => (
             <div key={a.no} onClick={() => setOpen(a)} style={{
               ...saiVars(true), color: 'var(--sai-ink)', textShadow: 'none', background: mPalette.paperDeep,
@@ -617,10 +617,10 @@ function MobileNewsModal({ article: a, onClose }) {
 function MobilePartners() {
   const partners = window.siteData.partners.list;
   return (
-    <div style={{ ...saiVars(false), background: saiBackdropOn() ? 'transparent' : mPalette.paper, color: 'var(--sai-ink)', textShadow: saiShadow() }}>
+    <div className="sai-reveal-each" style={{ ...saiVars(false), background: saiBackdropOn() ? 'transparent' : mPalette.paper, color: 'var(--sai-ink)', textShadow: saiShadow() }}>
       <MobilePageHeader no="04" jp={window.t('パートナー')} en="Partners" lead={window.siteData.partners.lead} />
-      <div style={{ padding: '48px 24px' }}>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 22 }}>
+      <div className="sai-reveal-each" style={{ padding: '48px 24px' }}>
+        <div className="sai-reveal-each" style={{ display: 'flex', flexDirection: 'column', gap: 22 }}>
           {partners.map(p => (
             <div key={p.no} style={{ ...saiVars(true), color: 'var(--sai-ink)', textShadow: 'none', background: mPalette.paperDeep, padding: 22, display: 'flex', flexDirection: 'column', gap: 14 }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
@@ -713,11 +713,11 @@ function MobileContact() {
       `mailto:${fallback}?subject=${encodeURIComponent(payload._subject)}&body=${encodeURIComponent(body)}`;
   };
   return (
-    <div style={{ ...saiVars(false), background: saiBackdropOn() ? 'transparent' : mPalette.paper, color: 'var(--sai-ink)', textShadow: saiShadow() }}>
+    <div className="sai-reveal-each" style={{ ...saiVars(false), background: saiBackdropOn() ? 'transparent' : mPalette.paper, color: 'var(--sai-ink)', textShadow: saiShadow() }}>
       <MobilePageHeader no="05" jp={window.t('お問い合わせ')} en="Contact" lead={window.t('ご相談・取材・パートナーシップ等のお問い合わせを承っております。お気軽にご連絡ください。')} />
-      <div style={{ padding: '48px 24px' }}>
+      <div className="sai-reveal-each" style={{ padding: '48px 24px' }}>
         {/* Contact cards */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 14, marginBottom: 32 }}>
+        <div className="sai-reveal-each" style={{ display: 'flex', flexDirection: 'column', gap: 14, marginBottom: 32 }}>
           {[
             { tag: 'PHONE', jp: 'お電話でのご連絡', lines: ['FAX : 03-5391-6870', '携帯 : 080-9541-6870', '受付 : 平日 9:00〜18:00'], color: 'var(--sai-akane)' },
             { tag: 'OFFICE', jp: '本社所在地', lines: ['〒949-7302', '新潟県南魚沼市浦佐 2476'], color: 'var(--sai-koke)' },
@@ -843,10 +843,10 @@ function MobileBizGroup({ group, color, n }) {
 function MobileBusiness() {
   const t = window.siteData.businessTree;
   return (
-    <div style={{ ...saiVars(false), background: saiBackdropOn() ? 'transparent' : mPalette.paper, color: 'var(--sai-ink)', textShadow: saiShadow() }}>
+    <div className="sai-reveal-each" style={{ ...saiVars(false), background: saiBackdropOn() ? 'transparent' : mPalette.paper, color: 'var(--sai-ink)', textShadow: saiShadow() }}>
       <MobilePageHeader no="06" jp={window.t('事業概要')} en="Business" lead={t.lead} />
 
-      <div style={{ padding: '32px 24px 0' }}>
+      <div className="sai-reveal-each" style={{ padding: '32px 24px 0' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 14 }}>
           <span style={{ fontFamily: mFont.mono, fontSize: 9.5, letterSpacing: 3, color: 'var(--sai-akane)' }}>STRUCTURE / 04 SECTORS</span>
         </div>
@@ -871,7 +871,7 @@ function MobileBusiness() {
         </div>
       </div>
 
-      <div style={{ padding: '32px 24px 32px', display: 'flex', flexDirection: 'column', gap: 22 }}>
+      <div className="sai-reveal-each" style={{ padding: '32px 24px 32px', display: 'flex', flexDirection: 'column', gap: 22 }}>
         {t.units.map((u, i) => {
           const sections = mBizSections(u.groups);
           const summaryLines = (window.siteData.business.find(b => b.tag === u.tag) || {}).body || [];
@@ -923,7 +923,7 @@ function MobileBusiness() {
         })}
       </div>
 
-      <div style={{ padding: '0 24px 40px' }}>
+      <div className="sai-reveal-each" style={{ padding: '0 24px 40px' }}>
         <div style={{ borderTop: `1px solid ${saiLine(mPalette.ink, '33')}`, borderBottom: `1px solid ${saiLine(mPalette.ink, '33')}`, padding: '18px 0' }}>
           <div style={{ fontFamily: mFont.mono, fontSize: 9.5, letterSpacing: 3, color: 'var(--sai-akane)', marginBottom: 8 }}>AREAS</div>
           <div style={{ fontFamily: mFont.jpSerif, fontSize: 12.5, lineHeight: 1.9, color: 'var(--sai-ink)' }}>{t.footer}</div>

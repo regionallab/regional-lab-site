@@ -314,6 +314,7 @@ function BizUnit({
 function SaiBusinessPage() {
   const t = window.siteData.businessTree;
   return /*#__PURE__*/React.createElement("div", {
+    className: "sai-reveal-each",
     style: {
       ...saiVars(false),
       background: saiBackdropOn() ? 'transparent' : bizB.paper,
@@ -327,6 +328,7 @@ function SaiBusinessPage() {
     en: "Business",
     lead: t.lead
   }), /*#__PURE__*/React.createElement("div", {
+    className: "sai-reveal-each",
     style: {
       padding: '64px 56px 0'
     }
@@ -345,6 +347,7 @@ function SaiBusinessPage() {
       color: 'var(--sai-akane)'
     }
   }, "STRUCTURE / 04 SECTORS")), /*#__PURE__*/React.createElement("div", {
+    className: "sai-reveal-each",
     style: {
       display: 'grid',
       gridTemplateColumns: 'repeat(4, minmax(0, 1fr))',
@@ -355,6 +358,7 @@ function SaiBusinessPage() {
     unit: u,
     index: i
   })))), /*#__PURE__*/React.createElement("div", {
+    className: "sai-reveal-each",
     style: {
       padding: '48px 56px 40px',
       display: 'flex',
@@ -366,6 +370,7 @@ function SaiBusinessPage() {
     unit: u,
     index: i
   }))), /*#__PURE__*/React.createElement("div", {
+    className: "sai-reveal-each",
     style: {
       padding: '0 56px 88px'
     }

@@ -12,6 +12,17 @@ function getPageFromHash() {
   return PAGE_IDS.includes(h) ? h : 'home';
 }
 
+// 下層ページの外枠。共通のヘッダーとフッターで中身を挟む。
+function SubPage({ children }) {
+  return (
+    <div style={{ fontFamily: '"Shippori Mincho", serif', background: window.saiBackdropOn() ? 'transparent' : '#f1ead8' }}>
+      <SaiNav />
+      {children}
+      <SaiCTA />
+    </div>
+  );
+}
+
 function App() {
   const [page, setPage] = React.useState(getPageFromHash());
   const [splashDone, setSplashDone] = React.useState(false);
@@ -43,36 +54,45 @@ function App() {
     return () => clearTimeout(t);
   }, []);
 
+  // 現す対象に印を付ける。ホームは帯ごとに className で直接指定しているが、
+  // 下層ページは「この中身を一つずつ現す」という箱に sai-reveal-each を付けておき、
+  // その直下の要素をここでまとめて対象にする（箱が入れ子のときは中だけを対象にする）。
+  // 描画される前に印を付けるので、一瞬見えてから消えるようなちらつきは起きない。
+  const saiTagReveal = () => {
+    document.querySelectorAll('.sai-reveal-each > *').forEach((el) => {
+      if (!el.classList.contains('sai-reveal-each')) el.classList.add('sai-reveal');
+    });
+  };
+
+  React.useLayoutEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    document.documentElement.classList.add('sai-reveal-on');
+    saiTagReveal();
+  }, [page, lang, isMobile]);
+
   // スクロールで帯をふわりと現す。JS が動いたときだけ初期状態を透明にするので、
   // 万一 JS が止まっても中身が見えなくなることはない。
   React.useEffect(() => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    const root = document.documentElement;
-    root.classList.add('sai-reveal-on');
     const io = new IntersectionObserver((entries) => {
       entries.forEach((e) => {
         if (e.isIntersecting) { e.target.classList.add('sai-in'); io.unobserve(e.target); }
       });
-    }, { threshold: 0.02, rootMargin: '0px 0px -8% 0px' });
+    }, { threshold: 0.02, rootMargin: '0px 0px -5% 0px' });
+    // 印を付けるのは切り替え直後の一度だけ。あとから差し替わった中身（お知らせの絞り込みなど）は
+    // そのまま表示する。表示済みの帯の中で急に消えるのを避けるため、ここでは印を付けない。
     const scan = () => document.querySelectorAll('.sai-reveal:not(.sai-in)').forEach((el) => io.observe(el));
+    scan();
     const t1 = setTimeout(scan, 60);
+    // 中身が差し替わっても、まだ現れていない帯を見失わないように拾い直す
+    const mo = new MutationObserver(scan);
+    mo.observe(document.body, { childList: true, subtree: true });
     // 取りこぼし防止：充分に時間が経っても現れていない帯は無条件で表示する
     const t2 = setTimeout(() => {
       document.querySelectorAll('.sai-reveal').forEach((el) => el.classList.add('sai-in'));
     }, 20000);
-    return () => { clearTimeout(t1); clearTimeout(t2); io.disconnect(); };
+    return () => { clearTimeout(t1); clearTimeout(t2); mo.disconnect(); io.disconnect(); };
   }, [page, lang, isMobile]);
-
-  // Sub-page renderer wraps the page content with the shared nav + footer
-  function SubPage({ children }) {
-    return (
-      <div style={{ fontFamily: '"Shippori Mincho", serif', background: window.saiBackdropOn() ? 'transparent' : '#f1ead8' }}>
-        <SaiNav />
-        {children}
-        <SaiCTA />
-      </div>
-    );
-  }
 
   let body;
   if (isMobile) {
@@ -121,7 +141,7 @@ function App() {
           transition: opacity 1500ms cubic-bezier(.16,.86,.3,1), transform 1500ms cubic-bezier(.16,.86,.3,1);
           will-change: opacity, transform;
         }
-        .sai-reveal-on .sai-reveal.sai-in { opacity: 1; transform: none; }
+        .sai-reveal-on .sai-reveal.sai-in { opacity: 1; transform: none; will-change: auto; }
         @media (prefers-reduced-motion: reduce) {
           .sai-reveal-on .sai-reveal { opacity: 1; transform: none; transition: none; }
         }

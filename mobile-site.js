@@ -872,6 +872,7 @@ function MobileAbout() {
   }));
   const pillarColors = ['#c2452f', '#d8a13a', '#9bb06a'];
   return /*#__PURE__*/React.createElement("div", {
+    className: "sai-reveal-each",
     style: {
       ...saiVars(false),
       background: saiBackdropOn() ? 'transparent' : mPalette.paper,
@@ -884,6 +885,7 @@ function MobileAbout() {
     en: "About Us",
     lead: about.lead
   }), /*#__PURE__*/React.createElement("div", {
+    className: "sai-reveal-each",
     style: {
       padding: '48px 24px'
     }
@@ -970,6 +972,7 @@ function MobileAbout() {
       padding: '36px 24px'
     }
   }, /*#__PURE__*/React.createElement("div", {
+    className: "sai-reveal-each",
     style: {
       display: 'flex',
       flexDirection: 'column',
@@ -1005,6 +1008,7 @@ function MobileAbout() {
       marginBottom: 18
     }
   }, "SECTION 02 / MEMBERS"), /*#__PURE__*/React.createElement("div", {
+    className: "sai-reveal-each",
     style: {
       display: 'flex',
       flexDirection: 'column',
@@ -1079,6 +1083,7 @@ function MobileCompany() {
   const info = [[window.t('屋号名'), window.saiLang === 'en' ? 'Regional Lab' : 'Regional Lab / リージョナルラボ'], [window.t('設立'), companyInfo.founded], [window.t('代表'), window.saiLang === 'en' ? 'Kidera Soma' : '木寺 蒼真'], [window.t('役員'), companyInfo.officers]];
   const offices = companyInfo.offices;
   return /*#__PURE__*/React.createElement("div", {
+    className: "sai-reveal-each",
     style: {
       ...saiVars(false),
       background: saiBackdropOn() ? 'transparent' : mPalette.paper,
@@ -1091,6 +1096,7 @@ function MobileCompany() {
     en: "Profile",
     lead: window.siteData.company.lead
   }), /*#__PURE__*/React.createElement("div", {
+    className: "sai-reveal-each",
     style: {
       padding: '48px 24px'
     }
@@ -1116,6 +1122,7 @@ function MobileCompany() {
       fontWeight: 500
     }
   }, window.t('事業紹介')), /*#__PURE__*/React.createElement("div", {
+    className: "sai-reveal-each",
     style: {
       display: 'flex',
       flexDirection: 'column',
@@ -1294,6 +1301,7 @@ function MobileNews() {
   const [open, setOpen] = React.useState(null);
   const shown = active === 'ALL' ? articles : articles.filter(a => a.cat === active);
   return /*#__PURE__*/React.createElement("div", {
+    className: "sai-reveal-each",
     style: {
       ...saiVars(false),
       background: saiBackdropOn() ? 'transparent' : mPalette.paper,
@@ -1306,6 +1314,7 @@ function MobileNews() {
     en: "News",
     lead: window.siteData.news.lead
   }), /*#__PURE__*/React.createElement("div", {
+    className: "sai-reveal-each",
     style: {
       padding: '40px 24px 48px'
     }
@@ -1330,6 +1339,7 @@ function MobileNews() {
       cursor: 'pointer'
     }
   }, c))), /*#__PURE__*/React.createElement("div", {
+    className: "sai-reveal-each",
     style: {
       display: 'flex',
       flexDirection: 'column',
@@ -1600,6 +1610,7 @@ function MobileNewsModal({
 function MobilePartners() {
   const partners = window.siteData.partners.list;
   return /*#__PURE__*/React.createElement("div", {
+    className: "sai-reveal-each",
     style: {
       ...saiVars(false),
       background: saiBackdropOn() ? 'transparent' : mPalette.paper,
@@ -1612,10 +1623,12 @@ function MobilePartners() {
     en: "Partners",
     lead: window.siteData.partners.lead
   }), /*#__PURE__*/React.createElement("div", {
+    className: "sai-reveal-each",
     style: {
       padding: '48px 24px'
     }
   }, /*#__PURE__*/React.createElement("div", {
+    className: "sai-reveal-each",
     style: {
       display: 'flex',
       flexDirection: 'column',
@@ -1822,6 +1835,7 @@ function MobileContact() {
     window.location.href = `mailto:${fallback}?subject=${encodeURIComponent(payload._subject)}&body=${encodeURIComponent(body)}`;
   };
   return /*#__PURE__*/React.createElement("div", {
+    className: "sai-reveal-each",
     style: {
       ...saiVars(false),
       background: saiBackdropOn() ? 'transparent' : mPalette.paper,
@@ -1834,10 +1848,12 @@ function MobileContact() {
     en: "Contact",
     lead: window.t('ご相談・取材・パートナーシップ等のお問い合わせを承っております。お気軽にご連絡ください。')
   }), /*#__PURE__*/React.createElement("div", {
+    className: "sai-reveal-each",
     style: {
       padding: '48px 24px'
     }
   }, /*#__PURE__*/React.createElement("div", {
+    className: "sai-reveal-each",
     style: {
       display: 'flex',
       flexDirection: 'column',
@@ -2153,6 +2169,7 @@ function MobileBizGroup({
 function MobileBusiness() {
   const t = window.siteData.businessTree;
   return /*#__PURE__*/React.createElement("div", {
+    className: "sai-reveal-each",
     style: {
       ...saiVars(false),
       background: saiBackdropOn() ? 'transparent' : mPalette.paper,
@@ -2165,6 +2182,7 @@ function MobileBusiness() {
     en: "Business",
     lead: t.lead
   }), /*#__PURE__*/React.createElement("div", {
+    className: "sai-reveal-each",
     style: {
       padding: '32px 24px 0'
     }
@@ -2241,6 +2259,7 @@ function MobileBusiness() {
       marginTop: 4
     }
   }, mBizCount(u.groups.length)))))), /*#__PURE__*/React.createElement("div", {
+    className: "sai-reveal-each",
     style: {
       padding: '32px 24px 32px',
       display: 'flex',
@@ -2363,6 +2382,7 @@ function MobileBusiness() {
       });
     }))))));
   })), /*#__PURE__*/React.createElement("div", {
+    className: "sai-reveal-each",
     style: {
       padding: '0 24px 40px'
     }

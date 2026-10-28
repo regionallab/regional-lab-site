@@ -396,6 +396,7 @@ function ContactCard({
 }
 function SaiContact() {
   return /*#__PURE__*/React.createElement("div", {
+    className: "sai-reveal-each",
     style: {
       ...saiVars(false),
       background: saiBackdropOn() ? 'transparent' : saiC.paper,
@@ -404,10 +405,12 @@ function SaiContact() {
       textShadow: saiShadow()
     }
   }, /*#__PURE__*/React.createElement(SaiContactHeader, null), /*#__PURE__*/React.createElement("div", {
+    className: "sai-reveal-each",
     style: {
       padding: '64px 56px 96px'
     }
   }, /*#__PURE__*/React.createElement("div", {
+    className: "sai-reveal-each",
     style: {
       display: 'grid',
       gridTemplateColumns: 'repeat(2, 1fr)',

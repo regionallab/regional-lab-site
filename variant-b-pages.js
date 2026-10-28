@@ -99,6 +99,7 @@ function SaiPageHeader({
 function SaiAbout() {
   const members = window.siteData.about.members;
   return /*#__PURE__*/React.createElement("div", {
+    className: "sai-reveal-each",
     style: {
       ...saiVars(false),
       background: saiBackdropOn() ? 'transparent' : saiB.paper,
@@ -248,6 +249,7 @@ function SaiAbout() {
       letterSpacing: '0.04em'
     }
   }, saiBreakAtComma(body)))))), /*#__PURE__*/React.createElement("div", {
+    className: "sai-reveal-each",
     style: {
       padding: '96px 56px'
     }
@@ -288,6 +290,7 @@ function SaiAbout() {
       color: 'var(--sai-muted)'
     }
   }, "04 MEMBERS")), /*#__PURE__*/React.createElement("div", {
+    className: "sai-reveal-each",
     style: {
       display: 'grid',
       gridTemplateColumns: '1fr 1fr',
@@ -377,6 +380,7 @@ function SaiCompany() {
   const services = window.siteData.company.services;
   const companyInfo = window.siteData.company.info;
   return /*#__PURE__*/React.createElement("div", {
+    className: "sai-reveal-each",
     style: {
       ...saiVars(false),
       background: saiBackdropOn() ? 'transparent' : saiB.paper,
@@ -390,6 +394,7 @@ function SaiCompany() {
     en: "Profile",
     lead: window.siteData.company.lead
   }), /*#__PURE__*/React.createElement("div", {
+    className: "sai-reveal-each",
     style: {
       padding: '80px 56px 0'
     }
@@ -481,6 +486,7 @@ function SaiCompany() {
       letterSpacing: '0.04em'
     }
   }, value)))))), /*#__PURE__*/React.createElement("div", {
+    className: "sai-reveal-each",
     style: {
       padding: '80px 56px'
     }
@@ -504,6 +510,7 @@ function SaiCompany() {
       letterSpacing: '0.04em'
     }
   }, window.t('事業紹介'))), /*#__PURE__*/React.createElement("div", {
+    className: "sai-reveal-each",
     style: {
       display: 'grid',
       gridTemplateColumns: 'repeat(4, minmax(0, 1fr))',
@@ -596,6 +603,7 @@ function SaiNews() {
   const [open, setOpen] = React.useState(null);
   const shown = active === 'ALL' ? articles : articles.filter(a => a.cat === active);
   return /*#__PURE__*/React.createElement("div", {
+    className: "sai-reveal-each",
     style: {
       ...saiVars(false),
       background: saiBackdropOn() ? 'transparent' : saiB.paper,
@@ -609,6 +617,7 @@ function SaiNews() {
     en: "News",
     lead: "\u30D7\u30ED\u30C0\u30AF\u30C8\u3001\u30A4\u30D9\u30F3\u30C8\u3001\u30E1\u30C7\u30A3\u30A2\u63B2\u8F09\u3002Regional Lab \u304B\u3089\u306E\u6700\u65B0\u306E\u304A\u77E5\u3089\u305B\u3067\u3059\u3002"
   }), /*#__PURE__*/React.createElement("div", {
+    className: "sai-reveal-each",
     style: {
       padding: '64px 56px'
     }
@@ -633,6 +642,7 @@ function SaiNews() {
       transition: 'all 0.15s'
     }
   }, c))), /*#__PURE__*/React.createElement("div", {
+    className: "sai-reveal-each",
     style: {
       display: 'flex',
       flexDirection: 'column',
@@ -918,6 +928,7 @@ function SaiNewsModal({
 function SaiPartners() {
   const partners = window.siteData.partners.list;
   return /*#__PURE__*/React.createElement("div", {
+    className: "sai-reveal-each",
     style: {
       ...saiVars(false),
       background: saiBackdropOn() ? 'transparent' : saiB.paper,
@@ -931,10 +942,12 @@ function SaiPartners() {
     en: "Partners",
     lead: "\u5171\u306B\u5730\u65B9\u306E\u672A\u6765\u3092\u5F69\u308B\u3001\u79C1\u305F\u3061\u306E\u5927\u5207\u306A\u30D1\u30FC\u30C8\u30CA\u30FC\u69D8\u3092\u3054\u7D39\u4ECB\u3057\u307E\u3059\u3002"
   }), /*#__PURE__*/React.createElement("div", {
+    className: "sai-reveal-each",
     style: {
       padding: '80px 56px'
     }
   }, /*#__PURE__*/React.createElement("div", {
+    className: "sai-reveal-each",
     style: {
       display: 'flex',
       flexDirection: 'column',

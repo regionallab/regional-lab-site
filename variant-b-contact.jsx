@@ -194,12 +194,12 @@ function ContactCard({ tag, jp, en, lines, color }) {
 
 function SaiContact() {
   return (
-    <div style={{ ...saiVars(false), background: saiBackdropOn() ? 'transparent' : saiC.paper, fontFamily: saiCFont.jpSerif, color: 'var(--sai-ink)', textShadow: saiShadow() }}>
+    <div className="sai-reveal-each" style={{ ...saiVars(false), background: saiBackdropOn() ? 'transparent' : saiC.paper, fontFamily: saiCFont.jpSerif, color: 'var(--sai-ink)', textShadow: saiShadow() }}>
       <SaiContactHeader />
 
-      <div style={{ padding: '64px 56px 96px' }}>
+      <div className="sai-reveal-each" style={{ padding: '64px 56px 96px' }}>
         {/* Direct contact cards */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 20, marginBottom: 48 }}>
+        <div className="sai-reveal-each" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 20, marginBottom: 48 }}>
           <ContactCard
             tag="PHONE"
             jp={window.t('お電話でのご連絡')}

@@ -52,7 +52,7 @@ function SaiAbout() {
   const members = window.siteData.about.members;
 
   return (
-    <div style={{ ...saiVars(false), background: saiBackdropOn() ? 'transparent' : saiB.paper, fontFamily: saiBFont.jpSerif, color: 'var(--sai-ink)', textShadow: saiShadow() }}>
+    <div className="sai-reveal-each" style={{ ...saiVars(false), background: saiBackdropOn() ? 'transparent' : saiB.paper, fontFamily: saiBFont.jpSerif, color: 'var(--sai-ink)', textShadow: saiShadow() }}>
       <SaiPageHeader
         no="01"
         jp={window.t('私たちについて')}
@@ -111,7 +111,7 @@ function SaiAbout() {
       </div>
 
       {/* メンバー紹介 */}
-      <div style={{ padding: '96px 56px' }}>
+      <div className="sai-reveal-each" style={{ padding: '96px 56px' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 48 }}>
           <div>
             <div style={{ fontFamily: saiBFont.mono, fontSize: 10, letterSpacing: 3, color: 'var(--sai-akane)' }}>SECTION 02</div>
@@ -122,7 +122,7 @@ function SaiAbout() {
           <span style={{ fontFamily: saiBFont.mono, fontSize: 11, letterSpacing: 3, color: 'var(--sai-muted)' }}>04 MEMBERS</span>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24 }}>
+        <div className="sai-reveal-each" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24 }}>
           {members.map((m, i) => (
             <div key={m.role} style={{ ...saiVars(true), color: 'var(--sai-ink)', textShadow: 'none', background: saiB.paperDeep, padding: 28, display: 'grid', gridTemplateColumns: '180px 1fr', gap: 24 }}>
               <div>
@@ -161,7 +161,7 @@ function SaiCompany() {
   const companyInfo = window.siteData.company.info;
 
   return (
-    <div style={{ ...saiVars(false), background: saiBackdropOn() ? 'transparent' : saiB.paper, fontFamily: saiBFont.jpSerif, color: 'var(--sai-ink)', textShadow: saiShadow() }}>
+    <div className="sai-reveal-each" style={{ ...saiVars(false), background: saiBackdropOn() ? 'transparent' : saiB.paper, fontFamily: saiBFont.jpSerif, color: 'var(--sai-ink)', textShadow: saiShadow() }}>
       <SaiPageHeader
         no="02"
         jp={window.t('屋号概要')}
@@ -170,7 +170,7 @@ function SaiCompany() {
       />
 
       {/* 会社情報 */}
-      <div style={{ padding: '80px 56px 0' }}>
+      <div className="sai-reveal-each" style={{ padding: '80px 56px 0' }}>
         <div style={{ marginBottom: 32 }}>
           <div style={{ fontFamily: saiBFont.mono, fontSize: 10, letterSpacing: 3, color: 'var(--sai-akane)' }}>SECTION 01 / BUSINESS PROFILE</div>
           <h2 style={{ fontFamily: saiBFont.jpSerif, fontSize: 44, fontWeight: 400, margin: '8px 0 0', letterSpacing: '0.04em' }}>
@@ -221,14 +221,14 @@ function SaiCompany() {
       </div>
 
       {/* 事業紹介 */}
-      <div style={{ padding: '80px 56px' }}>
+      <div className="sai-reveal-each" style={{ padding: '80px 56px' }}>
         <div style={{ marginBottom: 40 }}>
           <div style={{ fontFamily: saiBFont.mono, fontSize: 10, letterSpacing: 3, color: 'var(--sai-akane)' }}>SECTION 02 / BUSINESS</div>
           <h2 style={{ fontFamily: saiBFont.jpSerif, fontSize: 44, fontWeight: 400, margin: '8px 0 0', letterSpacing: '0.04em' }}>
             {window.t('事業紹介')}
           </h2>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, minmax(0, 1fr))', gap: 18 }}>
+        <div className="sai-reveal-each" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, minmax(0, 1fr))', gap: 18 }}>
           {services.map((s, i) => (
             <div key={s.tag} style={{ ...saiVars(true), color: 'var(--sai-ink)', textShadow: 'none', background: saiB.paperDeep, padding: 28 }}>
               <div style={{ fontFamily: saiBFont.mono, fontSize: 10, letterSpacing: 3, color: s.color, marginBottom: 8 }}>0{i+1} / 0{services.length}</div>
@@ -270,7 +270,7 @@ function SaiNews() {
   const shown = active === 'ALL' ? articles : articles.filter(a => a.cat === active);
 
   return (
-    <div style={{ ...saiVars(false), background: saiBackdropOn() ? 'transparent' : saiB.paper, fontFamily: saiBFont.jpSerif, color: 'var(--sai-ink)', textShadow: saiShadow() }}>
+    <div className="sai-reveal-each" style={{ ...saiVars(false), background: saiBackdropOn() ? 'transparent' : saiB.paper, fontFamily: saiBFont.jpSerif, color: 'var(--sai-ink)', textShadow: saiShadow() }}>
       <SaiPageHeader
         no="03"
         jp={window.t('お知らせ')}
@@ -278,7 +278,7 @@ function SaiNews() {
         lead="プロダクト、イベント、メディア掲載。Regional Lab からの最新のお知らせです。"
       />
 
-      <div style={{ padding: '64px 56px' }}>
+      <div className="sai-reveal-each" style={{ padding: '64px 56px' }}>
         <div style={{ display: 'flex', gap: 12, marginBottom: 32 }}>
           {cats.map((c) => (
             <div key={c} onClick={() => setActive(c)} style={{
@@ -292,7 +292,7 @@ function SaiNews() {
           ))}
         </div>
 
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
+        <div className="sai-reveal-each" style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
           {shown.map(a => (
             <div key={a.no} onClick={() => setOpen(a)} style={{
 ...saiVars(true), color: 'var(--sai-ink)', textShadow: 'none',               background: saiB.paperDeep,
@@ -399,7 +399,7 @@ function SaiPartners() {
   const partners = window.siteData.partners.list;
 
   return (
-    <div style={{ ...saiVars(false), background: saiBackdropOn() ? 'transparent' : saiB.paper, fontFamily: saiBFont.jpSerif, color: 'var(--sai-ink)', textShadow: saiShadow() }}>
+    <div className="sai-reveal-each" style={{ ...saiVars(false), background: saiBackdropOn() ? 'transparent' : saiB.paper, fontFamily: saiBFont.jpSerif, color: 'var(--sai-ink)', textShadow: saiShadow() }}>
       <SaiPageHeader
         no="04"
         jp={window.t('パートナー')}
@@ -407,8 +407,8 @@ function SaiPartners() {
         lead="共に地方の未来を彩る、私たちの大切なパートナー様をご紹介します。"
       />
 
-      <div style={{ padding: '80px 56px' }}>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
+      <div className="sai-reveal-each" style={{ padding: '80px 56px' }}>
+        <div className="sai-reveal-each" style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
           {partners.map(p => (
             <div key={p.no} style={{
 ...saiVars(true), color: 'var(--sai-ink)', textShadow: 'none',               background: saiB.paperDeep,
