@@ -20,9 +20,9 @@ const saiCFont = {
 function SaiContactHeader() {
   return /*#__PURE__*/React.createElement("div", {
     style: {
-      background: saiC.paperDeep,
+      background: saiVeil(saiC.paperDeep),
       padding: '80px 56px 64px',
-      borderBottom: `1px solid ${saiC.ink}22`,
+      borderBottom: `1px solid ${saiLine(saiC.ink, '22')}`,
       position: 'relative',
       overflow: 'hidden'
     }
@@ -31,7 +31,7 @@ function SaiContactHeader() {
       fontFamily: saiCFont.mono,
       fontSize: 11,
       letterSpacing: 4,
-      color: saiC.akane,
+      color: 'var(--sai-akane)',
       marginBottom: 18
     }
   }, "SECTION 05 \u2014 CONTACT"), /*#__PURE__*/React.createElement("div", {
@@ -47,7 +47,7 @@ function SaiContactHeader() {
       fontSize: 72,
       fontWeight: 500,
       margin: 0,
-      color: saiC.ink,
+      color: 'var(--sai-ink)',
       letterSpacing: '0.06em',
       lineHeight: 1.1
     }
@@ -56,14 +56,14 @@ function SaiContactHeader() {
       fontFamily: saiCFont.enSerif,
       fontStyle: 'italic',
       fontSize: 28,
-      color: saiC.muted
+      color: 'var(--sai-muted)'
     }
   }, "Contact")), /*#__PURE__*/React.createElement("p", {
     style: {
       marginTop: 24,
       fontFamily: saiCFont.jpSerif,
       fontSize: 15,
-      color: saiC.ink,
+      color: 'var(--sai-ink)',
       lineHeight: 2,
       maxWidth: 720
     }
@@ -92,11 +92,11 @@ function ContactField({
       fontFamily: saiCFont.jpSerif,
       fontSize: 14,
       letterSpacing: 2,
-      color: saiC.ink
+      color: 'var(--sai-ink)'
     }
   }, label, required && /*#__PURE__*/React.createElement("span", {
     style: {
-      color: saiC.akane,
+      color: 'var(--sai-akane)',
       marginLeft: 6
     }
   }, "*")), /*#__PURE__*/React.createElement("span", {
@@ -104,7 +104,7 @@ function ContactField({
       fontFamily: saiCFont.mono,
       fontSize: 9,
       letterSpacing: 2,
-      color: saiC.muted
+      color: 'var(--sai-muted)'
     }
   }, en)), children);
 }
@@ -112,9 +112,11 @@ const inputStyle = {
   fontFamily: '"Zen Old Mincho", serif',
   fontSize: 15,
   padding: '14px 16px',
+  ...saiVars(true),
+  textShadow: 'none',
   background: '#f1ead8',
   border: `1px solid ${saiC.ink}33`,
-  color: saiC.ink,
+  color: 'var(--sai-ink)',
   outline: 'none',
   letterSpacing: 1
 };
@@ -183,6 +185,9 @@ function SaiContactForm() {
   return /*#__PURE__*/React.createElement("form", {
     onSubmit: handleSubmit,
     style: {
+      ...saiVars(true),
+      color: 'var(--sai-ink)',
+      textShadow: 'none',
       background: saiC.paperDeep,
       padding: '48px 52px',
       display: 'grid',
@@ -199,7 +204,7 @@ function SaiContactForm() {
       fontFamily: saiCFont.mono,
       fontSize: 10,
       letterSpacing: 3,
-      color: saiC.akane
+      color: 'var(--sai-akane)'
     }
   }, "\u2014\u2014 INQUIRY FORM"), /*#__PURE__*/React.createElement("h3", {
     style: {
@@ -207,7 +212,7 @@ function SaiContactForm() {
       fontSize: 26,
       margin: '8px 0 0',
       letterSpacing: '0.05em',
-      color: saiC.ink
+      color: 'var(--sai-ink)'
     }
   }, window.t('お問い合わせフォーム'))), /*#__PURE__*/React.createElement(ContactField, {
     label: window.t('お問い合わせ種別'),
@@ -303,7 +308,7 @@ function SaiContactForm() {
     style: {
       fontFamily: saiCFont.jpSerif,
       fontSize: 13,
-      color: saiC.ink,
+      color: 'var(--sai-ink)',
       letterSpacing: 1
     }
   }, window.t('プライバシーポリシーに同意します'))), /*#__PURE__*/React.createElement("div", {
@@ -338,6 +343,9 @@ function ContactCard({
 }) {
   return /*#__PURE__*/React.createElement("div", {
     style: {
+      ...saiVars(true),
+      color: 'var(--sai-ink)',
+      textShadow: 'none',
       background: saiC.paper,
       padding: '32px 28px',
       borderTop: `2px solid ${color}`,
@@ -356,7 +364,7 @@ function ContactCard({
     style: {
       fontFamily: saiCFont.jpSerif,
       fontSize: 20,
-      color: saiC.ink,
+      color: 'var(--sai-ink)',
       letterSpacing: '0.05em',
       fontWeight: 500
     }
@@ -365,7 +373,7 @@ function ContactCard({
       fontFamily: saiCFont.enSerif,
       fontStyle: 'italic',
       fontSize: 14,
-      color: saiC.muted,
+      color: 'var(--sai-muted)',
       marginTop: 2
     }
   }, en)), /*#__PURE__*/React.createElement("div", {
@@ -380,7 +388,7 @@ function ContactCard({
     style: {
       fontFamily: saiCFont.jpSerif,
       fontSize: 14,
-      color: saiC.ink,
+      color: 'var(--sai-ink)',
       letterSpacing: 1,
       lineHeight: 1.8
     }
@@ -389,9 +397,11 @@ function ContactCard({
 function SaiContact() {
   return /*#__PURE__*/React.createElement("div", {
     style: {
-      background: saiPageVeil(saiC.paper),
+      ...saiVars(false),
+      background: saiBackdropOn() ? 'transparent' : saiC.paper,
       fontFamily: saiCFont.jpSerif,
-      color: saiC.ink
+      color: 'var(--sai-ink)',
+      textShadow: saiShadow()
     }
   }, /*#__PURE__*/React.createElement(SaiContactHeader, null), /*#__PURE__*/React.createElement("div", {
     style: {
@@ -420,10 +430,10 @@ function SaiContact() {
     style: {
       marginTop: 40,
       padding: '24px 28px',
-      border: `1px dashed ${saiC.ink}55`,
+      border: `1px dashed ${saiLine(saiC.ink, '55')}`,
       fontFamily: saiCFont.jpSerif,
       fontSize: 13,
-      color: saiC.muted,
+      color: 'var(--sai-muted)',
       letterSpacing: 1,
       lineHeight: 1.9
     }

@@ -35,9 +35,9 @@ function SaiPageHeader({
 }) {
   return /*#__PURE__*/React.createElement("div", {
     style: {
-      background: saiB.paperDeep,
+      background: saiVeil(saiB.paperDeep),
       padding: '80px 56px 64px',
-      borderBottom: `1px solid ${saiB.ink}22`,
+      borderBottom: `1px solid ${saiLine(saiB.ink, '22')}`,
       position: 'relative',
       overflow: 'hidden'
     }
@@ -56,7 +56,7 @@ function SaiPageHeader({
       fontFamily: saiBFont.mono,
       fontSize: 11,
       letterSpacing: 3,
-      color: saiB.akane
+      color: 'var(--sai-akane)'
     }
   }, "\u2014 ", no, " / PAGE"), /*#__PURE__*/React.createElement("div", {
     style: {
@@ -71,7 +71,7 @@ function SaiPageHeader({
       fontSize: 72,
       fontWeight: 400,
       margin: 0,
-      color: saiB.ink,
+      color: 'var(--sai-ink)',
       letterSpacing: '0.04em'
     }
   }, jp), /*#__PURE__*/React.createElement("span", {
@@ -79,14 +79,14 @@ function SaiPageHeader({
       fontFamily: saiBFont.enSerif,
       fontStyle: 'italic',
       fontSize: 36,
-      color: saiB.ai
+      color: 'var(--sai-ai)'
     }
   }, en)), lead && /*#__PURE__*/React.createElement("p", {
     style: {
       fontFamily: saiBFont.jpSerif,
       fontSize: 15,
       lineHeight: 2.0,
-      color: saiB.muted,
+      color: 'var(--sai-muted)',
       marginTop: 20,
       maxWidth: 900
     }
@@ -100,9 +100,11 @@ function SaiAbout() {
   const members = window.siteData.about.members;
   return /*#__PURE__*/React.createElement("div", {
     style: {
-      background: saiPageVeil(saiB.paper),
+      ...saiVars(false),
+      background: saiBackdropOn() ? 'transparent' : saiB.paper,
       fontFamily: saiBFont.jpSerif,
-      color: saiB.ink
+      color: 'var(--sai-ink)',
+      textShadow: saiShadow()
     }
   }, /*#__PURE__*/React.createElement(SaiPageHeader, {
     no: "01",
@@ -121,7 +123,7 @@ function SaiAbout() {
       fontFamily: saiBFont.mono,
       fontSize: 10,
       letterSpacing: 3,
-      color: saiB.akane
+      color: 'var(--sai-akane)'
     }
   }, "SECTION 01"), /*#__PURE__*/React.createElement("h2", {
     style: {
@@ -153,6 +155,9 @@ function SaiAbout() {
     }
   })))), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
     style: {
+      ...saiVars(true),
+      color: 'var(--sai-ink)',
+      textShadow: 'none',
       marginBottom: 40,
       background: saiB.paperDeep,
       padding: 32,
@@ -163,7 +168,7 @@ function SaiAbout() {
       fontFamily: saiBFont.mono,
       fontSize: 11,
       letterSpacing: 3,
-      color: saiB.akane
+      color: 'var(--sai-akane)'
     }
   }, "PURPOSE"), /*#__PURE__*/React.createElement("h3", {
     style: {
@@ -177,7 +182,7 @@ function SaiAbout() {
     style: {
       fontSize: 15,
       lineHeight: 2.1,
-      color: saiB.muted,
+      color: 'var(--sai-muted)',
       margin: 0
     }
   }, window.siteData.about.purpose.body)), /*#__PURE__*/React.createElement("div", {
@@ -185,7 +190,7 @@ function SaiAbout() {
       fontFamily: saiBFont.mono,
       fontSize: 11,
       letterSpacing: 3,
-      color: saiB.ai
+      color: 'var(--sai-ai)'
     }
   }, "BACKGROUND"), /*#__PURE__*/React.createElement("h3", {
     style: {
@@ -206,7 +211,7 @@ function SaiAbout() {
     style: {
       fontSize: 15,
       lineHeight: 2.2,
-      color: saiB.ink,
+      color: 'var(--sai-ink)',
       margin: 0
     }
   }, p))))), /*#__PURE__*/React.createElement("div", {
@@ -258,7 +263,7 @@ function SaiAbout() {
       fontFamily: saiBFont.mono,
       fontSize: 10,
       letterSpacing: 3,
-      color: saiB.akane
+      color: 'var(--sai-akane)'
     }
   }, "SECTION 02"), /*#__PURE__*/React.createElement("h2", {
     style: {
@@ -272,7 +277,7 @@ function SaiAbout() {
     style: {
       fontFamily: saiBFont.enSerif,
       fontStyle: 'italic',
-      color: saiB.ai,
+      color: 'var(--sai-ai)',
       fontSize: 28
     }
   }, "\u2014 our four."))), /*#__PURE__*/React.createElement("span", {
@@ -280,7 +285,7 @@ function SaiAbout() {
       fontFamily: saiBFont.mono,
       fontSize: 11,
       letterSpacing: 3,
-      color: saiB.muted
+      color: 'var(--sai-muted)'
     }
   }, "04 MEMBERS")), /*#__PURE__*/React.createElement("div", {
     style: {
@@ -291,6 +296,9 @@ function SaiAbout() {
   }, members.map((m, i) => /*#__PURE__*/React.createElement("div", {
     key: m.role,
     style: {
+      ...saiVars(true),
+      color: 'var(--sai-ink)',
+      textShadow: 'none',
       background: saiB.paperDeep,
       padding: 28,
       display: 'grid',
@@ -323,7 +331,7 @@ function SaiAbout() {
       fontFamily: saiBFont.mono,
       fontSize: 9,
       letterSpacing: 2,
-      color: saiB.muted,
+      color: 'var(--sai-muted)',
       marginTop: 8
     }
   }, "0", i + 1, " / 04")), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
@@ -331,7 +339,7 @@ function SaiAbout() {
       fontFamily: saiBFont.mono,
       fontSize: 10,
       letterSpacing: 2,
-      color: saiB.akane,
+      color: 'var(--sai-akane)',
       marginBottom: 8
     }
   }, m.role), /*#__PURE__*/React.createElement("div", {
@@ -347,14 +355,14 @@ function SaiAbout() {
       fontFamily: saiBFont.enSerif,
       fontStyle: 'italic',
       fontSize: 16,
-      color: saiB.ai,
+      color: 'var(--sai-ai)',
       marginBottom: 16
     }
   }, m.en), /*#__PURE__*/React.createElement("p", {
     style: {
       fontSize: 13,
       lineHeight: 2,
-      color: saiB.ink,
+      color: 'var(--sai-ink)',
       margin: 0
     }
   }, Array.isArray(m.bio) ? m.bio.map((line, li) => /*#__PURE__*/React.createElement(React.Fragment, {
@@ -370,9 +378,11 @@ function SaiCompany() {
   const companyInfo = window.siteData.company.info;
   return /*#__PURE__*/React.createElement("div", {
     style: {
-      background: saiPageVeil(saiB.paper),
+      ...saiVars(false),
+      background: saiBackdropOn() ? 'transparent' : saiB.paper,
       fontFamily: saiBFont.jpSerif,
-      color: saiB.ink
+      color: 'var(--sai-ink)',
+      textShadow: saiShadow()
     }
   }, /*#__PURE__*/React.createElement(SaiPageHeader, {
     no: "02",
@@ -392,7 +402,7 @@ function SaiCompany() {
       fontFamily: saiBFont.mono,
       fontSize: 10,
       letterSpacing: 3,
-      color: saiB.akane
+      color: 'var(--sai-akane)'
     }
   }, "SECTION 01 \u2014 BUSINESS PROFILE"), /*#__PURE__*/React.createElement("h2", {
     style: {
@@ -404,7 +414,7 @@ function SaiCompany() {
     }
   }, window.t('屋号情報'))), /*#__PURE__*/React.createElement("div", {
     style: {
-      borderTop: `1px solid ${saiB.ink}`
+      borderTop: `1px solid ${saiLine(saiB.ink, 'ff')}`
     }
   }, [[window.t('屋号名'), window.saiLang === 'en' ? 'Regional Lab' : 'Regional Lab / リージョナルラボ', 'TRADE NAME'], [window.t('設立'), companyInfo.founded, 'FOUNDED'], [window.t('役員'), companyInfo.officers, 'OFFICERS'], [window.t('拠点'), companyInfo.offices, 'LOCATIONS']].map(([label, value, enLabel]) => /*#__PURE__*/React.createElement("div", {
     key: label,
@@ -412,7 +422,7 @@ function SaiCompany() {
       display: 'grid',
       gridTemplateColumns: '200px 1fr',
       padding: '24px 0',
-      borderBottom: `1px solid ${saiB.ink}22`,
+      borderBottom: `1px solid ${saiLine(saiB.ink, '22')}`,
       alignItems: 'start',
       gap: 24
     }
@@ -421,7 +431,7 @@ function SaiCompany() {
       fontFamily: saiBFont.jpSerif,
       fontSize: 18,
       fontWeight: 500,
-      color: saiB.ai,
+      color: 'var(--sai-ai)',
       letterSpacing: 4
     }
   }, label), /*#__PURE__*/React.createElement("div", {
@@ -429,7 +439,7 @@ function SaiCompany() {
       fontFamily: saiBFont.mono,
       fontSize: 9,
       letterSpacing: 2,
-      color: saiB.muted,
+      color: 'var(--sai-muted)',
       marginTop: 4
     }
   }, enLabel)), /*#__PURE__*/React.createElement("div", null, Array.isArray(value) ? /*#__PURE__*/React.createElement("div", {
@@ -460,14 +470,14 @@ function SaiCompany() {
     style: {
       fontFamily: saiBFont.jpSerif,
       fontSize: 16,
-      color: saiB.ink,
+      color: 'var(--sai-ink)',
       letterSpacing: '0.04em'
     }
   }, v)))) : /*#__PURE__*/React.createElement("span", {
     style: {
       fontFamily: saiBFont.jpSerif,
       fontSize: 18,
-      color: saiB.ink,
+      color: 'var(--sai-ink)',
       letterSpacing: '0.04em'
     }
   }, value)))))), /*#__PURE__*/React.createElement("div", {
@@ -483,7 +493,7 @@ function SaiCompany() {
       fontFamily: saiBFont.mono,
       fontSize: 10,
       letterSpacing: 3,
-      color: saiB.akane
+      color: 'var(--sai-akane)'
     }
   }, "SECTION 02 \u2014 BUSINESS"), /*#__PURE__*/React.createElement("h2", {
     style: {
@@ -502,6 +512,9 @@ function SaiCompany() {
   }, services.map((s, i) => /*#__PURE__*/React.createElement("div", {
     key: s.tag,
     style: {
+      ...saiVars(true),
+      color: 'var(--sai-ink)',
+      textShadow: 'none',
       background: saiB.paperDeep,
       padding: 28
     }
@@ -525,7 +538,7 @@ function SaiCompany() {
     style: {
       fontFamily: saiBFont.jpSerif,
       fontSize: 14,
-      color: saiB.muted,
+      color: 'var(--sai-muted)',
       letterSpacing: 3,
       marginTop: 4,
       marginBottom: 16
@@ -584,9 +597,11 @@ function SaiNews() {
   const shown = active === 'ALL' ? articles : articles.filter(a => a.cat === active);
   return /*#__PURE__*/React.createElement("div", {
     style: {
-      background: saiPageVeil(saiB.paper),
+      ...saiVars(false),
+      background: saiBackdropOn() ? 'transparent' : saiB.paper,
       fontFamily: saiBFont.jpSerif,
-      color: saiB.ink
+      color: 'var(--sai-ink)',
+      textShadow: saiShadow()
     }
   }, /*#__PURE__*/React.createElement(SaiPageHeader, {
     no: "03",
@@ -608,7 +623,7 @@ function SaiNews() {
     onClick: () => setActive(c),
     style: {
       padding: '8px 18px',
-      border: `1px solid ${saiB.ink}`,
+      border: `1px solid ${saiLine(saiB.ink, 'ff')}`,
       background: active === c ? saiB.ink : 'transparent',
       color: active === c ? saiB.paper : saiB.ink,
       fontFamily: saiBFont.mono,
@@ -627,6 +642,9 @@ function SaiNews() {
     key: a.no,
     onClick: () => setOpen(a),
     style: {
+      ...saiVars(true),
+      color: 'var(--sai-ink)',
+      textShadow: 'none',
       background: saiB.paperDeep,
       padding: 32,
       display: 'grid',
@@ -641,7 +659,7 @@ function SaiNews() {
       fontFamily: saiBFont.mono,
       fontSize: 10,
       letterSpacing: 2,
-      color: saiB.muted
+      color: 'var(--sai-muted)'
     }
   }, a.date), /*#__PURE__*/React.createElement("div", {
     style: {
@@ -659,7 +677,7 @@ function SaiNews() {
       fontFamily: saiBFont.enSerif,
       fontStyle: 'italic',
       fontSize: 18,
-      color: saiB.muted,
+      color: 'var(--sai-muted)',
       marginTop: 16
     }
   }, "No. ", a.no)), a.img ? /*#__PURE__*/React.createElement("div", {
@@ -701,7 +719,7 @@ function SaiNews() {
       fontFamily: saiBFont.jpSerif,
       fontSize: 14,
       lineHeight: 2,
-      color: saiB.akane,
+      color: 'var(--sai-akane)',
       marginTop: 12,
       marginBottom: 14
     }
@@ -711,7 +729,7 @@ function SaiNews() {
     style: {
       fontSize: 13,
       lineHeight: 2.1,
-      color: saiB.ink
+      color: 'var(--sai-ink)'
     }
   }), /*#__PURE__*/React.createElement("div", {
     style: {
@@ -719,8 +737,8 @@ function SaiNews() {
       fontFamily: saiBFont.enSerif,
       fontStyle: 'italic',
       fontSize: 14,
-      color: saiB.ink,
-      borderBottom: `1px solid ${saiB.ink}`,
+      color: 'var(--sai-ink)',
+      borderBottom: `1px solid ${saiLine(saiB.ink, 'ff')}`,
       display: 'inline-block',
       paddingBottom: 2
     }
@@ -729,7 +747,7 @@ function SaiNews() {
       fontFamily: saiBFont.enSerif,
       fontStyle: 'italic',
       fontSize: 20,
-      color: saiB.ai,
+      color: 'var(--sai-ai)',
       textAlign: 'right'
     }
   }, "\u2197"))))), open && /*#__PURE__*/React.createElement(SaiNewsModal, {
@@ -768,6 +786,9 @@ function SaiNewsModal({
   }, /*#__PURE__*/React.createElement("div", {
     onClick: e => e.stopPropagation(),
     style: {
+      ...saiVars(true),
+      color: 'var(--sai-ink)',
+      textShadow: 'none',
       background: saiB.paper,
       maxWidth: 820,
       width: '100%',
@@ -838,14 +859,14 @@ function SaiNewsModal({
       fontFamily: saiBFont.mono,
       fontSize: 12,
       letterSpacing: 2,
-      color: saiB.muted
+      color: 'var(--sai-muted)'
     }
   }, a.date), /*#__PURE__*/React.createElement("span", {
     style: {
       fontFamily: saiBFont.enSerif,
       fontStyle: 'italic',
       fontSize: 16,
-      color: saiB.muted,
+      color: 'var(--sai-muted)',
       marginLeft: 'auto'
     }
   }, "No. ", a.no)), /*#__PURE__*/React.createElement("h2", {
@@ -870,7 +891,7 @@ function SaiNewsModal({
     style: {
       fontSize: 15,
       lineHeight: 2.4,
-      color: saiB.ink
+      color: 'var(--sai-ink)'
     }
   }), a.url && /*#__PURE__*/React.createElement("a", {
     href: a.url,
@@ -897,9 +918,11 @@ function SaiPartners() {
   const partners = window.siteData.partners.list;
   return /*#__PURE__*/React.createElement("div", {
     style: {
-      background: saiPageVeil(saiB.paper),
+      ...saiVars(false),
+      background: saiBackdropOn() ? 'transparent' : saiB.paper,
       fontFamily: saiBFont.jpSerif,
-      color: saiB.ink
+      color: 'var(--sai-ink)',
+      textShadow: saiShadow()
     }
   }, /*#__PURE__*/React.createElement(SaiPageHeader, {
     no: "04",
@@ -919,6 +942,9 @@ function SaiPartners() {
   }, partners.map(p => /*#__PURE__*/React.createElement("div", {
     key: p.no,
     style: {
+      ...saiVars(true),
+      color: 'var(--sai-ink)',
+      textShadow: 'none',
       background: saiB.paperDeep,
       padding: '40px 44px',
       display: 'grid',
@@ -962,7 +988,7 @@ function SaiPartners() {
       fontFamily: saiBFont.enSerif,
       fontStyle: 'italic',
       fontSize: 16,
-      color: saiB.muted,
+      color: 'var(--sai-muted)',
       marginTop: 4
     }
   }, p.en), /*#__PURE__*/React.createElement("div", {
@@ -979,14 +1005,14 @@ function SaiPartners() {
       fontSize: 11,
       letterSpacing: 2,
       padding: '4px 10px',
-      border: `1px solid ${saiB.ink}55`,
-      color: saiB.ink
+      border: `1px solid ${saiLine(saiB.ink, '55')}`,
+      color: 'var(--sai-ink)'
     }
   }, t)))), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("p", {
     style: {
       fontSize: 14,
       lineHeight: 2.1,
-      color: saiB.ink,
+      color: 'var(--sai-ink)',
       margin: 0
     }
   }, p.body), p.url && /*#__PURE__*/React.createElement("a", {
@@ -998,7 +1024,7 @@ function SaiPartners() {
       fontFamily: saiBFont.enSerif,
       fontStyle: 'italic',
       fontSize: 14,
-      color: saiB.ai,
+      color: 'var(--sai-ai)',
       borderBottom: `1px solid ${saiB.ai}`,
       display: 'inline-block',
       paddingBottom: 2,
@@ -1008,7 +1034,7 @@ function SaiPartners() {
     style: {
       marginTop: 48,
       padding: 40,
-      border: `1px dashed ${saiB.ink}55`,
+      border: `1px dashed ${saiLine(saiB.ink, '55')}`,
       textAlign: 'center'
     }
   }, /*#__PURE__*/React.createElement("div", {
@@ -1016,7 +1042,7 @@ function SaiPartners() {
       fontFamily: saiBFont.mono,
       fontSize: 10,
       letterSpacing: 3,
-      color: saiB.akane
+      color: 'var(--sai-akane)'
     }
   }, "BECOME A PARTNER"), /*#__PURE__*/React.createElement("div", {
     style: {

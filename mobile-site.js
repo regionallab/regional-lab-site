@@ -42,8 +42,11 @@ function MobileNav() {
       alignItems: 'center',
       justifyContent: 'space-between',
       padding: '14px 18px',
+      ...saiVars(true),
+      color: 'var(--sai-ink)',
+      textShadow: 'none',
       background: saiVeil(mPalette.paper, 0.92),
-      borderBottom: `1px solid ${mPalette.ink}22`
+      borderBottom: `1px solid ${saiLine(mPalette.ink, '22')}`
     }
   }, /*#__PURE__*/React.createElement("div", {
     onClick: () => {
@@ -87,7 +90,7 @@ function MobileNav() {
       fontSize: 19,
       fontWeight: 600,
       letterSpacing: 0.5,
-      color: mPalette.ink
+      color: 'var(--sai-ink)'
     }
   }, "Regional Lab"))), /*#__PURE__*/React.createElement("button", {
     onClick: () => setOpen(!open),
@@ -136,6 +139,9 @@ function MobileNav() {
       right: 0,
       bottom: 0,
       zIndex: 99,
+      ...saiVars(true),
+      color: 'var(--sai-ink)',
+      textShadow: 'none',
       background: mPalette.paper,
       padding: '40px 24px',
       display: 'flex',
@@ -150,7 +156,7 @@ function MobileNav() {
     },
     style: {
       padding: '18px 8px',
-      borderBottom: `1px solid ${mPalette.ink}22`,
+      borderBottom: `1px solid ${saiLine(mPalette.ink, '22')}`,
       display: 'flex',
       justifyContent: 'space-between',
       alignItems: 'center',
@@ -160,7 +166,7 @@ function MobileNav() {
     style: {
       fontFamily: mFont.jpSerif,
       fontSize: 18,
-      color: mPalette.ink,
+      color: 'var(--sai-ink)',
       letterSpacing: 2
     }
   }, window.t(jp)), /*#__PURE__*/React.createElement("span", {
@@ -168,14 +174,14 @@ function MobileNav() {
       fontFamily: mFont.mono,
       fontSize: 10,
       letterSpacing: 2,
-      color: mPalette.akane
+      color: 'var(--sai-akane)'
     }
   }, (sub || en).toUpperCase(), " \u2192"))), /*#__PURE__*/React.createElement("div", {
     onClick: () => window.saiSetLang(window.saiLang === 'en' ? 'ja' : 'en'),
     style: {
       marginTop: 20,
       padding: '14px 8px',
-      border: `1px solid ${mPalette.ink}`,
+      border: `1px solid ${saiLine(mPalette.ink, 'ff')}`,
       display: 'flex',
       gap: 8,
       justifyContent: 'center',
@@ -307,14 +313,14 @@ function MobilePageHeader({
     style: {
       background: saiVeil(mPalette.paperDeep),
       padding: '48px 24px 40px',
-      borderBottom: `1px solid ${mPalette.ink}22`
+      borderBottom: `1px solid ${saiLine(mPalette.ink, '22')}`
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
       fontFamily: mFont.mono,
       fontSize: 10,
       letterSpacing: 3,
-      color: mPalette.akane,
+      color: 'var(--sai-akane)',
       marginBottom: 14
     }
   }, "SECTION ", no, " \u2014 ", en.toUpperCase()), /*#__PURE__*/React.createElement("h1", {
@@ -323,7 +329,7 @@ function MobilePageHeader({
       fontSize: 40,
       fontWeight: 500,
       margin: 0,
-      color: mPalette.ink,
+      color: 'var(--sai-ink)',
       letterSpacing: '0.05em',
       lineHeight: 1.2
     }
@@ -332,7 +338,7 @@ function MobilePageHeader({
       fontFamily: mFont.enSerif,
       fontStyle: 'italic',
       fontSize: 20,
-      color: mPalette.muted,
+      color: 'var(--sai-muted)',
       marginTop: 8
     }
   }, en), lead && /*#__PURE__*/React.createElement("p", {
@@ -340,7 +346,7 @@ function MobilePageHeader({
       marginTop: 20,
       fontFamily: mFont.jpSerif,
       fontSize: 14,
-      color: mPalette.ink,
+      color: 'var(--sai-ink)',
       lineHeight: 2,
       margin: '20px 0 0'
     }
@@ -359,6 +365,7 @@ function MobileHome() {
   const consulting = window.siteData.consulting;
   return /*#__PURE__*/React.createElement("div", {
     style: {
+      ...saiVars(false),
       background: saiBackdropOn() ? 'transparent' : mPalette.paper
     }
   }, /*#__PURE__*/React.createElement("div", {
@@ -481,7 +488,7 @@ function MobileHome() {
     jp: window.t('理念'),
     body: window.siteData.about.pillars[0][1],
     bg: mPalette.paper,
-    color: mPalette.ink
+    color: 'var(--sai-ink)'
   }, {
     label: 'MISSION',
     jp: window.t('使命'),
@@ -528,7 +535,7 @@ function MobileHome() {
   }, mBreakAtComma(c.body)))))), /*#__PURE__*/React.createElement("div", {
     style: {
       background: saiVeil(mPalette.paper),
-      color: mPalette.ink,
+      color: 'var(--sai-ink)',
       padding: '56px 24px 24px'
     }
   }, /*#__PURE__*/React.createElement("div", {
@@ -615,6 +622,9 @@ function MobileHome() {
   }, business.map((s, i) => /*#__PURE__*/React.createElement("div", {
     key: s.tag,
     style: {
+      ...saiVars(true),
+      color: 'var(--sai-ink)',
+      textShadow: 'none',
       background: mPalette.paperDeep,
       padding: 20,
       position: 'relative'
@@ -627,6 +637,9 @@ function MobileHome() {
       fontFamily: mFont.mono,
       fontSize: 10,
       letterSpacing: 3,
+      ...saiVars(true),
+      color: 'var(--sai-ink)',
+      textShadow: 'none',
       background: mPalette.paper,
       padding: '4px 8px',
       color: s.accent
@@ -674,7 +687,7 @@ function MobileHome() {
       fontFamily: mFont.jpSerif,
       fontSize: 13,
       letterSpacing: 3,
-      color: mPalette.muted,
+      color: 'var(--sai-muted)',
       marginTop: 4
     }
   }, s.jp), /*#__PURE__*/React.createElement("p", {
@@ -682,7 +695,7 @@ function MobileHome() {
       fontFamily: mFont.jpSerif,
       fontSize: 14,
       lineHeight: 2,
-      color: mPalette.ink,
+      color: 'var(--sai-ink)',
       marginTop: 14,
       margin: '14px 0 16px'
     }
@@ -840,7 +853,10 @@ function MobileAbout() {
   const pillarColors = ['#c2452f', '#d8a13a', '#9bb06a'];
   return /*#__PURE__*/React.createElement("div", {
     style: {
-      background: saiPageVeil(mPalette.paper)
+      ...saiVars(false),
+      background: saiBackdropOn() ? 'transparent' : mPalette.paper,
+      color: 'var(--sai-ink)',
+      textShadow: saiShadow()
     }
   }, /*#__PURE__*/React.createElement(MobilePageHeader, {
     no: "01",
@@ -860,11 +876,14 @@ function MobileAbout() {
       fontFamily: mFont.mono,
       fontSize: 10,
       letterSpacing: 3,
-      color: mPalette.akane,
+      color: 'var(--sai-akane)',
       marginBottom: 14
     }
   }, "SECTION 01 \u2014 PURPOSE"), /*#__PURE__*/React.createElement("div", {
     style: {
+      ...saiVars(true),
+      color: 'var(--sai-ink)',
+      textShadow: 'none',
       background: mPalette.paperDeep,
       padding: 22,
       borderLeft: `4px solid ${mPalette.akane}`
@@ -875,7 +894,7 @@ function MobileAbout() {
       fontSize: 22,
       fontWeight: 500,
       margin: '0 0 16px',
-      color: mPalette.ink,
+      color: 'var(--sai-ink)',
       letterSpacing: '0.04em',
       lineHeight: 1.6
     }
@@ -883,7 +902,7 @@ function MobileAbout() {
     style: {
       fontFamily: mFont.jpSerif,
       fontSize: 14,
-      color: mPalette.muted,
+      color: 'var(--sai-muted)',
       lineHeight: 2,
       margin: 0
     }
@@ -896,7 +915,7 @@ function MobileAbout() {
       fontFamily: mFont.mono,
       fontSize: 10,
       letterSpacing: 3,
-      color: mPalette.ai,
+      color: 'var(--sai-ai)',
       marginBottom: 10
     }
   }, "BACKGROUND"), /*#__PURE__*/React.createElement("h3", {
@@ -905,7 +924,7 @@ function MobileAbout() {
       fontSize: 20,
       fontWeight: 500,
       margin: '0 0 16px',
-      color: mPalette.ink,
+      color: 'var(--sai-ink)',
       letterSpacing: '0.04em'
     }
   }, about.background.heading), /*#__PURE__*/React.createElement("div", {
@@ -919,7 +938,7 @@ function MobileAbout() {
     style: {
       fontFamily: mFont.jpSerif,
       fontSize: 14,
-      color: mPalette.ink,
+      color: 'var(--sai-ink)',
       lineHeight: 2,
       margin: 0
     }
@@ -962,7 +981,7 @@ function MobileAbout() {
       fontFamily: mFont.mono,
       fontSize: 10,
       letterSpacing: 3,
-      color: mPalette.akane,
+      color: 'var(--sai-akane)',
       marginBottom: 18
     }
   }, "SECTION 02 \u2014 MEMBERS"), /*#__PURE__*/React.createElement("div", {
@@ -974,6 +993,9 @@ function MobileAbout() {
   }, members.map((m, i) => /*#__PURE__*/React.createElement("div", {
     key: m.jp,
     style: {
+      ...saiVars(true),
+      color: 'var(--sai-ink)',
+      textShadow: 'none',
       background: mPalette.paperDeep,
       padding: 22
     }
@@ -998,14 +1020,14 @@ function MobileAbout() {
       fontFamily: mFont.mono,
       fontSize: 10,
       letterSpacing: 2,
-      color: mPalette.akane,
+      color: 'var(--sai-akane)',
       marginBottom: 10
     }
   }, m.role), /*#__PURE__*/React.createElement("div", {
     style: {
       fontFamily: mFont.jpSerif,
       fontSize: 22,
-      color: mPalette.ink,
+      color: 'var(--sai-ink)',
       letterSpacing: '0.05em'
     }
   }, m.jp), /*#__PURE__*/React.createElement("div", {
@@ -1013,14 +1035,14 @@ function MobileAbout() {
       fontFamily: mFont.enSerif,
       fontStyle: 'italic',
       fontSize: 16,
-      color: mPalette.ai,
+      color: 'var(--sai-ai)',
       marginTop: 4
     }
   }, m.en), /*#__PURE__*/React.createElement("p", {
     style: {
       fontFamily: mFont.jpSerif,
       fontSize: 13,
-      color: mPalette.ink,
+      color: 'var(--sai-ink)',
       lineHeight: 1.9,
       marginTop: 14,
       margin: '14px 0 0'
@@ -1038,7 +1060,10 @@ function MobileCompany() {
   const offices = companyInfo.offices;
   return /*#__PURE__*/React.createElement("div", {
     style: {
-      background: saiPageVeil(mPalette.paper)
+      ...saiVars(false),
+      background: saiBackdropOn() ? 'transparent' : mPalette.paper,
+      color: 'var(--sai-ink)',
+      textShadow: saiShadow()
     }
   }, /*#__PURE__*/React.createElement(MobilePageHeader, {
     no: "02",
@@ -1058,7 +1083,7 @@ function MobileCompany() {
       fontFamily: mFont.mono,
       fontSize: 10,
       letterSpacing: 3,
-      color: mPalette.akane,
+      color: 'var(--sai-akane)',
       marginBottom: 14
     }
   }, "SECTION 01 \u2014 BUSINESS"), /*#__PURE__*/React.createElement("h2", {
@@ -1066,7 +1091,7 @@ function MobileCompany() {
       fontFamily: mFont.jpSerif,
       fontSize: 28,
       margin: '0 0 24px',
-      color: mPalette.ink,
+      color: 'var(--sai-ink)',
       letterSpacing: '0.04em',
       fontWeight: 500
     }
@@ -1079,6 +1104,9 @@ function MobileCompany() {
   }, services.map(s => /*#__PURE__*/React.createElement("div", {
     key: s.tag,
     style: {
+      ...saiVars(true),
+      color: 'var(--sai-ink)',
+      textShadow: 'none',
       background: mPalette.paperDeep,
       padding: 20,
       borderTop: `2px solid ${s.color}`
@@ -1095,7 +1123,7 @@ function MobileCompany() {
       fontFamily: mFont.jpSerif,
       fontSize: 13,
       letterSpacing: 3,
-      color: mPalette.muted,
+      color: 'var(--sai-muted)',
       marginTop: 4
     }
   }, s.jp), /*#__PURE__*/React.createElement("p", {
@@ -1103,7 +1131,7 @@ function MobileCompany() {
       fontFamily: mFont.jpSerif,
       fontSize: 13,
       lineHeight: 1.9,
-      color: mPalette.ink,
+      color: 'var(--sai-ink)',
       marginTop: 12,
       margin: '12px 0 0'
     }
@@ -1116,7 +1144,7 @@ function MobileCompany() {
       fontFamily: mFont.mono,
       fontSize: 10,
       letterSpacing: 3,
-      color: mPalette.akane,
+      color: 'var(--sai-akane)',
       marginBottom: 14
     }
   }, "SECTION 02 \u2014 BUSINESS PROFILE"), /*#__PURE__*/React.createElement("h2", {
@@ -1124,12 +1152,15 @@ function MobileCompany() {
       fontFamily: mFont.jpSerif,
       fontSize: 28,
       margin: '0 0 24px',
-      color: mPalette.ink,
+      color: 'var(--sai-ink)',
       letterSpacing: '0.04em',
       fontWeight: 500
     }
   }, window.t('屋号情報')), /*#__PURE__*/React.createElement("div", {
     style: {
+      ...saiVars(true),
+      color: 'var(--sai-ink)',
+      textShadow: 'none',
       background: mPalette.paperDeep,
       padding: 22,
       display: 'flex',
@@ -1143,20 +1174,20 @@ function MobileCompany() {
       flexDirection: 'column',
       gap: 4,
       paddingBottom: 12,
-      borderBottom: `1px solid ${mPalette.ink}22`
+      borderBottom: `1px solid ${saiLine(mPalette.ink, '22')}`
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
       fontFamily: mFont.mono,
       fontSize: 10,
       letterSpacing: 2,
-      color: mPalette.akane
+      color: 'var(--sai-akane)'
     }
   }, k.toUpperCase()), /*#__PURE__*/React.createElement("div", {
     style: {
       fontFamily: mFont.jpSerif,
       fontSize: 14,
-      color: mPalette.ink,
+      color: 'var(--sai-ink)',
       letterSpacing: 1
     }
   }, v))), /*#__PURE__*/React.createElement("div", {
@@ -1170,7 +1201,7 @@ function MobileCompany() {
       fontFamily: mFont.mono,
       fontSize: 10,
       letterSpacing: 2,
-      color: mPalette.akane
+      color: 'var(--sai-akane)'
     }
   }, "LOCATIONS"), offices.map(([k, v]) => /*#__PURE__*/React.createElement("div", {
     key: k,
@@ -1193,7 +1224,7 @@ function MobileCompany() {
     style: {
       fontFamily: mFont.jpSerif,
       fontSize: 13,
-      color: mPalette.ink,
+      color: 'var(--sai-ink)',
       lineHeight: 1.7
     }
   }, v))))))), /*#__PURE__*/React.createElement(MobileFooter, null));
@@ -1244,7 +1275,10 @@ function MobileNews() {
   const shown = active === 'ALL' ? articles : articles.filter(a => a.cat === active);
   return /*#__PURE__*/React.createElement("div", {
     style: {
-      background: saiPageVeil(mPalette.paper)
+      ...saiVars(false),
+      background: saiBackdropOn() ? 'transparent' : mPalette.paper,
+      color: 'var(--sai-ink)',
+      textShadow: saiShadow()
     }
   }, /*#__PURE__*/React.createElement(MobilePageHeader, {
     no: "03",
@@ -1267,7 +1301,7 @@ function MobileNews() {
     onClick: () => setActive(c),
     style: {
       padding: '8px 16px',
-      border: `1px solid ${mPalette.ink}`,
+      border: `1px solid ${saiLine(mPalette.ink, 'ff')}`,
       background: active === c ? mPalette.ink : 'transparent',
       color: active === c ? mPalette.paper : mPalette.ink,
       fontFamily: mFont.mono,
@@ -1285,6 +1319,9 @@ function MobileNews() {
     key: a.no,
     onClick: () => setOpen(a),
     style: {
+      ...saiVars(true),
+      color: 'var(--sai-ink)',
+      textShadow: 'none',
       background: mPalette.paperDeep,
       padding: 20,
       display: 'flex',
@@ -1305,7 +1342,7 @@ function MobileNews() {
       fontFamily: mFont.mono,
       fontSize: 10,
       letterSpacing: 2,
-      color: mPalette.muted
+      color: 'var(--sai-muted)'
     }
   }, a.date), /*#__PURE__*/React.createElement("span", {
     style: {
@@ -1321,7 +1358,7 @@ function MobileNews() {
       fontFamily: mFont.enSerif,
       fontStyle: 'italic',
       fontSize: 13,
-      color: mPalette.muted,
+      color: 'var(--sai-muted)',
       marginLeft: 'auto'
     }
   }, "No. ", a.no)), a.img ? /*#__PURE__*/React.createElement("div", {
@@ -1357,7 +1394,7 @@ function MobileNews() {
       fontFamily: mFont.jpSerif,
       fontSize: 13,
       lineHeight: 1.95,
-      color: mPalette.akane,
+      color: 'var(--sai-akane)',
       margin: 0
     }
   }, a.lead), /*#__PURE__*/React.createElement(NewsBody, {
@@ -1366,15 +1403,15 @@ function MobileNews() {
     style: {
       fontSize: 12,
       lineHeight: 2,
-      color: mPalette.ink
+      color: 'var(--sai-ink)'
     }
   }), /*#__PURE__*/React.createElement("div", {
     style: {
       fontFamily: mFont.enSerif,
       fontStyle: 'italic',
       fontSize: 13,
-      color: mPalette.ink,
-      borderBottom: `1px solid ${mPalette.ink}`,
+      color: 'var(--sai-ink)',
+      borderBottom: `1px solid ${saiLine(mPalette.ink, 'ff')}`,
       display: 'inline-block',
       alignSelf: 'flex-start',
       paddingBottom: 2
@@ -1413,6 +1450,9 @@ function MobileNewsModal({
   }, /*#__PURE__*/React.createElement("div", {
     onClick: e => e.stopPropagation(),
     style: {
+      ...saiVars(true),
+      color: 'var(--sai-ink)',
+      textShadow: 'none',
       background: mPalette.paper,
       minHeight: '100%',
       borderTop: `5px solid ${a.catColor}`,
@@ -1480,14 +1520,14 @@ function MobileNewsModal({
       fontFamily: mFont.mono,
       fontSize: 11,
       letterSpacing: 2,
-      color: mPalette.muted
+      color: 'var(--sai-muted)'
     }
   }, a.date), /*#__PURE__*/React.createElement("span", {
     style: {
       fontFamily: mFont.enSerif,
       fontStyle: 'italic',
       fontSize: 13,
-      color: mPalette.muted,
+      color: 'var(--sai-muted)',
       marginLeft: 'auto'
     }
   }, "No. ", a.no)), /*#__PURE__*/React.createElement("h2", {
@@ -1512,7 +1552,7 @@ function MobileNewsModal({
     style: {
       fontSize: 14,
       lineHeight: 2.2,
-      color: mPalette.ink
+      color: 'var(--sai-ink)'
     }
   }), a.url && /*#__PURE__*/React.createElement("a", {
     href: a.url,
@@ -1540,7 +1580,10 @@ function MobilePartners() {
   const partners = window.siteData.partners.list;
   return /*#__PURE__*/React.createElement("div", {
     style: {
-      background: saiPageVeil(mPalette.paper)
+      ...saiVars(false),
+      background: saiBackdropOn() ? 'transparent' : mPalette.paper,
+      color: 'var(--sai-ink)',
+      textShadow: saiShadow()
     }
   }, /*#__PURE__*/React.createElement(MobilePageHeader, {
     no: "04",
@@ -1560,6 +1603,9 @@ function MobilePartners() {
   }, partners.map(p => /*#__PURE__*/React.createElement("div", {
     key: p.no,
     style: {
+      ...saiVars(true),
+      color: 'var(--sai-ink)',
+      textShadow: 'none',
       background: mPalette.paperDeep,
       padding: 22,
       display: 'flex',
@@ -1598,7 +1644,7 @@ function MobilePartners() {
     style: {
       fontFamily: mFont.jpSerif,
       fontSize: 17,
-      color: mPalette.ink,
+      color: 'var(--sai-ink)',
       letterSpacing: '0.04em',
       lineHeight: 1.4
     }
@@ -1607,7 +1653,7 @@ function MobilePartners() {
       fontFamily: mFont.enSerif,
       fontStyle: 'italic',
       fontSize: 13,
-      color: mPalette.muted
+      color: 'var(--sai-muted)'
     }
   }, p.en))), /*#__PURE__*/React.createElement("div", {
     style: {
@@ -1622,15 +1668,15 @@ function MobilePartners() {
       fontSize: 10,
       letterSpacing: 1.5,
       padding: '4px 8px',
-      border: `1px solid ${mPalette.ink}55`,
-      color: mPalette.ink
+      border: `1px solid ${saiLine(mPalette.ink, '55')}`,
+      color: 'var(--sai-ink)'
     }
   }, t))), /*#__PURE__*/React.createElement("p", {
     style: {
       fontFamily: mFont.jpSerif,
       fontSize: 13,
       lineHeight: 1.9,
-      color: mPalette.ink,
+      color: 'var(--sai-ink)',
       margin: 0
     }
   }, p.body), p.url && /*#__PURE__*/React.createElement("a", {
@@ -1641,7 +1687,7 @@ function MobilePartners() {
       fontFamily: mFont.enSerif,
       fontStyle: 'italic',
       fontSize: 14,
-      color: mPalette.ai,
+      color: 'var(--sai-ai)',
       borderBottom: `1px solid ${mPalette.ai}`,
       alignSelf: 'flex-start',
       paddingBottom: 2,
@@ -1651,7 +1697,7 @@ function MobilePartners() {
     style: {
       marginTop: 32,
       padding: 28,
-      border: `1px dashed ${mPalette.ink}55`,
+      border: `1px dashed ${saiLine(mPalette.ink, '55')}`,
       textAlign: 'center'
     }
   }, /*#__PURE__*/React.createElement("div", {
@@ -1659,7 +1705,7 @@ function MobilePartners() {
       fontFamily: mFont.mono,
       fontSize: 10,
       letterSpacing: 3,
-      color: mPalette.akane
+      color: 'var(--sai-akane)'
     }
   }, "BECOME A PARTNER"), /*#__PURE__*/React.createElement("div", {
     style: {
@@ -1667,7 +1713,7 @@ function MobilePartners() {
       fontSize: 19,
       marginTop: 10,
       letterSpacing: '0.04em',
-      color: mPalette.ink,
+      color: 'var(--sai-ink)',
       lineHeight: 1.6
     }
   }, window.t('地方の未来を、共に彩りませんか。')), /*#__PURE__*/React.createElement("div", {
@@ -1694,9 +1740,12 @@ function MobileContact() {
     fontFamily: '"Zen Old Mincho", serif',
     fontSize: 16,
     padding: '14px 14px',
+    ...saiVars(true),
+    color: 'var(--sai-ink)',
+    textShadow: 'none',
     background: mPalette.paper,
-    border: `1px solid ${mPalette.ink}33`,
-    color: mPalette.ink,
+    border: `1px solid ${saiLine(mPalette.ink, '33')}`,
+    color: 'var(--sai-ink)',
     outline: 'none',
     width: '100%',
     boxSizing: 'border-box'
@@ -1753,7 +1802,10 @@ function MobileContact() {
   };
   return /*#__PURE__*/React.createElement("div", {
     style: {
-      background: saiPageVeil(mPalette.paper)
+      ...saiVars(false),
+      background: saiBackdropOn() ? 'transparent' : mPalette.paper,
+      color: 'var(--sai-ink)',
+      textShadow: saiShadow()
     }
   }, /*#__PURE__*/React.createElement(MobilePageHeader, {
     no: "05",
@@ -1775,15 +1827,18 @@ function MobileContact() {
     tag: 'PHONE',
     jp: 'お電話でのご連絡',
     lines: ['FAX : 03-5391-6870', '携帯 : 080-9541-6870', '受付 : 平日 9:00 – 18:00'],
-    color: mPalette.akane
+    color: 'var(--sai-akane)'
   }, {
     tag: 'OFFICE',
     jp: '本社所在地',
     lines: ['〒949-7302', '新潟県南魚沼市浦佐 2476'],
-    color: mPalette.koke
+    color: 'var(--sai-koke)'
   }].map(c => /*#__PURE__*/React.createElement("div", {
     key: c.tag,
     style: {
+      ...saiVars(true),
+      color: 'var(--sai-ink)',
+      textShadow: 'none',
       background: mPalette.paperDeep,
       padding: 20,
       borderTop: `2px solid ${c.color}`
@@ -1799,7 +1854,7 @@ function MobileContact() {
     style: {
       fontFamily: mFont.jpSerif,
       fontSize: 17,
-      color: mPalette.ink,
+      color: 'var(--sai-ink)',
       letterSpacing: '0.04em',
       marginTop: 8
     }
@@ -1815,12 +1870,15 @@ function MobileContact() {
     style: {
       fontFamily: mFont.jpSerif,
       fontSize: 13,
-      color: mPalette.ink,
+      color: 'var(--sai-ink)',
       lineHeight: 1.7
     }
   }, l)))))), /*#__PURE__*/React.createElement("form", {
     onSubmit: handleSubmit,
     style: {
+      ...saiVars(true),
+      color: 'var(--sai-ink)',
+      textShadow: 'none',
       background: mPalette.paperDeep,
       padding: 22,
       display: 'flex',
@@ -1833,14 +1891,14 @@ function MobileContact() {
       fontFamily: mFont.mono,
       fontSize: 10,
       letterSpacing: 3,
-      color: mPalette.akane
+      color: 'var(--sai-akane)'
     }
   }, "\u2014\u2014 INQUIRY FORM"), /*#__PURE__*/React.createElement("h3", {
     style: {
       fontFamily: mFont.jpSerif,
       fontSize: 20,
       margin: '6px 0 0',
-      color: mPalette.ink,
+      color: 'var(--sai-ink)',
       letterSpacing: '0.04em'
     }
   }, window.t('お問い合わせフォーム'))), /*#__PURE__*/React.createElement("label", {
@@ -1853,12 +1911,12 @@ function MobileContact() {
     style: {
       fontFamily: mFont.jpSerif,
       fontSize: 13,
-      color: mPalette.ink,
+      color: 'var(--sai-ink)',
       letterSpacing: 2
     }
   }, window.t('お問い合わせ種別'), /*#__PURE__*/React.createElement("span", {
     style: {
-      color: mPalette.akane,
+      color: 'var(--sai-akane)',
       marginLeft: 4
     }
   }, "*")), /*#__PURE__*/React.createElement("select", {
@@ -1881,12 +1939,12 @@ function MobileContact() {
     style: {
       fontFamily: mFont.jpSerif,
       fontSize: 13,
-      color: mPalette.ink,
+      color: 'var(--sai-ink)',
       letterSpacing: 2
     }
   }, window.t('お名前'), /*#__PURE__*/React.createElement("span", {
     style: {
-      color: mPalette.akane,
+      color: 'var(--sai-akane)',
       marginLeft: 4
     }
   }, "*")), /*#__PURE__*/React.createElement("input", {
@@ -1904,12 +1962,12 @@ function MobileContact() {
     style: {
       fontFamily: mFont.jpSerif,
       fontSize: 13,
-      color: mPalette.ink,
+      color: 'var(--sai-ink)',
       letterSpacing: 2
     }
   }, window.t('メールアドレス'), /*#__PURE__*/React.createElement("span", {
     style: {
-      color: mPalette.akane,
+      color: 'var(--sai-akane)',
       marginLeft: 4
     }
   }, "*")), /*#__PURE__*/React.createElement("input", {
@@ -1927,7 +1985,7 @@ function MobileContact() {
     style: {
       fontFamily: mFont.jpSerif,
       fontSize: 13,
-      color: mPalette.ink,
+      color: 'var(--sai-ink)',
       letterSpacing: 2
     }
   }, window.t('お電話番号')), /*#__PURE__*/React.createElement("input", {
@@ -1945,12 +2003,12 @@ function MobileContact() {
     style: {
       fontFamily: mFont.jpSerif,
       fontSize: 13,
-      color: mPalette.ink,
+      color: 'var(--sai-ink)',
       letterSpacing: 2
     }
   }, window.t('お問い合わせ内容'), /*#__PURE__*/React.createElement("span", {
     style: {
-      color: mPalette.akane,
+      color: 'var(--sai-akane)',
       marginLeft: 4
     }
   }, "*")), /*#__PURE__*/React.createElement("textarea", {
@@ -2021,6 +2079,9 @@ function MobileBizGroup({
 }) {
   return /*#__PURE__*/React.createElement("div", {
     style: {
+      ...saiVars(true),
+      color: 'var(--sai-ink)',
+      textShadow: 'none',
       background: mPalette.paper,
       display: 'flex',
       flexDirection: 'column'
@@ -2062,10 +2123,10 @@ function MobileBizGroup({
       fontFamily: mFont.jpSerif,
       fontSize: 13,
       lineHeight: 1.8,
-      color: mPalette.ink,
+      color: 'var(--sai-ink)',
       padding: '9px 0 9px 15px',
       position: 'relative',
-      borderTop: i === 0 ? 'none' : `1px solid ${mPalette.ink}18`
+      borderTop: i === 0 ? 'none' : `1px solid ${saiLine(mPalette.ink, '18')}`
     }
   }, /*#__PURE__*/React.createElement("span", {
     "aria-hidden": "true",
@@ -2083,7 +2144,10 @@ function MobileBusiness() {
   const t = window.siteData.businessTree;
   return /*#__PURE__*/React.createElement("div", {
     style: {
-      background: saiPageVeil(mPalette.paper)
+      ...saiVars(false),
+      background: saiBackdropOn() ? 'transparent' : mPalette.paper,
+      color: 'var(--sai-ink)',
+      textShadow: saiShadow()
     }
   }, /*#__PURE__*/React.createElement(MobilePageHeader, {
     no: "06",
@@ -2106,13 +2170,13 @@ function MobileBusiness() {
       fontFamily: mFont.mono,
       fontSize: 9.5,
       letterSpacing: 3,
-      color: mPalette.akane
+      color: 'var(--sai-akane)'
     }
   }, "STRUCTURE \u2014 04 SECTORS"), /*#__PURE__*/React.createElement("span", {
     style: {
       flex: 1,
       height: 1,
-      background: `${mPalette.ink}22`
+      background: `${saiLine(mPalette.ink, '22')}`
     }
   })), /*#__PURE__*/React.createElement("div", {
     style: {
@@ -2129,7 +2193,10 @@ function MobileBusiness() {
       textAlign: 'left',
       cursor: 'pointer',
       font: 'inherit',
-      color: mPalette.ink,
+      color: 'var(--sai-ink)',
+      ...saiVars(true),
+      color: 'var(--sai-ink)',
+      textShadow: 'none',
       background: mPalette.paperDeep,
       border: 'none',
       borderTop: `3px solid ${u.color}`,
@@ -2159,14 +2226,14 @@ function MobileBusiness() {
       fontFamily: mFont.jpSerif,
       fontSize: 11.5,
       letterSpacing: 2,
-      color: mPalette.muted
+      color: 'var(--sai-muted)'
     }
   }, u.jp), /*#__PURE__*/React.createElement("span", {
     style: {
       fontFamily: mFont.mono,
       fontSize: 9,
       letterSpacing: 1.5,
-      color: mPalette.muted,
+      color: 'var(--sai-muted)',
       marginTop: 4
     }
   }, mBizCount(u.groups.length)))))), /*#__PURE__*/React.createElement("div", {
@@ -2185,6 +2252,9 @@ function MobileBusiness() {
       key: u.tag,
       id: 'mbiz-' + i,
       style: {
+        ...saiVars(true),
+        color: 'var(--sai-ink)',
+        textShadow: 'none',
         background: mPalette.paperDeep,
         borderLeft: `5px solid ${u.color}`,
         padding: '20px 18px 22px',
@@ -2229,7 +2299,7 @@ function MobileBusiness() {
         fontFamily: mFont.jpSerif,
         fontSize: 12.5,
         letterSpacing: 3,
-        color: mPalette.muted,
+        color: 'var(--sai-muted)',
         marginTop: 3
       }
     }, u.jp), summary && /*#__PURE__*/React.createElement("p", {
@@ -2238,7 +2308,7 @@ function MobileBusiness() {
         fontFamily: mFont.jpSerif,
         fontSize: 12.5,
         lineHeight: 1.95,
-        color: mPalette.ink,
+        color: 'var(--sai-ink)',
         opacity: 0.85,
         borderLeft: `1px solid ${u.color}55`,
         paddingLeft: 12
@@ -2246,7 +2316,7 @@ function MobileBusiness() {
     }, summary)), /*#__PURE__*/React.createElement("div", {
       style: {
         height: 1,
-        background: `${mPalette.ink}22`,
+        background: `${saiLine(mPalette.ink, '22')}`,
         margin: '20px 0 18px'
       }
     }), /*#__PURE__*/React.createElement("div", {
@@ -2300,8 +2370,8 @@ function MobileBusiness() {
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
-      borderTop: `1px solid ${mPalette.ink}33`,
-      borderBottom: `1px solid ${mPalette.ink}33`,
+      borderTop: `1px solid ${saiLine(mPalette.ink, '33')}`,
+      borderBottom: `1px solid ${saiLine(mPalette.ink, '33')}`,
       padding: '18px 0'
     }
   }, /*#__PURE__*/React.createElement("div", {
@@ -2309,7 +2379,7 @@ function MobileBusiness() {
       fontFamily: mFont.mono,
       fontSize: 9.5,
       letterSpacing: 3,
-      color: mPalette.akane,
+      color: 'var(--sai-akane)',
       marginBottom: 8
     }
   }, "AREAS"), /*#__PURE__*/React.createElement("div", {
@@ -2317,7 +2387,7 @@ function MobileBusiness() {
       fontFamily: mFont.jpSerif,
       fontSize: 12.5,
       lineHeight: 1.9,
-      color: mPalette.ink
+      color: 'var(--sai-ink)'
     }
   }, t.footer)), /*#__PURE__*/React.createElement("div", {
     style: {
@@ -2326,7 +2396,7 @@ function MobileBusiness() {
       fontFamily: mFont.jpSerif,
       fontSize: 17,
       letterSpacing: '0.08em',
-      color: mPalette.ai,
+      color: 'var(--sai-ai)',
       lineHeight: 1.8
     }
   }, t.tagline)), /*#__PURE__*/React.createElement(MobileFooter, null));
@@ -2361,8 +2431,10 @@ function MobileSite({
 }) {
   return /*#__PURE__*/React.createElement("div", {
     style: {
+      ...saiVars(false),
       fontFamily: mFont.jpSerif,
-      color: saiOnPhoto(mPalette.ink),
+      color: 'var(--sai-ink)',
+      textShadow: saiShadow(),
       background: saiBackdropOn() ? 'transparent' : mPalette.paper,
       minHeight: '100vh'
     }

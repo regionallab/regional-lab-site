@@ -19,15 +19,15 @@ const saiCFont = {
 
 function SaiContactHeader() {
   return (
-    <div style={{ background: saiC.paperDeep, padding: '80px 56px 64px', borderBottom: `1px solid ${saiC.ink}22`, position: 'relative', overflow: 'hidden' }}>
-      <div style={{ fontFamily: saiCFont.mono, fontSize: 11, letterSpacing: 4, color: saiC.akane, marginBottom: 18 }}>SECTION 05 — CONTACT</div>
+    <div style={{ background: saiVeil(saiC.paperDeep), padding: '80px 56px 64px', borderBottom: `1px solid ${saiLine(saiC.ink, '22')}`, position: 'relative', overflow: 'hidden' }}>
+      <div style={{ fontFamily: saiCFont.mono, fontSize: 11, letterSpacing: 4, color: 'var(--sai-akane)', marginBottom: 18 }}>SECTION 05 — CONTACT</div>
       <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', gap: 40 }}>
-        <h1 style={{ fontFamily: saiCFont.jpSerif, fontSize: 72, fontWeight: 500, margin: 0, color: saiC.ink, letterSpacing: '0.06em', lineHeight: 1.1 }}>
+        <h1 style={{ fontFamily: saiCFont.jpSerif, fontSize: 72, fontWeight: 500, margin: 0, color: 'var(--sai-ink)', letterSpacing: '0.06em', lineHeight: 1.1 }}>
           {window.t('お問い合わせ')}
         </h1>
-        <div style={{ fontFamily: saiCFont.enSerif, fontStyle: 'italic', fontSize: 28, color: saiC.muted }}>Contact</div>
+        <div style={{ fontFamily: saiCFont.enSerif, fontStyle: 'italic', fontSize: 28, color: 'var(--sai-muted)' }}>Contact</div>
       </div>
-      <p style={{ marginTop: 24, fontFamily: saiCFont.jpSerif, fontSize: 15, color: saiC.ink, lineHeight: 2, maxWidth: 720 }}>
+      <p style={{ marginTop: 24, fontFamily: saiCFont.jpSerif, fontSize: 15, color: 'var(--sai-ink)', lineHeight: 2, maxWidth: 720 }}>
         ご相談・取材・パートナーシップ等のお問い合わせを承っております。<br />
         以下のフォーム、またはメール・お電話より、お気軽にご連絡ください。
       </p>
@@ -39,10 +39,10 @@ function ContactField({ label, en, required, children }) {
   return (
     <label style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
       <span style={{ display: 'flex', alignItems: 'baseline', gap: 12 }}>
-        <span style={{ fontFamily: saiCFont.jpSerif, fontSize: 14, letterSpacing: 2, color: saiC.ink }}>
-          {label}{required && <span style={{ color: saiC.akane, marginLeft: 6 }}>*</span>}
+        <span style={{ fontFamily: saiCFont.jpSerif, fontSize: 14, letterSpacing: 2, color: 'var(--sai-ink)' }}>
+          {label}{required && <span style={{ color: 'var(--sai-akane)', marginLeft: 6 }}>*</span>}
         </span>
-        <span style={{ fontFamily: saiCFont.mono, fontSize: 9, letterSpacing: 2, color: saiC.muted }}>{en}</span>
+        <span style={{ fontFamily: saiCFont.mono, fontSize: 9, letterSpacing: 2, color: 'var(--sai-muted)' }}>{en}</span>
       </span>
       {children}
     </label>
@@ -53,9 +53,11 @@ const inputStyle = {
   fontFamily: '"Zen Old Mincho", serif',
   fontSize: 15,
   padding: '14px 16px',
+  ...saiVars(true),
+  textShadow: 'none',
   background: '#f1ead8',
   border: `1px solid ${saiC.ink}33`,
-  color: saiC.ink,
+  color: 'var(--sai-ink)',
   outline: 'none',
   letterSpacing: 1,
 };
@@ -114,6 +116,7 @@ function SaiContactForm() {
 
   return (
     <form onSubmit={handleSubmit} style={{
+      ...saiVars(true), color: 'var(--sai-ink)', textShadow: 'none',
       background: saiC.paperDeep,
       padding: '48px 52px',
       display: 'grid',
@@ -122,8 +125,8 @@ function SaiContactForm() {
       borderTop: `2px solid ${saiC.ai}`,
     }}>
       <div style={{ gridColumn: '1 / -1' }}>
-        <div style={{ fontFamily: saiCFont.mono, fontSize: 10, letterSpacing: 3, color: saiC.akane }}>—— INQUIRY FORM</div>
-        <h3 style={{ fontFamily: saiCFont.jpSerif, fontSize: 26, margin: '8px 0 0', letterSpacing: '0.05em', color: saiC.ink }}>{window.t('お問い合わせフォーム')}</h3>
+        <div style={{ fontFamily: saiCFont.mono, fontSize: 10, letterSpacing: 3, color: 'var(--sai-akane)' }}>—— INQUIRY FORM</div>
+        <h3 style={{ fontFamily: saiCFont.jpSerif, fontSize: 26, margin: '8px 0 0', letterSpacing: '0.05em', color: 'var(--sai-ink)' }}>{window.t('お問い合わせフォーム')}</h3>
       </div>
 
       <ContactField label={window.t('お問い合わせ種別')} en="CATEGORY" required>
@@ -158,7 +161,7 @@ function SaiContactForm() {
 
       <div style={{ gridColumn: '1 / -1', display: 'flex', alignItems: 'center', gap: 14, marginTop: 4 }}>
         <input type="checkbox" name="privacy" id="privacy" style={{ width: 16, height: 16 }} />
-        <label htmlFor="privacy" style={{ fontFamily: saiCFont.jpSerif, fontSize: 13, color: saiC.ink, letterSpacing: 1 }}>{window.t('プライバシーポリシーに同意します')}</label>
+        <label htmlFor="privacy" style={{ fontFamily: saiCFont.jpSerif, fontSize: 13, color: 'var(--sai-ink)', letterSpacing: 1 }}>{window.t('プライバシーポリシーに同意します')}</label>
       </div>
 
       <div style={{ gridColumn: '1 / -1', display: 'flex', justifyContent: 'flex-end', marginTop: 8 }}>
@@ -174,15 +177,15 @@ function SaiContactForm() {
 
 function ContactCard({ tag, jp, en, lines, color }) {
   return (
-    <div style={{ background: saiC.paper, padding: '32px 28px', borderTop: `2px solid ${color}`, display: 'flex', flexDirection: 'column', gap: 12 }}>
+    <div style={{ ...saiVars(true), color: 'var(--sai-ink)', textShadow: 'none', background: saiC.paper, padding: '32px 28px', borderTop: `2px solid ${color}`, display: 'flex', flexDirection: 'column', gap: 12 }}>
       <div style={{ fontFamily: saiCFont.mono, fontSize: 10, letterSpacing: 3, color }}>{tag}</div>
       <div>
-        <div style={{ fontFamily: saiCFont.jpSerif, fontSize: 20, color: saiC.ink, letterSpacing: '0.05em', fontWeight: 500 }}>{jp}</div>
-        <div style={{ fontFamily: saiCFont.enSerif, fontStyle: 'italic', fontSize: 14, color: saiC.muted, marginTop: 2 }}>{en}</div>
+        <div style={{ fontFamily: saiCFont.jpSerif, fontSize: 20, color: 'var(--sai-ink)', letterSpacing: '0.05em', fontWeight: 500 }}>{jp}</div>
+        <div style={{ fontFamily: saiCFont.enSerif, fontStyle: 'italic', fontSize: 14, color: 'var(--sai-muted)', marginTop: 2 }}>{en}</div>
       </div>
       <div style={{ display: 'flex', flexDirection: 'column', gap: 6, marginTop: 8 }}>
         {lines.map((l, i) => (
-          <div key={i} style={{ fontFamily: saiCFont.jpSerif, fontSize: 14, color: saiC.ink, letterSpacing: 1, lineHeight: 1.8 }}>{l}</div>
+          <div key={i} style={{ fontFamily: saiCFont.jpSerif, fontSize: 14, color: 'var(--sai-ink)', letterSpacing: 1, lineHeight: 1.8 }}>{l}</div>
         ))}
       </div>
     </div>
@@ -191,7 +194,7 @@ function ContactCard({ tag, jp, en, lines, color }) {
 
 function SaiContact() {
   return (
-    <div style={{ background: saiPageVeil(saiC.paper), fontFamily: saiCFont.jpSerif, color: saiC.ink }}>
+    <div style={{ ...saiVars(false), background: saiBackdropOn() ? 'transparent' : saiC.paper, fontFamily: saiCFont.jpSerif, color: 'var(--sai-ink)', textShadow: saiShadow() }}>
       <SaiContactHeader />
 
       <div style={{ padding: '64px 56px 96px' }}>
@@ -217,7 +220,7 @@ function SaiContact() {
         <SaiContactForm />
 
         {/* Footer note */}
-        <div style={{ marginTop: 40, padding: '24px 28px', border: `1px dashed ${saiC.ink}55`, fontFamily: saiCFont.jpSerif, fontSize: 13, color: saiC.muted, letterSpacing: 1, lineHeight: 1.9 }}>
+        <div style={{ marginTop: 40, padding: '24px 28px', border: `1px dashed ${saiLine(saiC.ink, '55')}`, fontFamily: saiCFont.jpSerif, fontSize: 13, color: 'var(--sai-muted)', letterSpacing: 1, lineHeight: 1.9 }}>
           ※ いただいたお問い合わせ内容は、当社のプライバシーポリシーに基づき適切に管理いたします。<br />
           ※ お問い合わせ内容により、ご返信までにお時間をいただく場合がございます。
         </div>

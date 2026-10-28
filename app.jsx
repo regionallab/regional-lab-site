@@ -87,6 +87,8 @@ function App() {
             position: 'fixed', inset: 0,
             width: '100%', height: '100%',
             objectFit: 'contain', display: 'block',
+            // 画像は縦長なので、余白まで同じ若草色で埋めて全面その色に見せる
+            background: '#d5d492',
             zIndex: 9999, pointerEvents: 'none',
           }}
         />

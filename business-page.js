@@ -63,6 +63,9 @@ function BizIndexCard({
       appearance: 'none',
       textAlign: 'left',
       cursor: 'pointer',
+      ...saiVars(true),
+      color: 'var(--sai-ink)',
+      textShadow: 'none',
       background: bizB.paperDeep,
       border: 'none',
       borderTop: `4px solid ${unit.color}`,
@@ -72,7 +75,7 @@ function BizIndexCard({
       gap: 6,
       minWidth: 0,
       font: 'inherit',
-      color: bizB.ink
+      color: 'var(--sai-ink)'
     }
   }, /*#__PURE__*/React.createElement("span", {
     style: {
@@ -94,14 +97,14 @@ function BizIndexCard({
       fontFamily: bizFont.jpSerif,
       fontSize: 13,
       letterSpacing: 3,
-      color: bizB.muted
+      color: 'var(--sai-muted)'
     }
   }, unit.jp), /*#__PURE__*/React.createElement("span", {
     style: {
       fontFamily: bizFont.mono,
       fontSize: 10,
       letterSpacing: 2,
-      color: bizB.muted,
+      color: 'var(--sai-muted)',
       marginTop: 6
     }
   }, bizCount(unit.groups.length)));
@@ -118,6 +121,9 @@ function BizGroupCard({
 }) {
   return /*#__PURE__*/React.createElement("div", {
     style: {
+      ...saiVars(true),
+      color: 'var(--sai-ink)',
+      textShadow: 'none',
       background: bizB.paper,
       display: 'flex',
       flexDirection: 'column',
@@ -161,11 +167,11 @@ function BizGroupCard({
       fontFamily: bizFont.jpSerif,
       fontSize: 13.5,
       lineHeight: 1.85,
-      color: bizB.ink,
+      color: 'var(--sai-ink)',
       letterSpacing: '0.02em',
       padding: '10px 0 10px 16px',
       position: 'relative',
-      borderTop: i === 0 ? 'none' : `1px solid ${bizB.ink}18`
+      borderTop: i === 0 ? 'none' : `1px solid ${saiLine(bizB.ink, '18')}`
     }
   }, /*#__PURE__*/React.createElement("span", {
     "aria-hidden": "true",
@@ -197,6 +203,9 @@ function BizUnit({
   return /*#__PURE__*/React.createElement("section", {
     id: 'biz-' + index,
     style: {
+      ...saiVars(true),
+      color: 'var(--sai-ink)',
+      textShadow: 'none',
       background: bizB.paperDeep,
       borderLeft: `5px solid ${unit.color}`,
       padding: '38px 40px 40px',
@@ -252,7 +261,7 @@ function BizUnit({
       fontFamily: bizFont.jpSerif,
       fontSize: 15,
       letterSpacing: 4,
-      color: bizB.muted
+      color: 'var(--sai-muted)'
     }
   }, unit.jp))), summary && /*#__PURE__*/React.createElement("p", {
     style: {
@@ -260,7 +269,7 @@ function BizUnit({
       fontFamily: bizFont.jpSerif,
       fontSize: 13.5,
       lineHeight: 2.1,
-      color: bizB.ink,
+      color: 'var(--sai-ink)',
       opacity: 0.85,
       borderLeft: `1px solid ${unit.color}55`,
       paddingLeft: 20
@@ -268,7 +277,7 @@ function BizUnit({
   }, summary)), /*#__PURE__*/React.createElement("div", {
     style: {
       height: 1,
-      background: `${bizB.ink}22`,
+      background: `${saiLine(bizB.ink, '22')}`,
       margin: '30px 0 26px'
     }
   }), /*#__PURE__*/React.createElement("div", {
@@ -323,9 +332,11 @@ function SaiBusinessPage() {
   const t = window.siteData.businessTree;
   return /*#__PURE__*/React.createElement("div", {
     style: {
-      background: saiPageVeil(bizB.paper),
+      ...saiVars(false),
+      background: saiBackdropOn() ? 'transparent' : bizB.paper,
       fontFamily: bizFont.jpSerif,
-      color: bizB.ink
+      color: 'var(--sai-ink)',
+      textShadow: saiShadow()
     }
   }, /*#__PURE__*/React.createElement(SaiPageHeader, {
     no: "06",
@@ -348,13 +359,13 @@ function SaiBusinessPage() {
       fontFamily: bizFont.mono,
       fontSize: 10,
       letterSpacing: 3,
-      color: bizB.akane
+      color: 'var(--sai-akane)'
     }
   }, "STRUCTURE \u2014 04 SECTORS"), /*#__PURE__*/React.createElement("span", {
     style: {
       flex: 1,
       height: 1,
-      background: `${bizB.ink}22`
+      background: `${saiLine(bizB.ink, '22')}`
     }
   })), /*#__PURE__*/React.createElement("div", {
     style: {
@@ -383,8 +394,8 @@ function SaiBusinessPage() {
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
-      borderTop: `1px solid ${bizB.ink}33`,
-      borderBottom: `1px solid ${bizB.ink}33`,
+      borderTop: `1px solid ${saiLine(bizB.ink, '33')}`,
+      borderBottom: `1px solid ${saiLine(bizB.ink, '33')}`,
       padding: '26px 0',
       display: 'grid',
       gridTemplateColumns: '160px 1fr',
@@ -396,7 +407,7 @@ function SaiBusinessPage() {
       fontFamily: bizFont.mono,
       fontSize: 10,
       letterSpacing: 3,
-      color: bizB.akane
+      color: 'var(--sai-akane)'
     }
   }, "AREAS"), /*#__PURE__*/React.createElement("span", {
     style: {
@@ -404,7 +415,7 @@ function SaiBusinessPage() {
       fontSize: 14,
       letterSpacing: '0.06em',
       lineHeight: 1.9,
-      color: bizB.ink
+      color: 'var(--sai-ink)'
     }
   }, t.footer)), /*#__PURE__*/React.createElement("div", {
     style: {
@@ -414,7 +425,7 @@ function SaiBusinessPage() {
       fontSize: 24,
       letterSpacing: '0.1em',
       lineHeight: 1.8,
-      color: bizB.ai
+      color: 'var(--sai-ai)'
     }
   }, t.tagline)));
 }
