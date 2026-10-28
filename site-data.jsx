@@ -18,7 +18,16 @@ window.siteDataJa = {
   // 拡大しながら入れ替わります。空のままなら従来どおりの無地（和紙色）。
   // 写真は縮小せずそのままの画素数で置いてください。横長が向いています。
   backdrop: {
-    photos: [],
+    photos: [
+      'assets/bg-01-taki-fuchi.jpg',     // 渓流の滝とエメラルドの淵
+      'assets/bg-02-dam-lake.jpg',       // ターコイズのダム湖
+      'assets/bg-03-emerald-fuchi.jpg',  // 淵（撮影）
+      'assets/bg-04-ropeway.jpg',        // 新緑のロープウェイ
+      'assets/bg-05-kawara-taki.jpg',    // 河原の小滝（撮影）
+      'assets/bg-06-hakkaisan.jpg',      // 八海山と田園（撮影・縦）
+      'assets/bg-07-yuzawa.jpg',         // 湯沢の街並みと山
+      'assets/bg-08-nyudougumo.jpg',     // 入道雲と盆地（撮影・縦）
+    ],
     interval: 9000,     // 1枚を映す時間（ms）
     fade: 2400,         // 入れ替えにかける時間（ms）
     zoom: 1.10,         // 表示中にここまで拡大する
