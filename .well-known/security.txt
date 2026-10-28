@@ -1,0 +1,5 @@
+# 脆弱性を見つけた方へ / If you find a security issue
+Contact: https://www.regional-lab.info/#contact
+Expires: 2027-10-28T00:00:00.000Z
+Preferred-Languages: ja, en
+Canonical: https://www.regional-lab.info/.well-known/security.txt
