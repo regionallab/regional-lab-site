@@ -189,7 +189,7 @@ window.siteDataJa = {
           'この地から日本の礎を築く人材を輩出すべく、我々も尽力して参ります。',
         ],
         img: 'assets/news-shokasonjuku.jpg',
-        imgPos: '50% 38%',
+        imgPos: '50% 42%',
         imgPosWide: '50% 31%',
       },
       {
