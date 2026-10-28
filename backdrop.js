@@ -10,12 +10,33 @@ const BACKDROP_DEFAULTS = {
   // クロスフェードにかける時間（ms）
   zoom: 1.10,
   // 表示中にここまでゆっくり拡大する
-  veil: 0.72,
-  // 本文の面にかける和紙の不透明度（0=写真そのまま 1=従来どおり）
-  scrim: 0.12,
-  // 写真全体にうっすら重ねる和紙の濃さ
-  scrimColor: '#f1ead8'
+  veil: 0,
+  // 見出し帯にかける和紙の濃さ。0 = 写真の色をそのまま出す
+  veilPage: 0.88,
+  // 本文が詰まったページの地にかける和紙の濃さ（可読性優先）
+  // 写真の上の明るい文字を読ませるための膜。色を薄める和紙ではなく「暗く締める」膜にしており、
+  // 色相と鮮やかさはそのまま残る（夕景のように沈むだけ）。0 にすれば加工なしの素のまま。
+  scrim: 0.45,
+  scrimColor: '#120f0a'
 };
+
+// 写真の上に出す文字の色。写真の鮮やかさを保つため面を敷かず、文字側を明るくして読ませる。
+// 左が従来の色、右が写真の上に出すときの色。
+const SAI_ON_PHOTO = {
+  '#1f1a14': '#faf6ec',
+  // 墨 → 生成り
+  '#766a52': '#e6ddc8',
+  // 鈍色
+  '#9a3324': '#f0907a',
+  // 茜（暗所用に明るく）
+  '#1f3552': '#b3cbe4',
+  // 藍
+  '#13243a': '#9db7d4',
+  '#5a6b3d': '#bed092' // 苔
+};
+
+// 明るい文字が白飛びした空などに溶けないよう、文字の後ろにだけ薄い影を落とす。
+const SAI_TEXT_SHADOW = '0 1px 2px rgba(0,0,0,0.6), 0 2px 10px rgba(0,0,0,0.55), 0 0 28px rgba(0,0,0,0.45)';
 
 // 背景写真が設定されているか。未設定なら従来の無地背景のまま動く。
 function saiBackdropOn() {
@@ -34,6 +55,26 @@ function saiVeil(hex, alpha) {
   const n = parseInt(full, 16);
   const a = alpha == null ? saiBackdropCfg().veil : alpha;
   return `rgba(${n >> 16 & 255}, ${n >> 8 & 255}, ${n & 255}, ${a})`;
+}
+
+// 背景写真があるときだけ、文字色を明るい側へ入れ替える。無いときは元の色のまま。
+function saiOnPhoto(hex) {
+  if (!saiBackdropOn()) return hex;
+  return SAI_ON_PHOTO[String(hex).toLowerCase()] || hex;
+}
+function saiShadow() {
+  return saiBackdropOn() ? SAI_TEXT_SHADOW : undefined;
+}
+
+// 罫線。写真の上では暗い罫が沈むので、明るい側へ入れ替える。
+function saiLine(hex, alpha) {
+  if (!saiBackdropOn()) return `${hex}${alpha || '22'}`;
+  return 'rgba(250, 246, 236, 0.38)';
+}
+
+// 本文が詰まったページの地。写真の上でも読めるよう和紙を濃いめに敷く。
+function saiPageVeil(hex) {
+  return saiVeil(hex, saiBackdropCfg().veilPage);
 }
 function Backdrop() {
   const cfg = saiBackdropCfg();
@@ -112,5 +153,9 @@ Object.assign(window, {
   Backdrop,
   saiBackdropOn,
   saiVeil,
+  saiPageVeil,
+  saiOnPhoto,
+  saiShadow,
+  saiLine,
   saiBackdropCfg
 });
