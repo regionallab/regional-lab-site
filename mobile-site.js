@@ -230,6 +230,7 @@ function MobileNav() {
 function MobileFooter() {
   const navItems = [['私たちについて', 'about'], ['屋号概要', 'company', 'Profile'], ['事業概要', 'business'], ['お知らせ', 'news'], ['パートナー', 'partners'], ['お問い合わせ', 'contact']];
   return /*#__PURE__*/React.createElement("div", {
+    className: "sai-reveal",
     style: {
       background: saiVeil(mPalette.paper),
       padding: '64px 24px 32px'
@@ -454,6 +455,7 @@ function MobileHome() {
       display: 'block'
     }
   })))), /*#__PURE__*/React.createElement("div", {
+    className: "sai-reveal",
     style: {
       background: saiVeil(mPalette.paperDeep),
       padding: '64px 24px'
@@ -549,8 +551,9 @@ function MobileHome() {
       marginTop: 12
     }
   }, mBreakAtComma(c.body)))))), /*#__PURE__*/React.createElement("div", {
+    className: "sai-reveal",
     style: {
-      background: saiVeil(mPalette.paper),
+      background: saiBackdropOn() ? 'linear-gradient(170deg, rgba(16,13,8,0.6) 0%, rgba(16,13,8,0.44) 60%, rgba(16,13,8,0) 100%)' : mPalette.paper,
       color: 'var(--sai-ink)',
       padding: '56px 24px 24px'
     }
@@ -598,6 +601,7 @@ function MobileHome() {
       margin: '20px 0 0'
     }
   }, consulting.body)), /*#__PURE__*/React.createElement("div", {
+    className: "sai-reveal",
     style: {
       padding: '64px 24px',
       background: saiVeil(mPalette.paper)

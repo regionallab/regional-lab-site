@@ -134,9 +134,14 @@ function SaiHero() {
             padding: '14px 28px', background: saiPalette.akane, color: saiPalette.paper,
             fontFamily: saiFont.jpSerif, fontSize: 14, letterSpacing: 3, cursor: 'pointer',
           }}>{window.t('事業を見る →')}</div>
+          {/* 写真の上では墨の枠線・墨文字が溶けるため、暗い下地を敷いて枠線と文字を明るい側にする */}
           <div onClick={() => window.saiNavigate && window.saiNavigate('contact')} style={{
-            padding: '14px 28px', border: `1px solid ${saiPalette.ink}`, color: saiPalette.ink,
+            padding: '14px 28px',
+            background: saiBackdropOn() ? 'rgba(16, 13, 8, 0.55)' : 'transparent',
+            border: `1px solid ${saiBackdropOn() ? 'rgba(250, 246, 236, 0.85)' : saiPalette.ink}`,
+            color: saiOnPhoto(saiPalette.ink), textShadow: saiShadow(),
             fontFamily: saiFont.jpSerif, fontSize: 14, letterSpacing: 3, cursor: 'pointer',
+            backdropFilter: saiBackdropOn() ? 'blur(2px)' : undefined,
           }}>{window.t('お問い合わせ')}</div>
         </div>
       </div>
@@ -146,7 +151,7 @@ function SaiHero() {
 
 function SaiMission() {
   return (
-    <div style={{ background: saiVeil(saiPalette.paperDeep), padding: '96px 56px', position: 'relative' }}>
+    <div className="sai-reveal" style={{ background: saiVeil(saiPalette.paperDeep), padding: '96px 56px', position: 'relative' }}>
       {/* faded kanji */}
       <Vertical style={{
         position: 'absolute', right: 40, top: 40,
@@ -195,7 +200,7 @@ function SaiMission() {
 function SaiBusiness() {
   const items = window.siteData.business;
   return (
-    <div id="business-section" style={{ background: saiVeil(saiPalette.paper), padding: '120px 56px' }}>
+    <div id="business-section" className="sai-reveal" style={{ background: saiVeil(saiPalette.paper), padding: '120px 56px' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 64 }}>
         <h2 style={{ fontFamily: saiFont.jpSerif, fontSize: 64, fontWeight: 400, margin: 0, color: saiOnPhoto(saiPalette.ink), textShadow: saiShadow(), letterSpacing: '0.04em' }}>
           {window.t('四つの')}<span style={{ color: saiOnPhoto(saiPalette.akane) }}>{window.t('柱')}</span>
@@ -242,7 +247,12 @@ function SaiBusiness() {
 function SaiConsulting() {
   const c = window.siteData.consulting;
   return (
-    <div style={{ background: saiVeil(saiPalette.paper), color: saiPalette.ink, padding: '96px 56px 56px', position: 'relative', overflow: 'hidden' }}>
+    <div className="sai-reveal" style={{
+      background: saiBackdropOn()
+        ? 'linear-gradient(100deg, rgba(16,13,8,0.62) 0%, rgba(16,13,8,0.46) 50%, rgba(16,13,8,0) 92%)'
+        : saiPalette.paper,
+      color: saiPalette.ink, padding: '96px 56px 56px', position: 'relative', overflow: 'hidden',
+    }}>
       {/* faded kanji */}
       <Vertical style={{
         position: 'absolute', right: 56, top: 24,
@@ -270,7 +280,7 @@ function SaiConsulting() {
 function SaiTimeline() {
   const events = window.siteData.timeline;
   return (
-    <div style={{ background: saiVeil(saiPalette.aiDeep, 0.55), padding: '120px 0', color: saiPalette.paper, position: 'relative', overflow: 'hidden' }}>
+    <div className="sai-reveal" style={{ background: saiVeil(saiPalette.aiDeep, 0.55), padding: '120px 0', color: saiPalette.paper, position: 'relative', overflow: 'hidden' }}>
       <Vertical style={{
         position: 'absolute', right: 56, top: 56,
         fontFamily: saiFont.jpSerif, fontSize: 160, opacity: 0.08, letterSpacing: 0,
@@ -342,7 +352,7 @@ function SaiCTA() {
     ['パートナー', 'Partners', ['H.O.I.Consulting', '(株)遊然', 'LITERAS AI']],
   ];
   return (
-    <div style={{ background: saiVeil(saiPalette.paper), padding: '96px 56px 32px', position: 'relative' }}>
+    <div className="sai-reveal" style={{ background: saiVeil(saiPalette.paper), padding: '96px 56px 32px', position: 'relative' }}>
       <div style={{ textAlign: 'center', maxWidth: 1200, margin: '0 auto 80px' }}>
         <div style={{ fontFamily: saiFont.mono, fontSize: 11, letterSpacing: 3, color: saiOnPhoto(saiPalette.akane), textShadow: saiShadow(), marginBottom: 20 }}>TOGETHER</div>
         <h2 style={{ fontFamily: saiFont.jpSerif, fontSize: 'clamp(36px, 4.6vw, 60px)', fontWeight: 400, margin: 0, color: saiOnPhoto(saiPalette.ink), textShadow: saiShadow(), letterSpacing: '0.06em', lineHeight: 1.3, whiteSpace: 'nowrap' }}>

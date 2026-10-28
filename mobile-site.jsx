@@ -123,7 +123,7 @@ function MobileFooter() {
     ['お問い合わせ', 'contact'],
   ];
   return (
-    <div style={{ background: saiVeil(mPalette.paper), padding: '64px 24px 32px' }}>
+    <div className="sai-reveal" style={{ background: saiVeil(mPalette.paper), padding: '64px 24px 32px' }}>
       <div style={{ textAlign: 'center', marginBottom: 48 }}>
         <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 3, color: saiOnPhoto(mPalette.akane), textShadow: saiShadow(), marginBottom: 16 }}>TOGETHER</div>
         <h2 style={{ fontFamily: mFont.jpSerif, fontSize: 28, fontWeight: 400, margin: 0, color: saiOnPhoto(mPalette.ink), textShadow: saiShadow(), letterSpacing: '0.04em', lineHeight: 1.5 }}>
@@ -202,7 +202,7 @@ function MobileHome() {
       </div>
 
       {/* MISSION — 理念 / 使命 / 展望 */}
-      <div style={{ background: saiVeil(mPalette.paperDeep), padding: '64px 24px' }}>
+      <div className="sai-reveal" style={{ background: saiVeil(mPalette.paperDeep), padding: '64px 24px' }}>
         <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 3, color: saiOnPhoto(mPalette.akane), textShadow: saiShadow(), marginBottom: 18 }}>{window.t('理念 / 使命 / 展望')}</div>
         <h2 style={{ fontFamily: mFont.jpSerif, fontSize: 30, fontWeight: 400, color: saiOnPhoto(mPalette.ink), textShadow: saiShadow(), letterSpacing: '0.04em', lineHeight: 1.5, margin: 0 }}>
           {window.siteData.mission.heading.map((h, i) => (
@@ -231,7 +231,12 @@ function MobileHome() {
       </div>
 
       {/* CONSULTING — キャッチコピー */}
-      <div style={{ background: saiVeil(mPalette.paper), color: 'var(--sai-ink)', padding: '56px 24px 24px' }}>
+      <div className="sai-reveal" style={{
+        background: saiBackdropOn()
+          ? 'linear-gradient(170deg, rgba(16,13,8,0.6) 0%, rgba(16,13,8,0.44) 60%, rgba(16,13,8,0) 100%)'
+          : mPalette.paper,
+        color: 'var(--sai-ink)', padding: '56px 24px 24px',
+      }}>
         <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 3, color: saiOnPhoto(mPalette.akane), textShadow: saiShadow(), marginBottom: 16 }}>
           {consulting.eyebrow}
         </div>
@@ -247,7 +252,7 @@ function MobileHome() {
       </div>
 
       {/* BUSINESS — 四つの柱 */}
-      <div style={{ padding: '64px 24px', background: saiVeil(mPalette.paper) }}>
+      <div className="sai-reveal" style={{ padding: '64px 24px', background: saiVeil(mPalette.paper) }}>
         <div style={{ marginBottom: 36 }}>
           <h2 style={{ fontFamily: mFont.jpSerif, fontSize: 40, fontWeight: 400, margin: 0, color: saiOnPhoto(mPalette.ink), textShadow: saiShadow(), letterSpacing: '0.04em' }}>
             {window.t('四つの')}<span style={{ color: saiOnPhoto(mPalette.akane) }}>{window.t('柱')}</span>

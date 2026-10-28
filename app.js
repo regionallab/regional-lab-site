@@ -53,6 +53,36 @@
       return () => clearTimeout(t);
     }, []);
 
+    // スクロールで帯をふわりと現す。JS が動いたときだけ初期状態を透明にするので、
+    // 万一 JS が止まっても中身が見えなくなることはない。
+    React.useEffect(() => {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      const root = document.documentElement;
+      root.classList.add('sai-reveal-on');
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('sai-in');
+            io.unobserve(e.target);
+          }
+        });
+      }, {
+        threshold: 0.06,
+        rootMargin: '0px 0px -8% 0px'
+      });
+      const scan = () => document.querySelectorAll('.sai-reveal:not(.sai-in)').forEach(el => io.observe(el));
+      const t1 = setTimeout(scan, 60);
+      // 取りこぼし防止：充分に時間が経っても現れていない帯は無条件で表示する
+      const t2 = setTimeout(() => {
+        document.querySelectorAll('.sai-reveal').forEach(el => el.classList.add('sai-in'));
+      }, 20000);
+      return () => {
+        clearTimeout(t1);
+        clearTimeout(t2);
+        io.disconnect();
+      };
+    }, [page, lang, isMobile]);
+
     // Sub-page renderer wraps the page content with the shared nav + footer
     function SubPage({
       children
@@ -121,6 +151,16 @@
       }
     }), /*#__PURE__*/React.createElement("style", null, `
         .sai-app-body { animation: saiHomeIn 4s ease-in-out forwards; }
+        .sai-reveal-on .sai-reveal {
+          opacity: 0;
+          transform: translateY(26px);
+          transition: opacity 900ms cubic-bezier(.22,.61,.36,1), transform 900ms cubic-bezier(.22,.61,.36,1);
+          will-change: opacity, transform;
+        }
+        .sai-reveal-on .sai-reveal.sai-in { opacity: 1; transform: none; }
+        @media (prefers-reduced-motion: reduce) {
+          .sai-reveal-on .sai-reveal { opacity: 1; transform: none; transition: none; }
+        }
         .sai-splash-logo { animation: saiSplashLogo 4s ease-in-out forwards; }
         @keyframes saiHomeIn {
           0%, 75% { opacity: 0; }
