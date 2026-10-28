@@ -35,7 +35,7 @@ window.siteDataEn = (function () {
 
   const services = [
     { jp: 'Events', body: 'Planning and running regional business contests, ideathons and product exchange events. With the Event Lab audience platform and our consulting, we create the entry point into each region.' },
-    { jp: 'Community', body: 'A selective membership community built on business education: free Growth, screened Standard, invitation-only Prime, plus programmes for companies, developing people who can execute.' },
+    { jp: 'Community', body: 'A membership community built on business education: free Growth, screened Standard, invitation-only Prime, the fee-free Muikamachi Shoka Sonjuku, plus programmes for companies, developing people who can execute.' },
     { jp: 'Apparel', body: 'Rebuilding regional crafts for modern demand. E-commerce and retail in Japan, e-commerce first then Singapore abroad, keeping value in tangible form.' },
     { jp: 'DX & AX', body: 'For communities: AI talent development and AI literacy training. For companies: AI consulting and AI seminars.' },
   ];

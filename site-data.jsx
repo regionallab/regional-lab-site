@@ -146,7 +146,7 @@ window.siteDataJa = {
     },
     services: [
       { tag: 'Re.Event', jp: 'イベント事業', body: '地方創生ビジコンやアイデアソン、地方産品交流会などの企画・運営。集客OS「Event Lab」の提供とコンサルティングを含め、地域への「入口」をつくります。', color: SITE_COLORS.akane },
-      { tag: 'Re.Lab', jp: 'コミュニティ事業', body: 'ビジネス教育を軸とした選抜制の会員コミュニティ。無料のグロース、審査制のスタンダード、招待制のプライムの三層とToB向けプログラムで、実践できる人を育てます。', color: SITE_COLORS.ai },
+      { tag: 'Re.Lab', jp: 'コミュニティ事業', body: 'ビジネス教育を軸とした会員コミュニティ。無料のグロース、審査制のスタンダード、招待制のプライム、参加費無料の六日町松下村塾、そしてToB向けプログラムで、実践できる人を育てます。', color: SITE_COLORS.ai },
       { tag: 'Regional.', jp: 'アパレル事業', body: '地方の伝統工芸品を現代の需要へ再構築。国内はEC・店舗、海外はEC先行からシンガポールへと販路を広げ、価値を形として残します。', color: SITE_COLORS.koke },
       { tag: 'Re.Com', jp: 'DX&AX事業', body: 'コミュニティではAI人材創出・AIリテラシー研修、企業研修ではAIコンサル・AIセミナーを提供します。', color: '#8a6d3b' },
     ],

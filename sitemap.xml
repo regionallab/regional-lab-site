@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ページ切り替えを # で行う構成のため、検索エンジンに渡せる URL はトップのみです。
+     個別ページも登録したい場合は、ルーティングを /about のような実URLに変える必要があります。 -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://www.regional-lab.info/</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>
