@@ -8,8 +8,18 @@ const BACKDROP_DEFAULTS = {
   // 1枚を映す時間（ms）
   fade: 2400,
   // クロスフェードにかける時間（ms）
-  zoom: 1.10,
-  // 表示中にここまでゆっくり拡大する
+  zoomFrom: 1.06,
+  // 映り始めの拡大率（横に流すための余白をここで確保する）
+  zoom: 1.22,
+  // 表示の終わりまでにここまでゆっくり拡大する
+  driftX: -2.0,
+  // 表示中に横へ流す量（要素幅に対する％）
+  driftY: -1.4,
+  // 同じく縦へ流す量
+  stillZoom: 1.14,
+  // スマホの1枚表示で、ゆっくり往復させる拡大率
+  stillCycle: 24000,
+  // その往復1回にかける時間（ms）
   veil: 0,
   // 見出し帯にかける和紙の濃さ。0 = 写真の色をそのまま出す
   veilPage: 0.88,
@@ -108,7 +118,8 @@ function Backdrop() {
   const [reduce] = React.useState(() => window.matchMedia('(prefers-reduced-motion: reduce)').matches);
   const [narrow] = React.useState(() => window.matchMedia('(max-width: 768px)').matches);
 
-  // スマホは通信量を抑えるため1枚だけ、動きも付けない。
+  // スマホは通信量を抑えるため1枚だけ。ただし動きは付ける（画像の枚数は増えない）。
+  // 「視差効果を減らす」設定の端末だけは完全に静止させる。
   const still = narrow || reduce || photos.length < 2;
   React.useEffect(() => {
     if (still) return;
@@ -143,6 +154,7 @@ function Backdrop() {
       background: cfg.scrimColor
     }
   }, still ? /*#__PURE__*/React.createElement("div", {
+    className: reduce ? undefined : 'sai-bd-still',
     style: Object.assign({}, layer, {
       backgroundImage: `url("${photos[0]}")`
     })
@@ -168,10 +180,24 @@ function Backdrop() {
   }), /*#__PURE__*/React.createElement("style", null, `
         .sai-bd-in  { animation: saiBdIn ${cfg.fade}ms ease-in-out both,
                                  saiBdZoom ${cfg.interval + cfg.fade}ms linear both; }
-        .sai-bd-out { animation: saiBdOut ${cfg.fade}ms ease-in-out both; }
+        .sai-bd-out { animation: saiBdOut ${cfg.fade}ms ease-in-out both,
+                                 saiBdDrift ${cfg.fade}ms linear both; }
+        .sai-bd-still { animation: saiBdStill ${cfg.stillCycle}ms ease-in-out infinite alternate both; }
         @keyframes saiBdIn   { from { opacity: 0; } to { opacity: 1; } }
         @keyframes saiBdOut  { from { opacity: 1; } to { opacity: 0; } }
-        @keyframes saiBdZoom { from { transform: scale(1); } to { transform: scale(${cfg.zoom}); } }
+        @keyframes saiBdZoom {
+          from { transform: scale(${cfg.zoomFrom}) translate3d(0, 0, 0); }
+          to   { transform: scale(${cfg.zoom}) translate3d(${cfg.driftX}%, ${cfg.driftY}%, 0); }
+        }
+        /* 消えていく写真が固まって見えないよう、フェード中もそのまま流し続ける */
+        @keyframes saiBdDrift {
+          from { transform: scale(${cfg.zoom}) translate3d(${cfg.driftX}%, ${cfg.driftY}%, 0); }
+          to   { transform: scale(${(cfg.zoom * 1.04).toFixed(3)}) translate3d(${(cfg.driftX * 1.3).toFixed(2)}%, ${(cfg.driftY * 1.3).toFixed(2)}%, 0); }
+        }
+        @keyframes saiBdStill {
+          from { transform: scale(1) translate3d(0, 0, 0); }
+          to   { transform: scale(${cfg.stillZoom}) translate3d(${(cfg.driftX * 1.2).toFixed(2)}%, ${(cfg.driftY * 1.2).toFixed(2)}%, 0); }
+        }
       `));
 }
 Object.assign(window, {
