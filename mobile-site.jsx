@@ -56,8 +56,12 @@ function MobileNav() {
           <div style={{ width: 44, height: 44, borderRadius: 22, overflow: 'hidden', flexShrink: 0 }}>
             <img src="assets/logo-regionallab.png" alt="Regional Lab" style={{ width: '135%', height: '135%', objectFit: 'cover', marginLeft: '-17.5%', marginTop: '-17.5%', display: 'block' }} />
           </div>
-          <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.1, gap: 3 }}>
-            <div style={{ fontFamily: mFont.jpSerif, fontSize: 19, fontWeight: 600, letterSpacing: 0.5, color: 'var(--sai-ink)' }}>Regional Lab</div>
+          {/* ロゴの組み方に合わせ、Minamiuonuma を上に小さく、頭文字の R と L だけ苔色にする */}
+          <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.05, gap: 2 }}>
+            <div style={{ fontFamily: mFont.jpSerif, fontSize: 10.5, fontWeight: 500, letterSpacing: 1.5, color: 'var(--sai-ink)' }}>Minamiuonuma</div>
+            <div style={{ fontFamily: mFont.jpSerif, fontSize: 19, fontWeight: 600, letterSpacing: 0.5, color: 'var(--sai-ink)' }}>
+              <span style={{ color: mPalette.koke }}>R</span>egional <span style={{ color: mPalette.koke }}>L</span>ab
+            </div>
           </div>
         </div>
         <button

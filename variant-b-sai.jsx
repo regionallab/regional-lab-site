@@ -38,8 +38,12 @@ function SaiNav() {
             style={{ width: '135%', height: '135%', objectFit: 'cover', display: 'block', marginLeft: '-17.5%', marginTop: '-17.5%' }}
           />
         </div>
-        <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', lineHeight: 1.1, gap: 6 }}>
-          <div style={{ fontFamily: saiFont.jpSerif, fontSize: 24, fontWeight: 600, letterSpacing: 1, color: saiPalette.ink }}>Regional Lab</div>
+        {/* ロゴの組み方に合わせ、Minamiuonuma を上に小さく、頭文字の R と L だけ苔色にする */}
+        <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', lineHeight: 1.05, gap: 3 }}>
+          <div style={{ fontFamily: saiFont.jpSerif, fontSize: 13, fontWeight: 500, letterSpacing: 2, color: saiPalette.ink }}>Minamiuonuma</div>
+          <div style={{ fontFamily: saiFont.jpSerif, fontSize: 24, fontWeight: 600, letterSpacing: 1, color: saiPalette.ink }}>
+            <span style={{ color: saiPalette.koke }}>R</span>egional <span style={{ color: saiPalette.koke }}>L</span>ab
+          </div>
         </div>
       </div>
       <div style={{ display: 'flex', gap: 28, fontFamily: saiFont.jpSerif, fontSize: 14, color: saiPalette.ink, alignItems: 'center', letterSpacing: 2 }}>

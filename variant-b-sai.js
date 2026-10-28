@@ -64,10 +64,18 @@ function SaiNav() {
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
-      lineHeight: 1.1,
-      gap: 6
+      lineHeight: 1.05,
+      gap: 3
     }
   }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: saiFont.jpSerif,
+      fontSize: 13,
+      fontWeight: 500,
+      letterSpacing: 2,
+      color: saiPalette.ink
+    }
+  }, "Minamiuonuma"), /*#__PURE__*/React.createElement("div", {
     style: {
       fontFamily: saiFont.jpSerif,
       fontSize: 24,
@@ -75,7 +83,15 @@ function SaiNav() {
       letterSpacing: 1,
       color: saiPalette.ink
     }
-  }, "Regional Lab"))), /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: saiPalette.koke
+    }
+  }, "R"), "egional ", /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: saiPalette.koke
+    }
+  }, "L"), "ab"))), /*#__PURE__*/React.createElement("div", {
     style: {
       display: 'flex',
       gap: 28,

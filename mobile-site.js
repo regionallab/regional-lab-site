@@ -81,10 +81,18 @@ function MobileNav() {
     style: {
       display: 'flex',
       flexDirection: 'column',
-      lineHeight: 1.1,
-      gap: 3
+      lineHeight: 1.05,
+      gap: 2
     }
   }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: mFont.jpSerif,
+      fontSize: 10.5,
+      fontWeight: 500,
+      letterSpacing: 1.5,
+      color: 'var(--sai-ink)'
+    }
+  }, "Minamiuonuma"), /*#__PURE__*/React.createElement("div", {
     style: {
       fontFamily: mFont.jpSerif,
       fontSize: 19,
@@ -92,7 +100,15 @@ function MobileNav() {
       letterSpacing: 0.5,
       color: 'var(--sai-ink)'
     }
-  }, "Regional Lab"))), /*#__PURE__*/React.createElement("button", {
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: mPalette.koke
+    }
+  }, "R"), "egional ", /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: mPalette.koke
+    }
+  }, "L"), "ab"))), /*#__PURE__*/React.createElement("button", {
     onClick: () => setOpen(!open),
     "aria-label": "Menu",
     style: {
