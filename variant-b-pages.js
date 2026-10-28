@@ -942,6 +942,7 @@ function SaiPartners() {
       letterSpacing: '0.04em'
     }
   }, window.t('地方の未来を、共に彩りませんか。')), /*#__PURE__*/React.createElement("div", {
+    onClick: () => window.saiNavigate && window.saiNavigate('contact'),
     style: {
       marginTop: 16,
       padding: '12px 28px',
@@ -950,7 +951,8 @@ function SaiPartners() {
       fontFamily: saiBFont.jpSerif,
       fontSize: 14,
       letterSpacing: 3,
-      display: 'inline-block'
+      display: 'inline-block',
+      cursor: 'pointer'
     }
   }, window.t('協業のご相談 →')))));
 }

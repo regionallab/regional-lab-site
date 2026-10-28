@@ -328,7 +328,8 @@ function SaiBusinessPage() {
     style: {
       borderTop: `1px solid ${saiLine(bizB.ink, '33')}`,
       borderBottom: `1px solid ${saiLine(bizB.ink, '33')}`,
-      padding: '26px 0'
+      padding: '26px 0',
+      textAlign: 'center'
     }
   }, /*#__PURE__*/React.createElement("span", {
     style: {

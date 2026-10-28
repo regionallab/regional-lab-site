@@ -432,7 +432,7 @@ function SaiPartners() {
 
         <div style={{ marginTop: 48, padding: 40, border: `1px dashed ${saiLine(saiB.ink, '55')}`, textAlign: 'center' }}>
           <div style={{ fontFamily: saiBFont.jpSerif, fontSize: 22, marginTop: 8, letterSpacing: '0.04em' }}>{window.t('地方の未来を、共に彩りませんか。')}</div>
-          <div style={{ marginTop: 16, padding: '12px 28px', background: saiB.ink, color: saiB.paper, fontFamily: saiBFont.jpSerif, fontSize: 14, letterSpacing: 3, display: 'inline-block' }}>{window.t('協業のご相談 →')}</div>
+          <div onClick={() => window.saiNavigate && window.saiNavigate('contact')} style={{ marginTop: 16, padding: '12px 28px', background: saiB.ink, color: saiB.paper, fontFamily: saiBFont.jpSerif, fontSize: 14, letterSpacing: 3, display: 'inline-block', cursor: 'pointer' }}>{window.t('協業のご相談 →')}</div>
         </div>
       </div>
     </div>

@@ -2200,7 +2200,8 @@ function MobileBusiness() {
       fontFamily: mFont.jpSerif,
       fontSize: 12.5,
       lineHeight: 1.9,
-      color: 'var(--sai-ink)'
+      color: 'var(--sai-ink)',
+      textAlign: 'center'
     }
   }, t.footer)), /*#__PURE__*/React.createElement("div", {
     style: {

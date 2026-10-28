@@ -897,7 +897,7 @@ function MobileBusiness() {
 
       <div className="sai-reveal-each" style={{ padding: '0 24px 40px' }}>
         <div style={{ borderTop: `1px solid ${saiLine(mPalette.ink, '33')}`, borderBottom: `1px solid ${saiLine(mPalette.ink, '33')}`, padding: '18px 0' }}>
-          <div style={{ fontFamily: mFont.jpSerif, fontSize: 12.5, lineHeight: 1.9, color: 'var(--sai-ink)' }}>{t.footer}</div>
+          <div style={{ fontFamily: mFont.jpSerif, fontSize: 12.5, lineHeight: 1.9, color: 'var(--sai-ink)', textAlign: 'center' }}>{t.footer}</div>
         </div>
         <div style={{ marginTop: 26, textAlign: 'center', fontFamily: mFont.jpSerif, fontSize: 17, letterSpacing: '0.08em', color: 'var(--sai-ai)', lineHeight: 1.8 }}>
           {t.tagline}

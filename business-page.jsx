@@ -175,7 +175,7 @@ function SaiBusinessPage() {
       </div>
 
       <div className="sai-reveal-each" style={{ padding: '0 56px 88px' }}>
-        <div style={{ borderTop: `1px solid ${saiLine(bizB.ink, '33')}`, borderBottom: `1px solid ${saiLine(bizB.ink, '33')}`, padding: '26px 0' }}>
+        <div style={{ borderTop: `1px solid ${saiLine(bizB.ink, '33')}`, borderBottom: `1px solid ${saiLine(bizB.ink, '33')}`, padding: '26px 0', textAlign: 'center' }}>
           <span style={{ fontFamily: bizFont.jpSerif, fontSize: 14, letterSpacing: '0.06em', lineHeight: 1.9, color: 'var(--sai-ink)' }}>
             {t.footer}
           </span>
