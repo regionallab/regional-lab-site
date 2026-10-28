@@ -8,6 +8,7 @@ const mPalette = {
   paperDeep: '#e6dcc0',
   ink: '#1f1a14',
   ai: '#1f3552',
+  aiDeep: '#13243a',
   koke: '#5a6b3d',
   akane: '#9a3324',
   muted: '#766a52'
@@ -410,7 +411,7 @@ function MobileHome() {
       left: 0,
       width: '94%',
       height: '90%',
-      background: mPalette.ai
+      background: saiBackdropOn() ? mPalette.aiDeep : mPalette.ai
     }
   }), /*#__PURE__*/React.createElement("div", {
     style: {

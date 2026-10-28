@@ -152,7 +152,7 @@ function SaiHero() {
       top: 64,
       width: 720,
       height: 600,
-      background: saiPalette.ai
+      background: saiBackdropOn() ? saiPalette.aiDeep : saiPalette.ai
     }
   }), /*#__PURE__*/React.createElement("div", {
     style: {

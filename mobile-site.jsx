@@ -7,6 +7,7 @@ const mPalette = {
   paperDeep: '#e6dcc0',
   ink: '#1f1a14',
   ai: '#1f3552',
+  aiDeep: '#13243a',
   koke: '#5a6b3d',
   akane: '#9a3324',
   muted: '#766a52',
@@ -183,11 +184,11 @@ function MobileHome() {
           <span style={{ display: 'block', whiteSpace: window.saiLang === 'en' ? 'normal' : 'nowrap' }}>{window.t('彩る組織へ')}</span>
         </h1>
         <div style={{ marginTop: 32, position: 'relative', paddingTop: 64, paddingLeft: 52 }}>
-          {/* 藍色の和紙パネル（背面） */}
+          {/* 藍色の和紙パネル（背面）。背景写真があるときは濃い藍にして写真と沈み込ませない。 */}
           <div style={{
             position: 'absolute', top: 0, left: 0,
             width: '94%', height: '90%',
-            background: mPalette.ai,
+            background: saiBackdropOn() ? mPalette.aiDeep : mPalette.ai,
           }} />
           {/* ロゴ画像（前面・重なり） */}
           <div style={{ position: 'relative', width: '100%', aspectRatio: '4/5', overflow: 'hidden', background: '#d5d492' }}>

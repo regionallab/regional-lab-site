@@ -78,12 +78,13 @@ function SaiHero() {
       overflow: 'hidden',
       minHeight: 760,
     }}>
-      {/* Indigo washi panel */}
+      {/* 藍の和紙パネル（背面）。背景写真が緑〜碧なので、藍は濃いほうを使って
+          写真と沈み込まないようにしている（前面の若草パネルとの差も大きくなる）。 */}
       <div style={{
         position: 'absolute',
         left: 56, top: 64,
         width: 720, height: 600,
-        background: saiPalette.ai,
+        background: saiBackdropOn() ? saiPalette.aiDeep : saiPalette.ai,
       }} />
       {/* Photo */}
       <div style={{ position: 'absolute', left: 320, top: 180, width: 540, height: 680, overflow: 'hidden', background: '#d5d492' }}>
