@@ -186,7 +186,8 @@ function SaiHero() {
       fontFamily: saiFont.jpAlt,
       fontSize: 15,
       lineHeight: 2,
-      color: saiPalette.akane,
+      color: saiOnPhoto(saiPalette.akane),
+      textShadow: saiShadow(),
       letterSpacing: '0.18em',
       marginBottom: 20
     }
@@ -195,7 +196,8 @@ function SaiHero() {
       fontFamily: saiFont.enSerif,
       fontSize: 68,
       lineHeight: 1.15,
-      color: saiPalette.ink,
+      color: saiOnPhoto(saiPalette.ink),
+      textShadow: saiShadow(),
       letterSpacing: '0.01em',
       fontWeight: 500
     }
@@ -214,7 +216,8 @@ function SaiHero() {
       fontFamily: saiFont.jpAlt,
       fontSize: 18,
       lineHeight: 2.2,
-      color: saiPalette.akane,
+      color: saiOnPhoto(saiPalette.akane),
+      textShadow: saiShadow(),
       letterSpacing: '0.3em',
       whiteSpace: 'nowrap',
       marginTop: 24
@@ -224,7 +227,8 @@ function SaiHero() {
       fontFamily: saiFont.jpSerif,
       fontSize: 84,
       lineHeight: 1.35,
-      color: saiPalette.ink,
+      color: saiOnPhoto(saiPalette.ink),
+      textShadow: saiShadow(),
       letterSpacing: '0.08em',
       fontWeight: 500,
       whiteSpace: 'nowrap'
@@ -234,7 +238,8 @@ function SaiHero() {
       fontFamily: saiFont.jpSerif,
       fontSize: 84,
       lineHeight: 1.35,
-      color: saiPalette.ink,
+      color: saiOnPhoto(saiPalette.ink),
+      textShadow: saiShadow(),
       letterSpacing: '0.08em',
       fontWeight: 500,
       whiteSpace: 'nowrap',
@@ -316,7 +321,7 @@ function SaiMission() {
       top: 40,
       fontFamily: saiFont.jpSerif,
       fontSize: 240,
-      color: saiPalette.ink,
+      color: saiOnPhoto(saiPalette.ink),
       opacity: 0.04,
       letterSpacing: 0
     }
@@ -333,7 +338,8 @@ function SaiMission() {
       fontFamily: saiFont.jpSerif,
       fontSize: 28,
       letterSpacing: 8,
-      color: saiPalette.ai
+      color: saiOnPhoto(saiPalette.ai),
+      textShadow: saiShadow()
     }
   }, window.t('─ 理念 / 使命 / 展望'))), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
     style: {
@@ -398,7 +404,8 @@ function SaiMission() {
       fontFamily: saiFont.jpSerif,
       fontSize: 15,
       lineHeight: 2.2,
-      color: saiPalette.ink,
+      color: saiOnPhoto(saiPalette.ink),
+      textShadow: saiShadow(),
       margin: '32px 0 0',
       maxWidth: 940
     }
@@ -425,19 +432,21 @@ function SaiBusiness() {
       fontSize: 64,
       fontWeight: 400,
       margin: 0,
-      color: saiPalette.ink,
+      color: saiOnPhoto(saiPalette.ink),
+      textShadow: saiShadow(),
       letterSpacing: '0.04em'
     }
   }, window.t('四つの'), /*#__PURE__*/React.createElement("span", {
     style: {
-      color: saiPalette.akane
+      color: saiOnPhoto(saiPalette.akane)
     }
   }, window.t('柱'))), /*#__PURE__*/React.createElement("div", {
     style: {
       fontFamily: saiFont.mono,
       fontSize: 11,
       letterSpacing: 3,
-      color: saiPalette.muted
+      color: saiOnPhoto(saiPalette.muted),
+      textShadow: saiShadow()
     }
   }, "OUR BUSINESS \u2014 04 SECTORS")), /*#__PURE__*/React.createElement("div", {
     style: {
@@ -547,7 +556,7 @@ function SaiConsulting() {
       top: 24,
       fontFamily: saiFont.jpSerif,
       fontSize: 220,
-      color: saiPalette.ink,
+      color: saiOnPhoto(saiPalette.ink),
       opacity: 0.05,
       letterSpacing: 0
     }
@@ -567,14 +576,15 @@ function SaiConsulting() {
       fontFamily: saiFont.mono,
       fontSize: 11,
       letterSpacing: 3,
-      color: saiPalette.akane,
+      color: saiOnPhoto(saiPalette.akane),
+      textShadow: saiShadow(),
       whiteSpace: 'nowrap'
     }
   }, c.eyebrow, " \u2014 ", c.scope), /*#__PURE__*/React.createElement("span", {
     style: {
       flex: 1,
       height: 1,
-      background: `${saiPalette.ink}22`
+      background: saiLine(saiPalette.ink, '22')
     }
   })), /*#__PURE__*/React.createElement("h2", {
     style: {
@@ -582,20 +592,22 @@ function SaiConsulting() {
       fontSize: 'clamp(38px, 4.2vw, 58px)',
       fontWeight: 400,
       margin: 0,
-      color: saiPalette.ink,
+      color: saiOnPhoto(saiPalette.ink),
+      textShadow: saiShadow(),
       letterSpacing: '0.06em',
       lineHeight: 1.4
     }
   }, c.heading[0], /*#__PURE__*/React.createElement("span", {
     style: {
-      color: saiPalette.akane
+      color: saiOnPhoto(saiPalette.akane)
     }
   }, c.heading[1]), c.heading[2]), /*#__PURE__*/React.createElement("p", {
     style: {
       fontFamily: saiFont.jpSerif,
       fontSize: 15,
       lineHeight: 2.2,
-      color: saiPalette.muted,
+      color: saiOnPhoto(saiPalette.muted),
+      textShadow: saiShadow(),
       margin: '28px 0 0',
       maxWidth: 940
     }
@@ -605,7 +617,7 @@ function SaiTimeline() {
   const events = window.siteData.timeline;
   return /*#__PURE__*/React.createElement("div", {
     style: {
-      background: saiVeil(saiPalette.aiDeep, 0.86),
+      background: saiVeil(saiPalette.aiDeep, 0.55),
       padding: '120px 0',
       color: saiPalette.paper,
       position: 'relative',
@@ -766,7 +778,8 @@ function SaiCTA() {
       fontFamily: saiFont.mono,
       fontSize: 11,
       letterSpacing: 3,
-      color: saiPalette.akane,
+      color: saiOnPhoto(saiPalette.akane),
+      textShadow: saiShadow(),
       marginBottom: 20
     }
   }, "\u2014\u2014 TOGETHER"), /*#__PURE__*/React.createElement("h2", {
@@ -775,14 +788,15 @@ function SaiCTA() {
       fontSize: 'clamp(36px, 4.6vw, 60px)',
       fontWeight: 400,
       margin: 0,
-      color: saiPalette.ink,
+      color: saiOnPhoto(saiPalette.ink),
+      textShadow: saiShadow(),
       letterSpacing: '0.06em',
       lineHeight: 1.3,
       whiteSpace: 'nowrap'
     }
   }, window.t('その地に、もう一度、'), /*#__PURE__*/React.createElement("span", {
     style: {
-      color: saiPalette.ai
+      color: saiOnPhoto(saiPalette.ai)
     }
   }, window.t('光を。')))), /*#__PURE__*/React.createElement("div", {
     style: {
@@ -790,7 +804,7 @@ function SaiCTA() {
       gridTemplateColumns: 'repeat(5, 1fr)',
       gap: 24,
       paddingTop: 48,
-      borderTop: `1px solid ${saiPalette.ink}33`
+      borderTop: `1px solid ${saiLine(saiPalette.ink, '33')}`
     }
   }, tabs.map(([jp, en, sub, id]) => /*#__PURE__*/React.createElement("div", {
     key: en,
@@ -802,7 +816,8 @@ function SaiCTA() {
     style: {
       fontFamily: saiFont.jpSerif,
       fontSize: 15,
-      color: saiPalette.ink,
+      color: saiOnPhoto(saiPalette.ink),
+      textShadow: saiShadow(),
       letterSpacing: 2,
       fontWeight: 500
     }
@@ -811,7 +826,8 @@ function SaiCTA() {
       fontFamily: saiFont.mono,
       fontSize: 9,
       letterSpacing: 2,
-      color: saiPalette.akane,
+      color: saiOnPhoto(saiPalette.akane),
+      textShadow: saiShadow(),
       marginTop: 2,
       marginBottom: 14
     }
@@ -826,20 +842,22 @@ function SaiCTA() {
     style: {
       fontFamily: saiFont.jpSerif,
       fontSize: 12,
-      color: saiPalette.muted,
+      color: saiOnPhoto(saiPalette.muted),
+      textShadow: saiShadow(),
       letterSpacing: 1
     }
   }, "\u2014 ", window.t(s))))))), /*#__PURE__*/React.createElement("div", {
     style: {
       marginTop: 64,
       paddingTop: 24,
-      borderTop: `1px solid ${saiPalette.ink}22`,
+      borderTop: `1px solid ${saiLine(saiPalette.ink, '22')}`,
       display: 'flex',
       justifyContent: 'space-between',
       fontFamily: saiFont.mono,
       fontSize: 10,
       letterSpacing: 2,
-      color: saiPalette.muted
+      color: saiOnPhoto(saiPalette.muted),
+      textShadow: saiShadow()
     }
   }, /*#__PURE__*/React.createElement("span", null, "\xA9 REGIONAL LAB 2026"), /*#__PURE__*/React.createElement("span", null, window.t('魚沼エリア × 宮城エリア × 東京エリア')), /*#__PURE__*/React.createElement("span", null, window.t('個の研鑽をもって、日本の礎であり続ける。'))));
 }
@@ -847,7 +865,7 @@ function SaiVariant() {
   return /*#__PURE__*/React.createElement("div", {
     style: {
       fontFamily: saiFont.jpSerif,
-      color: saiPalette.ink,
+      color: saiOnPhoto(saiPalette.ink),
       background: saiBackdropOn() ? 'transparent' : saiPalette.paper
     }
   }, /*#__PURE__*/React.createElement(SaiNav, null), /*#__PURE__*/React.createElement(SaiHero, null), /*#__PURE__*/React.createElement(SaiMission, null), /*#__PURE__*/React.createElement(SaiConsulting, null), /*#__PURE__*/React.createElement(SaiBusiness, null), /*#__PURE__*/React.createElement(SaiTimeline, null), /*#__PURE__*/React.createElement(SaiCTA, null));

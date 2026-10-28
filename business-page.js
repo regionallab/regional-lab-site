@@ -323,7 +323,7 @@ function SaiBusinessPage() {
   const t = window.siteData.businessTree;
   return /*#__PURE__*/React.createElement("div", {
     style: {
-      background: saiVeil(bizB.paper),
+      background: saiPageVeil(bizB.paper),
       fontFamily: bizFont.jpSerif,
       color: bizB.ink
     }

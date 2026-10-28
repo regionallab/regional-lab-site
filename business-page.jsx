@@ -181,7 +181,7 @@ function BizUnit({ unit, index }) {
 function SaiBusinessPage() {
   const t = window.siteData.businessTree;
   return (
-    <div style={{ background: saiVeil(bizB.paper), fontFamily: bizFont.jpSerif, color: bizB.ink }}>
+    <div style={{ background: saiPageVeil(bizB.paper), fontFamily: bizFont.jpSerif, color: bizB.ink }}>
       <SaiPageHeader no="06" jp={window.t('事業概要')} en="Business" lead={t.lead} />
 
       <div style={{ padding: '64px 56px 0' }}>

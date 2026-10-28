@@ -221,7 +221,8 @@ function MobileFooter() {
       fontFamily: mFont.mono,
       fontSize: 10,
       letterSpacing: 3,
-      color: mPalette.akane,
+      color: saiOnPhoto(mPalette.akane),
+      textShadow: saiShadow(),
       marginBottom: 16
     }
   }, "\u2014\u2014 TOGETHER"), /*#__PURE__*/React.createElement("h2", {
@@ -230,17 +231,18 @@ function MobileFooter() {
       fontSize: 28,
       fontWeight: 400,
       margin: 0,
-      color: mPalette.ink,
+      color: saiOnPhoto(mPalette.ink),
+      textShadow: saiShadow(),
       letterSpacing: '0.04em',
       lineHeight: 1.5
     }
   }, window.t('その地に、もう一度、'), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("span", {
     style: {
-      color: mPalette.ai
+      color: saiOnPhoto(mPalette.ai)
     }
   }, window.t('光を。')))), /*#__PURE__*/React.createElement("div", {
     style: {
-      borderTop: `1px solid ${mPalette.ink}33`,
+      borderTop: `1px solid ${saiLine(mPalette.ink, '33')}`,
       paddingTop: 28,
       display: 'flex',
       flexDirection: 'column',
@@ -251,7 +253,7 @@ function MobileFooter() {
     onClick: () => window.saiNavigate && window.saiNavigate(en),
     style: {
       padding: '14px 4px',
-      borderBottom: `1px solid ${mPalette.ink}11`,
+      borderBottom: `1px solid ${saiLine(mPalette.ink, '11')}`,
       display: 'flex',
       justifyContent: 'space-between',
       alignItems: 'center',
@@ -262,27 +264,30 @@ function MobileFooter() {
       fontFamily: mFont.jpSerif,
       fontSize: 15,
       letterSpacing: 2,
-      color: mPalette.ink
+      color: saiOnPhoto(mPalette.ink),
+      textShadow: saiShadow()
     }
   }, window.t(jp)), /*#__PURE__*/React.createElement("span", {
     style: {
       fontFamily: mFont.mono,
       fontSize: 9,
       letterSpacing: 2,
-      color: mPalette.akane
+      color: saiOnPhoto(mPalette.akane),
+      textShadow: saiShadow()
     }
   }, (sub || en).toUpperCase())))), /*#__PURE__*/React.createElement("div", {
     style: {
       marginTop: 32,
       paddingTop: 20,
-      borderTop: `1px solid ${mPalette.ink}22`,
+      borderTop: `1px solid ${saiLine(mPalette.ink, '22')}`,
       display: 'flex',
       flexDirection: 'column',
       gap: 8,
       fontFamily: mFont.mono,
       fontSize: 10,
       letterSpacing: 1.5,
-      color: mPalette.muted,
+      color: saiOnPhoto(mPalette.muted),
+      textShadow: saiShadow(),
       textAlign: 'center'
     }
   }, /*#__PURE__*/React.createElement("span", null, "\xA9 REGIONAL LAB 2026"), /*#__PURE__*/React.createElement("span", null, window.t('魚沼エリア × 宮城エリア × 東京エリア'))));
@@ -358,7 +363,7 @@ function MobileHome() {
   }, /*#__PURE__*/React.createElement("div", {
     style: {
       padding: '40px 24px 56px',
-      background: `linear-gradient(180deg, ${mPalette.paper} 0%, ${mPalette.paperDeep} 100%)`,
+      background: `linear-gradient(180deg, ${saiVeil(mPalette.paper)} 0%, ${saiVeil(mPalette.paperDeep)} 100%)`,
       position: 'relative'
     }
   }, /*#__PURE__*/React.createElement("div", {
@@ -366,7 +371,8 @@ function MobileHome() {
       fontFamily: mFont.mono,
       fontSize: 10,
       letterSpacing: 3,
-      color: mPalette.akane,
+      color: saiOnPhoto(mPalette.akane),
+      textShadow: saiShadow(),
       marginBottom: 24
     }
   }, "\u2014\u2014 ", window.t('新潟県南魚沼市を支え続ける企業へ'), " \u2014\u2014"), /*#__PURE__*/React.createElement("h1", {
@@ -375,7 +381,8 @@ function MobileHome() {
       fontSize: 44,
       fontWeight: 500,
       margin: 0,
-      color: mPalette.ink,
+      color: saiOnPhoto(mPalette.ink),
+      textShadow: saiShadow(),
       letterSpacing: '0.04em',
       lineHeight: 1.3
     }
@@ -432,7 +439,8 @@ function MobileHome() {
       fontFamily: mFont.mono,
       fontSize: 10,
       letterSpacing: 3,
-      color: mPalette.akane,
+      color: saiOnPhoto(mPalette.akane),
+      textShadow: saiShadow(),
       marginBottom: 18
     }
   }, "\u2014\u2014 ", window.t('─ 理念 / 使命 / 展望').replace('─ ', '')), /*#__PURE__*/React.createElement("h2", {
@@ -440,7 +448,8 @@ function MobileHome() {
       fontFamily: mFont.jpSerif,
       fontSize: 30,
       fontWeight: 400,
-      color: mPalette.ink,
+      color: saiOnPhoto(mPalette.ink),
+      textShadow: saiShadow(),
       letterSpacing: '0.04em',
       lineHeight: 1.5,
       margin: 0
@@ -449,13 +458,14 @@ function MobileHome() {
     key: i
   }, h[0], /*#__PURE__*/React.createElement("span", {
     style: {
-      color: h[2] === 'akane' ? mPalette.akane : mPalette.ai
+      color: saiOnPhoto(h[2] === 'akane' ? mPalette.akane : mPalette.ai)
     }
   }, h[1]), h[3], i === 0 && /*#__PURE__*/React.createElement("br", null)))), /*#__PURE__*/React.createElement("p", {
     style: {
       fontFamily: mFont.jpSerif,
       fontSize: 14,
-      color: mPalette.ink,
+      color: saiOnPhoto(mPalette.ink),
+      textShadow: saiShadow(),
       lineHeight: 2,
       margin: '28px 0 32px'
     }
@@ -525,7 +535,8 @@ function MobileHome() {
       fontFamily: mFont.mono,
       fontSize: 10,
       letterSpacing: 3,
-      color: mPalette.akane,
+      color: saiOnPhoto(mPalette.akane),
+      textShadow: saiShadow(),
       marginBottom: 16
     }
   }, consulting.eyebrow), /*#__PURE__*/React.createElement("h2", {
@@ -534,20 +545,22 @@ function MobileHome() {
       fontSize: 30,
       fontWeight: 400,
       margin: 0,
-      color: mPalette.ink,
+      color: saiOnPhoto(mPalette.ink),
+      textShadow: saiShadow(),
       letterSpacing: '0.04em',
       lineHeight: 1.5
     }
   }, consulting.heading[0], /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("span", {
     style: {
-      color: mPalette.akane
+      color: saiOnPhoto(mPalette.akane)
     }
   }, consulting.heading[1]), consulting.heading[2]), /*#__PURE__*/React.createElement("div", {
     style: {
       fontFamily: mFont.mono,
       fontSize: 10,
       letterSpacing: 2,
-      color: mPalette.muted,
+      color: saiOnPhoto(mPalette.muted),
+      textShadow: saiShadow(),
       marginTop: 14,
       lineHeight: 1.8
     }
@@ -555,7 +568,8 @@ function MobileHome() {
     style: {
       fontFamily: mFont.jpSerif,
       fontSize: 14,
-      color: mPalette.muted,
+      color: saiOnPhoto(mPalette.muted),
+      textShadow: saiShadow(),
       lineHeight: 2,
       margin: '20px 0 0'
     }
@@ -574,19 +588,21 @@ function MobileHome() {
       fontSize: 40,
       fontWeight: 400,
       margin: 0,
-      color: mPalette.ink,
+      color: saiOnPhoto(mPalette.ink),
+      textShadow: saiShadow(),
       letterSpacing: '0.04em'
     }
   }, window.t('四つの'), /*#__PURE__*/React.createElement("span", {
     style: {
-      color: mPalette.akane
+      color: saiOnPhoto(mPalette.akane)
     }
   }, window.t('柱'))), /*#__PURE__*/React.createElement("div", {
     style: {
       fontFamily: mFont.mono,
       fontSize: 10,
       letterSpacing: 3,
-      color: mPalette.muted,
+      color: saiOnPhoto(mPalette.muted),
+      textShadow: saiShadow(),
       marginTop: 6
     }
   }, "OUR BUSINESS \u2014 04 SECTORS")), /*#__PURE__*/React.createElement("div", {
@@ -823,7 +839,7 @@ function MobileAbout() {
   const pillarColors = ['#c2452f', '#d8a13a', '#9bb06a'];
   return /*#__PURE__*/React.createElement("div", {
     style: {
-      background: saiVeil(mPalette.paper)
+      background: saiPageVeil(mPalette.paper)
     }
   }, /*#__PURE__*/React.createElement(MobilePageHeader, {
     no: "01",
@@ -1021,7 +1037,7 @@ function MobileCompany() {
   const offices = companyInfo.offices;
   return /*#__PURE__*/React.createElement("div", {
     style: {
-      background: saiVeil(mPalette.paper)
+      background: saiPageVeil(mPalette.paper)
     }
   }, /*#__PURE__*/React.createElement(MobilePageHeader, {
     no: "02",
@@ -1227,7 +1243,7 @@ function MobileNews() {
   const shown = active === 'ALL' ? articles : articles.filter(a => a.cat === active);
   return /*#__PURE__*/React.createElement("div", {
     style: {
-      background: saiVeil(mPalette.paper)
+      background: saiPageVeil(mPalette.paper)
     }
   }, /*#__PURE__*/React.createElement(MobilePageHeader, {
     no: "03",
@@ -1523,7 +1539,7 @@ function MobilePartners() {
   const partners = window.siteData.partners.list;
   return /*#__PURE__*/React.createElement("div", {
     style: {
-      background: saiVeil(mPalette.paper)
+      background: saiPageVeil(mPalette.paper)
     }
   }, /*#__PURE__*/React.createElement(MobilePageHeader, {
     no: "04",
@@ -1736,7 +1752,7 @@ function MobileContact() {
   };
   return /*#__PURE__*/React.createElement("div", {
     style: {
-      background: saiVeil(mPalette.paper)
+      background: saiPageVeil(mPalette.paper)
     }
   }, /*#__PURE__*/React.createElement(MobilePageHeader, {
     no: "05",
@@ -2066,7 +2082,7 @@ function MobileBusiness() {
   const t = window.siteData.businessTree;
   return /*#__PURE__*/React.createElement("div", {
     style: {
-      background: saiVeil(mPalette.paper)
+      background: saiPageVeil(mPalette.paper)
     }
   }, /*#__PURE__*/React.createElement(MobilePageHeader, {
     no: "06",
@@ -2345,7 +2361,7 @@ function MobileSite({
   return /*#__PURE__*/React.createElement("div", {
     style: {
       fontFamily: mFont.jpSerif,
-      color: mPalette.ink,
+      color: saiOnPhoto(mPalette.ink),
       background: saiBackdropOn() ? 'transparent' : mPalette.paper,
       minHeight: '100vh'
     }

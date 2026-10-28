@@ -120,27 +120,27 @@ function MobileFooter() {
   return (
     <div style={{ background: saiVeil(mPalette.paper), padding: '64px 24px 32px' }}>
       <div style={{ textAlign: 'center', marginBottom: 48 }}>
-        <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 3, color: mPalette.akane, marginBottom: 16 }}>—— TOGETHER</div>
-        <h2 style={{ fontFamily: mFont.jpSerif, fontSize: 28, fontWeight: 400, margin: 0, color: mPalette.ink, letterSpacing: '0.04em', lineHeight: 1.5 }}>
-          {window.t('その地に、もう一度、')}<br /><span style={{ color: mPalette.ai }}>{window.t('光を。')}</span>
+        <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 3, color: saiOnPhoto(mPalette.akane), textShadow: saiShadow(), marginBottom: 16 }}>—— TOGETHER</div>
+        <h2 style={{ fontFamily: mFont.jpSerif, fontSize: 28, fontWeight: 400, margin: 0, color: saiOnPhoto(mPalette.ink), textShadow: saiShadow(), letterSpacing: '0.04em', lineHeight: 1.5 }}>
+          {window.t('その地に、もう一度、')}<br /><span style={{ color: saiOnPhoto(mPalette.ai) }}>{window.t('光を。')}</span>
         </h2>
       </div>
-      <div style={{ borderTop: `1px solid ${mPalette.ink}33`, paddingTop: 28, display: 'flex', flexDirection: 'column', gap: 2 }}>
+      <div style={{ borderTop: `1px solid ${saiLine(mPalette.ink, '33')}`, paddingTop: 28, display: 'flex', flexDirection: 'column', gap: 2 }}>
         {navItems.map(([jp, en, sub]) => (
           <div
             key={en}
             onClick={() => window.saiNavigate && window.saiNavigate(en)}
             style={{
-              padding: '14px 4px', borderBottom: `1px solid ${mPalette.ink}11`,
+              padding: '14px 4px', borderBottom: `1px solid ${saiLine(mPalette.ink, '11')}`,
               display: 'flex', justifyContent: 'space-between', alignItems: 'center', cursor: 'pointer',
             }}
           >
-            <span style={{ fontFamily: mFont.jpSerif, fontSize: 15, letterSpacing: 2, color: mPalette.ink }}>{window.t(jp)}</span>
-            <span style={{ fontFamily: mFont.mono, fontSize: 9, letterSpacing: 2, color: mPalette.akane }}>{(sub || en).toUpperCase()}</span>
+            <span style={{ fontFamily: mFont.jpSerif, fontSize: 15, letterSpacing: 2, color: saiOnPhoto(mPalette.ink), textShadow: saiShadow() }}>{window.t(jp)}</span>
+            <span style={{ fontFamily: mFont.mono, fontSize: 9, letterSpacing: 2, color: saiOnPhoto(mPalette.akane), textShadow: saiShadow() }}>{(sub || en).toUpperCase()}</span>
           </div>
         ))}
       </div>
-      <div style={{ marginTop: 32, paddingTop: 20, borderTop: `1px solid ${mPalette.ink}22`, display: 'flex', flexDirection: 'column', gap: 8, fontFamily: mFont.mono, fontSize: 10, letterSpacing: 1.5, color: mPalette.muted, textAlign: 'center' }}>
+      <div style={{ marginTop: 32, paddingTop: 20, borderTop: `1px solid ${saiLine(mPalette.ink, '22')}`, display: 'flex', flexDirection: 'column', gap: 8, fontFamily: mFont.mono, fontSize: 10, letterSpacing: 1.5, color: saiOnPhoto(mPalette.muted), textShadow: saiShadow(), textAlign: 'center' }}>
         <span>© REGIONAL LAB 2026</span>
         <span>{window.t('魚沼エリア × 宮城エリア × 東京エリア')}</span>
       </div>
@@ -176,9 +176,9 @@ function MobileHome() {
   return (
     <div style={{ background: saiBackdropOn() ? 'transparent' : mPalette.paper }}>
       {/* HERO */}
-      <div style={{ padding: '40px 24px 56px', background: `linear-gradient(180deg, ${mPalette.paper} 0%, ${mPalette.paperDeep} 100%)`, position: 'relative' }}>
-        <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 3, color: mPalette.akane, marginBottom: 24 }}>—— {window.t('新潟県南魚沼市を支え続ける企業へ')} ——</div>
-        <h1 style={{ fontFamily: mFont.jpSerif, fontSize: 44, fontWeight: 500, margin: 0, color: mPalette.ink, letterSpacing: '0.04em', lineHeight: 1.3 }}>
+      <div style={{ padding: '40px 24px 56px', background: `linear-gradient(180deg, ${saiVeil(mPalette.paper)} 0%, ${saiVeil(mPalette.paperDeep)} 100%)`, position: 'relative' }}>
+        <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 3, color: saiOnPhoto(mPalette.akane), textShadow: saiShadow(), marginBottom: 24 }}>—— {window.t('新潟県南魚沼市を支え続ける企業へ')} ——</div>
+        <h1 style={{ fontFamily: mFont.jpSerif, fontSize: 44, fontWeight: 500, margin: 0, color: saiOnPhoto(mPalette.ink), textShadow: saiShadow(), letterSpacing: '0.04em', lineHeight: 1.3 }}>
           <span style={{ display: 'block', whiteSpace: window.saiLang === 'en' ? 'normal' : 'nowrap' }}>{window.t('地方の未来を、')}</span>
           <span style={{ display: 'block', whiteSpace: window.saiLang === 'en' ? 'normal' : 'nowrap' }}>{window.t('彩る組織へ')}</span>
         </h1>
@@ -198,16 +198,16 @@ function MobileHome() {
 
       {/* MISSION — 理念 / 使命 / 展望 */}
       <div style={{ background: saiVeil(mPalette.paperDeep), padding: '64px 24px' }}>
-        <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 3, color: mPalette.akane, marginBottom: 18 }}>—— {window.t('─ 理念 / 使命 / 展望').replace('─ ', '')}</div>
-        <h2 style={{ fontFamily: mFont.jpSerif, fontSize: 30, fontWeight: 400, color: mPalette.ink, letterSpacing: '0.04em', lineHeight: 1.5, margin: 0 }}>
+        <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 3, color: saiOnPhoto(mPalette.akane), textShadow: saiShadow(), marginBottom: 18 }}>—— {window.t('─ 理念 / 使命 / 展望').replace('─ ', '')}</div>
+        <h2 style={{ fontFamily: mFont.jpSerif, fontSize: 30, fontWeight: 400, color: saiOnPhoto(mPalette.ink), textShadow: saiShadow(), letterSpacing: '0.04em', lineHeight: 1.5, margin: 0 }}>
           {window.siteData.mission.heading.map((h, i) => (
             <React.Fragment key={i}>
-              {h[0]}<span style={{ color: h[2] === 'akane' ? mPalette.akane : mPalette.ai }}>{h[1]}</span>{h[3]}
+              {h[0]}<span style={{ color: saiOnPhoto(h[2] === 'akane' ? mPalette.akane : mPalette.ai) }}>{h[1]}</span>{h[3]}
               {i === 0 && <br />}
             </React.Fragment>
           ))}
         </h2>
-        <p style={{ fontFamily: mFont.jpSerif, fontSize: 14, color: mPalette.ink, lineHeight: 2, margin: '28px 0 32px' }}>
+        <p style={{ fontFamily: mFont.jpSerif, fontSize: 14, color: saiOnPhoto(mPalette.ink), textShadow: saiShadow(), lineHeight: 2, margin: '28px 0 32px' }}>
           {window.siteData.mission.body}
         </p>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
@@ -227,16 +227,16 @@ function MobileHome() {
 
       {/* CONSULTING — キャッチコピー */}
       <div style={{ background: saiVeil(mPalette.paper), color: mPalette.ink, padding: '56px 24px 24px' }}>
-        <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 3, color: mPalette.akane, marginBottom: 16 }}>
+        <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 3, color: saiOnPhoto(mPalette.akane), textShadow: saiShadow(), marginBottom: 16 }}>
           {consulting.eyebrow}
         </div>
-        <h2 style={{ fontFamily: mFont.jpSerif, fontSize: 30, fontWeight: 400, margin: 0, color: mPalette.ink, letterSpacing: '0.04em', lineHeight: 1.5 }}>
-          {consulting.heading[0]}<br /><span style={{ color: mPalette.akane }}>{consulting.heading[1]}</span>{consulting.heading[2]}
+        <h2 style={{ fontFamily: mFont.jpSerif, fontSize: 30, fontWeight: 400, margin: 0, color: saiOnPhoto(mPalette.ink), textShadow: saiShadow(), letterSpacing: '0.04em', lineHeight: 1.5 }}>
+          {consulting.heading[0]}<br /><span style={{ color: saiOnPhoto(mPalette.akane) }}>{consulting.heading[1]}</span>{consulting.heading[2]}
         </h2>
-        <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 2, color: mPalette.muted, marginTop: 14, lineHeight: 1.8 }}>
+        <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 2, color: saiOnPhoto(mPalette.muted), textShadow: saiShadow(), marginTop: 14, lineHeight: 1.8 }}>
           {consulting.scope}
         </div>
-        <p style={{ fontFamily: mFont.jpSerif, fontSize: 14, color: mPalette.muted, lineHeight: 2, margin: '20px 0 0' }}>
+        <p style={{ fontFamily: mFont.jpSerif, fontSize: 14, color: saiOnPhoto(mPalette.muted), textShadow: saiShadow(), lineHeight: 2, margin: '20px 0 0' }}>
           {consulting.body}
         </p>
       </div>
@@ -244,10 +244,10 @@ function MobileHome() {
       {/* BUSINESS — 四つの柱 */}
       <div style={{ padding: '64px 24px', background: saiVeil(mPalette.paper) }}>
         <div style={{ marginBottom: 36 }}>
-          <h2 style={{ fontFamily: mFont.jpSerif, fontSize: 40, fontWeight: 400, margin: 0, color: mPalette.ink, letterSpacing: '0.04em' }}>
-            {window.t('四つの')}<span style={{ color: mPalette.akane }}>{window.t('柱')}</span>
+          <h2 style={{ fontFamily: mFont.jpSerif, fontSize: 40, fontWeight: 400, margin: 0, color: saiOnPhoto(mPalette.ink), textShadow: saiShadow(), letterSpacing: '0.04em' }}>
+            {window.t('四つの')}<span style={{ color: saiOnPhoto(mPalette.akane) }}>{window.t('柱')}</span>
           </h2>
-          <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 3, color: mPalette.muted, marginTop: 6 }}>OUR BUSINESS — 04 SECTORS</div>
+          <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 3, color: saiOnPhoto(mPalette.muted), textShadow: saiShadow(), marginTop: 6 }}>OUR BUSINESS — 04 SECTORS</div>
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 36 }}>
           {business.map((s, i) => (
@@ -345,7 +345,7 @@ function MobileAbout() {
   }));
   const pillarColors = ['#c2452f', '#d8a13a', '#9bb06a'];
   return (
-    <div style={{ background: saiVeil(mPalette.paper) }}>
+    <div style={{ background: saiPageVeil(mPalette.paper) }}>
       <MobilePageHeader no="01" jp={window.t('私たちについて')} en="About Us" lead={about.lead} />
       <div style={{ padding: '48px 24px' }}>
         {/* 目的 */}
@@ -425,7 +425,7 @@ function MobileCompany() {
   ];
   const offices = companyInfo.offices;
   return (
-    <div style={{ background: saiVeil(mPalette.paper) }}>
+    <div style={{ background: saiPageVeil(mPalette.paper) }}>
       <MobilePageHeader no="02" jp={window.t('屋号概要')} en="Profile" lead={window.siteData.company.lead} />
       <div style={{ padding: '48px 24px' }}>
         <div style={{ marginBottom: 40 }}>
@@ -496,7 +496,7 @@ function MobileNews() {
   const [open, setOpen] = React.useState(null);
   const shown = active === 'ALL' ? articles : articles.filter(a => a.cat === active);
   return (
-    <div style={{ background: saiVeil(mPalette.paper) }}>
+    <div style={{ background: saiPageVeil(mPalette.paper) }}>
       <MobilePageHeader no="03" jp={window.t('お知らせ')} en="News" lead={window.siteData.news.lead} />
       <div style={{ padding: '40px 24px 48px' }}>
         <div style={{ display: 'flex', gap: 8, marginBottom: 24, flexWrap: 'wrap' }}>
@@ -604,7 +604,7 @@ function MobileNewsModal({ article: a, onClose }) {
 function MobilePartners() {
   const partners = window.siteData.partners.list;
   return (
-    <div style={{ background: saiVeil(mPalette.paper) }}>
+    <div style={{ background: saiPageVeil(mPalette.paper) }}>
       <MobilePageHeader no="04" jp={window.t('パートナー')} en="Partners" lead={window.siteData.partners.lead} />
       <div style={{ padding: '48px 24px' }}>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 22 }}>
@@ -700,7 +700,7 @@ function MobileContact() {
       `mailto:${fallback}?subject=${encodeURIComponent(payload._subject)}&body=${encodeURIComponent(body)}`;
   };
   return (
-    <div style={{ background: saiVeil(mPalette.paper) }}>
+    <div style={{ background: saiPageVeil(mPalette.paper) }}>
       <MobilePageHeader no="05" jp={window.t('お問い合わせ')} en="Contact" lead={window.t('ご相談・取材・パートナーシップ等のお問い合わせを承っております。お気軽にご連絡ください。')} />
       <div style={{ padding: '48px 24px' }}>
         {/* Contact cards */}
@@ -831,7 +831,7 @@ function MobileBizGroup({ group, color, n }) {
 function MobileBusiness() {
   const t = window.siteData.businessTree;
   return (
-    <div style={{ background: saiVeil(mPalette.paper) }}>
+    <div style={{ background: saiPageVeil(mPalette.paper) }}>
       <MobilePageHeader no="06" jp={window.t('事業概要')} en="Business" lead={t.lead} />
 
       <div style={{ padding: '32px 24px 0' }}>
@@ -945,7 +945,7 @@ function MobileApp({ page }) {
 
 function MobileSite({ page }) {
   return (
-    <div style={{ fontFamily: mFont.jpSerif, color: mPalette.ink, background: saiBackdropOn() ? 'transparent' : mPalette.paper, minHeight: '100vh' }}>
+    <div style={{ fontFamily: mFont.jpSerif, color: saiOnPhoto(mPalette.ink), background: saiBackdropOn() ? 'transparent' : mPalette.paper, minHeight: '100vh' }}>
       <MobileNav />
       <MobileApp page={page} />
     </div>

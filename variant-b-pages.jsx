@@ -52,7 +52,7 @@ function SaiAbout() {
   const members = window.siteData.about.members;
 
   return (
-    <div style={{ background: saiVeil(saiB.paper), fontFamily: saiBFont.jpSerif, color: saiB.ink }}>
+    <div style={{ background: saiPageVeil(saiB.paper), fontFamily: saiBFont.jpSerif, color: saiB.ink }}>
       <SaiPageHeader
         no="01"
         jp={window.t('私たちについて')}
@@ -161,7 +161,7 @@ function SaiCompany() {
   const companyInfo = window.siteData.company.info;
 
   return (
-    <div style={{ background: saiVeil(saiB.paper), fontFamily: saiBFont.jpSerif, color: saiB.ink }}>
+    <div style={{ background: saiPageVeil(saiB.paper), fontFamily: saiBFont.jpSerif, color: saiB.ink }}>
       <SaiPageHeader
         no="02"
         jp={window.t('屋号概要')}
@@ -270,7 +270,7 @@ function SaiNews() {
   const shown = active === 'ALL' ? articles : articles.filter(a => a.cat === active);
 
   return (
-    <div style={{ background: saiVeil(saiB.paper), fontFamily: saiBFont.jpSerif, color: saiB.ink }}>
+    <div style={{ background: saiPageVeil(saiB.paper), fontFamily: saiBFont.jpSerif, color: saiB.ink }}>
       <SaiPageHeader
         no="03"
         jp={window.t('お知らせ')}
@@ -398,7 +398,7 @@ function SaiPartners() {
   const partners = window.siteData.partners.list;
 
   return (
-    <div style={{ background: saiVeil(saiB.paper), fontFamily: saiBFont.jpSerif, color: saiB.ink }}>
+    <div style={{ background: saiPageVeil(saiB.paper), fontFamily: saiBFont.jpSerif, color: saiB.ink }}>
       <SaiPageHeader
         no="04"
         jp={window.t('パートナー')}
