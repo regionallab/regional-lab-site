@@ -18,7 +18,7 @@ function write(path, text) {
 function run(argv) {
   var ROOT = argv[0], BABEL = argv[1];
   var FILES = [
-    'i18n', 'site-data', 'site-data-en', 'shared',
+    'i18n', 'site-data', 'site-data-en', 'shared', 'backdrop',
     'variant-b-sai', 'variant-b-pages', 'variant-b-contact',
     'business-page', 'mobile-site', 'app',
   ];
