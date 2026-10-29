@@ -94,6 +94,7 @@ function saiPageVeil(hex) {
 }
 
 // 最初の画面をスクロールに合わせて静かに見送る。上へ流しながら薄くしていく。
+// 控えめに。画面が流れきるまでかけて、消し切らずに少し残す。
 // 「視差効果を減らす」設定の端末では何もしない。
 function saiUseScrollFade() {
   const ref = React.useRef(null);
@@ -103,10 +104,10 @@ function saiUseScrollFade() {
     let raf = 0;
     const apply = () => {
       raf = 0;
-      const span = (window.innerHeight || 1) * 0.9;
+      const span = (window.innerHeight || 1) * 1.4;
       const p = Math.min(1, Math.max(0, window.scrollY / span));
-      el.style.opacity = String(1 - p * 0.95);
-      el.style.transform = p ? `translate3d(0, ${(-p * 110).toFixed(1)}px, 0) scale(${(1 - p * 0.06).toFixed(4)})` : '';
+      el.style.opacity = String(1 - p * 0.55);
+      el.style.transform = p ? `translate3d(0, ${(-p * 40).toFixed(1)}px, 0) scale(${(1 - p * 0.02).toFixed(4)})` : '';
       el.style.willChange = p > 0 && p < 1 ? 'opacity, transform' : 'auto';
     };
     const onScroll = () => { if (!raf) raf = requestAnimationFrame(apply); };
