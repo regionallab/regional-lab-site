@@ -34,6 +34,7 @@ function MobileNav() {
   const [open, setOpen] = React.useState(false);
   const navItems = [['ホーム', 'home'], ['私たちについて', 'about'], ['会社概要', 'company', 'Profile'], ['事業概要', 'business'], ['お知らせ', 'news'], ['パートナー', 'partners'], ['お問い合わせ', 'contact']];
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
+    "data-sai-sticky": "true",
     style: {
       position: 'sticky',
       top: 0,
@@ -673,7 +674,9 @@ function MobileHome() {
       marginTop: 14,
       margin: '14px 0 16px'
     }
-  }, s.bodyText), /*#__PURE__*/React.createElement("div", {
+  }, s.bodyText), /*#__PURE__*/React.createElement("button", {
+    type: "button",
+    onClick: () => window.saiGoToBusiness(i),
     style: {
       padding: '10px 14px',
       background: s.accent,
@@ -682,7 +685,11 @@ function MobileHome() {
       display: 'inline-block',
       fontFamily: mFont.jpSerif,
       fontSize: 13,
-      letterSpacing: 3
+      letterSpacing: 3,
+      lineHeight: 1.7,
+      border: 'none',
+      appearance: 'none',
+      cursor: 'pointer'
     }
   }, "\u300C", s.key, "\u300D"))))), /*#__PURE__*/React.createElement("div", {
     style: {
@@ -1955,15 +1962,24 @@ function mBizScrollTo(id) {
   const el = document.getElementById(id);
   if (!el) return;
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const y = el.getBoundingClientRect().top + window.pageYOffset - 12;
+  const target = () => saiLayoutTop(el) - saiStickyGap(12);
   window.scrollTo({
-    top: y,
+    top: target(),
     behavior: reduce ? 'auto' : 'smooth'
   });
-  // 一部の環境では smooth が無視されるため、動いていなければ確実に移動させる
+  // 動き終わってからもう一度測り直し、最後はその事業の頭に合わせる
+  let placed = null;
   setTimeout(() => {
-    if (Math.abs(window.pageYOffset - y) > 4) window.scrollTo(0, y);
-  }, 600);
+    placed = target();
+    if (Math.abs(window.pageYOffset - placed) > 4) window.scrollTo(0, placed);
+    // 写真が遅れて入ると上の高さがまた変わるので、もう一度だけ合わせ直す。
+    // ただし、その間に読み手が自分で動かしていたら触らない。
+    setTimeout(() => {
+      if (placed == null || Math.abs(window.pageYOffset - placed) > 24) return;
+      const y = target();
+      if (Math.abs(window.pageYOffset - y) > 4) window.scrollTo(0, y);
+    }, 1000);
+  }, 900);
 }
 function MobileBizGroup({
   group,

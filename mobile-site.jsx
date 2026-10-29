@@ -45,7 +45,7 @@ function MobileNav() {
   ];
   return (
     <React.Fragment>
-      <div style={{
+      <div data-sai-sticky="true" style={{
         position: 'sticky', top: 0, zIndex: 100,
         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
         padding: '14px 18px',
@@ -278,13 +278,14 @@ function MobileHome() {
               <p style={{ fontFamily: mFont.jpSerif, fontSize: 14, lineHeight: 2, color: 'var(--sai-ink)', marginTop: 14, margin: '14px 0 16px' }}>
                 {s.bodyText}
               </p>
-              <div style={{
+              <button type="button" onClick={() => window.saiGoToBusiness(i)} style={{
                 padding: '10px 14px', background: s.accent, color: mPalette.paper,
                 alignSelf: 'flex-start', display: 'inline-block',
-                fontFamily: mFont.jpSerif, fontSize: 13, letterSpacing: 3,
+                fontFamily: mFont.jpSerif, fontSize: 13, letterSpacing: 3, lineHeight: 1.7,
+                border: 'none', appearance: 'none', cursor: 'pointer',
               }}>
                 「{s.key}」
-              </div>
+              </button>
             </div>
           ))}
         </div>
@@ -798,12 +799,21 @@ function mBizScrollTo(id) {
   const el = document.getElementById(id);
   if (!el) return;
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const y = el.getBoundingClientRect().top + window.pageYOffset - 12;
-  window.scrollTo({ top: y, behavior: reduce ? 'auto' : 'smooth' });
-  // 一部の環境では smooth が無視されるため、動いていなければ確実に移動させる
+  const target = () => saiLayoutTop(el) - saiStickyGap(12);
+  window.scrollTo({ top: target(), behavior: reduce ? 'auto' : 'smooth' });
+  // 動き終わってからもう一度測り直し、最後はその事業の頭に合わせる
+  let placed = null;
   setTimeout(() => {
-    if (Math.abs(window.pageYOffset - y) > 4) window.scrollTo(0, y);
-  }, 600);
+    placed = target();
+    if (Math.abs(window.pageYOffset - placed) > 4) window.scrollTo(0, placed);
+    // 写真が遅れて入ると上の高さがまた変わるので、もう一度だけ合わせ直す。
+    // ただし、その間に読み手が自分で動かしていたら触らない。
+    setTimeout(() => {
+      if (placed == null || Math.abs(window.pageYOffset - placed) > 24) return;
+      const y = target();
+      if (Math.abs(window.pageYOffset - y) > 4) window.scrollTo(0, y);
+    }, 1000);
+  }, 900);
 }
 
 function MobileBizGroup({ group, color, n }) {

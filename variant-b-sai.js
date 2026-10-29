@@ -515,7 +515,9 @@ function SaiBusiness() {
       color: saiPalette.ink,
       marginTop: 16
     }
-  }, Array.isArray(s.body) ? s.body.join(window.saiLang === 'en' ? ' ' : '') : s.body), /*#__PURE__*/React.createElement("div", {
+  }, Array.isArray(s.body) ? s.body.join(window.saiLang === 'en' ? ' ' : '') : s.body), /*#__PURE__*/React.createElement("button", {
+    type: "button",
+    onClick: () => window.saiGoToBusiness(i),
     style: {
       marginTop: 'auto',
       padding: '10px 14px',
@@ -524,7 +526,11 @@ function SaiBusiness() {
       alignSelf: 'flex-start',
       fontFamily: saiFont.jpSerif,
       fontSize: 13,
-      letterSpacing: 3
+      letterSpacing: 3,
+      lineHeight: 1.7,
+      border: 'none',
+      appearance: 'none',
+      cursor: 'pointer'
     }
   }, "\u300C", s.key, "\u300D")))));
 }

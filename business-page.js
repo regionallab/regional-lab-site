@@ -38,15 +38,24 @@ function bizScrollTo(id, offset) {
   const el = document.getElementById(id);
   if (!el) return;
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const y = el.getBoundingClientRect().top + window.pageYOffset - (offset || 24);
+  const target = () => saiLayoutTop(el) - (offset || 24);
   window.scrollTo({
-    top: y,
+    top: target(),
     behavior: reduce ? 'auto' : 'smooth'
   });
-  // 一部の環境では smooth が無視されるため、動いていなければ確実に移動させる
+  // 動き終わってからもう一度測り直し、最後はその事業の頭に合わせる
+  let placed = null;
   setTimeout(() => {
-    if (Math.abs(window.pageYOffset - y) > 4) window.scrollTo(0, y);
-  }, 600);
+    placed = target();
+    if (Math.abs(window.pageYOffset - placed) > 4) window.scrollTo(0, placed);
+    // 写真が遅れて入ると上の高さがまた変わるので、もう一度だけ合わせ直す。
+    // ただし、その間に読み手が自分で動かしていたら触らない。
+    setTimeout(() => {
+      if (placed == null || Math.abs(window.pageYOffset - placed) > 24) return;
+      const y = target();
+      if (Math.abs(window.pageYOffset - y) > 4) window.scrollTo(0, y);
+    }, 1000);
+  }, 900);
 }
 
 // ---------------------------------------------------------

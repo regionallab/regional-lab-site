@@ -224,14 +224,15 @@ function SaiBusiness() {
                 ? s.body.join(window.saiLang === 'en' ? ' ' : '')
                 : s.body}
             </p>
-            <div style={{
+            <button type="button" onClick={() => window.saiGoToBusiness(i)} style={{
               marginTop: 'auto', padding: '10px 14px',
               background: s.accent, color: saiPalette.paper,
               alignSelf: 'flex-start',
-              fontFamily: saiFont.jpSerif, fontSize: 13, letterSpacing: 3,
+              fontFamily: saiFont.jpSerif, fontSize: 13, letterSpacing: 3, lineHeight: 1.7,
+              border: 'none', appearance: 'none', cursor: 'pointer',
             }}>
               「{s.key}」
-            </div>
+            </button>
           </div>
         ))}
       </div>

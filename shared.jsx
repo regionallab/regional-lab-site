@@ -1,6 +1,21 @@
 // Shared placeholder + helper components used across all variants.
 // Every styles object MUST be uniquely-named.
 
+// 画面の上端に貼り付く帯の高さ。送り先がその裏に隠れないよう、その分だけ余計に空ける。
+function saiStickyGap(extra) {
+  const bar = document.querySelector('[data-sai-sticky]');
+  const h = bar ? Math.round(bar.getBoundingClientRect().height) : 0;
+  return h + (extra || 0);
+}
+
+// 送り先の位置。帯は現れる前に下へずらして置いてあり、画面からの距離で測ると
+// その分だけ行き過ぎる。ずらしの影響を受けない積み上げの位置で測る。
+function saiLayoutTop(el) {
+  let y = 0;
+  for (let n = el; n; n = n.offsetParent) y += n.offsetTop;
+  return y;
+}
+
 const PLACEHOLDER_STRIPE = (color1, color2) =>
   `repeating-linear-gradient(135deg, ${color1} 0 10px, ${color2} 10px 20px)`;
 

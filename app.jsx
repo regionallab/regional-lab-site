@@ -37,6 +37,39 @@ function App() {
       // 事業概要は専用ページがないため、ホームの「三つの柱」セクションへスクロール
       window.scrollTo({ top: 0, behavior: 'auto' });
     };
+    // ホームの四つの札から、事業概要ページのその事業の箇所まで送る。
+    // ページが差し替わるのを待ってから位置を測る（見つかるまで少しだけ待ち直す）。
+    window.saiGoToBusiness = (index) => {
+      window.saiNavigate('business');
+      const mobile = window.matchMedia('(max-width: 768px)').matches;
+      const id = (mobile ? 'mbiz-' : 'biz-') + index;
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      let tries = 0;
+      const seek = () => {
+        const el = document.getElementById(id);
+        if (!el) {
+          if (tries++ < 40) setTimeout(seek, 80);
+          return;
+        }
+        const target = () => saiLayoutTop(el) - (mobile ? saiStickyGap(12) : 24);
+        window.scrollTo({ top: target(), behavior: reduce ? 'auto' : 'smooth' });
+        // 動き終わってからもう一度測り直す。写真の読み込みで上の高さが変わっても、
+        // また smooth が無視される環境でも、最後は必ずその事業の頭に合う。
+        let placed = null;
+        setTimeout(() => {
+          placed = target();
+          if (Math.abs(window.pageYOffset - placed) > 4) window.scrollTo(0, placed);
+          // 写真が遅れて入ると上の高さがまた変わるので、もう一度だけ合わせ直す。
+          // ただし、その間に読み手が自分で動かしていたら触らない。
+          setTimeout(() => {
+            if (placed == null || Math.abs(window.pageYOffset - placed) > 24) return;
+            const y = target();
+            if (Math.abs(window.pageYOffset - y) > 4) window.scrollTo(0, y);
+          }, 1000);
+        }, 900);
+      };
+      setTimeout(seek, 80);
+    };
     const onHash = () => setPage(getPageFromHash());
     window.addEventListener('hashchange', onHash);
     window.saiOnLangChange = (l) => setLang(l);
