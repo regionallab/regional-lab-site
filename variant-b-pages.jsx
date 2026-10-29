@@ -147,7 +147,7 @@ function SaiAbout() {
 }
 
 // =========================================================
-// COMPANY — 屋号概要
+// COMPANY — 会社概要
 // =========================================================
 function SaiCompany() {
   const services = window.siteData.company.services;
@@ -157,7 +157,7 @@ function SaiCompany() {
     <div className="sai-reveal-each" style={{ ...saiVars(false), background: saiBackdropOn() ? 'transparent' : saiB.paper, fontFamily: saiBFont.jpSerif, color: 'var(--sai-ink)', textShadow: saiShadow() }}>
       <SaiPageHeader
         no="02"
-        jp={window.t('屋号概要')}
+        jp={window.t('会社概要')}
         en="Profile"
         lead={window.siteData.company.lead}
       />
@@ -166,12 +166,12 @@ function SaiCompany() {
       <div className="sai-reveal-each" style={{ padding: '80px 56px 0' }}>
         <div style={{ marginBottom: 32 }}>
           <h2 style={{ fontFamily: saiBFont.jpSerif, fontSize: 44, fontWeight: 400, margin: 0, letterSpacing: '0.04em' }}>
-            {window.t('屋号情報')}
+            {window.t('会社情報')}
           </h2>
         </div>
         <div style={{ borderTop: `1px solid ${saiLine(saiB.ink, 'ff')}` }}>
           {[
-            [window.t('屋号名'), window.saiLang === 'en' ? 'Regional Lab' : 'Regional Lab / リージョナルラボ'],
+            [window.t('会社名'), window.saiLang === 'en' ? 'Regional Lab' : 'Regional Lab / リージョナルラボ'],
             [window.t('設立'), companyInfo.founded],
             [window.t('役員'), companyInfo.officers],
             [window.t('拠点'), companyInfo.offices],

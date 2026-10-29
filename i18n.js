@@ -13,7 +13,7 @@ window.saiLang = function () {
 const SAI_EN = {
   // nav / chrome
   '私たちについて': 'About Us',
-  '屋号概要': 'Profile',
+  '会社概要': 'Profile',
   '事業概要': 'Business',
   'お知らせ': 'News',
   'お問い合わせ': 'Contact',
@@ -54,8 +54,8 @@ const SAI_EN = {
   '目的と設立背景': 'Purpose & Founding',
   'メンバー紹介': 'Members',
   '事業紹介': 'Our Businesses',
-  '屋号情報': 'Business Profile',
-  '屋号名': 'Trade name',
+  '会社情報': 'Business Profile',
+  '会社名': 'Company name',
   '新着記事': 'Latest articles',
   'プレスリリース': 'Press releases',
   'メディア掲載': 'In the media',

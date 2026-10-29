@@ -316,7 +316,7 @@ function SaiAbout() {
 }
 
 // =========================================================
-// COMPANY — 屋号概要
+// COMPANY — 会社概要
 // =========================================================
 function SaiCompany() {
   const services = window.siteData.company.services;
@@ -332,7 +332,7 @@ function SaiCompany() {
     }
   }, /*#__PURE__*/React.createElement(SaiPageHeader, {
     no: "02",
-    jp: window.t('屋号概要'),
+    jp: window.t('会社概要'),
     en: "Profile",
     lead: window.siteData.company.lead
   }), /*#__PURE__*/React.createElement("div", {
@@ -352,11 +352,11 @@ function SaiCompany() {
       margin: 0,
       letterSpacing: '0.04em'
     }
-  }, window.t('屋号情報'))), /*#__PURE__*/React.createElement("div", {
+  }, window.t('会社情報'))), /*#__PURE__*/React.createElement("div", {
     style: {
       borderTop: `1px solid ${saiLine(saiB.ink, 'ff')}`
     }
-  }, [[window.t('屋号名'), window.saiLang === 'en' ? 'Regional Lab' : 'Regional Lab / リージョナルラボ'], [window.t('設立'), companyInfo.founded], [window.t('役員'), companyInfo.officers], [window.t('拠点'), companyInfo.offices]].map(([label, value]) => /*#__PURE__*/React.createElement("div", {
+  }, [[window.t('会社名'), window.saiLang === 'en' ? 'Regional Lab' : 'Regional Lab / リージョナルラボ'], [window.t('設立'), companyInfo.founded], [window.t('役員'), companyInfo.officers], [window.t('拠点'), companyInfo.offices]].map(([label, value]) => /*#__PURE__*/React.createElement("div", {
     key: label,
     style: {
       display: 'grid',

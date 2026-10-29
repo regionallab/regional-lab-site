@@ -47,7 +47,7 @@ function SaiNav() {
         </div>
       </div>
       <div style={{ display: 'flex', gap: 28, fontFamily: saiFont.jpSerif, fontSize: 14, color: saiPalette.ink, alignItems: 'center', letterSpacing: 2 }}>
-        {[['ホーム','home'],['私たちについて','about'],['屋号概要','company','Profile'],['事業概要','business'],['お知らせ','news'],['お問い合わせ','contact'],['パートナー','partners']].map(([jp, en, sub]) => (
+        {[['ホーム','home'],['私たちについて','about'],['会社概要','company','Profile'],['事業概要','business'],['お知らせ','news'],['お問い合わせ','contact'],['パートナー','partners']].map(([jp, en, sub]) => (
           <div
             key={en}
             onClick={() => window.saiNavigate && window.saiNavigate(en)}
@@ -340,7 +340,7 @@ function SaiTimeline() {
 function SaiCTA() {
   const tabs = [
     ['私たちについて', 'About', ['目的と設立背景', 'メンバー紹介']],
-    ['屋号概要', 'Profile', ['事業紹介', '屋号情報', '拠点'], 'company'],
+    ['会社概要', 'Profile', ['事業紹介', '会社情報', '拠点'], 'company'],
     ['お知らせ', 'News', ['新着記事', 'プレスリリース', 'メディア掲載']],
     ['お問い合わせ', 'Contact', ['法人の方', '学生の方', '取材依頼']],
     ['パートナー', 'Partners', ['H.O.I.Consulting', '(株)遊然', 'LITERAS AI']],

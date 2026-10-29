@@ -32,7 +32,7 @@ function mBreakAtComma(text) {
 }
 function MobileNav() {
   const [open, setOpen] = React.useState(false);
-  const navItems = [['ホーム', 'home'], ['私たちについて', 'about'], ['屋号概要', 'company', 'Profile'], ['事業概要', 'business'], ['お知らせ', 'news'], ['パートナー', 'partners'], ['お問い合わせ', 'contact']];
+  const navItems = [['ホーム', 'home'], ['私たちについて', 'about'], ['会社概要', 'company', 'Profile'], ['事業概要', 'business'], ['お知らせ', 'news'], ['パートナー', 'partners'], ['お問い合わせ', 'contact']];
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
     style: {
       position: 'sticky',
@@ -227,7 +227,7 @@ function MobileNav() {
 // Mobile Footer (compact CTA + sitemap)
 // ----------------------------------------------------------
 function MobileFooter() {
-  const navItems = [['私たちについて', 'about'], ['屋号概要', 'company', 'Profile'], ['事業概要', 'business'], ['お知らせ', 'news'], ['パートナー', 'partners'], ['お問い合わせ', 'contact']];
+  const navItems = [['私たちについて', 'about'], ['会社概要', 'company', 'Profile'], ['事業概要', 'business'], ['お知らせ', 'news'], ['パートナー', 'partners'], ['お問い合わせ', 'contact']];
   return /*#__PURE__*/React.createElement("div", {
     className: "sai-reveal",
     style: {
@@ -1003,7 +1003,7 @@ function MobileAbout() {
 function MobileCompany() {
   const services = window.siteData.company.services;
   const companyInfo = window.siteData.company.info;
-  const info = [[window.t('屋号名'), window.saiLang === 'en' ? 'Regional Lab' : 'Regional Lab / リージョナルラボ'], [window.t('設立'), companyInfo.founded], [window.t('代表'), window.saiLang === 'en' ? 'Kidera Soma' : '木寺 蒼真'], [window.t('役員'), companyInfo.officers]];
+  const info = [[window.t('会社名'), window.saiLang === 'en' ? 'Regional Lab' : 'Regional Lab / リージョナルラボ'], [window.t('設立'), companyInfo.founded], [window.t('代表'), window.saiLang === 'en' ? 'Kidera Soma' : '木寺 蒼真'], [window.t('役員'), companyInfo.officers]];
   const offices = companyInfo.offices;
   return /*#__PURE__*/React.createElement("div", {
     className: "sai-reveal-each",
@@ -1015,7 +1015,7 @@ function MobileCompany() {
     }
   }, /*#__PURE__*/React.createElement(MobilePageHeader, {
     no: "02",
-    jp: window.t('屋号概要'),
+    jp: window.t('会社概要'),
     en: "Profile",
     lead: window.siteData.company.lead
   }), /*#__PURE__*/React.createElement("div", {
@@ -1090,7 +1090,7 @@ function MobileCompany() {
       letterSpacing: '0.04em',
       fontWeight: 500
     }
-  }, window.t('屋号情報')), /*#__PURE__*/React.createElement("div", {
+  }, window.t('会社情報')), /*#__PURE__*/React.createElement("div", {
     style: {
       ...saiVars(true),
       color: 'var(--sai-ink)',

@@ -37,7 +37,7 @@ function MobileNav() {
   const navItems = [
     ['ホーム', 'home'],
     ['私たちについて', 'about'],
-    ['屋号概要', 'company', 'Profile'],
+    ['会社概要', 'company', 'Profile'],
     ['事業概要', 'business'],
     ['お知らせ', 'news'],
     ['パートナー', 'partners'],
@@ -116,7 +116,7 @@ function MobileNav() {
 function MobileFooter() {
   const navItems = [
     ['私たちについて', 'about'],
-    ['屋号概要', 'company', 'Profile'],
+    ['会社概要', 'company', 'Profile'],
     ['事業概要', 'business'],
     ['お知らせ', 'news'],
     ['パートナー', 'partners'],
@@ -424,7 +424,7 @@ function MobileCompany() {
   const services = window.siteData.company.services;
   const companyInfo = window.siteData.company.info;
   const info = [
-    [window.t('屋号名'), window.saiLang === 'en' ? 'Regional Lab' : 'Regional Lab / リージョナルラボ'],
+    [window.t('会社名'), window.saiLang === 'en' ? 'Regional Lab' : 'Regional Lab / リージョナルラボ'],
     [window.t('設立'), companyInfo.founded],
     [window.t('代表'), window.saiLang === 'en' ? 'Kidera Soma' : '木寺 蒼真'],
     [window.t('役員'), companyInfo.officers],
@@ -432,7 +432,7 @@ function MobileCompany() {
   const offices = companyInfo.offices;
   return (
     <div className="sai-reveal-each" style={{ ...saiVars(false), background: saiBackdropOn() ? 'transparent' : mPalette.paper, color: 'var(--sai-ink)', textShadow: saiShadow() }}>
-      <MobilePageHeader no="02" jp={window.t('屋号概要')} en="Profile" lead={window.siteData.company.lead} />
+      <MobilePageHeader no="02" jp={window.t('会社概要')} en="Profile" lead={window.siteData.company.lead} />
       <div className="sai-reveal-each" style={{ padding: '48px 24px' }}>
         <div style={{ marginBottom: 40 }}>
           <h2 style={{ fontFamily: mFont.jpSerif, fontSize: 28, margin: '0 0 24px', color: 'var(--sai-ink)', letterSpacing: '0.04em', fontWeight: 500 }}>{window.t('事業紹介')}</h2>
@@ -448,7 +448,7 @@ function MobileCompany() {
         </div>
 
         <div style={{ marginBottom: 40 }}>
-          <h2 style={{ fontFamily: mFont.jpSerif, fontSize: 28, margin: '0 0 24px', color: 'var(--sai-ink)', letterSpacing: '0.04em', fontWeight: 500 }}>{window.t('屋号情報')}</h2>
+          <h2 style={{ fontFamily: mFont.jpSerif, fontSize: 28, margin: '0 0 24px', color: 'var(--sai-ink)', letterSpacing: '0.04em', fontWeight: 500 }}>{window.t('会社情報')}</h2>
           <div style={{ ...saiVars(true), color: 'var(--sai-ink)', textShadow: 'none', background: mPalette.paperDeep, padding: 22, display: 'flex', flexDirection: 'column', gap: 14 }}>
             {info.map(([k, v]) => (
               <div key={k} style={{ display: 'flex', flexDirection: 'column', gap: 4, paddingBottom: 12, borderBottom: `1px solid ${saiLine(mPalette.ink, '22')}` }}>
