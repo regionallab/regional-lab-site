@@ -274,7 +274,7 @@ function SaiNews() {
               background: active === c ? saiB.ink : 'transparent',
               color: active === c ? saiB.paper : 'var(--sai-ink)',
               fontFamily: saiBFont.mono, fontSize: 11, letterSpacing: 2,
-              cursor: 'pointer', transition: 'all 0.15s',
+              cursor: 'pointer', transition: 'all 0.35s',
             }}>{c === 'ALL' ? window.t('すべて') : c}</div>
           ))}
         </div>

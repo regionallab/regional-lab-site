@@ -169,7 +169,7 @@ function SaiHero() {
   }), /*#__PURE__*/React.createElement("div", {
     className: "sai-hero-piece",
     style: {
-      '--sai-hero-step': '0.14s',
+      '--sai-hero-step': '0.22s',
       position: 'absolute',
       left: 320,
       top: 180,
@@ -190,7 +190,7 @@ function SaiHero() {
   })), window.saiLang === 'en' ? /*#__PURE__*/React.createElement("div", {
     className: "sai-hero-piece",
     style: {
-      '--sai-hero-step': '0.3s',
+      '--sai-hero-step': '0.48s',
       position: 'absolute',
       right: 72,
       top: 96,
@@ -220,7 +220,7 @@ function SaiHero() {
   }, window.t('地方の未来を、'), /*#__PURE__*/React.createElement("br", null), window.t('彩る組織へ'))) : /*#__PURE__*/React.createElement("div", {
     className: "sai-hero-piece",
     style: {
-      '--sai-hero-step': '0.3s',
+      '--sai-hero-step': '0.48s',
       position: 'absolute',
       right: 80,
       top: 80,
@@ -266,7 +266,7 @@ function SaiHero() {
   }, "\u5F69\u308B\u7D44\u7E54\u3078")), /*#__PURE__*/React.createElement("div", {
     className: "sai-hero-piece",
     style: {
-      '--sai-hero-step': '0.46s',
+      '--sai-hero-step': '0.74s',
       position: 'absolute',
       left: 56,
       bottom: 40,
@@ -725,7 +725,7 @@ function SaiTimeline() {
     }
   }, loc)))))), /*#__PURE__*/React.createElement("style", null, `
         @keyframes saiMarquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-        .sai-marquee { animation: saiMarquee 62s linear infinite; }
+        .sai-marquee { animation: saiMarquee 95s linear infinite; }
         .sai-marquee:hover { animation-play-state: paused; }
         @media (prefers-reduced-motion: reduce) { .sai-marquee { animation: none; } }
       `));

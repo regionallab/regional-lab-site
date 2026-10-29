@@ -91,12 +91,12 @@ function SaiHero() {
         background: saiBackdropOn() ? saiPalette.aiDeep : saiPalette.ai,
       }} />
       {/* Photo */}
-      <div className="sai-hero-piece" style={{ '--sai-hero-step': '0.14s', position: 'absolute', left: 320, top: 180, width: 540, height: 680, overflow: 'hidden', background: '#d5d492' }}>
+      <div className="sai-hero-piece" style={{ '--sai-hero-step': '0.22s', position: 'absolute', left: 320, top: 180, width: 540, height: 680, overflow: 'hidden', background: '#d5d492' }}>
         <img src="assets/hero-logo-hq.png" alt="Regional Lab" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
       </div>
       {/* Headline — vertical in JP, horizontal in EN */}
       {window.saiLang === 'en' ? (
-      <div className="sai-hero-piece" style={{ '--sai-hero-step': '0.3s', position: 'absolute', right: 72, top: 96, width: 520, textAlign: 'right' }}>
+      <div className="sai-hero-piece" style={{ '--sai-hero-step': '0.48s', position: 'absolute', right: 72, top: 96, width: 520, textAlign: 'right' }}>
         <div style={{ fontFamily: saiFont.jpAlt, fontSize: 15, lineHeight: 2, color: saiOnPhoto(saiPalette.akane), textShadow: saiShadow(), letterSpacing: '0.18em', marginBottom: 20 }}>
           {window.t('新潟県南魚沼市を支え続ける企業へ')}
         </div>
@@ -105,7 +105,7 @@ function SaiHero() {
         </div>
       </div>
       ) : (
-      <div className="sai-hero-piece" style={{ '--sai-hero-step': '0.3s', position: 'absolute', right: 80, top: 80, display: 'flex', flexDirection: 'row-reverse', alignItems: 'flex-start', gap: 28 }}>
+      <div className="sai-hero-piece" style={{ '--sai-hero-step': '0.48s', position: 'absolute', right: 80, top: 80, display: 'flex', flexDirection: 'row-reverse', alignItems: 'flex-start', gap: 28 }}>
         <Vertical style={{ fontFamily: saiFont.jpAlt, fontSize: 18, lineHeight: 2.2, color: saiOnPhoto(saiPalette.akane), textShadow: saiShadow(), letterSpacing: '0.3em', whiteSpace: 'nowrap', marginTop: 24 }}>
           新潟県南魚沼市を支え続ける企業へ
         </Vertical>
@@ -120,7 +120,7 @@ function SaiHero() {
 
       {/* Bottom metadata strip */}
       <div className="sai-hero-piece" style={{
-        '--sai-hero-step': '0.46s',
+        '--sai-hero-step': '0.74s',
         position: 'absolute', left: 56, bottom: 40, right: 56,
         display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end',
       }}>
@@ -330,7 +330,7 @@ function SaiTimeline() {
 
       <style>{`
         @keyframes saiMarquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-        .sai-marquee { animation: saiMarquee 62s linear infinite; }
+        .sai-marquee { animation: saiMarquee 95s linear infinite; }
         .sai-marquee:hover { animation-play-state: paused; }
         @media (prefers-reduced-motion: reduce) { .sai-marquee { animation: none; } }
       `}</style>

@@ -190,7 +190,7 @@
         .sai-reveal-on .sai-reveal {
           opacity: 0;
           transform: translateY(180px) scale(0.88);
-          transition: opacity 1700ms cubic-bezier(.16,.86,.3,1), transform 1700ms cubic-bezier(.16,.86,.3,1);
+          transition: opacity 2600ms cubic-bezier(.16,.86,.3,1), transform 2600ms cubic-bezier(.16,.86,.3,1);
           will-change: opacity, transform;
         }
         .sai-reveal-on .sai-reveal.sai-in { opacity: 1; transform: none; will-change: auto; }
@@ -200,7 +200,7 @@
         /* 最初の画面の各要素を、順に下から立ち上げる。
            初回はオープニングが明けてから始めたいので、待ち時間を変数で持つ。 */
         .sai-hero-piece {
-          animation: saiHeroIn 1600ms cubic-bezier(.16,.86,.3,1) both;
+          animation: saiHeroIn 2500ms cubic-bezier(.16,.86,.3,1) both;
           animation-delay: calc(var(--sai-hero-delay, 0s) + var(--sai-hero-step, 0s));
         }
         @keyframes saiHeroIn {

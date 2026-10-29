@@ -33,9 +33,9 @@ window.siteDataJa = {
     // 湯沢の街並みと山
     'assets/bg-08-nyudougumo.jpg' // 入道雲と盆地（撮影・縦）
     ],
-    interval: 10000,
+    interval: 14000,
     // 1枚を映す時間（ms）
-    fade: 2800,
+    fade: 4000,
     // 入れ替えにかける時間（ms）
     zoomFrom: 1.08,
     // 映り始めの拡大率（横に流すための余白をここで確保する）
@@ -47,7 +47,7 @@ window.siteDataJa = {
     // 同じく縦へ流す量
     stillZoom: 1.18,
     // スマホの1枚表示で、ゆっくり往復させる拡大率
-    stillCycle: 22000,
+    stillCycle: 32000,
     // その往復1回にかける時間（ms）
     veil: 0,
     // 見出し帯にかける和紙の濃さ。0 = 写真の色をそのまま出す

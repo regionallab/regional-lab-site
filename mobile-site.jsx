@@ -69,9 +69,9 @@ function MobileNav() {
           aria-label="Menu"
           style={{ background: 'none', border: 'none', padding: 8, cursor: 'pointer', display: 'flex', flexDirection: 'column', gap: 5 }}
         >
-          <span style={{ width: 24, height: 2, background: mPalette.ink, display: 'block', transition: 'all 0.2s', transform: open ? 'translateY(7px) rotate(45deg)' : 'none' }}></span>
-          <span style={{ width: 24, height: 2, background: mPalette.ink, display: 'block', opacity: open ? 0 : 1, transition: 'all 0.2s' }}></span>
-          <span style={{ width: 24, height: 2, background: mPalette.ink, display: 'block', transition: 'all 0.2s', transform: open ? 'translateY(-7px) rotate(-45deg)' : 'none' }}></span>
+          <span style={{ width: 24, height: 2, background: mPalette.ink, display: 'block', transition: 'all 0.4s', transform: open ? 'translateY(7px) rotate(45deg)' : 'none' }}></span>
+          <span style={{ width: 24, height: 2, background: mPalette.ink, display: 'block', opacity: open ? 0 : 1, transition: 'all 0.4s' }}></span>
+          <span style={{ width: 24, height: 2, background: mPalette.ink, display: 'block', transition: 'all 0.4s', transform: open ? 'translateY(-7px) rotate(-45deg)' : 'none' }}></span>
         </button>
       </div>
       {open && (
@@ -181,11 +181,11 @@ function MobileHome() {
       {/* HERO */}
       <div ref={heroRef} style={{ padding: '40px 24px 56px', background: `linear-gradient(180deg, ${saiVeil(mPalette.paper)} 0%, ${saiVeil(mPalette.paperDeep)} 100%)`, position: 'relative' }}>
         <div className="sai-hero-piece" style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 3, color: saiOnPhoto(mPalette.akane), textShadow: saiShadow(), marginBottom: 24 }}>{window.t('新潟県南魚沼市を支え続ける企業へ')}</div>
-        <h1 className="sai-hero-piece" style={{ '--sai-hero-step': '0.14s', fontFamily: mFont.jpSerif, fontSize: 44, fontWeight: 500, margin: 0, color: saiOnPhoto(mPalette.ink), textShadow: saiShadow(), letterSpacing: '0.04em', lineHeight: 1.3 }}>
+        <h1 className="sai-hero-piece" style={{ '--sai-hero-step': '0.22s', fontFamily: mFont.jpSerif, fontSize: 44, fontWeight: 500, margin: 0, color: saiOnPhoto(mPalette.ink), textShadow: saiShadow(), letterSpacing: '0.04em', lineHeight: 1.3 }}>
           <span style={{ display: 'block', whiteSpace: window.saiLang === 'en' ? 'normal' : 'nowrap' }}>{window.t('地方の未来を、')}</span>
           <span style={{ display: 'block', whiteSpace: window.saiLang === 'en' ? 'normal' : 'nowrap' }}>{window.t('彩る組織へ')}</span>
         </h1>
-        <div className="sai-hero-piece" style={{ '--sai-hero-step': '0.3s', marginTop: 32, position: 'relative', paddingTop: 64, paddingLeft: 52 }}>
+        <div className="sai-hero-piece" style={{ '--sai-hero-step': '0.48s', marginTop: 32, position: 'relative', paddingTop: 64, paddingLeft: 52 }}>
           {/* 藍色の和紙パネル（背面）。背景写真があるときは濃い藍にして写真と沈み込ませない。 */}
           <div style={{
             position: 'absolute', top: 0, left: 0,
@@ -335,7 +335,7 @@ function MobileHome() {
         </div>
         <style>{`
           @keyframes mMarquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-          .m-marquee { animation: mMarquee 57s linear infinite; }
+          .m-marquee { animation: mMarquee 88s linear infinite; }
           @media (prefers-reduced-motion: reduce) { .m-marquee { animation: none; } }
         `}</style>
       </div>

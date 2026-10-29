@@ -551,7 +551,7 @@ function SaiNews() {
       fontSize: 11,
       letterSpacing: 2,
       cursor: 'pointer',
-      transition: 'all 0.15s'
+      transition: 'all 0.35s'
     }
   }, c === 'ALL' ? window.t('すべて') : c))), /*#__PURE__*/React.createElement("div", {
     className: "sai-reveal-each",
