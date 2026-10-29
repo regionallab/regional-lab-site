@@ -55,7 +55,7 @@ const NEWS_CATS_EN = { 'イベント': 'EVENT', 'プロダクト': 'PRODUCT', '�
     {
       jp: 'Community',
       groups: [
-        { branch: 'To C', name: 'Growth', items: ['Free community', 'Building experience', 'Building knowledge', 'Self-reflection support'] },
+        { branch: 'To C', name: 'Growth', items: ['Free community', 'Building experience', 'Building knowledge', 'Self-reflection support', 'E-learning material support'] },
         { branch: 'To C', name: 'Standard', items: ['Screened, paid community', 'Foundational knowledge', 'Current-affairs sessions', 'Company research sessions', '1-on-1 with founders', '1-on-1 coaching', 'Access to Event Lab'] },
         { branch: 'To C', name: 'Prime', items: ['Invitation-only, paid community', 'Startup support', 'Community founding support', 'Career support', 'Internship introductions', 'Post-graduation guidance'] },
         { branch: 'To C', name: 'Muikamachi Shoka Sonjuku', items: ['Business knowledge & skills', 'AI knowledge & skills', 'App development knowledge & skills', 'Regional revitalization knowledge & skills', 'Life design knowledge & skills'] },
@@ -72,7 +72,7 @@ const NEWS_CATS_EN = { 'イベント': 'EVENT', 'プロダクト': 'PRODUCT', '�
     {
       jp: 'DX & AX',
       groups: [
-        { name: 'Community', items: ['AI talent development', 'AI literacy training'] },
+        { name: 'Community', items: ['AI talent development', 'AI literacy training', 'E-learning material support'] },
         { name: 'Corporate training', items: ['AI consulting', 'AI seminars'] },
       ],
     },

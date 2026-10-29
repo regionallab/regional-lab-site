@@ -210,7 +210,7 @@ window.siteDataJa = {
       groups: [{
         branch: 'To C',
         name: 'グロース',
-        items: ['無料コミュニティ', '経験蓄積', '情報蓄積', '自己内省サポート']
+        items: ['無料コミュニティ', '経験蓄積', '情報蓄積', '自己内省サポート', 'eラーニング教材支援']
       }, {
         branch: 'To C',
         name: 'スタンダード',
@@ -245,7 +245,7 @@ window.siteDataJa = {
       color: '#8a6d3b',
       groups: [{
         name: 'コミュニティ',
-        items: ['AI人材創出', 'AIリテラシー研修']
+        items: ['AI人材創出', 'AIリテラシー研修', 'eラーニング教材支援']
       }, {
         name: '企業研修',
         items: ['AIコンサル', 'AIセミナー']

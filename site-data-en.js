@@ -80,7 +80,7 @@ window.siteDataEn = function () {
     groups: [{
       branch: 'To C',
       name: 'Growth',
-      items: ['Free community', 'Building experience', 'Building knowledge', 'Self-reflection support']
+      items: ['Free community', 'Building experience', 'Building knowledge', 'Self-reflection support', 'E-learning material support']
     }, {
       branch: 'To C',
       name: 'Standard',
@@ -111,7 +111,7 @@ window.siteDataEn = function () {
     jp: 'DX & AX',
     groups: [{
       name: 'Community',
-      items: ['AI talent development', 'AI literacy training']
+      items: ['AI talent development', 'AI literacy training', 'E-learning material support']
     }, {
       name: 'Corporate training',
       items: ['AI consulting', 'AI seminars']
