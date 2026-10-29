@@ -219,17 +219,15 @@ function MobileHome() {
             { label: 'MISSION', jp: window.t('使命'), body: window.siteData.about.pillars[1][1], bg: mPalette.ai, color: mPalette.paper },
             { label: 'VISION', jp: window.t('展望'), body: window.siteData.about.pillars[2][1], bg: mPalette.koke, color: mPalette.paper },
           ].map(c => (
+            // スマホは画面の幅いっぱいに一枚ずつ並ぶので、PCのような背の高い札だと縦に間延びする。
+            // 見出しと言葉を近づけ、横長の短い札にする。
             <div key={c.label} style={{
               background: c.bg, color: c.color, textShadow: 'none',
-              padding: '40px 24px',
-              minHeight: 320,
-              display: 'flex', flexDirection: 'column', justifyContent: 'space-between',
+              padding: '24px 22px',
               borderRadius: 4,
             }}>
-              <div>
-                <div style={{ fontFamily: mFont.jpSerif, fontSize: 16, letterSpacing: 6, opacity: 0.85 }}>{c.jp}</div>
-              </div>
-              <div style={{ fontFamily: mFont.jpSerif, fontSize: 22, lineHeight: 1.8, letterSpacing: '0.04em' }}>{mBreakAtComma(c.body)}</div>
+              <div style={{ fontFamily: mFont.jpSerif, fontSize: 14, letterSpacing: 5, opacity: 0.85 }}>{c.jp}</div>
+              <div style={{ fontFamily: mFont.jpSerif, fontSize: 20, lineHeight: 1.75, letterSpacing: '0.04em', marginTop: 16 }}>{mBreakAtComma(c.body)}</div>
             </div>
           ))}
         </div>
