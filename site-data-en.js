@@ -67,7 +67,7 @@ window.siteDataEn = function () {
     jp: 'Events',
     groups: [{
       name: 'Event Lab',
-      items: ['Event audience platform', 'Event production support', 'High-quality student community']
+      items: ['Event audience platform', 'Event production support', 'High-quality student community', 'E-learning material support']
     }, {
       name: 'Events',
       items: ['Regional business contests', 'Regional ideathons', 'Regional product exchanges', 'Minamiuonuma events']

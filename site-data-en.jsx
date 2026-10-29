@@ -47,7 +47,7 @@ const NEWS_CATS_EN = { 'イベント': 'EVENT', 'プロダクト': 'PRODUCT', '�
     {
       jp: 'Events',
       groups: [
-        { name: 'Event Lab', items: ['Event audience platform', 'Event production support', 'High-quality student community'] },
+        { name: 'Event Lab', items: ['Event audience platform', 'Event production support', 'High-quality student community', 'E-learning material support'] },
         { name: 'Events', items: ['Regional business contests', 'Regional ideathons', 'Regional product exchanges', 'Minamiuonuma events'] },
         { name: 'Consulting', items: ['Event planning & development sparring', 'Monetisation design support', 'Operational support', 'Organisational consulting', 'HR consulting', 'Regional consulting', 'Corporate consulting'] },
       ],

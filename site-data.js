@@ -195,7 +195,7 @@ window.siteDataJa = {
       color: SITE_COLORS.ai,
       groups: [{
         name: 'Event Lab',
-        items: ['イベント集客 OS', 'イベント開催支援サービス', '質の高い学生コミュニティ']
+        items: ['イベント集客 OS', 'イベント開催支援サービス', '質の高い学生コミュニティ', 'eラーニング教材支援']
       }, {
         name: 'Events',
         items: ['地方創生ビジネスコンテスト', '地方創生アイデアソン', '地方産品交流会', '南魚沼諸イベント']
