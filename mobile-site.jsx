@@ -215,12 +215,12 @@ function MobileHome() {
         </p>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
           {[
-            { label: 'PHILOSOPHY', jp: window.t('理念'), body: window.siteData.about.pillars[0][1], bg: mPalette.paper, color: 'var(--sai-ink)' },
+            { label: 'PHILOSOPHY', jp: window.t('理念'), body: window.siteData.about.pillars[0][1], bg: mPalette.paper, color: mPalette.ink },
             { label: 'MISSION', jp: window.t('使命'), body: window.siteData.about.pillars[1][1], bg: mPalette.ai, color: mPalette.paper },
             { label: 'VISION', jp: window.t('展望'), body: window.siteData.about.pillars[2][1], bg: mPalette.koke, color: mPalette.paper },
           ].map(c => (
             <div key={c.label} style={{
-              background: c.bg, color: c.color,
+              background: c.bg, color: c.color, textShadow: 'none',
               padding: '40px 24px',
               minHeight: 320,
               display: 'flex', flexDirection: 'column', justifyContent: 'space-between',

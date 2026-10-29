@@ -487,7 +487,7 @@ function MobileHome() {
     jp: window.t('理念'),
     body: window.siteData.about.pillars[0][1],
     bg: mPalette.paper,
-    color: 'var(--sai-ink)'
+    color: mPalette.ink
   }, {
     label: 'MISSION',
     jp: window.t('使命'),
@@ -505,6 +505,7 @@ function MobileHome() {
     style: {
       background: c.bg,
       color: c.color,
+      textShadow: 'none',
       padding: '40px 24px',
       minHeight: 320,
       display: 'flex',
