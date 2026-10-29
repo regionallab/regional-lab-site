@@ -505,24 +505,26 @@ function MobileHome() {
     style: {
       background: c.bg,
       color: c.color,
-      padding: '22px 20px',
+      padding: '40px 24px',
+      minHeight: 320,
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'space-between',
       borderRadius: 4
     }
-  }, /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
     style: {
       fontFamily: mFont.jpSerif,
-      fontSize: 14,
-      letterSpacing: 5,
-      marginTop: 4,
+      fontSize: 16,
+      letterSpacing: 6,
       opacity: 0.85
     }
-  }, c.jp), /*#__PURE__*/React.createElement("div", {
+  }, c.jp)), /*#__PURE__*/React.createElement("div", {
     style: {
       fontFamily: mFont.jpSerif,
-      fontSize: 17,
+      fontSize: 22,
       lineHeight: 1.8,
-      letterSpacing: '0.04em',
-      marginTop: 12
+      letterSpacing: '0.04em'
     }
   }, mBreakAtComma(c.body)))))), /*#__PURE__*/React.createElement("div", {
     className: "sai-reveal",

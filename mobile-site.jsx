@@ -219,9 +219,17 @@ function MobileHome() {
             { label: 'MISSION', jp: window.t('使命'), body: window.siteData.about.pillars[1][1], bg: mPalette.ai, color: mPalette.paper },
             { label: 'VISION', jp: window.t('展望'), body: window.siteData.about.pillars[2][1], bg: mPalette.koke, color: mPalette.paper },
           ].map(c => (
-            <div key={c.label} style={{ background: c.bg, color: c.color, padding: '22px 20px', borderRadius: 4 }}>
-              <div style={{ fontFamily: mFont.jpSerif, fontSize: 14, letterSpacing: 5, marginTop: 4, opacity: 0.85 }}>{c.jp}</div>
-              <div style={{ fontFamily: mFont.jpSerif, fontSize: 17, lineHeight: 1.8, letterSpacing: '0.04em', marginTop: 12 }}>{mBreakAtComma(c.body)}</div>
+            <div key={c.label} style={{
+              background: c.bg, color: c.color,
+              padding: '40px 24px',
+              minHeight: 320,
+              display: 'flex', flexDirection: 'column', justifyContent: 'space-between',
+              borderRadius: 4,
+            }}>
+              <div>
+                <div style={{ fontFamily: mFont.jpSerif, fontSize: 16, letterSpacing: 6, opacity: 0.85 }}>{c.jp}</div>
+              </div>
+              <div style={{ fontFamily: mFont.jpSerif, fontSize: 22, lineHeight: 1.8, letterSpacing: '0.04em' }}>{mBreakAtComma(c.body)}</div>
             </div>
           ))}
         </div>
