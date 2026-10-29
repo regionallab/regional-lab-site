@@ -52,11 +52,11 @@ function App() {
   React.useEffect(() => {
     // 初回だけ、オープニングが明けるのを待ってから最初の画面を立ち上げる。
     // 明けた後は待ち時間を 0 にして、ページを戻ったときすぐ現れるようにする。
-    document.documentElement.style.setProperty('--sai-hero-delay', '3.3s');
+    document.documentElement.style.setProperty('--sai-hero-delay', '4.2s');
     const t = setTimeout(() => {
       setSplashDone(true);
       document.documentElement.style.setProperty('--sai-hero-delay', '0s');
-    }, 4000);
+    }, 5000);
     return () => clearTimeout(t);
   }, []);
 
@@ -125,22 +125,26 @@ function App() {
         {body}
       </div>
       {!splashDone && (
-        <img
-          src="assets/splash-noroshi.png"
-          alt="Regional Lab"
-          className="sai-splash-logo"
+        // 若草色の地は最初から敷いておき、その上でロゴだけをゆっくり現す。
+        // 地ごと薄く現すと、透けた背景写真が先に見えてしまうため。
+        <div
+          className="sai-splash"
           style={{
             position: 'fixed', inset: 0,
-            width: '100%', height: '100%',
-            objectFit: 'contain', display: 'block',
-            // 画像は縦長なので、余白まで同じ若草色で埋めて全面その色に見せる
             background: '#d5d492',
             zIndex: 9999, pointerEvents: 'none',
           }}
-        />
+        >
+          <img
+            src="assets/splash-noroshi.png"
+            alt="Regional Lab"
+            className="sai-splash-logo"
+            style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }}
+          />
+        </div>
       )}
       <style>{`
-        .sai-app-body { animation: saiHomeIn 4s ease-in-out forwards; }
+        .sai-app-body { animation: saiHomeIn 5s ease-in-out forwards; }
         .sai-reveal-on .sai-reveal {
           opacity: 0;
           transform: translateY(180px) scale(0.88);
@@ -164,17 +168,22 @@ function App() {
         @media (prefers-reduced-motion: reduce) {
           .sai-hero-piece { animation: none; }
         }
-        .sai-splash-logo { animation: saiSplashLogo 4s ease-in-out forwards; }
+        /* 若草色の地。最初から出ていて、終わりに引いていく */
+        .sai-splash { animation: saiSplashVeil 5s ease-in-out forwards; }
+        /* ロゴ。2.5秒かけてゆっくり現れ、地と一緒に引いていく */
+        .sai-splash-logo { animation: saiSplashLogo 5s ease-in-out forwards; }
         @keyframes saiHomeIn {
-          0%, 75% { opacity: 0; }
+          0%, 76% { opacity: 0; }
           100%    { opacity: 1; }
+        }
+        @keyframes saiSplashVeil {
+          0%, 70% { opacity: 1; }
+          100%    { opacity: 0; }
         }
         @keyframes saiSplashLogo {
           0%   { opacity: 0; }
-          25%  { opacity: 1; }
           50%  { opacity: 1; }
-          75%  { opacity: 0; }
-          100% { opacity: 0; }
+          100% { opacity: 1; }
         }
       `}</style>
     </React.Fragment>
