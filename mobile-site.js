@@ -956,6 +956,7 @@ function MobileAbout() {
   }, m.img &&
   /*#__PURE__*/
   // 横長に切り取るので、中央で合わせると頭の上が切れる。上端を基準に置く。
+  // 元の写真で頭の上が空いている一枚だけ、imgPos で見せる位置をずらす。
   React.createElement("div", {
     style: {
       width: '100%',
@@ -970,7 +971,7 @@ function MobileAbout() {
       width: '100%',
       height: '100%',
       objectFit: 'cover',
-      objectPosition: 'center top',
+      objectPosition: m.imgPos || 'center top',
       display: 'block'
     }
   })), /*#__PURE__*/React.createElement("div", {

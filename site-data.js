@@ -145,7 +145,9 @@ window.siteDataJa = {
       jp: '峯 奏音',
       en: 'Mine Kanato',
       bio: ['HopeCreater 代表、CRENECTION 代表。', 'Events / Event Lab / Consulting を統括し、', 'イベント事業の設計と運営を率いる。'],
-      img: 'assets/member-mine.jpg'
+      img: 'assets/member-mine.jpg',
+      // この一枚だけ頭の上の余白が広いので、横長に切り取るときは少し下を見せる
+      imgPos: 'center 24%'
     }, {
       role: '事業統括責任者 / Regional.',
       jp: '渡邉 輝',

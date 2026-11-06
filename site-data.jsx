@@ -133,7 +133,8 @@ window.siteDataJa = {
     members: [
       { role: '代表', jp: '木寺 蒼真', en: 'Kidera Soma', bio: ['南魚沼に出会い、地方創生に身を投じる。', '観光客から地域課題と向き合い、日本の未来や地方の魅力を', '残していくべく、Regional Lab を創業。'], img: 'assets/member-kidera.jpg' },
       { role: '副代表', jp: '中原 光輝', en: 'Nakahara Koki', bio: ['My Vision Lab 代表。', 'コミュニティ事業を統括し、ToC・ToB 両輪で', '会員の人生設計に伴走する。'], img: 'assets/member-nakahara.jpg' },
-      { role: '事業統括責任者 / Re.Event', jp: '峯 奏音', en: 'Mine Kanato', bio: ['HopeCreater 代表、CRENECTION 代表。', 'Events / Event Lab / Consulting を統括し、', 'イベント事業の設計と運営を率いる。'], img: 'assets/member-mine.jpg' },
+      { role: '事業統括責任者 / Re.Event', jp: '峯 奏音', en: 'Mine Kanato', bio: ['HopeCreater 代表、CRENECTION 代表。', 'Events / Event Lab / Consulting を統括し、', 'イベント事業の設計と運営を率いる。'], img: 'assets/member-mine.jpg', // この一枚だけ頭の上の余白が広いので、横長に切り取るときは少し下を見せる
+        imgPos: 'center 24%' },
       { role: '事業統括責任者 / Regional.', jp: '渡邉 輝', en: 'Watanabe Akira', bio: ['Global Canvas Japan 代表。', 'アパレル事業を統括し、日本市場と海外市場（店舗・EC）へ', '伝統工芸品を届ける。'], img: 'assets/member-watanabe.jpg' },
     ],
   },
