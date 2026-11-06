@@ -400,8 +400,9 @@ function MobileAbout() {
             {members.map((m, i) => (
               <div key={m.jp} style={{ ...saiVars(true), color: 'var(--sai-ink)', textShadow: 'none', background: mPalette.paperDeep, padding: 22 }}>
                 {m.img && (
+                  // 横長に切り取るので、中央で合わせると頭の上が切れる。上端を基準に置く。
                   <div style={{ width: '100%', aspectRatio: '4/3', overflow: 'hidden', marginBottom: 16 }}>
-                    <img src={m.img} alt={m.jp} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                    <img src={m.img} alt={m.jp} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', display: 'block' }} />
                   </div>
                 )}
                 <div style={{ fontFamily: mFont.mono, fontSize: 10, letterSpacing: 2, color: 'var(--sai-akane)', marginBottom: 10 }}>{m.role}</div>

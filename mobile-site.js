@@ -953,7 +953,10 @@ function MobileAbout() {
       background: mPalette.paperDeep,
       padding: 22
     }
-  }, m.img && /*#__PURE__*/React.createElement("div", {
+  }, m.img &&
+  /*#__PURE__*/
+  // 横長に切り取るので、中央で合わせると頭の上が切れる。上端を基準に置く。
+  React.createElement("div", {
     style: {
       width: '100%',
       aspectRatio: '4/3',
@@ -967,6 +970,7 @@ function MobileAbout() {
       width: '100%',
       height: '100%',
       objectFit: 'cover',
+      objectPosition: 'center top',
       display: 'block'
     }
   })), /*#__PURE__*/React.createElement("div", {
