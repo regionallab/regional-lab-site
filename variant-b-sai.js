@@ -22,6 +22,79 @@ const saiFont = {
   enSerif: '"Cormorant Garamond", serif',
   mono: '"JetBrains Mono", ui-monospace, monospace'
 };
+
+// Instagram と note への入口。写真の上に置くので、お問い合わせの札と同じ暗い下地で読ませる。
+const SAI_SOCIALS = [{
+  label: 'Instagram',
+  href: 'https://www.instagram.com/regional_lab/'
+}, {
+  label: 'note',
+  href: 'https://note.com/chihousouseinote'
+}];
+function SaiInstagramMark() {
+  return /*#__PURE__*/React.createElement("svg", {
+    width: "20",
+    height: "20",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: "1.6",
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    "aria-hidden": "true"
+  }, /*#__PURE__*/React.createElement("rect", {
+    x: "3",
+    y: "3",
+    width: "18",
+    height: "18",
+    rx: "5"
+  }), /*#__PURE__*/React.createElement("circle", {
+    cx: "12",
+    cy: "12",
+    r: "4.2"
+  }), /*#__PURE__*/React.createElement("circle", {
+    cx: "17.2",
+    cy: "6.8",
+    r: "1.1",
+    fill: "currentColor",
+    stroke: "none"
+  }));
+}
+function SaiSocialLinks() {
+  return /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      gap: 10
+    }
+  }, SAI_SOCIALS.map(s => /*#__PURE__*/React.createElement("a", {
+    key: s.label,
+    href: s.href,
+    target: "_blank",
+    rel: "noopener noreferrer",
+    "aria-label": s.label,
+    title: s.label,
+    style: {
+      width: 40,
+      height: 40,
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      background: saiBackdropOn() ? 'rgba(16, 13, 8, 0.55)' : 'transparent',
+      border: `1px solid ${saiBackdropOn() ? 'rgba(250, 246, 236, 0.85)' : saiPalette.ink}`,
+      color: saiOnPhoto(saiPalette.ink),
+      textShadow: saiShadow(),
+      backdropFilter: saiBackdropOn() ? 'blur(2px)' : undefined,
+      textDecoration: 'none',
+      cursor: 'pointer'
+    }
+  }, s.label === 'Instagram' ? /*#__PURE__*/React.createElement(SaiInstagramMark, null) : /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: saiFont.enSerif,
+      fontSize: 15,
+      letterSpacing: 1
+    }
+  }, "note"))));
+}
 function SaiNav() {
   return /*#__PURE__*/React.createElement("div", {
     style: {
@@ -293,7 +366,8 @@ function SaiHero() {
   }, window.t('イベント、コミュニティ、アパレル、DX&AX。'), /*#__PURE__*/React.createElement("br", null), window.t('四つの事業で、地方創生を立体的に描く。'))), /*#__PURE__*/React.createElement("div", {
     style: {
       display: 'flex',
-      gap: 12
+      gap: 12,
+      alignItems: 'flex-end'
     }
   }, /*#__PURE__*/React.createElement("div", {
     onClick: () => window.saiNavigate && window.saiNavigate('business'),
@@ -307,6 +381,13 @@ function SaiHero() {
       cursor: 'pointer'
     }
   }, window.t('事業を見る →')), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      gap: 10
+    }
+  }, /*#__PURE__*/React.createElement(SaiSocialLinks, null), /*#__PURE__*/React.createElement("div", {
     onClick: () => window.saiNavigate && window.saiNavigate('contact'),
     style: {
       padding: '14px 28px',
@@ -320,7 +401,7 @@ function SaiHero() {
       cursor: 'pointer',
       backdropFilter: saiBackdropOn() ? 'blur(2px)' : undefined
     }
-  }, window.t('お問い合わせ')))));
+  }, window.t('お問い合わせ'))))));
 }
 function SaiMission() {
   return /*#__PURE__*/React.createElement("div", {
@@ -833,5 +914,6 @@ function SaiVariant() {
 Object.assign(window, {
   SaiVariant,
   SaiNav,
-  SaiCTA
+  SaiCTA,
+  SaiSocialLinks
 });

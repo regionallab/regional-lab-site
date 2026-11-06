@@ -20,6 +20,45 @@ const saiFont = {
   mono: '"JetBrains Mono", ui-monospace, monospace',
 };
 
+// Instagram と note への入口。写真の上に置くので、お問い合わせの札と同じ暗い下地で読ませる。
+const SAI_SOCIALS = [
+  { label: 'Instagram', href: 'https://www.instagram.com/regional_lab/' },
+  { label: 'note', href: 'https://note.com/chihousouseinote' },
+];
+
+function SaiInstagramMark() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+         strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="3" y="3" width="18" height="18" rx="5" />
+      <circle cx="12" cy="12" r="4.2" />
+      <circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+
+function SaiSocialLinks() {
+  return (
+    <div style={{ display: 'flex', gap: 10 }}>
+      {SAI_SOCIALS.map((s) => (
+        <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer"
+           aria-label={s.label} title={s.label} style={{
+          width: 40, height: 40, display: 'flex', alignItems: 'center', justifyContent: 'center',
+          background: saiBackdropOn() ? 'rgba(16, 13, 8, 0.55)' : 'transparent',
+          border: `1px solid ${saiBackdropOn() ? 'rgba(250, 246, 236, 0.85)' : saiPalette.ink}`,
+          color: saiOnPhoto(saiPalette.ink), textShadow: saiShadow(),
+          backdropFilter: saiBackdropOn() ? 'blur(2px)' : undefined,
+          textDecoration: 'none', cursor: 'pointer',
+        }}>
+          {s.label === 'Instagram'
+            ? <SaiInstagramMark />
+            : <span style={{ fontFamily: saiFont.enSerif, fontSize: 15, letterSpacing: 1 }}>note</span>}
+        </a>
+      ))}
+    </div>
+  );
+}
+
 function SaiNav() {
   return (
     <div style={{
@@ -129,20 +168,24 @@ function SaiHero() {
             {window.t('イベント、コミュニティ、アパレル、DX&AX。')}<br/>{window.t('四つの事業で、地方創生を立体的に描く。')}
           </p>
         </div>
-        <div style={{ display: 'flex', gap: 12 }}>
+        <div style={{ display: 'flex', gap: 12, alignItems: 'flex-end' }}>
           <div onClick={() => window.saiNavigate && window.saiNavigate('business')} style={{
             padding: '14px 28px', background: saiPalette.akane, color: saiPalette.paper,
             fontFamily: saiFont.jpSerif, fontSize: 14, letterSpacing: 3, cursor: 'pointer',
           }}>{window.t('事業を見る →')}</div>
-          {/* 写真の上では墨の枠線・墨文字が溶けるため、暗い下地を敷いて枠線と文字を明るい側にする */}
-          <div onClick={() => window.saiNavigate && window.saiNavigate('contact')} style={{
-            padding: '14px 28px',
-            background: saiBackdropOn() ? 'rgba(16, 13, 8, 0.55)' : 'transparent',
-            border: `1px solid ${saiBackdropOn() ? 'rgba(250, 246, 236, 0.85)' : saiPalette.ink}`,
-            color: saiOnPhoto(saiPalette.ink), textShadow: saiShadow(),
-            fontFamily: saiFont.jpSerif, fontSize: 14, letterSpacing: 3, cursor: 'pointer',
-            backdropFilter: saiBackdropOn() ? 'blur(2px)' : undefined,
-          }}>{window.t('お問い合わせ')}</div>
+          {/* お問い合わせの真上に、Instagram と note への入口を並べる */}
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 10 }}>
+            <SaiSocialLinks />
+            {/* 写真の上では墨の枠線・墨文字が溶けるため、暗い下地を敷いて枠線と文字を明るい側にする */}
+            <div onClick={() => window.saiNavigate && window.saiNavigate('contact')} style={{
+              padding: '14px 28px',
+              background: saiBackdropOn() ? 'rgba(16, 13, 8, 0.55)' : 'transparent',
+              border: `1px solid ${saiBackdropOn() ? 'rgba(250, 246, 236, 0.85)' : saiPalette.ink}`,
+              color: saiOnPhoto(saiPalette.ink), textShadow: saiShadow(),
+              fontFamily: saiFont.jpSerif, fontSize: 14, letterSpacing: 3, cursor: 'pointer',
+              backdropFilter: saiBackdropOn() ? 'blur(2px)' : undefined,
+            }}>{window.t('お問い合わせ')}</div>
+          </div>
         </div>
       </div>
     </div>
@@ -394,4 +437,4 @@ function SaiVariant() {
   );
 }
 
-Object.assign(window, { SaiVariant, SaiNav, SaiCTA });
+Object.assign(window, { SaiVariant, SaiNav, SaiCTA, SaiSocialLinks });
