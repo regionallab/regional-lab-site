@@ -193,9 +193,19 @@ function MobileNav() {
       color: 'var(--sai-akane)'
     }
   }, "\u2192"))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginTop: 24,
+      display: 'flex',
+      justifyContent: 'center'
+    }
+  }, /*#__PURE__*/React.createElement(SaiSocialLinks, {
+    size: 24,
+    gap: 26,
+    color: mPalette.ink
+  })), /*#__PURE__*/React.createElement("div", {
     onClick: () => window.saiSetLang(window.saiLang === 'en' ? 'ja' : 'en'),
     style: {
-      marginTop: 20,
+      marginTop: 24,
       padding: '14px 8px',
       border: `1px solid ${saiLine(mPalette.ink, 'ff')}`,
       display: 'flex',

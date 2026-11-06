@@ -20,55 +20,6 @@ const saiFont = {
   mono: '"JetBrains Mono", ui-monospace, monospace',
 };
 
-// Instagram と note への入口。囲みは置かず、マークだけを写真の上に載せる。
-// 写真に溶けないよう、文字と同じ要領で影だけ落とす。
-const SAI_SOCIALS = [
-  { label: 'Instagram', href: 'https://www.instagram.com/regional_lab/' },
-  { label: 'note', href: 'https://note.com/chihousouseinote' },
-];
-
-function SaiInstagramMark({ size }) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor"
-         strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <rect x="3" y="3" width="18" height="18" rx="5" />
-      <circle cx="12" cy="12" r="4.2" />
-      <circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none" />
-    </svg>
-  );
-}
-
-// note のマーク（小文字の n）。字ではなく形として置くため、塗りの図形で描く。
-function SaiNoteMark({ size }) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-      <path d="M3 21V3h9.3c5.1 0 8.7 1.9 8.7 6.8V21h-5.2v-9.7c0-2.4-1.2-3.5-3.7-3.5H8.2V21H3z" />
-    </svg>
-  );
-}
-
-function SaiSocialLinks({ size, gap }) {
-  const mark = size || 26;
-  return (
-    <div style={{ display: 'flex', gap: gap || 16, alignItems: 'center' }}>
-      {SAI_SOCIALS.map((s) => (
-        <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer"
-           aria-label={s.label} title={s.label} style={{
-          display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 4,
-          color: saiOnPhoto(saiPalette.ink),
-          filter: saiBackdropOn()
-            ? 'drop-shadow(0 1px 2px rgba(0,0,0,0.6)) drop-shadow(0 2px 10px rgba(0,0,0,0.5))'
-            : undefined,
-          textDecoration: 'none', cursor: 'pointer',
-        }}>
-          {/* note は塗りのため同じ寸法だと重く見える。少し小さくして目方を揃える */}
-          {s.label === 'Instagram' ? <SaiInstagramMark size={mark} /> : <SaiNoteMark size={Math.round(mark * 0.86)} />}
-        </a>
-      ))}
-    </div>
-  );
-}
-
 function SaiNav() {
   return (
     <div style={{
@@ -185,7 +136,7 @@ function SaiHero() {
           }}>{window.t('事業を見る →')}</div>
           {/* お問い合わせの真上に、Instagram と note への入口を並べる */}
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 10 }}>
-            <SaiSocialLinks />
+            <SaiSocialLinks color={saiOnPhoto(saiPalette.ink)} glow={saiBackdropOn()} />
             {/* 写真の上では墨の枠線・墨文字が溶けるため、暗い下地を敷いて枠線と文字を明るい側にする */}
             <div onClick={() => window.saiNavigate && window.saiNavigate('contact')} style={{
               padding: '14px 28px',
@@ -447,4 +398,4 @@ function SaiVariant() {
   );
 }
 
-Object.assign(window, { SaiVariant, SaiNav, SaiCTA, SaiSocialLinks });
+Object.assign(window, { SaiVariant, SaiNav, SaiCTA });

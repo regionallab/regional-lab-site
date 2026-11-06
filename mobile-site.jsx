@@ -96,9 +96,13 @@ function MobileNav() {
               <span style={{ fontFamily: mFont.jpSerif, fontSize: 15, color: 'var(--sai-akane)' }}>→</span>
             </div>
           ))}
+          {/* お問い合わせと言語切替のあいだに、Instagram と note の入口を中央に置く */}
+          <div style={{ marginTop: 24, display: 'flex', justifyContent: 'center' }}>
+            <SaiSocialLinks size={24} gap={26} color={mPalette.ink} />
+          </div>
           <div
             onClick={() => window.saiSetLang(window.saiLang === 'en' ? 'ja' : 'en')}
-            style={{ marginTop: 20, padding: '14px 8px', border: `1px solid ${saiLine(mPalette.ink, 'ff')}`, display: 'flex', gap: 8, justifyContent: 'center', alignItems: 'center', fontFamily: mFont.mono, fontSize: 13, letterSpacing: 2, cursor: 'pointer' }}
+            style={{ marginTop: 24, padding: '14px 8px', border: `1px solid ${saiLine(mPalette.ink, 'ff')}`, display: 'flex', gap: 8, justifyContent: 'center', alignItems: 'center', fontFamily: mFont.mono, fontSize: 13, letterSpacing: 2, cursor: 'pointer' }}
           >
             <span style={{ opacity: window.saiLang === 'ja' ? 1 : 0.4, fontWeight: window.saiLang === 'ja' ? 700 : 400 }}>JP</span>
             <span style={{ opacity: 0.4 }}>/</span>
